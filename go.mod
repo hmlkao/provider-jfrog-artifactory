@@ -1,4 +1,4 @@
-module github.com/upbound/upjet-provider-template
+module github.com/hmlkao/provider-artifactory
 
 go 1.21
 
