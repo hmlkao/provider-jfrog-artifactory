@@ -10,7 +10,7 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
-	"github.com/hmlkao/provider-artifactory/config/null"
+	"github.com/hmlkao/provider-artifactory/config/local_oci_repository"
 )
 
 const (
@@ -36,7 +36,7 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		local_oci_repository.Configure,
 	} {
 		configure(pc)
 	}
