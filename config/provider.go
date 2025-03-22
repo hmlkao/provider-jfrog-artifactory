@@ -36,7 +36,7 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		local_oci_repository.Configure,
+		localocirepository.Configure,
 	} {
 		configure(pc)
 	}

@@ -16,5 +16,5 @@ apis/zz_register.go
 config/provider-metadata.yaml
 config/schema.json
 package/crds/
-internal/controller/*
-!internal/controller/providerconfig/
+# internal/controller/*
+# !internal/controller/providerconfig/
