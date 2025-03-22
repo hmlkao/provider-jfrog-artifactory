@@ -11,8 +11,8 @@ cover.out
 .idea/
 
 # Generated files
-apis/artifactory/
-apis/zz_register.go
+# apis/artifactory/
+# apis/zz_register.go
 config/provider-metadata.yaml
 config/schema.json
 package/crds/
