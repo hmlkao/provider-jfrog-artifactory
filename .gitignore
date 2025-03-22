@@ -9,3 +9,10 @@ cover.out
 # ignore IDE folders
 .vscode/
 .idea/
+
+# Generated files
+apis/
+config/provider-metadata.yaml
+config/schema.json
+package/crds/
+internal/controller/

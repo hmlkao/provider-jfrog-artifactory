@@ -1,5 +1,5 @@
-apiVersion: null.artifactory.upbound.io/v1alpha1
-kind: Resource
+apiVersion: artifactory.crossplane.io/v1alpha1
+kind: LocalOCIRepository
 metadata:
   name: example
 spec:
