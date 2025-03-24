@@ -45,7 +45,8 @@ NPROCS ?= 1
 GO_TEST_PARALLEL := $(shell echo $$(( $(NPROCS) / 2 )))
 
 GO_REQUIRED_VERSION ?= 1.24
-GOLANGCILINT_VERSION ?= 1.64.8 # https://github.com/golangci/golangci-lint/releases
+# https://github.com/golangci/golangci-lint/releases
+GOLANGCILINT_VERSION ?= 1.64.8
 GO_STATIC_PACKAGES = $(GO_PROJECT)/cmd/provider $(GO_PROJECT)/cmd/generator
 GO_LDFLAGS += -X $(GO_PROJECT)/internal/version.Version=$(VERSION)
 GO_SUBDIRS += cmd internal apis
@@ -54,10 +55,13 @@ GO_SUBDIRS += cmd internal apis
 # ====================================================================================
 # Setup Kubernetes tools
 
-KIND_VERSION = v0.27.0 # https://github.com/kubernetes-sigs/kind/releases
-UP_VERSION = v0.28.0 # https://cli.upbound.io/stable?prefix=stable/
+# https://github.com/kubernetes-sigs/kind/releases
+KIND_VERSION = v0.27.0
+# https://cli.upbound.io/stable?prefix=stable/
+UP_VERSION = v0.38.4
 UP_CHANNEL = stable
-UPTEST_VERSION = v0.12.0 # https://github.com/upbound/official-providers-ci/releases
+# https://github.com/upbound/official-providers-ci/releases
+UPTEST_VERSION = v0.12.0
 -include build/makelib/k8s_tools.mk
 
 # ====================================================================================
@@ -171,7 +175,8 @@ run: go.build
 
 # ====================================================================================
 # End to End Testing
-CROSSPLANE_VERSION = 1.19.0 # https://docs.crossplane.io/latest/getting-started/introduction/
+# https://docs.crossplane.io/latest/getting-started/introduction/
+CROSSPLANE_VERSION = 1.19.0
 CROSSPLANE_NAMESPACE = upbound-system
 -include build/makelib/local.xpkg.mk
 -include build/makelib/controlplane.mk
