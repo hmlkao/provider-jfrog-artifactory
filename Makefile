@@ -55,7 +55,7 @@ GO_SUBDIRS += cmd internal apis
 # Setup Kubernetes tools
 
 KIND_VERSION = v0.27.0 # https://github.com/kubernetes-sigs/kind/releases
-UP_VERSION = v0.38.4 # https://cli.upbound.io/stable?prefix=stable/
+UP_VERSION = v0.28.0 # https://cli.upbound.io/stable?prefix=stable/
 UP_CHANNEL = stable
 UPTEST_VERSION = v0.12.0 # https://github.com/upbound/official-providers-ci/releases
 -include build/makelib/k8s_tools.mk
