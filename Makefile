@@ -14,7 +14,7 @@ export TERRAFORM_PROVIDER_SOURCE ?= jfrog/artifactory
 export TERRAFORM_PROVIDER_REPO ?= https://github.com/jfrog/terraform-provider-artifactory
 export TERRAFORM_PROVIDER_VERSION ?= 12.9.1
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME ?= terraform-provider-artifactory
-export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX ?= https://releases.hashicorp.com/$(TERRAFORM_PROVIDER_DOWNLOAD_NAME)/$(TERRAFORM_PROVIDER_VERSION)
+export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX ?= https://github.com/jfrog/$(TERRAFORM_PROVIDER_DOWNLOAD_NAME)/releases/download/v$(TERRAFORM_PROVIDER_VERSION)
 export TERRAFORM_NATIVE_PROVIDER_BINARY ?= terraform-provider-artifactory_v12.9.1
 export TERRAFORM_DOCS_PATH ?= docs/resources
 

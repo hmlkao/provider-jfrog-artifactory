@@ -10,7 +10,9 @@ cover.out
 .vscode/
 .idea/
 
-# Generated files
+## Generated files
+# Even if these files are generated (can be created whenever again, so it's not needed to keep them in repo),
+#   they are required by GHA Workflows to be possible to run tests
 # apis/artifactory/
 # apis/zz_register.go
 # config/provider-metadata.yaml
