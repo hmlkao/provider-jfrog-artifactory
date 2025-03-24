@@ -10,7 +10,7 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
-	"github.com/hmlkao/provider-artifactory/config/local_oci_repository"
+	localocirepository "github.com/hmlkao/provider-artifactory/config/local_oci_repository"
 )
 
 const (
