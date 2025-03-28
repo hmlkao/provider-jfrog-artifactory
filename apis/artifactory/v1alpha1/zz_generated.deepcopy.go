@@ -77,11 +77,6 @@ func (in *LocalOCIRepositoryInitParameters) DeepCopyInto(out *LocalOCIRepository
 		*out = new(string)
 		**out = **in
 	}
-	if in.Key != nil {
-		in, out := &in.Key, &out.Key
-		*out = new(string)
-		**out = **in
-	}
 	if in.MaxUniqueTags != nil {
 		in, out := &in.MaxUniqueTags, &out.MaxUniqueTags
 		*out = new(float64)
@@ -226,11 +221,6 @@ func (in *LocalOCIRepositoryObservation) DeepCopyInto(out *LocalOCIRepositoryObs
 		*out = new(string)
 		**out = **in
 	}
-	if in.Key != nil {
-		in, out := &in.Key, &out.Key
-		*out = new(string)
-		**out = **in
-	}
 	if in.MaxUniqueTags != nil {
 		in, out := &in.MaxUniqueTags, &out.MaxUniqueTags
 		*out = new(float64)
@@ -335,11 +325,6 @@ func (in *LocalOCIRepositoryParameters) DeepCopyInto(out *LocalOCIRepositoryPara
 	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
-		*out = new(string)
-		**out = **in
-	}
-	if in.Key != nil {
-		in, out := &in.Key, &out.Key
 		*out = new(string)
 		**out = **in
 	}

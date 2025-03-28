@@ -37,9 +37,6 @@ type LocalOCIRepositoryInitParameters struct {
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
-	// A mandatory identifier for the repository that must be unique. Must be 1 - 64 alphanumeric and hyphen characters. It cannot contain spaces or special characters.
-	Key *string `json:"key,omitempty" tf:"key,omitempty"`
-
 	// The maximum number of unique tags of a single OCI image to store in this repository. Once the number tags for an object exceeds this setting, older tags are removed. A value of 0 (default) indicates there is no limit.
 	MaxUniqueTags *float64 `json:"maxUniqueTags,omitempty" tf:"max_unique_tags,omitempty"`
 
@@ -95,9 +92,6 @@ type LocalOCIRepositoryObservation struct {
 
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
-
-	// A mandatory identifier for the repository that must be unique. Must be 1 - 64 alphanumeric and hyphen characters. It cannot contain spaces or special characters.
-	Key *string `json:"key,omitempty" tf:"key,omitempty"`
 
 	// The maximum number of unique tags of a single OCI image to store in this repository. Once the number tags for an object exceeds this setting, older tags are removed. A value of 0 (default) indicates there is no limit.
 	MaxUniqueTags *float64 `json:"maxUniqueTags,omitempty" tf:"max_unique_tags,omitempty"`
@@ -159,10 +153,6 @@ type LocalOCIRepositoryParameters struct {
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	// +kubebuilder:validation:Optional
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
-
-	// A mandatory identifier for the repository that must be unique. Must be 1 - 64 alphanumeric and hyphen characters. It cannot contain spaces or special characters.
-	// +kubebuilder:validation:Optional
-	Key *string `json:"key,omitempty" tf:"key,omitempty"`
 
 	// The maximum number of unique tags of a single OCI image to store in this repository. Once the number tags for an object exceeds this setting, older tags are removed. A value of 0 (default) indicates there is no limit.
 	// +kubebuilder:validation:Optional
@@ -239,9 +229,8 @@ type LocalOCIRepositoryStatus struct {
 type LocalOCIRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.key) || (has(self.initProvider) && has(self.initProvider.key))",message="spec.forProvider.key is a required parameter"
-	Spec   LocalOCIRepositorySpec   `json:"spec"`
-	Status LocalOCIRepositoryStatus `json:"status,omitempty"`
+	Spec              LocalOCIRepositorySpec   `json:"spec"`
+	Status            LocalOCIRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
