@@ -11,10 +11,18 @@ include ../../../build/makelib/imagelight.mk
 # ====================================================================================
 # Targets
 
+# Dynamically set RUNTIME variable
+RUNTIME := $(shell if which docker >/dev/null 2>&1; then echo docker; elif which podman >/dev/null 2>&1; then echo podman; else echo none; fi)
+
+# Ensure RUNTIME is valid
+ifeq ($(RUNTIME),none)
+$(ERROR) Neither docker nor podman is available in PATH
+endif
+
 img.build:
-	@$(INFO) docker build $(IMAGE)
+	@$(INFO) $(RUNTIME) build $(IMAGE)
 	@$(MAKE) BUILD_ARGS="--load" img.build.shared
-	@$(OK) docker build $(IMAGE)
+	@$(OK) $(RUNTIME) build $(IMAGE)
 
 img.publish:
 	@$(INFO) Skipping image publish for $(IMAGE)
@@ -25,7 +33,7 @@ img.build.shared:
 	@cp Dockerfile $(IMAGE_TEMP_DIR) || $(FAIL)
 	@cp terraformrc.hcl $(IMAGE_TEMP_DIR) || $(FAIL)
 	@cp -r $(OUTPUT_DIR)/bin/ $(IMAGE_TEMP_DIR)/bin || $(FAIL)
-	@docker buildx build $(BUILD_ARGS) \
+	@$(RUNTIME) buildx build $(BUILD_ARGS) \
 		--platform $(IMAGE_PLATFORMS) \
 		--build-arg TERRAFORM_VERSION=$(TERRAFORM_VERSION) \
 		--build-arg TERRAFORM_PROVIDER_SOURCE=$(TERRAFORM_PROVIDER_SOURCE) \

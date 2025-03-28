@@ -9,12 +9,14 @@ Artifactory API.
 
 Install the provider by using the following command after changing the image tag
 to the [latest release](https://marketplace.upbound.io/providers/hmlkao/provider-artifactory):
-```
+
+```bash
 up ctp provider install hmlkao/provider-artifactory:v0.1.0
 ```
 
 Alternatively, you can use declarative installation:
-```
+
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
@@ -29,9 +31,14 @@ Notice that in this example Provider resource is referencing ControllerConfig wi
 
 You can see the API reference [here](https://doc.crds.dev/github.com/hmlkao/provider-artifactory).
 
+### Build provider from scratch
+
+Check [`BUILD_FROM_SCRATCH.md`](./BUILD_FROM_SCRATCH.md) for notes how was this provider built using [crossplane/upjet tool](https://github.com/crossplane/upjet) step-by-step.
+
 ## Developing
 
 Run code-generation pipeline:
+
 ```console
 go run cmd/generator/main.go "$PWD"
 ```

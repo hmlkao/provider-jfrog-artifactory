@@ -9,8 +9,8 @@ import "github.com/crossplane/upjet/pkg/config"
 // ExternalNameConfigs contains all external name configurations for this
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
-	// Import requires using a randomly generated ID from provider: nl-2e21sda
-	"artifactory_local_oci_repository": config.IdentifierFromProvider,
+	// Local repositories can be imported using their name
+	"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
