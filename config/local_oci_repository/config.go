@@ -12,7 +12,7 @@ const shortGroup string = "artifactory"
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_local_oci_repository", func(r *config.Resource) {
 		// TODO: Get rid of ShortGroup config and use artifactory.jfrog.crossplane.io for initial config instead
-		//   This is naming convention dilema beween:
+		//   This is naming convention dilema between:
 		//     - jfrog.crossplane.io as base group and set ShortGroup to artifactory which will produce artifactory.jfrog.crossplane.io anyway and resource is just LocalOCIRepository (current solution)
 		//     - jfrog.crossplane.io as base group and resource prefix to be artifactory, like ArtifactoryLocalOCIRepository
 		//     - artifactory.jfrog.crossplane.io as base group and resource is just LocalOCIRepository (no need to set up ShortGroup)
