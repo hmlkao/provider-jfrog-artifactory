@@ -1,16 +1,13 @@
 apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
 kind: LocalOCIRepository
 metadata:
-  # name: crossplane-oci
   name: oci-crossplane-repository
 spec:
-  forProvider:
+  forProvider: {}
     # We don't need to set up the 'key' parameter, even if it is mandatory,
     #   because it is set up as a name of the resource
     # Otherwise, there are two different parameters,
     #   one for resource name and the second for repository name which is confusing
     #key: oci-crossplane-repository
-    propertySets:
-      - artifactory
   providerConfigRef:
     name: default
