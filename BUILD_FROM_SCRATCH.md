@@ -232,14 +232,18 @@ When you run `make run`, Terraform state from Crossplane provider is stored in `
 Steps to publish provider to Upbound Marketplace according to [these instructions](https://docs.upbound.io/upbound-marketplace/packages/).
 
 1. [Upbound account](https://docs.upbound.io/operate/accounts/identity-management/users/#create-an-account) is required
-2. Create API token in Upbound account
-3. Create new repository according to provider name, e.g. `provider-artifactory`
-4. Set these GitHub secrets in the repository
+2. Create an Organization within Upbound account, e.g. `hmlkao`
+3. Create a Robot account within Organization settings
+   1. Name - e.g., `provider-artifactory-ci`
+   2. Create a token
+      1. Name - e.g., `github-ci`
+4. Create a new repository according to provider name, e.g. `provider-artifactory` (MUST match with provider name!)
+5. Set these GitHub secrets in the repository
 
-    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_USR` - Upbound account username, like `homolkao`
-    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PWD` - Upbound account password
+    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_USR` - Robot account username, e.g. `provider-artifactory-ci`
+    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PWD` - Robot token created in previous step
 
-5. Update registry domain on all places in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/homolkao`
+6. Update registry domain to `xpkg.upbound.io/<org-name>` on all places (`REGISTRY_ORGS`, `XPKG_REG_ORGS` and `XPKG_REG_ORGS_NO_PROMOTE`) in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/hmlkao`
 
 ## Troubleshooting
 
