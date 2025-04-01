@@ -9,6 +9,19 @@ Artifactory API.
 > [!WARNING]
 > This repo targets to do as less changes as possible in source code to successfully build the provider with explanation.
 
+- [Build provider from scratch](#build-provider-from-scratch)
+  - [Steps to build using template](#steps-to-build-using-template)
+  - [Testing the generated resources](#testing-the-generated-resources)
+    - [Debugging](#debugging)
+  - [Publish provider](#publish-provider)
+  - [Troubleshooting](#troubleshooting)
+    - [`make generate` fails with error](#make-generate-fails-with-error)
+      - [Solution](#solution)
+    - [`cannot find id in tfstate` in provider output](#cannot-find-id-in-tfstate-in-provider-output)
+      - [Solution](#solution-1)
+    - [`make build` fails with error](#make-build-fails-with-error)
+      - [Solution](#solution-2)
+
 ## Steps to build using template
 
 Followed steps in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
@@ -214,6 +227,20 @@ kubectl apply -f package/crds/
 
 When you run `make run`, Terraform state from Crossplane provider is stored in `/var/folders/` folder, check logs from provider to get exact path of Terraform workspace, so you can check what exactly is applied and what is stored in Terraform state.
 
+## Publish provider
+
+Steps to publish provider to Upbound Marketplace according to [these instructions](https://docs.upbound.io/upbound-marketplace/packages/).
+
+1. [Upbound account](https://docs.upbound.io/operate/accounts/identity-management/users/#create-an-account) is required
+2. Create API token in Upbound account
+3. Create new repository according to provider name, e.g. `provider-artifactory`
+4. Set these GitHub secrets in the repository
+
+    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_USR` - Upbound account username, like `homolkao`
+    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PWD` - Upbound account password
+
+5. Update registry domain on all places in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/homolkao`
+
 ## Troubleshooting
 
 ### `make generate` fails with error
@@ -330,3 +357,37 @@ func Configure(p *config.Provider) {
 	})
 }
 ```
+
+### `make build` fails with error
+
+When you use Podman as container runtime on MacOS.
+
+```log
+up: error: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+16:52:09 [FAIL]
+make[3]: *** [xpkg.build.provider-artifactory] Error 1
+make[2]: *** [do.build.artifacts.linux_arm64] Error 2
+make[1]: *** [build.all] Error 2
+make: *** [build] Error 2
+```
+
+#### Solution
+
+Follow [these instructions](https://podman-desktop.io/docs/migrating-from-docker/using-the-docker_host-environment-variable#procedure) in Podman docs.
+
+1. Get current Podman machine socket
+
+    ```bash
+    podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}' | pbcopy
+    ## Example
+    # podman machine inspect --format '{{.ConnectionInfo.PodmanSocket.Path}}'
+    # /var/folders/sj/hzvqvb413qgd6mx110wmbr6m0000gn/T/podman/podman-machine-default-api.sock
+    ```
+
+2. Set `DOCKER_HOST`
+
+    ```bash
+    export DOCKER_HOST=unix://<paste-socket-path-here>
+    ## Example
+    # export DOCKER_HOST=unix:///var/folders/sj/hzvqvb413qgd6mx110wmbr6m0000gn/T/podman/podman-machine-default-api.sock
+    ```
