@@ -229,21 +229,37 @@ When you run `make run`, Terraform state from Crossplane provider is stored in `
 
 ## Publish provider
 
+> [!NOTE]
+> To be able to write artifact to GitHub, allow Read/Write permissions to GitHub Action Workflow
+> You can enable it generally in GH repository Settings > Actions > General > Workflow permissions > Read and write permissions
+>
+> --OR--
+>
+> Set this permission directly in `.github/workflows/ci.yaml` workflow
+>
+> ```yaml
+> permissions:
+>   packages: write
+> ```
+
 Steps to publish provider to Upbound Marketplace according to [these instructions](https://docs.upbound.io/upbound-marketplace/packages/).
 
 1. [Upbound account](https://docs.upbound.io/operate/accounts/identity-management/users/#create-an-account) is required
 2. Create an Organization within Upbound account, e.g. `hmlkao`
-3. Create a Robot account within Organization settings
+3. Craete a Team in Organization settings, e.g. `Artifactory`
+4. Create a Robot account in Organization settings
    1. Name - e.g., `provider-artifactory-ci`
    2. Create a token
       1. Name - e.g., `github-ci`
-4. Create a new repository according to provider name, e.g. `provider-artifactory` (MUST match with provider name!)
-5. Set these GitHub secrets in the repository
+5. Assign the Robot account to the Team
+6. Create a new Repository according to provider name, e.g. `provider-artifactory` (MUST match with provider name!)
+7. Assign a Permissions for the Team to the Repository
+8. Set these GitHub secrets in the repository
 
     - `UPBOUND_MARKETPLACE_PUSH_ROBOT_USR` - Robot account username, e.g. `provider-artifactory-ci`
     - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PWD` - Robot token created in previous step
 
-6. Update registry domain to `xpkg.upbound.io/<org-name>` on all places (`REGISTRY_ORGS`, `XPKG_REG_ORGS` and `XPKG_REG_ORGS_NO_PROMOTE`) in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/hmlkao`
+9. Update registry domain to `xpkg.upbound.io/<org-name>` on all places (`REGISTRY_ORGS`, `XPKG_REG_ORGS` and `XPKG_REG_ORGS_NO_PROMOTE`) in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/hmlkao`
 
 ## Troubleshooting
 
