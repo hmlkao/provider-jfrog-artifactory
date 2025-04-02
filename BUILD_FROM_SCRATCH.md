@@ -21,6 +21,8 @@ Artifactory API.
       - [Solution](#solution-1)
     - [`make build` fails with error](#make-build-fails-with-error)
       - [Solution](#solution-2)
+    - [Tag workflows fails](#tag-workflows-fails)
+      - [Solution](#solution-3)
 
 ## Steps to build using template
 
@@ -172,7 +174,7 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
     ```bash
     $ ARTIFACTORY_URL=https://artifactory.site.com/artifactory
     $ read -r ARTIFACTORY_TOKEN
-    <put-your-token-here>
+    <put-your-token-here + enter>
     $ cat examples/providerconfig/secret.yaml.tmpl | sed -e "s/y0ur-t0k3n/${ARTIFACTORY_TOKEN}/g" -e "s^y0ur-url^${ARTIFACTORY_URL}^g" > examples/providerconfig/secret.yaml
     ```
 
@@ -414,3 +416,18 @@ Follow [these instructions](https://podman-desktop.io/docs/migrating-from-docker
     ## Example
     # export DOCKER_HOST=unix:///var/folders/sj/hzvqvb413qgd6mx110wmbr6m0000gn/T/podman/podman-machine-default-api.sock
     ```
+
+### Tag workflows fails
+
+```text
+Resource not accessible by integration
+```
+
+#### Solution
+
+Add this block to the `.github/workflows/tag.yaml`:
+
+```yaml
+permissions:
+  contents: write
+```
