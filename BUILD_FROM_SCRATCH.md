@@ -35,6 +35,9 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
 2. Fetch submodule (no change in source code)
 
+    > [!WARNING]
+    > Submodule `Avarei/build` is used for `build/` path, because [this PR](https://github.com/crossplane/build/pull/14) was not merged yet
+
     ```bash
     make submodules
     ```
@@ -253,13 +256,14 @@ Steps to publish provider to Upbound Marketplace according to [these instruction
       1. Name - e.g., `github-ci`
 5. Assign the Robot account to the Team
 6. Create a new Repository according to provider name, e.g. `provider-artifactory` (MUST match with provider name!)
-7. Assign a Permissions for the Team to the Repository
+7. Assign a Write permissions for the Team in the Repository settings
 8. Set these GitHub secrets in the repository
 
-    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_USR` - Robot account username, e.g. `provider-artifactory-ci`
-    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PWD` - Robot token created in previous step
+    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_USR` - Robot token Access ID, e.g. `a064335d-4b4e-78da-89fb-0d0bd9e832ee`
+    - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW` - Robot token itself
 
 9. Update registry domain to `xpkg.upbound.io/<org-name>` on all places (`REGISTRY_ORGS`, `XPKG_REG_ORGS` and `XPKG_REG_ORGS_NO_PROMOTE`) in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/hmlkao`
+10. Push changes to GitHub, CI workflow will be triggered and should pass
 
 ## Troubleshooting
 
@@ -276,9 +280,8 @@ Upjet tool requires `page_title` and `description` fields in each file in Terraf
 
 This is a workaround which generates valid Markdown files which are unfortunately missing siginificant part of origin files.
 
-I've created an issue with question how it looks with a fix:
-    <!-- markdownlint-disable-next-line no-bare-urls -->
-    https://github.com/jfrog/terraform-provider-artifactory/issues/1229
+> [!NOTE]
+> I created [an issue](https://github.com/jfrog/terraform-provider-artifactory/issues/1229) asking what the fix looks like
 
 1. Clone repo of the Terraform provider and change directory into it
 
