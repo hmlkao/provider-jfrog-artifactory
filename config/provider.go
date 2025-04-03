@@ -10,6 +10,7 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
+	localdockerv2repository "github.com/hmlkao/provider-artifactory/config/local_docker_v2_repository"
 	localocirepository "github.com/hmlkao/provider-artifactory/config/local_oci_repository"
 )
 
@@ -36,6 +37,7 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
+		localdockerv2repository.Configure,
 		localocirepository.Configure,
 	} {
 		configure(pc)
