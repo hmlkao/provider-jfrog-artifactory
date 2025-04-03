@@ -60,8 +60,8 @@ KIND_VERSION = v0.27.0
 # https://cli.upbound.io/stable?prefix=stable/
 UP_VERSION = v0.38.4
 UP_CHANNEL = stable
-# https://github.com/upbound/official-providers-ci/releases
-UPTEST_VERSION = v0.12.0
+# https://github.com/crossplane/uptest/releases
+UPTEST_VERSION = v1.3.0
 -include build/makelib/k8s_tools.mk
 
 # ====================================================================================
