@@ -9,6 +9,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
+	localdockerv2repository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localdockerv2repository"
 	localocirepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localocirepository"
 	providerconfig "github.com/hmlkao/provider-artifactory/internal/controller/providerconfig"
 )
@@ -17,6 +18,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
+		localdockerv2repository.Setup,
 		localocirepository.Setup,
 		providerconfig.Setup,
 	} {
