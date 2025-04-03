@@ -12,6 +12,7 @@ import (
 
 	localdockerv2repository "github.com/hmlkao/provider-artifactory/config/local_docker_v2_repository"
 	localocirepository "github.com/hmlkao/provider-artifactory/config/local_oci_repository"
+	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_terraform_provider_repository"
 )
 
 const (
@@ -39,6 +40,7 @@ func GetProvider() *ujconfig.Provider {
 		// add custom config functions
 		localdockerv2repository.Configure,
 		localocirepository.Configure,
+		localterraformproviderrepository.Configure,
 	} {
 		configure(pc)
 	}
