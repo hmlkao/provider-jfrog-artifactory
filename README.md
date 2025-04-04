@@ -158,7 +158,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_local_docker_v1_repository`          | :x:                |                                    |
 | `artifactory_local_docker_v2_repository`          | :heavy_check_mark: | `LocalDockerV2Repository`          |
 | `artifactory_local_gems_repository`               | :x:                |                                    |
-| `artifactory_local_generic_repository`            | :x:                |                                    |
+| `artifactory_local_generic_repository`            | :heavy_check_mark: | `LocalGenericRepository`           |
 | `artifactory_local_gitlfs_repository`             | :x:                |                                    |
 | `artifactory_local_go_repository`                 | :x:                |                                    |
 | `artifactory_local_gradle_repository`             | :x:                |                                    |

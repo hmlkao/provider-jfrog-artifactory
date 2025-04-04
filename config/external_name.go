@@ -10,6 +10,7 @@ import "github.com/crossplane/upjet/pkg/config"
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_local_docker_v2_repository":    config.ParameterAsIdentifier("key"),
+	"artifactory_local_generic_repository":      config.ParameterAsIdentifier("key"),
 	"artifactory_local_oci_repository":          config.ParameterAsIdentifier("key"),
 	"artifactory_terraform_provider_repository": config.ParameterAsIdentifier("key"),
 }
