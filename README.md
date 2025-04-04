@@ -33,6 +33,35 @@ Notice that in this example Provider resource is referencing ControllerConfig wi
 
 You can see the API reference [here](https://doc.crds.dev/github.com/hmlkao/provider-artifactory).
 
+## Naming convention decision
+
+There are more Terraform providers developed by JFrog, e.g.:
+
+- [`jfrog/artifactory`](https://registry.terraform.io/providers/jfrog/artifactory)
+- [`jfrog/platform`](https://registry.terraform.io/providers/jfrog/platform)
+- [`jfrog/project`](https://registry.terraform.io/providers/jfrog/project)
+- etc.
+
+So, I used `jfrog.crossplane.io` base group for this Crossplane provider.
+
+### Options
+
+1. (*current naming convention*) `jfrog.crossplane.io` as a base group and set `ShortGroup` to `artifactory` which will produce `artifactory.jfrog.crossplane.io` and resource is just `LocalOCIRepository`
+
+    - :heavy_minus_sign: All resources must have specificied `ShortGroup` as `artifactory`
+
+2. `artifactory.jfrog.crossplane.io` as base group and resource is just `LocalOCIRepository` (no need to set up `ShortGroup`)
+
+    - :heavy_plus_sign: Get rid of `ShortGroup` config and use `artifactory.jfrog.crossplane.io` for initial config instead
+    - :heavy_plus_sign: Allows to use `ShortGroup` for Group of resources like `local.artifactory.jfrog.crossplane.io` for Local Repositories according to Terraform provider
+      - :heavy_minus_sigh: Can be less clear, because there will be the same resources, e.g. `AlpineRepository` for groups `local.artifactory.jfrog.crossplane.io`, `remote.artifactory.jfrog.crossplane.io`, etc.
+
+3. `jfrog.crossplane.io` as a base group and resource prefix to be `artifactory`, like `ArtifactoryLocalOCIRepository`
+
+    - :heavy_minus_sign: All resources contains `Artifactory` which is not needed
+
+Not sure, which one is the best.
+
 ## Supported resources
 
 List of all resources of [Terraform provider version 12.9.1](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs).
@@ -150,7 +179,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_local_sbt_repository`                | :x:                |                                    |
 | `artifactory_local_swift_repository`              | :x:                |                                    |
 | `artifactory_local_terraform_module_repository`   | :x:                |                                    |
-| `artifactory_local_terraform_provider_repository` | :x:                | `LocalTerraformProviderRepository` |
+| `artifactory_local_terraform_provider_repository` | :heavy_check_mark: | `LocalTerraformProviderRepository` |
 | `artifactory_local_terraformbackend_repository`   | :x:                |                                    |
 | `artifactory_local_vagrant_repository`            | :x:                |                                    |
 
