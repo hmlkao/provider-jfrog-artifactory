@@ -10,4 +10,7 @@ package v1alpha1
 func (tr *LocalDockerV2Repository) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *LocalGenericRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *LocalOCIRepository) Hub() {}

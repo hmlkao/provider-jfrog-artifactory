@@ -17,6 +17,15 @@ func (l *LocalDockerV2RepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this LocalGenericRepositoryList.
+func (l *LocalGenericRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this LocalOCIRepositoryList.
 func (l *LocalOCIRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
