@@ -6,7 +6,7 @@ spec:
   forProvider: {}
     # We don't need to set up the 'key' parameter, even if it is mandatory,
     #   because it is set up as a name of the resource
-    # Otherwise, there are two different parameters,
+    # Otherwise, there would be two different parameters,
     #   one for resource name and the second for repository name which is confusing
     #key: terraform-provider-crossplane-repository
   providerConfigRef:
