@@ -14,7 +14,7 @@ func Configure(p *config.Provider) {
 		r.ShortGroup = shortGroup
 		// Specify Kubernetes kind
 		r.Kind = "LocalDockerV2Repository"
-		// Fix an issue with ExternalName configuration
+		// Set custom func to get external name because there is no 'id' stored in Terraform state
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil
