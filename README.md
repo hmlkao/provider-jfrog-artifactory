@@ -68,10 +68,22 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 
 ### Artifact
 
-| Resource                      | Supported          | Kind                           |
-|-------------------------------|--------------------|--------------------------------|
-| `artifactory_artifact`        | :x:                |                                |
-| `artifactory_item_properties` | :x:                |                                |
+- *Resource Import Not Implemented* - Terraform resource doesn't allow import and it's not possible to set external name, because there is no id set in terraform state, e.g.:
+
+    ```bash
+    $ terraform import artifactory_artifact.my-local-artifact artifact
+    artifactory_artifact.my-local-artifact: Importing from ID "artifact"...
+    ╷
+    │ Error: Resource Import Not Implemented
+    │
+    │ This resource does not support import. Please contact the provider developer for additional information.
+    ╵
+    ```
+
+| Resource                      | Supported                             | Kind                           |
+|-------------------------------|---------------------------------------|--------------------------------|
+| `artifactory_artifact`        | :x: (Resource Import Not Implemented) |                                |
+| `artifactory_item_properties` | :x:                                   |                                |
 
 ### Configuration
 
