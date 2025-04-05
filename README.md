@@ -1,3 +1,4 @@
+<!-- markdownlint-disable  no-hard-tabs -->
 # Provider Artifactory
 
 `provider-artifactory` is a [Crossplane](https://crossplane.io/) provider that
@@ -42,19 +43,19 @@ There are more Terraform providers developed by JFrog, e.g.:
 - [`jfrog/project`](https://registry.terraform.io/providers/jfrog/project)
 - etc.
 
-So, I used `jfrog.crossplane.io` base group for this Crossplane provider.
+So, I decided to use `jfrog.crossplane.io` base group for this Crossplane provider.
 
 ### Options
 
-1. (*current naming convention*) `jfrog.crossplane.io` as a base group and set `ShortGroup` to `artifactory` which will produce `artifactory.jfrog.crossplane.io` and resource is just `LocalOCIRepository`
+1. (*current naming convention*) `jfrog.crossplane.io` as a base group and set `ShortGroup` as `artifactory` to all resources which will produce `artifactory.jfrog.crossplane.io` and K8s kind is just `LocalOCIRepository`
 
     - :heavy_minus_sign: All resources must have specificied `ShortGroup` as `artifactory`
 
 2. `artifactory.jfrog.crossplane.io` as base group and resource is just `LocalOCIRepository` (no need to set up `ShortGroup`)
 
     - :heavy_plus_sign: Get rid of `ShortGroup` config and use `artifactory.jfrog.crossplane.io` for initial config instead
-    - :heavy_plus_sign: Allows to use `ShortGroup` for Group of resources like `local.artifactory.jfrog.crossplane.io` for Local Repositories according to Terraform provider
-      - :heavy_minus_sigh: Can be less clear, because there will be the same resources, e.g. `AlpineRepository` for groups `local.artifactory.jfrog.crossplane.io`, `remote.artifactory.jfrog.crossplane.io`, etc.
+    - Allows to use `ShortGroup` for Group of resources like `local.artifactory.jfrog.crossplane.io` for Local Repositories according to Terraform provider
+      - :heavy_minus_sign: Can be less clear, because there will be the same resources, e.g. `AlpineRepository` for groups `local.artifactory.jfrog.crossplane.io`, `remote.artifactory.jfrog.crossplane.io`, etc.
 
 3. `jfrog.crossplane.io` as a base group and resource prefix to be `artifactory`, like `ArtifactoryLocalOCIRepository`
 
@@ -80,10 +81,10 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
     ╵
     ```
 
-| Resource                      | Supported                             | Kind                           |
-|-------------------------------|---------------------------------------|--------------------------------|
-| `artifactory_artifact`        | :x: (Resource Import Not Implemented) |                                |
-| `artifactory_item_properties` | :x:                                   |                                |
+| Resource                      | Supported                                                  | Kind             |
+|-------------------------------|------------------------------------------------------------|------------------|
+| `artifactory_artifact`        | :x: (Resource Import Not Implemented)                      |                  |
+| `artifactory_item_properties` | :heavy_check_mark: ([notes](#artifactory_item_properties)) | `ItemProperties` |
 
 ### Configuration
 
@@ -327,6 +328,49 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_release_bundle_v2_webhook`                  | :x:                |                                |
 | `artifactory_user_custom_webhook`                        | :x:                |                                |
 | `artifactory_user_webhook`                               | :x:                |                                |
+
+### `artifactory_item_properties`
+
+#### Properties must exist
+
+At least one property of repo/idem MUST exists, otherwise this resource fails with an error:
+
+```log
+2025-04-05T21:00:10+02:00	DEBUG	events	cannot run refresh: refresh failed: Unable to Refresh Resource: An unexpected error occurred while attempting to refresh resource state. Please retry the operation or report this issue to the provider developers.
+
+Error: {
+  "errors" : [ {
+    "status" : 404,
+    "message" : "No properties could be found."
+  } ]
+}
+```
+
+#### Properties are stored as string
+
+Terraform requires to set [property values as a set of strings](https://registry.terraform.io/providers/jfrog/artifactory/latest/docs/resources/item_properties#properties-1).
+
+However, Artifactory converts this set of strings to a single string separated by commas. The next reconciliation use Terraform refresh which cause the state is changed to this single string and Terraform apply is triggered again which will **end up with neverending loop**.
+
+```yaml
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: ItemProperties
+metadata:
+  name: my-repo-properties
+spec:
+  forProvider:
+    repoKey: generic-crossplane-local
+    properties:
+      key1: ["value1"]
+      key2: ["value2", "value3"]    # <--- This configuration will cause neverending reconciliation loop
+  providerConfigRef:
+    name: default
+```
+
+You can find the whole reconciliation process investigation of provider log [here](./docs/artifact/item_properties/reconsiliation-process-investigation.log).
+
+> [!NOTE] Solution
+> Don't use more than one value for the key even if it allows to use a set of strings.
 
 ## Build provider from scratch
 

@@ -1,0 +1,28 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: ItemProperties
+metadata:
+  name: my-repo-properties
+spec:
+  forProvider:
+    repoKey: generic-crossplane-local
+    properties:
+      key1: ["value1"]
+      #key2: ["value2", "value3"] # Do NOT set more then one value, otherwise reconciliation ends up in infinite loop
+  providerConfigRef:
+    name: default
+
+---
+
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: ItemProperties
+metadata:
+  name: my-folder-properties
+spec:
+  forProvider:
+    repoKey: generic-crossplane-repository
+    itemPath: my-path
+    properties:
+      key1: ["value1"]
+      #key2: ["value2", "value3"] # Do NOT set more then one value, otherwise reconciliation ends up in infinite loop
+  providerConfigRef:
+    name: default
