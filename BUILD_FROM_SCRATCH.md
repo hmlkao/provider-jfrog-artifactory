@@ -24,6 +24,8 @@ Artifactory API.
       - [Solution](#solution-2)
     - [Tag GH workflow fails](#tag-gh-workflow-fails)
       - [Solution](#solution-3)
+    - [Failed to instantiate provider "xxx" to obtain schema](#failed-to-instantiate-provider-xxx-to-obtain-schema)
+      - [Solution](#solution-4)
 
 ## Steps to build using template
 
@@ -467,3 +469,61 @@ Add this block to the `.github/workflows/tag.yaml`:
 permissions:
   contents: write
 ```
+
+### Failed to instantiate provider "xxx" to obtain schema
+
+When you run `make run` and you'll get following error message:
+
+```log
+2025-04-08T13:05:11+02:00	DEBUG	events	cannot run refresh: refresh failed: failed to read schema for artifactory_item_properties.my-folder-properties in registry.terraform.io/jfrog/artifactory: failed to instantiate provider "registry.terraform.io/jfrog/artifactory" to obtain schema: Unrecognized remote plugin message:
+
+This usually means that the plugin is either invalid or simply
+needs to be recompiled to support the latest protocol.: 	{"type": "Warning", "object": {"kind":"ItemProperties","name":"my-folder-properties","uid":"c4312fe6-b815-4282-b123-49ea5577a6f5","apiVersion":"artifactory.jfrog.crossplane.io/v1alpha1","resourceVersion":"130449"}, "reason": "CannotObserveExternalResource"}
+```
+
+#### Solution
+
+1. Try to run Terraform directly with debug as it is in [`Makefile`](./Makefile)
+
+    ```bash
+    $ TF_LOG=debug .cache/tools/darwin_arm64/terraform-1.5.7 -chdir=.work/terraform/ providers schema -json=true
+    ...
+    2025-04-08T14:14:52.068+0200 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1 pid=25512
+    2025-04-08T14:14:52.068+0200 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    ╷
+    │ Error: Failed to load plugin schemas
+    │
+    │ Error while loading schemas for plugin components: Failed to obtain provider schema: Could not load the schema for provider registry.terraform.io/jfrog/artifactory: failed to instantiate provider "registry.terraform.io/jfrog/artifactory" to obtain schema: timeout while waiting for plugin to start..
+    ╵
+
+    2025-04-08T14:15:52.071+0200 [WARN]  provider: plugin failed to exit gracefully
+    ```
+
+2. Check running terraform processes
+
+    ```bash
+    $ ps ax | grep terraform
+    34519 s002  S+     0:00.00 grep terraform
+    60678 s002  S      0:04.03 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    7399 s005  S      0:00.53 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
+    7400 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    8404 s005  S      0:00.51 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
+    8407 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    24394 s005  S      0:00.25 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
+    24395 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    25509 s005  S+     0:00.21 .cache/tools/darwin_arm64/terraform-1.5.7 -chdir=.work/terraform/ providers schema -json=true
+    25512 s005  UE+    0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    92484 s005  S      0:00.76 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
+    92485 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    82693 s010  S+     0:00.84 terraform plan
+    82694 s010  UE+    0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    ```
+
+    From `man ps`, `UE` stat means
+
+      - `U       Marks a process in uninterruptible wait.`
+      - `E       The process is trying to exit.`
+
+    These processes cannot be killed (even using `kill -9`). The only way I found to get rid of it is to restart laptop...
+
+    However, you can kill at least terraform processes `kill -9 terraform`, it may unblock laptop to run `make run` again.
