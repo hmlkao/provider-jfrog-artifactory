@@ -3,7 +3,7 @@ kind: Provider
 metadata:
   name: provider-artifactory
   annotations:
-    meta.crossplane.io/maintainer: Crossplane Maintainers <ondrej.homolka@gmail.com>
+    meta.crossplane.io/maintainer: Ondrej Homolka <ondrej.homolka@gmail.com>
     meta.crossplane.io/source: github.com/hmlkao/provider-artifactory
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/description: |
