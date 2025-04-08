@@ -42,7 +42,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 3. Fetch submodule (no change in source code)
 
     > [!WARNING]
-    > Submodule `Avarei/build` is used for `build/` path, because [this PR](https://github.com/crossplane/build/pull/14) was not merged yet
+    > Submodule `Avarei/build` is used for the `build/` path, which contains essential scripts and configurations for the build process. This submodule is necessary because [this PR](https://github.com/crossplane/build/pull/14), which integrates these changes into the main repository, has not been merged yet.
 
     ```bash
     make submodules
@@ -72,11 +72,11 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
 6. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
 
-    It means to add provider configuration arguments, for Artifactory Terraform provider it means to set optional `url`, `access_token`, `oidc_provider_name` and `tfc_credential_tag_name`, we can omit `api_key` as it's deprecated (in v12.9.1).
+    It means to add provider configuration arguments. For the Artifactory Terraform provider, the arguments `url`, `access_token`, `oidc_provider_name`, and `tfc_credential_tag_name` are optional. The `api_key` argument can be omitted as it is deprecated (in v12.9.1).
 
-7. Add external name to `config/external_name.go` file according to Terraform import reference, examples:
+7. Add external name to `config/external_name.go` file according to the Terraform import reference.
 
-   - E.g., for `artifactory_local_oci_repository` I want to use K8s resource `metadata.name` as a `key` parameter, otherwise we will have resource `name` and OCI repository `key` different which can be confusing, so we set `config.ParameterAsIdentifier("key")` which cause that the `key` parameter is set to the same as `metadata.name` of K8s resource
+   - For example, with `artifactory_local_oci_repository`, use the Kubernetes resource `metadata.name` as the `key` parameter. This ensures that the resource `name` and the OCI repository `key` are identical, avoiding confusion. To achieve this, set `config.ParameterAsIdentifier("key")`, which maps the `key` parameter to the `metadata.name` of the Kubernetes resource.
 
         ```text
         terraform import artifactory_local_oci_repository.my-oci-local-repo name-of-oci-local-repo
@@ -85,7 +85,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
                                                                  `-------------------`------------   These fields may differ, so we need to set `"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),` in `ExternalNameConfigs` variable
         ```
 
-8. Create folder and add custom configuration to `config/` folder for Artifactory resource(s) and remove `null` resource
+8. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s). Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
 
     > [!NOTE]
     > More details are in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
@@ -96,13 +96,15 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
         mkdir config/local_oci_repository
         ```
 
-9. Update go modules, otherwise it failed with missing modules
+9. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
 
     ```sh
     go mod tidy
     ```
 
 10. Install required Go tools
+
+    `goimports` is a tool that formats Go code and automatically manages import statements, ensuring consistency and reducing manual effort during the build process.
 
     ```bash
     go get golang.org/x/tools/cmd/goimports@latest
@@ -111,7 +113,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
 11. Build provider
 
-    (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
+    The `make generate` command is used to generate the necessary Crossplane Custom Resource Definitions (CRDs) and other artifacts required for the provider. This step ensures that the provider is correctly configured and ready for deployment. (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
 
     ```sh
     make generate

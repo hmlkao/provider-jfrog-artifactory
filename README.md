@@ -1,12 +1,38 @@
 <!-- markdownlint-disable  no-hard-tabs -->
 # Provider Artifactory
 
+This document provides an overview and guidance for using the `provider-artifactory`, a Crossplane provider for managing Artifactory resources.
+
 `provider-artifactory` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/crossplane/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
 
 The repo was created from [crossplane/upjet-provider-template@7311f9f](https://github.com/crossplane/upjet-provider-template/tree/7311f9f9baa87f4431702ba209dffbc6067ce74b) template.
+
+- [Provider Artifactory](#provider-artifactory)
+  - [Getting Started](#getting-started)
+  - [Naming convention decision](#naming-convention-decision)
+    - [Options](#options)
+  - [Supported resources](#supported-resources)
+    - [Artifact](#artifact)
+    - [Configuration](#configuration)
+    - [Federated Repositories](#federated-repositories)
+    - [Lifecycle](#lifecycle)
+    - [Local Repositories](#local-repositories)
+    - [Remote Repositories](#remote-repositories)
+    - [Replication](#replication)
+    - [Security](#security)
+    - [User](#user)
+    - [Virtual Repositories](#virtual-repositories)
+    - [Webhook](#webhook)
+    - [Notes](#notes)
+      - [`artifactory_item_properties`](#artifactory_item_properties)
+        - [Properties must exist](#properties-must-exist)
+        - [Properties are stored as string](#properties-are-stored-as-string)
+  - [Build provider from scratch](#build-provider-from-scratch)
+  - [Developing](#developing)
+  - [Report a Bug](#report-a-bug)
 
 ## Getting Started
 
@@ -49,7 +75,7 @@ So, I decided to use `jfrog.crossplane.io` base group for this Crossplane provid
 
 1. (*current naming convention*) `jfrog.crossplane.io` as a base group and set `ShortGroup` as `artifactory` to all resources which will produce `artifactory.jfrog.crossplane.io` and K8s kind is just `LocalOCIRepository`
 
-    - :heavy_minus_sign: All resources must have specificied `ShortGroup` as `artifactory`
+    - :heavy_minus_sign: All resources must have specified `ShortGroup` as `artifactory`
 
 2. `artifactory.jfrog.crossplane.io` as base group and resource is just `LocalOCIRepository` (no need to set up `ShortGroup`)
 
@@ -329,11 +355,13 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_user_custom_webhook`                        | :x:                |                                |
 | `artifactory_user_webhook`                               | :x:                |                                |
 
-### `artifactory_item_properties`
+### Notes
 
-#### Properties must exist
+#### `artifactory_item_properties`
 
-At least one property of repo/idem MUST exists, otherwise this resource fails with an error:
+##### Properties must exist
+
+At least one property of repo/item MUST exists, otherwise this resource fails with an error:
 
 ```log
 2025-04-05T21:00:10+02:00	DEBUG	events	cannot run refresh: refresh failed: Unable to Refresh Resource: An unexpected error occurred while attempting to refresh resource state. Please retry the operation or report this issue to the provider developers.
@@ -346,7 +374,7 @@ Error: {
 }
 ```
 
-#### Properties are stored as string
+##### Properties are stored as string
 
 Terraform requires to set [property values as a set of strings](https://registry.terraform.io/providers/jfrog/artifactory/latest/docs/resources/item_properties#properties-1).
 
