@@ -1,0 +1,19 @@
+{
+  "apiVersion": "artifactory.jfrog.crossplane.io/v1alpha1",
+  "kind": "Keypair",
+  "metadata": {
+    "name": "my-crossplane-keypair",
+    "namespace": "crossplane-system"
+  },
+  "spec": {
+    "forProvider": {
+      "alias": "my-keypair-alias",
+      "pairType": "RSA",
+      "privateKeySecretRef": {
+        "name": "crossplane-keypair",
+        "key": "private-key",
+        "namespace": "crossplane-system"
+      }
+    }
+  }
+}
