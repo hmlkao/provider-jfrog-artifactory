@@ -14,6 +14,7 @@ Artifactory API.
   - [Testing the generated resources](#testing-the-generated-resources)
     - [Debugging](#debugging)
   - [Publish provider](#publish-provider)
+  - [Publish to Upbound Marketplace](#publish-to-upbound-marketplace)
   - [Troubleshooting](#troubleshooting)
     - [`make generate` fails with error](#make-generate-fails-with-error)
       - [Solution](#solution)
@@ -21,21 +22,22 @@ Artifactory API.
       - [Solution](#solution-1)
     - [`make build` fails with error](#make-build-fails-with-error)
       - [Solution](#solution-2)
-    - [Tag workflows fails](#tag-workflows-fails)
+    - [Tag GH workflow fails](#tag-gh-workflow-fails)
       - [Solution](#solution-3)
 
 ## Steps to build using template
 
 Followed steps in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
 
-1. Clone repo to your localhost and change directory into it
+1. Create a new repo from template [crossplane/upjet-provider-template](https://github.com/crossplane/upjet-provider-template)
+2. Clone repo to your localhost and change directory into it
 
     ```bash
     git clone git@github.com:hmlkao/provider-artifactory.git
     cd provider-artifactory
     ```
 
-2. Fetch submodule (no change in source code)
+3. Fetch submodule (no change in source code)
 
     > [!WARNING]
     > Submodule `Avarei/build` is used for `build/` path, because [this PR](https://github.com/crossplane/build/pull/14) was not merged yet
@@ -44,7 +46,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     make submodules
     ```
 
-3. Setup provider name and group
+4. Setup provider name and group
 
     ```bash
     $ ./hack/prepare.sh
@@ -54,7 +56,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     CRD rootGroup (ex. upbound.io, crossplane.io): jfrog.crossplane.io
     ```
 
-4. Configure Terraform provider in `Makefile`
+5. Configure Terraform provider in `Makefile`
 
     ```bash
     export TERRAFORM_PROVIDER_SOURCE ?= jfrog/artifactory
@@ -66,11 +68,11 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     export TERRAFORM_DOCS_PATH ?= docs/resources
     ```
 
-5. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.0/docs#argument-reference)
+6. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
 
     It means to add provider configuration arguments, for Artifactory Terraform provider it means to set optional `url`, `access_token`, `oidc_provider_name` and `tfc_credential_tag_name`, we can omit `api_key` as it's deprecated (in v12.9.1).
 
-6. Add external name to `config/external_name.go` file according to Terraform import reference, examples:
+7. Add external name to `config/external_name.go` file according to Terraform import reference, examples:
 
    - E.g., for `artifactory_local_oci_repository` I want to use K8s resource `metadata.name` as a `key` parameter, otherwise we will have resource `name` and OCI repository `key` different which can be confusing, so we set `config.ParameterAsIdentifier("key")` which cause that the `key` parameter is set to the same as `metadata.name` of K8s resource
 
@@ -81,7 +83,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
                                                                  `-------------------`------------   These fields may differ, so we need to set `"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),` in `ExternalNameConfigs` variable
         ```
 
-7. Create folder and add custom configuration to `config/` folder for Artifactory resource(s) and remove `null` resource
+8. Create folder and add custom configuration to `config/` folder for Artifactory resource(s) and remove `null` resource
 
     > [!NOTE]
     > More details are in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
@@ -92,20 +94,20 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
         mkdir config/local_oci_repository
         ```
 
-8. Update go modules, otherwise it failed with missing modules
+9. Update go modules, otherwise it failed with missing modules
 
     ```sh
     go mod tidy
     ```
 
-9. Install required Go tools
+10. Install required Go tools
 
     ```bash
     go get golang.org/x/tools/cmd/goimports@latest
     go install golang.org/x/tools/cmd/goimports@latest
     ```
 
-10. Build provider
+11. Build provider
 
     (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
 
@@ -148,7 +150,7 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
     - E.g., for `artifactory_local_oci_repository`
 
         ```bash
-        mkdir examples/local_oci_repository
+        mkdir -p examples/local_repositories/local_oci_repository
         ```
 
 4. Create K8s resource YAML file
@@ -156,14 +158,13 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
     - E.g., for `artifactory_local_oci_repository`
 
         ```bash
-        cat <<EOF > examples/local_oci_repository/local_oci_repository.yaml
+        cat <<EOF > examples/local_repositories/local_oci_repository/local_oci_repository.yaml
         apiVersion: artifactory.jfrog.upbound.io/v1alpha1
         kind: LocalOCIRepository
         metadata:
-          name: crossplane-oci
+          name: oci-crossplane-repository
         spec:
-          forProvider:
-            key: crossplane-oci-repository
+          forProvider: {}
         providerConfigRef:
           name: default
         EOF
@@ -193,7 +194,7 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
     make run
     ```
 
-    It will block the terminal.
+    It will block the terminal, you can check provider logs there.
 
 8. Follow commands must be run in different terminal due to block of the first one
 9. Deploy `ProviderConfig` to the cluster
@@ -207,7 +208,7 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
     - E.g., for `artifactory_local_oci_repository`
 
         ```bash
-        kubectl apply -f examples/local_oci_repository/
+        kubectl apply -f examples/local_repositories/local_oci_repository/
         ```
 
 11. Check the resource in K8s cluster
@@ -265,7 +266,42 @@ Steps to publish provider to Upbound Marketplace according to [these instruction
     - `UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW` - Robot token itself
 
 9. Update registry domain to `xpkg.upbound.io/<org-name>` on all places (`REGISTRY_ORGS`, `XPKG_REG_ORGS` and `XPKG_REG_ORGS_NO_PROMOTE`) in `Makefile`, e.g. replace `xpkg.upbound.io/upbound` with `xpkg.upbound.io/hmlkao`
-10. Push changes to GitHub, CI workflow will be triggered and should pass
+10. Push changes to GitHub, CI workflow will be triggered and package pushed to Upbound repository
+
+## Publish to Upbound Marketplace
+
+You can do the initial publish from the commandline. No need to write to `#upbound` channel on Crossplane Slack as mentioned in [Upbound Marketplace documentation](https://docs.upbound.io/build/repositories/publish-packages/#publishing-public-packages).
+
+1. Create an access token for your account
+   1. My Account > API tokens
+2. Install `up` command on your local machine
+
+    ```bash
+    curl -sL https://cli.upbound.io | CHANNEL=main sh
+    ```
+
+3. Login to your Upbound account with token
+
+    ```bash
+    $ read -r UP_TOKEN
+    <paste-your-token-here+enter>
+    $ export UP_TOKEN
+    $ up login -u <access-token-id> --organization=<org-id>
+
+    # Example
+    $ up login -u f41ef3fc-f7d6-4ee4-ca51-9e68cce10e01 --organization=hmlkao
+    ```
+
+4. Enable auto-publishing on the repository
+
+    ```bash
+    up repo update --organization=<org-id> --private=false --publish <repo-name>
+
+    # Example
+    up repo update --organization=hmlkao --private=false --publish provider-artifactory
+    ```
+
+All current and new versions with semver tag will be published.
 
 ## Troubleshooting
 
@@ -417,7 +453,7 @@ Follow [these instructions](https://podman-desktop.io/docs/migrating-from-docker
     # export DOCKER_HOST=unix:///var/folders/sj/hzvqvb413qgd6mx110wmbr6m0000gn/T/podman/podman-machine-default-api.sock
     ```
 
-### Tag workflows fails
+### Tag GH workflow fails
 
 ```text
 Resource not accessible by integration
