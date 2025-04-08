@@ -15,6 +15,7 @@ import (
 	localgenericrepository "github.com/hmlkao/provider-artifactory/config/local_generic_repository"
 	localocirepository "github.com/hmlkao/provider-artifactory/config/local_oci_repository"
 	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_terraform_provider_repository"
+	"github.com/hmlkao/provider-artifactory/config/security/keypair"
 )
 
 const (
@@ -46,6 +47,8 @@ func GetProvider() *ujconfig.Provider {
 		localgenericrepository.Configure,
 		localocirepository.Configure,
 		localterraformproviderrepository.Configure,
+		// Security
+		keypair.Configure,
 	} {
 		configure(pc)
 	}

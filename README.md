@@ -278,7 +278,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_certificate`                | :x:                |                                |
 | `artifactory_distribution_public_key`    | :x:                |                                |
 | `artifactory_global_environment`         | :x:                |                                |
-| `artifactory_keypair`                    | :x:                |                                |
+| `artifactory_keypair`                    | :heavy_check_mark: | `Keypair`                      |
 | `artifactory_password_expiration_policy` | :x:                |                                |
 | `artifactory_scoped_token`               | :x:                |                                |
 | `artifactory_user_lock_policy`           | :x:                |                                |
