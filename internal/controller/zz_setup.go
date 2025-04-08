@@ -10,9 +10,11 @@ import (
 	"github.com/crossplane/upjet/pkg/controller"
 
 	itemproperties "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/itemproperties"
+	keypair "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/keypair"
 	localdockerv2repository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localdockerv2repository"
 	localgenericrepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localgenericrepository"
 	localocirepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localocirepository"
+	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localterraformproviderrepository"
 	providerconfig "github.com/hmlkao/provider-artifactory/internal/controller/providerconfig"
 )
 
@@ -21,9 +23,11 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		itemproperties.Setup,
+		keypair.Setup,
 		localdockerv2repository.Setup,
 		localgenericrepository.Setup,
 		localocirepository.Setup,
+		localterraformproviderrepository.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
