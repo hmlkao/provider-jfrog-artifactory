@@ -26,10 +26,12 @@ The repo was created from [crossplane/upjet-provider-template@7311f9f](https://g
     - [User](#user)
     - [Virtual Repositories](#virtual-repositories)
     - [Webhook](#webhook)
-    - [Notes](#notes)
+    - [Known issues](#known-issues)
       - [`artifactory_item_properties`](#artifactory_item_properties)
         - [Properties must exist](#properties-must-exist)
         - [Properties are stored as string](#properties-are-stored-as-string)
+      - [`keypair`](#keypair)
+        - [Fails with error `cannot find pair_name in tfstate`](#fails-with-error-cannot-find-pair_name-in-tfstate)
   - [Build provider from scratch](#build-provider-from-scratch)
   - [Developing](#developing)
   - [Report a Bug](#report-a-bug)
@@ -107,10 +109,10 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
     ╵
     ```
 
-| Resource                      | Supported                                                  | Kind             |
-|-------------------------------|------------------------------------------------------------|------------------|
-| `artifactory_artifact`        | :x: (Resource Import Not Implemented)                      |                  |
-| `artifactory_item_properties` | :heavy_check_mark: ([notes](#artifactory_item_properties)) | `ItemProperties` |
+| Resource                      | Supported                                                         | Kind             |
+|-------------------------------|-------------------------------------------------------------------|------------------|
+| `artifactory_artifact`        | :x: (Resource Import Not Implemented)                             |                  |
+| `artifactory_item_properties` | :heavy_check_mark: ([known issues](#artifactory_item_properties)) | `ItemProperties` |
 
 ### Configuration
 
@@ -273,15 +275,15 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 
 ### Security
 
-| Resource                                 | Supported          | Kind                           |
-|------------------------------------------|--------------------|--------------------------------|
-| `artifactory_certificate`                | :x:                |                                |
-| `artifactory_distribution_public_key`    | :x:                |                                |
-| `artifactory_global_environment`         | :x:                |                                |
-| `artifactory_keypair`                    | :heavy_check_mark: | `Keypair`                      |
-| `artifactory_password_expiration_policy` | :x:                |                                |
-| `artifactory_scoped_token`               | :x:                |                                |
-| `artifactory_user_lock_policy`           | :x:                |                                |
+| Resource                                 | Supported                                     | Kind                           |
+|------------------------------------------|-----------------------------------------------|--------------------------------|
+| `artifactory_certificate`                | :x:                                           |                                |
+| `artifactory_distribution_public_key`    | :x:                                           |                                |
+| `artifactory_global_environment`         | :x:                                           |                                |
+| `artifactory_keypair`                    | :heavy_check_mark: ([known issues](#keypair)) | `Keypair`                      |
+| `artifactory_password_expiration_policy` | :x:                                           |                                |
+| `artifactory_scoped_token`               | :x:                                           |                                |
+| `artifactory_user_lock_policy`           | :x:                                           |                                |
 
 ### User
 
@@ -355,7 +357,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_user_custom_webhook`                        | :x:                |                                |
 | `artifactory_user_webhook`                               | :x:                |                                |
 
-### Notes
+### Known issues
 
 #### `artifactory_item_properties`
 
@@ -399,6 +401,43 @@ You can find the whole reconciliation process investigation of provider log [her
 
 > [!NOTE] Solution
 > Don't use more than one value for the key even if it allows to use a set of strings.
+
+#### `keypair`
+
+##### Fails with error `cannot find pair_name in tfstate`
+
+Provider prints error message
+
+```log
+2025-04-09T15:45:04+02:00	DEBUG	events	cannot set critical annotations: cannot get external name: cannot find pair_name in tfstate	{"type": "Warning", "object": {"kind":"Keypair","name":"my-crossplane-keypair","uid":"203fa67f-74a6-41c1-9de8-49b3de5573f7","apiVersion":"artifactory.jfrog.crossplane.io/v1alpha1","resourceVersion":"236597"}, "reason": "CannotObserveExternalResource"}
+```
+
+After the further investigation I found out that the provider is not able to refresh Terraform state. The reason is that provider does the Terraform refresh first and expects map of [`KeyPairAPIModel` values](https://github.com/jfrog/terraform-provider-artifactory/blob/v12.9.1/pkg/artifactory/resource/security/resource_artifactory_keypair.go#L60-L67).
+
+```go
+type KeyPairAPIModel struct {
+	PairName   string `json:"pairName"`
+	PairType   string `json:"pairType"`
+	Alias      string `json:"alias"`
+	PrivateKey string `json:"privateKey"`
+	Passphrase string `json:"passphrase"`
+	PublicKey  string `json:"publicKey"`
+}
+```
+
+But Artifactory returns the empty list (in case there is no key) or list of keys without `PrivateKey` and `Passphrase` which cause an error
+
+```
+Error: json: cannot unmarshal array into Go value of type security.KeyPairAPIModel
+```
+
+This is also mentioned in Terraform Artifactory provider description for `artifactory_keypair` resource
+
+> Artifactory REST API call 'Get Key Pair' doesn't return attributes `private_key` and `passphrase`, but consumes these keys in the POST call.
+
+So, it seems it's possible to CREATE or UPDATE resource, but **it's not possible to refresh Terraform state**.
+
+More details from the investigation are [here](./docs/security/keypair/cannot-find-pair-name-in-tfstate.md).
 
 ## Build provider from scratch
 

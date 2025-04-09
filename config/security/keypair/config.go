@@ -21,7 +21,7 @@ func Configure(p *config.Provider) {
 			if id, ok := tfstate["pair_name"].(string); ok && id != "" {
 				return id, nil
 			}
-			return "", errors.New("cannot find id in tfstate")
+			return "", errors.New("cannot find pair_name in tfstate")
 		}
 	})
 }
