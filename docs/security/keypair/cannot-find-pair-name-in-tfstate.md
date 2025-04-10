@@ -185,7 +185,9 @@
 cd /var/folders/sj/hzvqvb413qgd6mx110wmbr6m0000gn/T/203fa67f-74a6-41c1-9de8-49b3de5573f7
 ```
 
-Run Terraform refresh the same way as provider does
+Run Terraform refresh the same way as provider does.
+
+Output from `terraform apply -refresh-only` command run by provider is different (check above parsed provider log) in comparison when I run it manually from the folder:
 
 ```bash
 $ terraform apply -refresh-only -auto-approve -input=false -lock=false
@@ -202,7 +204,7 @@ artifactory_keypair.my-crossplane-keypair: Refreshing state...
 │ Error: json: cannot unmarshal array into Go value of type security.KeyPairAPIModel
 ```
 
-Run Terraform refresh with debug enabled when there is no key pair in Artifactory
+Run Terraform refresh with debug enabled when there is no key pair in the Artifactory:
 
 ```bash
 $ TF_LOG=debug terraform apply -refresh-only -auto-approve -input=false -lock=false
@@ -240,7 +242,7 @@ BODY         :
 2025/04/09 15:10:35.772768 ERROR RESTY json: cannot unmarshal array into Go value of type security.KeyPairAPIModel"
 ```
 
-Run Terraform refresh with debug enabled when there is at least one key pair
+Run Terraform refresh with debug enabled when there is at least one key pair in the Artifactory:
 
 ```bash
 $ TF_LOG=debug terraform apply -refresh-only -auto-approve -input=false -lock=false
@@ -276,7 +278,7 @@ BODY         :
    {
       "pairName": "asdf",
       "pairType": "RSA",
-      "alias": "srvcdbuild",
+      "alias": "asdf-alias",
       "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl1gCrNUFUNbYQTtr53li\nT/y5itkQA8Gus/nuFOhy0SyWAZ7+CTJnJmFSWLxqszjkasQ5qHC+8j/+WOD+hgKt\nq4cII/GkeVTQm0zuzACHCzZzcqfo53OxBFpK3YJjjFtF5RCQqEjQnBKz19Hvuweb\nEB9sh+B0rOiM9227VBQ4BVn26twjUfXoP9w5Ulxk+selHZ11e35KMbEULZeahOLh\n1Q+KCEqhGSWOB6jVU3LulOsIOlp0qYdM/muMub8vaSqu5wfUFM4ogjChZCrc9tgn\n8mJZdovAK0J1x4YEkT/J0GwlVuY4sZQYXG50ou7O0TaR7jawz4UpcuHsfwdCKR0W\npQIDAQAB\n-----END PUBLIC KEY-----\n",
       "unavailable": false
    }
@@ -286,8 +288,6 @@ BODY         :
 ```
 
 ## Weird behavior
-
-Output from `terraform apply -refresh-only` command run by provider is different from when I run it manually from the folder.
 
 If I apply Terraform manually, it passes well.
 
@@ -345,4 +345,4 @@ Terraform has checked that the real remote objects still match the result of you
 Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 ```
 
-So, the idea with bad parsing of returned values might be wrong... Otherwise, I would expect that `terraform apply -refresh-only` fails everytime.
+So, the idea with bad parsing of returned values might be wrong... Otherwise, I would expect that `terraform apply -refresh-only` fails even after the key is created successfuly.

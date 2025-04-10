@@ -11,11 +11,11 @@ import (
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
 	itemproperties "github.com/hmlkao/provider-artifactory/config/artifact/item_properties"
-	localdockerv2repository "github.com/hmlkao/provider-artifactory/config/local_docker_v2_repository"
-	localgenericrepository "github.com/hmlkao/provider-artifactory/config/local_generic_repository"
-	localocirepository "github.com/hmlkao/provider-artifactory/config/local_oci_repository"
 	localansiblerepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_ansible_repository"
-	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_terraform_provider_repository"
+	localdockerv2repository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_docker_v2_repository"
+	localgenericrepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_generic_repository"
+	localocirepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_oci_repository"
+	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_terraform_provider_repository"
 	"github.com/hmlkao/provider-artifactory/config/security/keypair"
 )
 

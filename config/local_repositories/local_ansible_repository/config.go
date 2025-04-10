@@ -19,7 +19,7 @@ func Configure(p *config.Provider) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil
 			}
-			return "", errors.New("cannot find id in tfstate")
+			return "", errors.New("cannot find 'key' in tfstate")
 		}
 
 		r.References["primary_keypair_ref"] = config.Reference{

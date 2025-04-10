@@ -82,10 +82,10 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
         terraform import artifactory_local_oci_repository.my-oci-local-repo name-of-oci-local-repo
                                                           ~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~
                                                                 \                   \
-                                                                 `-------------------`------------   These fields may differ, so we need to set `"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),` in `ExternalNameConfigs` variable
+                                                                 `-------------------`------------   These fields may differ, if we set `"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),` in `ExternalNameConfigs` variable the key is always used as resource name
         ```
 
-8. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s). Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
+8. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s).
 
     > [!NOTE]
     > More details are in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
@@ -96,13 +96,36 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
         mkdir config/local_oci_repository
         ```
 
-9. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
+9. Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
+
+    ```bash
+    rm -rf config/null
+    ```
+
+    And remove this reference from `config/provider.go`
+
+10. Add line to `config/provider.go`, e.g. for `artifactory_local_oci_repository`
+
+    > [!NOTE]
+    > It's not necessary to have it here if you don't need to override the default resource.
+    > If you don't need to configure it, it will generate resource according to default behavior.
+
+    ```go
+    for _, configure := range []func(provider *ujconfig.Provider){
+      ...
+      localocirepository.Configure,
+    } {
+      configure(pc)
+    }
+    ```
+
+11. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
 
     ```sh
     go mod tidy
     ```
 
-10. Install required Go tools
+12. Install required Go tools
 
     `goimports` is a tool that formats Go code and automatically manages import statements, ensuring consistency and reducing manual effort during the build process.
 
@@ -111,7 +134,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     go install golang.org/x/tools/cmd/goimports@latest
     ```
 
-11. Build provider
+13. Build provider
 
     The `make generate` command is used to generate the necessary Crossplane Custom Resource Definitions (CRDs) and other artifacts required for the provider. This step ensures that the provider is correctly configured and ready for deployment. (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
 
@@ -405,7 +428,7 @@ This is a workaround which generates valid Markdown files which are unfortunatel
 
 #### Solution
 
-Can be solved by own `GetExternalNameFn` function, just it to resource configuration in `config/local_oci_repository/config.go`.
+Can be solved by own `GetExternalNameFn` function, just add it to the resource configuration in, e.g. `config/local_oci_repository/config.go`.
 
 TODO: However, I think that there is better solution than this, but requires more investigation.
 

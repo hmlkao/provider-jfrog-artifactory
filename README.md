@@ -431,7 +431,7 @@ But Artifactory returns the empty list (in case there is no key) or list of keys
 Error: json: cannot unmarshal array into Go value of type security.KeyPairAPIModel
 ```
 
-This is also mentioned in Terraform Artifactory provider description for `artifactory_keypair` resource
+This is also [mentioned](https://registry.terraform.io/providers/jfrog/artifactory/latest/docs/resources/keypair#argument-reference) in Terraform Artifactory provider description for `artifactory_keypair` resource:
 
 > Artifactory REST API call 'Get Key Pair' doesn't return attributes `private_key` and `passphrase`, but consumes these keys in the POST call.
 
