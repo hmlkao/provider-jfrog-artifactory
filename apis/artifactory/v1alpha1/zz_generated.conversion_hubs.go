@@ -13,6 +13,9 @@ func (tr *ItemProperties) Hub() {}
 func (tr *Keypair) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *LocalAnsibleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *LocalDockerV2Repository) Hub() {}
 
 // Hub marks this type as a conversion hub.
