@@ -186,7 +186,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | Resource                                          | Supported          | Kind                               |
 |---------------------------------------------------|--------------------|------------------------------------|
 | `artifactory_local_alpine_repository`             | :x:                |                                    |
-| `artifactory_local_ansible_repository`            | :x:                |                                    |
+| `artifactory_local_ansible_repository`            | :heavy_check_mark: | `LocalAnsibleRepository`           |
 | `artifactory_local_bower_repository`              | :x:                |                                    |
 | `artifactory_local_cargo_repository`              | :x:                |                                    |
 | `artifactory_local_chef_repository`               | :x:                |                                    |
