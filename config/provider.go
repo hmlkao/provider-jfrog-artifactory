@@ -14,6 +14,7 @@ import (
 	localdockerv2repository "github.com/hmlkao/provider-artifactory/config/local_docker_v2_repository"
 	localgenericrepository "github.com/hmlkao/provider-artifactory/config/local_generic_repository"
 	localocirepository "github.com/hmlkao/provider-artifactory/config/local_oci_repository"
+	localansiblerepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_ansible_repository"
 	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_terraform_provider_repository"
 	"github.com/hmlkao/provider-artifactory/config/security/keypair"
 )
@@ -43,6 +44,7 @@ func GetProvider() *ujconfig.Provider {
 		// Artifact
 		itemproperties.Configure,
 		// Local Repositories
+		localansiblerepository.Configure,
 		localdockerv2repository.Configure,
 		localgenericrepository.Configure,
 		localocirepository.Configure,

@@ -12,6 +12,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// Artifact
 	"artifactory_item_properties": config.IdentifierFromProvider,
 	// Local Repositories
+	"artifactory_local_ansible_repository":            config.ParameterAsIdentifier("key"),
 	"artifactory_local_docker_v2_repository":          config.ParameterAsIdentifier("key"),
 	"artifactory_local_generic_repository":            config.ParameterAsIdentifier("key"),
 	"artifactory_local_oci_repository":                config.ParameterAsIdentifier("key"),
