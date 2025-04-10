@@ -26,6 +26,15 @@ func (l *KeypairList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this LocalAnsibleRepositoryList.
+func (l *LocalAnsibleRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this LocalDockerV2RepositoryList.
 func (l *LocalDockerV2RepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))

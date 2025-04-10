@@ -11,6 +11,7 @@ import (
 
 	itemproperties "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/itemproperties"
 	keypair "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/keypair"
+	localansiblerepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localansiblerepository"
 	localdockerv2repository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localdockerv2repository"
 	localgenericrepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localgenericrepository"
 	localocirepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localocirepository"
@@ -24,6 +25,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		itemproperties.Setup,
 		keypair.Setup,
+		localansiblerepository.Setup,
 		localdockerv2repository.Setup,
 		localgenericrepository.Setup,
 		localocirepository.Setup,
