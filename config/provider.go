@@ -43,6 +43,8 @@ func GetProvider() *ujconfig.Provider {
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// Artifact
 		itemproperties.Configure,
+		// Configuration
+		// archivepolicy.Configure,
 		// Local Repositories
 		localansiblerepository.Configure,
 		localdockerv2repository.Configure,

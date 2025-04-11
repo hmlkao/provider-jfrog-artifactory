@@ -97,6 +97,7 @@ List of all resources of [Terraform provider v12.9.1](https://registry.terraform
 - *Resource Import Not Implemented* - Terraform resource doesn't allow import and it's not possible to set external name, because there is no id set in terraform state, e.g.:
 
     ```bash
+    # Example
     $ terraform import artifactory_artifact.my-local-artifact artifact
     artifactory_artifact.my-local-artifact: Importing from ID "artifact"...
     ╷
@@ -106,29 +107,40 @@ List of all resources of [Terraform provider v12.9.1](https://registry.terraform
     ╵
     ```
 
-| Resource                      | Supported                                                         | Kind             |
-|-------------------------------|-------------------------------------------------------------------|------------------|
-| `artifactory_artifact`        | :x: (Resource Import Not Implemented)                             |                  |
+- *Nested Schema* - Terraform resource contains Nested Schema and upjet is not able to generate provider, it fails with error:
+
+    ```bash
+    # Example
+    $ make generate
+    ...
+    panic: cannot generate crd for resource artifactory_archive_policy: cannot build types for ArchivePolicy: cannot build the Types for resource "artifactory_archive_policy": cannot infer type from schema of field search_criteria: invalid schema type TypeInvalid
+    ```
+
+    There is [opened issue](https://github.com/crossplane/upjet/issues/372) on crossplane/upjet, no workaround here for now.
+
+| Resource                      | Supported                                                                          | Kind             |
+|-------------------------------|------------------------------------------------------------------------------------|------------------|
+| `artifactory_artifact`        | :x: (Resource Import Not Implemented)                                              |                  |
 | `artifactory_item_properties` | :heavy_check_mark: ([known issues](./KNOWN_ISSUES.md#artifactory_item_properties)) | `ItemProperties` |
 
 ### Configuration
 
-| Resource                             | Supported          | Kind                           |
-|--------------------------------------|--------------------|--------------------------------|
-| `artifactory_archive_policy`         | :x:                |                                |
-| `artifactory_backup`                 | :x:                |                                |
-| `artifactory_general_security`       | :x:                |                                |
-| `artifactory_ldap_group_setting`     | :x:                |                                |
-| `artifactory_ldap_group_setting_v2`  | :x:                |                                |
-| `artifactory_ldap_setting`           | :x:                |                                |
-| `artifactory_ldap_setting_v2`        | :x:                |                                |
-| `artifactory_mail_server`            | :x:                |                                |
-| `artifactory_oauth_settings`         | :x:                |                                |
-| `artifactory_package_cleanup_policy` | :x:                |                                |
-| `artifactory_property_set`           | :x:                |                                |
-| `artifactory_proxy`                  | :x:                |                                |
-| `artifactory_repository_layout`      | :x:                |                                |
-| `artifactory_vault_configuration`    | :x:                |                                |
+| Resource                             | Supported           | Kind                           |
+|--------------------------------------|---------------------|--------------------------------|
+| `artifactory_archive_policy`         | :x: (Nested Schema) |                                |
+| `artifactory_backup`                 | :x:                 |                                |
+| `artifactory_general_security`       | :x:                 |                                |
+| `artifactory_ldap_group_setting`     | :x:                 |                                |
+| `artifactory_ldap_group_setting_v2`  | :x:                 |                                |
+| `artifactory_ldap_setting`           | :x:                 |                                |
+| `artifactory_ldap_setting_v2`        | :x:                 |                                |
+| `artifactory_mail_server`            | :x:                 |                                |
+| `artifactory_oauth_settings`         | :x:                 |                                |
+| `artifactory_package_cleanup_policy` | :x:                 |                                |
+| `artifactory_property_set`           | :x:                 |                                |
+| `artifactory_proxy`                  | :x:                 |                                |
+| `artifactory_repository_layout`      | :x:                 |                                |
+| `artifactory_vault_configuration`    | :x:                 |                                |
 
 ### Federated Repositories
 
@@ -284,12 +296,12 @@ List of all resources of [Terraform provider v12.9.1](https://registry.terraform
 
 ### User
 
-| Resource                     | Supported          | Kind                           |
-|------------------------------|--------------------|--------------------------------|
-| `artifactory_anonymous_user` | :x:                |                                |
-| `artifactory_managed_user`   | :x:                |                                |
-| `artifactory_unmanaged_user` | :x:                |                                |
-| `artifactory_user`           | :x:                |                                |
+| Resource                     | Supported           | Kind                           |
+|------------------------------|---------------------|--------------------------------|
+| `artifactory_anonymous_user` | :x:                 |                                |
+| `artifactory_managed_user`   | :x: (Nested Schema) |                                |
+| `artifactory_unmanaged_user` | :x: (Nested Schema) |                                |
+| `artifactory_user`           | :x: (Nested Schema) |                                |
 
 ### Virtual Repositories
 
