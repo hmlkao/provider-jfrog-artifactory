@@ -9,6 +9,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
+	anonymoususer "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/anonymoususer"
 	itemproperties "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/itemproperties"
 	keypair "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/keypair"
 	localansiblerepository "github.com/hmlkao/provider-artifactory/internal/controller/artifactory/localansiblerepository"
@@ -23,6 +24,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
+		anonymoususer.Setup,
 		itemproperties.Setup,
 		keypair.Setup,
 		localansiblerepository.Setup,
