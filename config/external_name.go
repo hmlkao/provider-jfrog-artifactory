@@ -11,6 +11,8 @@ import "github.com/crossplane/upjet/pkg/config"
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Artifact
 	"artifactory_item_properties": config.IdentifierFromProvider,
+	// Configuration
+	// "artifactory_archive_policy": config.IdentifierFromProvider,
 	// Local Repositories
 	"artifactory_local_ansible_repository":            config.ParameterAsIdentifier("key"),
 	"artifactory_local_docker_v2_repository":          config.ParameterAsIdentifier("key"),
