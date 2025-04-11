@@ -17,6 +17,7 @@ import (
 	localocirepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_oci_repository"
 	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_terraform_provider_repository"
 	"github.com/hmlkao/provider-artifactory/config/security/keypair"
+	anonymoususer "github.com/hmlkao/provider-artifactory/config/user/anonymous_user"
 )
 
 const (
@@ -53,6 +54,11 @@ func GetProvider() *ujconfig.Provider {
 		localterraformproviderrepository.Configure,
 		// Security
 		keypair.Configure,
+		// User
+		anonymoususer.Configure,
+		// manageduser.Configure,
+		// unmanageduser.Configure,
+		// user.Configure,
 	} {
 		configure(pc)
 	}

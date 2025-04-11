@@ -21,6 +21,11 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_local_terraform_provider_repository": config.ParameterAsIdentifier("key"),
 	// Security
 	"artifactory_keypair": config.ParameterAsIdentifier("pair_name"),
+	// User
+	"artifactory_anonymous_user": config.NameAsIdentifier,
+	// "artifactory_managed_user": config.NameAsIdentifier,
+	// "artifactory_unmanaged_user": config.NameAsIdentifier,
+	// "artifactory_user": config.NameAsIdentifier,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the

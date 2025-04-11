@@ -2,11 +2,41 @@
 # Known issues
 
 - [Known issues](#known-issues)
+  - [Resource Import Not Implemented](#resource-import-not-implemented)
+  - [Nested Schema](#nested-schema)
   - [`artifactory_item_properties`](#artifactory_item_properties)
     - [Properties must exist](#properties-must-exist)
     - [Properties are stored as string](#properties-are-stored-as-string)
   - [`keypair`](#keypair)
     - [Fails with error `cannot find pair_name in tfstate`](#fails-with-error-cannot-find-pair_name-in-tfstate)
+
+## Resource Import Not Implemented
+
+Terraform resource doesn't allow import and it's not possible to set external name, because there is no id set in terraform state, e.g.:
+
+```bash
+# Example
+$ terraform import artifactory_artifact.my-local-artifact artifact
+artifactory_artifact.my-local-artifact: Importing from ID "artifact"...
+╷
+│ Error: Resource Import Not Implemented
+│
+│ This resource does not support import. Please contact the provider developer for additional information.
+╵
+```
+
+## Nested Schema
+
+Terraform resource contains Nested Schema and upjet is not able to generate provider, it fails with error:
+
+```bash
+# Example
+$ make generate
+...
+panic: cannot generate crd for resource artifactory_archive_policy: cannot build types for ArchivePolicy: cannot build the Types for resource "artifactory_archive_policy": cannot infer type from schema of field search_criteria: invalid schema type TypeInvalid
+```
+
+There is [opened issue](https://github.com/crossplane/upjet/issues/372) on crossplane/upjet, no workaround here for now.
 
 ## `artifactory_item_properties`
 
