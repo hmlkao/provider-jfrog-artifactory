@@ -7,7 +7,7 @@ generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
 
 > [!WARNING]
-> This repo targets to do as less changes as possible in source code to successfully build the provider with explanation.
+> This repo targets to do as fewer changes as possible in source code to successfully build the provider with explanation.
 
 - [Build provider from scratch](#build-provider-from-scratch)
   - [Steps to build using template](#steps-to-build-using-template)
@@ -55,7 +55,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     Lower case provider name (ex. github): artifactory
     Normal case provider name (ex. GitHub): Artifactory
     Organization (ex. upbound, my-org-name): hmlkao
-    CRD rootGroup (ex. upbound.io, crossplane.io): jfrog.crossplane.io
+    CRD rootGroup (ex. upbound.io, crossplane.io): artifactory.jfrog.crossplane.io
     ```
 
 5. Configure Terraform provider in `Makefile`

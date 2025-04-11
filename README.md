@@ -1,4 +1,4 @@
-<!-- markdownlint-disable  no-hard-tabs -->
+<!-- markdownlint-disable no-hard-tabs -->
 # Provider Artifactory
 
 This document provides an overview and guidance for using the `provider-artifactory`, a Crossplane provider for managing Artifactory resources.
@@ -9,6 +9,8 @@ generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
 
 The repo was created from [crossplane/upjet-provider-template@7311f9f](https://github.com/crossplane/upjet-provider-template/tree/7311f9f9baa87f4431702ba209dffbc6067ce74b) template.
+
+Provider is generated from Terraform provider [jfrog/artifactory v12.9.1](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs).
 
 - [Provider Artifactory](#provider-artifactory)
   - [Getting Started](#getting-started)
@@ -26,12 +28,6 @@ The repo was created from [crossplane/upjet-provider-template@7311f9f](https://g
     - [User](#user)
     - [Virtual Repositories](#virtual-repositories)
     - [Webhook](#webhook)
-    - [Known issues](#known-issues)
-      - [`artifactory_item_properties`](#artifactory_item_properties)
-        - [Properties must exist](#properties-must-exist)
-        - [Properties are stored as string](#properties-are-stored-as-string)
-      - [`keypair`](#keypair)
-        - [Fails with error `cannot find pair_name in tfstate`](#fails-with-error-cannot-find-pair_name-in-tfstate)
   - [Build provider from scratch](#build-provider-from-scratch)
   - [Developing](#developing)
   - [Report a Bug](#report-a-bug)
@@ -42,7 +38,7 @@ Install the provider by using the following command after changing the image tag
 to the [latest release](https://marketplace.upbound.io/providers/hmlkao/provider-artifactory):
 
 ```bash
-up ctp provider install hmlkao/provider-artifactory:v0.1.0
+up ctp provider install hmlkao/provider-artifactory:v0.2.0
 ```
 
 Alternatively, you can use declarative installation:
@@ -54,7 +50,7 @@ kind: Provider
 metadata:
   name: provider-artifactory
 spec:
-  package: hmlkao/provider-artifactory:v0.1.0
+  package: hmlkao/provider-artifactory:v0.2.0
 EOF
 ```
 
@@ -71,29 +67,30 @@ There are more Terraform providers developed by JFrog, e.g.:
 - [`jfrog/project`](https://registry.terraform.io/providers/jfrog/project)
 - etc.
 
-So, I decided to use `jfrog.crossplane.io` base group for this Crossplane provider.
+So, I decided to use `artifactory.jfrog.crossplane.io` base group for this Crossplane provider.
 
 ### Options
 
-1. (*current naming convention*) `jfrog.crossplane.io` as a base group and set `ShortGroup` as `artifactory` to all resources which will produce `artifactory.jfrog.crossplane.io` and K8s kind is just `LocalOCIRepository`
+1. (*current naming convention*) `artifactory.jfrog.crossplane.io` as base group and resource is `LocalOCIRepository`
+
+    - :heavy_plus_sign: Get rid of `ShortGroup` config and use `artifactory.jfrog.crossplane.io` for initial config instead
+    - Auto generated `ShortGroup` for Group of resources like `local.artifactory.jfrog.crossplane.io` for Local Repositories according to Terraform provider (by default)
+      - :heavy_minus_sign: Can be less clear, because there will be the same resources, e.g. `AlpineRepository` for groups `local.artifactory.jfrog.crossplane.io`, `remote.artifactory.jfrog.crossplane.io`, etc.
+      - :heavy_minus_sign: All resources must have specified `ShortGroup` as `""` (empty string) to override default behavior
+
+2. `jfrog.crossplane.io` as a base group and set `ShortGroup` as `artifactory` to all resources which will produce `artifactory.jfrog.crossplane.io` and K8s kind is just `LocalOCIRepository`
 
     - :heavy_minus_sign: All resources must have specified `ShortGroup` as `artifactory`
 
-2. `artifactory.jfrog.crossplane.io` as base group and resource is just `LocalOCIRepository` (no need to set up `ShortGroup`)
+3. `artifactory.crossplane.io` as a base group and resource prefix to be `artifactory`, like `LocalOCIRepository`
 
-    - :heavy_plus_sign: Get rid of `ShortGroup` config and use `artifactory.jfrog.crossplane.io` for initial config instead
-    - Allows to use `ShortGroup` for Group of resources like `local.artifactory.jfrog.crossplane.io` for Local Repositories according to Terraform provider
-      - :heavy_minus_sign: Can be less clear, because there will be the same resources, e.g. `AlpineRepository` for groups `local.artifactory.jfrog.crossplane.io`, `remote.artifactory.jfrog.crossplane.io`, etc.
-
-3. `jfrog.crossplane.io` as a base group and resource prefix to be `artifactory`, like `ArtifactoryLocalOCIRepository`
-
-    - :heavy_minus_sign: All resources contains `Artifactory` which is not needed
+    - :heavy_minus_sign: It's not clear for other JFrog providers, e.g. for `jfrog/platform` would be `platform.crossplane.io`
 
 Not sure, which one is the best.
 
 ## Supported resources
 
-List of all resources of [Terraform provider version 12.9.1](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs).
+List of all resources of [Terraform provider v12.9.1](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs).
 
 ### Artifact
 
@@ -112,7 +109,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | Resource                      | Supported                                                         | Kind             |
 |-------------------------------|-------------------------------------------------------------------|------------------|
 | `artifactory_artifact`        | :x: (Resource Import Not Implemented)                             |                  |
-| `artifactory_item_properties` | :heavy_check_mark: ([known issues](#artifactory_item_properties)) | `ItemProperties` |
+| `artifactory_item_properties` | :heavy_check_mark: ([known issues](./KNOWN_ISSUES.md#artifactory_item_properties)) | `ItemProperties` |
 
 ### Configuration
 
@@ -280,7 +277,7 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_certificate`                | :x:                                           |                                |
 | `artifactory_distribution_public_key`    | :x:                                           |                                |
 | `artifactory_global_environment`         | :x:                                           |                                |
-| `artifactory_keypair`                    | :heavy_check_mark: ([known issues](#keypair)) | `Keypair`                      |
+| `artifactory_keypair`                    | :heavy_check_mark: ([known issues](./KNOWN_ISSUES.md#keypair)) | `Keypair`                      |
 | `artifactory_password_expiration_policy` | :x:                                           |                                |
 | `artifactory_scoped_token`               | :x:                                           |                                |
 | `artifactory_user_lock_policy`           | :x:                                           |                                |
@@ -357,88 +354,6 @@ List of all resources of [Terraform provider version 12.9.1](https://registry.te
 | `artifactory_user_custom_webhook`                        | :x:                |                                |
 | `artifactory_user_webhook`                               | :x:                |                                |
 
-### Known issues
-
-#### `artifactory_item_properties`
-
-##### Properties must exist
-
-At least one property of repo/item MUST exists, otherwise this resource fails with an error:
-
-```log
-2025-04-05T21:00:10+02:00	DEBUG	events	cannot run refresh: refresh failed: Unable to Refresh Resource: An unexpected error occurred while attempting to refresh resource state. Please retry the operation or report this issue to the provider developers.
-
-Error: {
-  "errors" : [ {
-    "status" : 404,
-    "message" : "No properties could be found."
-  } ]
-}
-```
-
-##### Properties are stored as string
-
-Terraform requires to set [property values as a set of strings](https://registry.terraform.io/providers/jfrog/artifactory/latest/docs/resources/item_properties#properties-1).
-
-However, Artifactory converts this set of strings to a single string separated by commas. The next reconciliation use Terraform refresh which cause the state is changed to this single string and Terraform apply is triggered again which will **end up with neverending loop**.
-
-```yaml
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: ItemProperties
-metadata:
-  name: my-repo-properties
-spec:
-  forProvider:
-    repoKey: generic-crossplane-local
-    properties:
-      key1: ["value1"]
-      key2: ["value2", "value3"]    # <--- This configuration will cause neverending reconciliation loop
-  providerConfigRef:
-    name: default
-```
-
-You can find the whole reconciliation process investigation of provider log [here](./docs/artifact/item_properties/reconsiliation-process-investigation.log).
-
-> [!NOTE] Solution
-> Don't use more than one value for the key even if it allows to use a set of strings.
-
-#### `keypair`
-
-##### Fails with error `cannot find pair_name in tfstate`
-
-Provider prints error message
-
-```log
-2025-04-09T15:45:04+02:00	DEBUG	events	cannot set critical annotations: cannot get external name: cannot find pair_name in tfstate	{"type": "Warning", "object": {"kind":"Keypair","name":"my-crossplane-keypair","uid":"203fa67f-74a6-41c1-9de8-49b3de5573f7","apiVersion":"artifactory.jfrog.crossplane.io/v1alpha1","resourceVersion":"236597"}, "reason": "CannotObserveExternalResource"}
-```
-
-After the further investigation I found out that the provider is not able to refresh Terraform state. The reason is that provider does the Terraform refresh first and expects map of [`KeyPairAPIModel` values](https://github.com/jfrog/terraform-provider-artifactory/blob/v12.9.1/pkg/artifactory/resource/security/resource_artifactory_keypair.go#L60-L67).
-
-```go
-type KeyPairAPIModel struct {
-	PairName   string `json:"pairName"`
-	PairType   string `json:"pairType"`
-	Alias      string `json:"alias"`
-	PrivateKey string `json:"privateKey"`
-	Passphrase string `json:"passphrase"`
-	PublicKey  string `json:"publicKey"`
-}
-```
-
-But Artifactory returns the empty list (in case there is no key) or list of keys without `PrivateKey` and `Passphrase` which cause an error
-
-```
-Error: json: cannot unmarshal array into Go value of type security.KeyPairAPIModel
-```
-
-This is also [mentioned](https://registry.terraform.io/providers/jfrog/artifactory/latest/docs/resources/keypair#argument-reference) in Terraform Artifactory provider description for `artifactory_keypair` resource:
-
-> Artifactory REST API call 'Get Key Pair' doesn't return attributes `private_key` and `passphrase`, but consumes these keys in the POST call.
-
-So, it seems it's possible to CREATE or UPDATE resource, but **it's not possible to refresh Terraform state**.
-
-More details from the investigation are [here](./docs/security/keypair/cannot-find-pair-name-in-tfstate.md).
-
 ## Build provider from scratch
 
 Check [`BUILD_FROM_SCRATCH.md`](./BUILD_FROM_SCRATCH.md) for notes how was this provider built using [crossplane/upjet tool](https://github.com/crossplane/upjet) step-by-step.
@@ -471,5 +386,4 @@ make build
 
 ## Report a Bug
 
-For filing bugs, suggesting improvements, or requesting new features, please
-open an [issue](https://github.com/hmlkao/provider-artifactory/issues).
+For filing bugs, suggesting improvements, or requesting new features, please open an [issue](https://github.com/hmlkao/provider-artifactory/issues).
