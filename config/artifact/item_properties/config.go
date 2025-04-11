@@ -6,13 +6,13 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
-const shortGroup string = "artifactory"
+const shortGroup string = "" // Otherwise, 'item' is used
 
 // Configure configures individual resources by adding custom ResourceConfigurators.
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_item_properties", func(r *config.Resource) {
 		r.ShortGroup = shortGroup
-		// Specify Kubernetes kind
+		// Specify Kubernetes kind, otherwise, 'Properties' is used
 		r.Kind = "ItemProperties"
 		// Set custom func to get external name because there is no 'id' stored in Terraform state
 		// Import is supported using the following syntax:
@@ -29,7 +29,7 @@ func Configure(p *config.Provider) {
 				// Return id for a repo
 				return repoKey, nil
 			}
-			return "", errors.New("cannot find id in tfstate")
+			return "", errors.New("cannot find 'repo_key' in tfstate")
 		}
 	})
 }
