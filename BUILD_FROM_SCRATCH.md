@@ -39,10 +39,19 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     cd provider-artifactory
     ```
 
-3. Fetch submodule (no change in source code)
+3. Fetch submodule
 
     > [!WARNING]
     > Submodule `Avarei/build` is used for the `build/` path, which contains essential scripts and configurations for the build process. This submodule is necessary because [this PR](https://github.com/crossplane/build/pull/14), which integrates these changes into the main repository, has not been merged yet.
+    > There is unfortunetly no tags used for [crossplane/build](https://github.com/crossplane/build) repo, so we pull the latest version from `main` branch.
+
+    Update `crossplane/build` submodule to the latest version
+
+    ```bash
+    git submodule update --recursive --remote
+    ```
+
+    Pull Git submodules
 
     ```bash
     make submodules
@@ -70,11 +79,15 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     export TERRAFORM_DOCS_PATH ?= docs/resources
     ```
 
-6. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
+6. Upgrade all versions to the latest ones in `Makefile`, e.g. `GO_REQUIRED_VERSION`, `GOLANGCILINT_VERSION`, `KIND_VERSION`, etc.
+
+7. Update versions in `.github/workflows/` YAML files
+
+8. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
 
     It means to add provider configuration arguments. For the Artifactory Terraform provider, the arguments `url`, `access_token`, `oidc_provider_name`, and `tfc_credential_tag_name` are optional. The `api_key` argument can be omitted as it is deprecated (in v12.9.1).
 
-7. Add external name to `config/external_name.go` file according to the Terraform import reference.
+9. Add external name to `config/external_name.go` file according to the Terraform import reference.
 
    - For example, with `artifactory_local_oci_repository`, use the Kubernetes resource `metadata.name` as the `key` parameter. This ensures that the resource `name` and the OCI repository `key` are identical, avoiding confusion. To achieve this, set `config.ParameterAsIdentifier("key")`, which maps the `key` parameter to the `metadata.name` of the Kubernetes resource.
 
@@ -85,7 +98,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
                                                                  `-------------------`------------   These fields may differ, if we set `"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),` in `ExternalNameConfigs` variable the key is always used as resource name
         ```
 
-8. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s).
+10. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s).
 
     > [!NOTE]
     > More details are in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
@@ -96,7 +109,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
         mkdir config/local_oci_repository
         ```
 
-9. Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
+11. Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
 
     ```bash
     rm -rf config/null
@@ -104,7 +117,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
     And remove this reference from `config/provider.go`
 
-10. Add line to `config/provider.go`, e.g. for `artifactory_local_oci_repository`
+12. Add line to `config/provider.go`, e.g. for `artifactory_local_oci_repository`
 
     > [!NOTE]
     > It's not necessary to have it here if you don't need to override the default resource.
@@ -119,13 +132,13 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     }
     ```
 
-11. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
+13. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
 
     ```sh
     go mod tidy
     ```
 
-12. Install required Go tools
+14. Install required Go tools
 
     `goimports` is a tool that formats Go code and automatically manages import statements, ensuring consistency and reducing manual effort during the build process.
 
@@ -134,7 +147,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     go install golang.org/x/tools/cmd/goimports@latest
     ```
 
-13. Build provider
+15. Build provider
 
     The `make generate` command is used to generate the necessary Crossplane Custom Resource Definitions (CRDs) and other artifacts required for the provider. This step ensures that the provider is correctly configured and ready for deployment. (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
 
@@ -150,7 +163,6 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
 
     ```bash
     rm -rf examples/null
-    rm -rf examples/storeconfig
     ```
 
 2. Create provider configuration
@@ -200,6 +212,7 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
 5. Create K8s Secret from template
 
     ```bash
+    # Example
     $ ARTIFACTORY_URL=https://artifactory.site.com/artifactory
     $ read -r ARTIFACTORY_TOKEN
     <put-your-token-here + enter>
@@ -223,7 +236,7 @@ According to [crossplane/upjet documentation](https://github.com/crossplane/upje
 
     It will block the terminal, you can check provider logs there.
 
-8. Follow commands must be run in different terminal due to block of the first one
+8. Following commands must be run in different terminal due to block of the first one
 9. Deploy `ProviderConfig` to the cluster
 
     ```bash
@@ -281,11 +294,11 @@ Steps to publish provider to Upbound Marketplace according to [these instruction
 2. Create an Organization within Upbound account, e.g. `hmlkao`
 3. Craete a Team in Organization settings, e.g. `Artifactory`
 4. Create a Robot account in Organization settings
-   1. Name - e.g., `provider-artifactory-ci`
+   1. Name - e.g., `github-ci`
    2. Create a token
-      1. Name - e.g., `github-ci`
+      1. Name - e.g., `provider-jfrog-artifactory`
 5. Assign the Robot account to the Team
-6. Create a new Repository according to provider name, e.g. `provider-artifactory` (MUST match with provider name!)
+6. Create a new Repository according to provider name, e.g. `provider-jfrog-artifactory` (MUST match with provider name!)
 7. Assign a Write permissions for the Team in the Repository settings
 8. Set these GitHub secrets in the repository
 

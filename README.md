@@ -97,7 +97,7 @@ List of all resources of [Terraform provider v12.9.1](https://registry.terraform
 | Resource                      | Supported                                                                                  | Kind             |
 |-------------------------------|--------------------------------------------------------------------------------------------|------------------|
 | `artifactory_artifact`        | :x: ([Resource Import Not Implemented](./KNOWN_ISSUES.md#resource-import-not-implemented)) |                  |
-| `artifactory_item_properties` | :heavy_check_mark: ([known issues](./KNOWN_ISSUES.md#artifactory_item_properties))         | `ItemProperties` |
+| `artifactory_item_properties` | :heavy_check_mark: ([Known Issues](./KNOWN_ISSUES.md#artifactory_item_properties))         | `ItemProperties` |
 
 ### Configuration
 
@@ -265,7 +265,7 @@ List of all resources of [Terraform provider v12.9.1](https://registry.terraform
 | `artifactory_certificate`                | :x:                                                            |                                |
 | `artifactory_distribution_public_key`    | :x:                                                            |                                |
 | `artifactory_global_environment`         | :x:                                                            |                                |
-| `artifactory_keypair`                    | :heavy_check_mark: ([known issues](./KNOWN_ISSUES.md#keypair)) | `Keypair`                      |
+| `artifactory_keypair`                    | :heavy_check_mark: ([Known Issues](./KNOWN_ISSUES.md#keypair)) | `Keypair`                      |
 | `artifactory_password_expiration_policy` | :x:                                                            |                                |
 | `artifactory_scoped_token`               | :x:                                                            |                                |
 | `artifactory_user_lock_policy`           | :x:                                                            |                                |
