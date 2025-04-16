@@ -21,8 +21,8 @@ import (
 	"github.com/pkg/errors"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	v1alpha1 "github.com/hmlkao/provider-artifactory/apis/artifactory/v1alpha1"
-	features "github.com/hmlkao/provider-artifactory/internal/features"
+	v1alpha1 "github.com/hmlkao/provider-jfrog-artifactory/apis/artifactory/v1alpha1"
+	features "github.com/hmlkao/provider-jfrog-artifactory/internal/features"
 )
 
 // Setup adds a controller that reconciles LocalOCIRepository managed resources.

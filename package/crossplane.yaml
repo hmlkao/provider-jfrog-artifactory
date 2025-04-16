@@ -1,14 +1,14 @@
 apiVersion: meta.pkg.crossplane.io/v1
 kind: Provider
 metadata:
-  name: provider-artifactory
+  name: provider-jfrog-artifactory
   annotations:
     meta.crossplane.io/maintainer: Ondrej Homolka <ondrej.homolka@gmail.com>
-    meta.crossplane.io/source: github.com/hmlkao/provider-artifactory
+    meta.crossplane.io/source: github.com/hmlkao/provider-jfrog-artifactory
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/description: |
       Artifactory Crossplane provider to manage JFrog Artifactory resources in Kubernetes.
     meta.crossplane.io/readme: |
       Provider Artifactory is a Crossplane provider for [JFrog Artifactory](https://jfrog.com/artifactory/).
       If you encounter an issue please create an issue in the
-      [hmlkao/provider-artifactory](https://github.com/hmlkao/provider-artifactory/issues) repo.
+      [hmlkao/provider-jfrog-artifactory](https://github.com/hmlkao/provider-jfrog-artifactory/issues) repo.
