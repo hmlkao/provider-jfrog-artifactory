@@ -41,7 +41,7 @@ type LocalAnsibleRepositoryInitParameters struct {
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
 	// Primary keypair used to sign artifacts. Default value is empty.
-	// +crossplane:generate:reference:type=github.com/hmlkao/provider-artifactory/apis/artifactory/v1alpha1.Keypair
+	// +crossplane:generate:reference:type=github.com/hmlkao/provider-jfrog-artifactory/apis/artifactory/v1alpha1.Keypair
 	PrimaryKeypairRef *string `json:"primaryKeypairRef,omitempty" tf:"primary_keypair_ref,omitempty"`
 
 	// Reference to a Keypair in artifactory to populate primaryKeypairRef.
@@ -162,7 +162,7 @@ type LocalAnsibleRepositoryParameters struct {
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
 	// Primary keypair used to sign artifacts. Default value is empty.
-	// +crossplane:generate:reference:type=github.com/hmlkao/provider-artifactory/apis/artifactory/v1alpha1.Keypair
+	// +crossplane:generate:reference:type=github.com/hmlkao/provider-jfrog-artifactory/apis/artifactory/v1alpha1.Keypair
 	// +kubebuilder:validation:Optional
 	PrimaryKeypairRef *string `json:"primaryKeypairRef,omitempty" tf:"primary_keypair_ref,omitempty"`
 

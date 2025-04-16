@@ -1,7 +1,7 @@
 <!-- markdownlint-disable no-duplicate-heading no-hard-tabs -->
 # Build provider from scratch
 
-`provider-artifactory` is a [Crossplane](https://crossplane.io/) provider that
+`provider-jfrog-artifactory` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/crossplane/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
@@ -35,8 +35,8 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 2. Clone repo to your localhost and change directory into it
 
     ```bash
-    git clone git@github.com:hmlkao/provider-artifactory.git
-    cd provider-artifactory
+    git clone git@github.com:hmlkao/provider-jfrog-artifactory.git
+    cd provider-jfrog-artifactory
     ```
 
 3. Fetch submodule
@@ -61,8 +61,10 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
     ```bash
     $ ./hack/prepare.sh
-    Lower case provider name (ex. github): artifactory
-    Normal case provider name (ex. GitHub): Artifactory
+    # This will be also used to set resource prefix, will be explained below
+    Lower case provider name (ex. github): jfrog-artifactory
+    Normal case provider name (ex. GitHub): JFrog Artifactory
+    # Organization in Upbound account, check 'Publish provider' paragraph
     Organization (ex. upbound, my-org-name): hmlkao
     CRD rootGroup (ex. upbound.io, crossplane.io): artifactory.jfrog.crossplane.io
     ```
@@ -81,15 +83,33 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
 6. Upgrade all versions to the latest ones in `Makefile`, e.g. `GO_REQUIRED_VERSION`, `GOLANGCILINT_VERSION`, `KIND_VERSION`, etc.
 
-7. Update versions in `.github/workflows/` YAML files
+7. Update versions in `.github/workflows/` YAML files + `.golangci.yml` configuration
 
-8. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
+8. (*optional*) With current setup the `apiVersion` of K8s resources will be, e.g. `jfrog-artifactory.artifactory.jfrog.crossplane.io/v1beta1` or `jfrog-artifactory.local.artifactory.jfrog.crossplane.io/v1beta1`, if you want to change it just to `artifactory.jfrog.crossplane.io/v1beta1`, update `Group` constant in `apis/v1beta1/register.go` and `apis/v1alpha1/register.go` files, e.g.:
+
+    ```go
+    const (
+      Group   = "artifactory.jfrog.crossplane.io"
+    )
+    ```
+
+    Also check `resourcePrefix` constant and parameter of `ujconfig.WithRootGroup()` func in `config/provider.go`:
+
+    ```go
+    const (
+	    resourcePrefix = "artifactory"
+    )
+    ...
+    ujconfig.WithRootGroup("artifactory.jfrog.crossplane.io"),
+    ```
+
+9. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
 
     It means to add provider configuration arguments. For the Artifactory Terraform provider, the arguments `url`, `access_token`, `oidc_provider_name`, and `tfc_credential_tag_name` are optional. The `api_key` argument can be omitted as it is deprecated (in v12.9.1).
 
-9. Add external name to `config/external_name.go` file according to the Terraform import reference.
+10. Add external name to `config/external_name.go` file according to the Terraform import reference.
 
-   - For example, with `artifactory_local_oci_repository`, use the Kubernetes resource `metadata.name` as the `key` parameter. This ensures that the resource `name` and the OCI repository `key` are identical, avoiding confusion. To achieve this, set `config.ParameterAsIdentifier("key")`, which maps the `key` parameter to the `metadata.name` of the Kubernetes resource.
+    - For example, with `artifactory_local_oci_repository`, use the Kubernetes resource `metadata.name` as the `key` parameter. This ensures that the resource `name` and the OCI repository `key` are identical, avoiding confusion. To achieve this, set `config.ParameterAsIdentifier("key")`, which maps the `key` parameter to the `metadata.name` of the Kubernetes resource.
 
         ```text
         terraform import artifactory_local_oci_repository.my-oci-local-repo name-of-oci-local-repo
@@ -98,7 +118,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
                                                                  `-------------------`------------   These fields may differ, if we set `"artifactory_local_oci_repository": config.ParameterAsIdentifier("key"),` in `ExternalNameConfigs` variable the key is always used as resource name
         ```
 
-10. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s).
+11. Create a folder and add custom configuration to the `config/` folder for Artifactory resource(s).
 
     > [!NOTE]
     > More details are in [Generating a Crossplane provider](https://github.com/crossplane/upjet/blob/main/docs/generating-a-provider.md)
@@ -109,7 +129,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
         mkdir config/local_oci_repository
         ```
 
-11. Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
+12. Remove the `null` resource as it is included in the template for demonstration purposes and does not apply to the Artifactory provider. Keeping it may lead to unnecessary clutter or errors during the build process.
 
     ```bash
     rm -rf config/null
@@ -117,7 +137,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
     And remove this reference from `config/provider.go`
 
-12. Add line to `config/provider.go`, e.g. for `artifactory_local_oci_repository`
+13. Add line to `config/provider.go`, e.g. for `artifactory_local_oci_repository`
 
     > [!NOTE]
     > It's not necessary to have it here if you don't need to override the default resource.
@@ -132,13 +152,13 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     }
     ```
 
-13. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
+14. Update Go modules to ensure all required dependencies are downloaded and properly resolved, avoiding errors caused by missing modules.
 
     ```sh
     go mod tidy
     ```
 
-14. Install required Go tools
+15. Install required Go tools
 
     `goimports` is a tool that formats Go code and automatically manages import statements, ensuring consistency and reducing manual effort during the build process.
 
@@ -147,7 +167,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     go install golang.org/x/tools/cmd/goimports@latest
     ```
 
-15. Build provider
+16. Build provider
 
     The `make generate` command is used to generate the necessary Crossplane Custom Resource Definitions (CRDs) and other artifacts required for the provider. This step ensures that the provider is correctly configured and ready for deployment. (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
 
@@ -338,7 +358,7 @@ You can do the initial publish from the commandline. No need to write to `#upbou
     up repo update --organization=<org-id> --private=false --publish <repo-name>
 
     # Example
-    up repo update --organization=hmlkao --private=false --publish provider-artifactory
+    up repo update --organization=hmlkao --private=false --publish provider-jfrog-artifactory
     ```
 
 All current and new versions with semver tag will be published.
@@ -399,8 +419,8 @@ This is a workaround which generates valid Markdown files which are unfortunatel
 6. Copy generated doc to the path of Terraform provider in Crossplane provider
 
     ```sh
-    rm -rf ../provider-artifactory/.work/jfrog/artifactory/docs/
-    cp -R docs/ ../provider-artifactory/.work/jfrog/artifactory/docs/
+    rm -rf ../provider-jfrog-artifactory/.work/jfrog/artifactory/docs/
+    cp -R docs/ ../provider-jfrog-artifactory/.work/jfrog/artifactory/docs/
     ```
 
 ### `cannot find id in tfstate` in provider output
@@ -466,7 +486,7 @@ When you use Podman as container runtime on MacOS.
 ```log
 up: error: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 16:52:09 [FAIL]
-make[3]: *** [xpkg.build.provider-artifactory] Error 1
+make[3]: *** [xpkg.build.provider-jfrog-artifactory] Error 1
 make[2]: *** [do.build.artifacts.linux_arm64] Error 2
 make[1]: *** [build.all] Error 2
 make: *** [build] Error 2

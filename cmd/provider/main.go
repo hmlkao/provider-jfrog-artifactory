@@ -31,12 +31,12 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 	"sigs.k8s.io/controller-runtime/pkg/metrics"
 
-	"github.com/hmlkao/provider-artifactory/apis"
-	"github.com/hmlkao/provider-artifactory/apis/v1alpha1"
-	"github.com/hmlkao/provider-artifactory/config"
-	"github.com/hmlkao/provider-artifactory/internal/clients"
-	"github.com/hmlkao/provider-artifactory/internal/controller"
-	"github.com/hmlkao/provider-artifactory/internal/features"
+	"github.com/hmlkao/provider-jfrog-artifactory/apis"
+	"github.com/hmlkao/provider-jfrog-artifactory/apis/v1alpha1"
+	"github.com/hmlkao/provider-jfrog-artifactory/config"
+	"github.com/hmlkao/provider-jfrog-artifactory/internal/clients"
+	"github.com/hmlkao/provider-jfrog-artifactory/internal/controller"
+	"github.com/hmlkao/provider-jfrog-artifactory/internal/features"
 )
 
 func main() {
@@ -62,7 +62,7 @@ func main() {
 	kingpin.MustParse(app.Parse(os.Args[1:]))
 
 	zl := zap.New(zap.UseDevMode(*debug))
-	log := logging.NewLogrLogger(zl.WithName("provider-artifactory"))
+	log := logging.NewLogrLogger(zl.WithName("provider-jfrog-artifactory"))
 	if *debug {
 		// The controller-runtime runs with a no-op logger by default. It is
 		// *very* verbose even at info level, so we only provide it a real
@@ -77,7 +77,7 @@ func main() {
 
 	mgr, err := ctrl.NewManager(cfg, ctrl.Options{
 		LeaderElection:   *leaderElection,
-		LeaderElectionID: "crossplane-leader-election-provider-artifactory",
+		LeaderElectionID: "crossplane-leader-election-provider-jfrog-artifactory",
 		Cache: cache.Options{
 			SyncPeriod: syncPeriod,
 		},

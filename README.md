@@ -1,9 +1,9 @@
 <!-- markdownlint-disable no-hard-tabs -->
-# Provider Artifactory
+# Provider JFrog Artifactory
 
-This document provides an overview and guidance for using the `provider-artifactory`, a Crossplane provider for managing Artifactory resources.
+This document provides an overview and guidance for using the `provider-jfrog-artifactory`, a Crossplane provider for managing Artifactory resources.
 
-`provider-artifactory` is a [Crossplane](https://crossplane.io/) provider that
+`provider-jfrog-artifactory` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/crossplane/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
@@ -12,7 +12,7 @@ The repo was created from [crossplane/upjet-provider-template@7311f9f](https://g
 
 Provider is generated from Terraform provider [jfrog/artifactory v12.9.1](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs).
 
-- [Provider Artifactory](#provider-artifactory)
+- [Provider JFrog Artifactory](#provider-jfrog-artifactory)
   - [Getting Started](#getting-started)
   - [Naming convention decision](#naming-convention-decision)
     - [Options](#options)
@@ -35,10 +35,10 @@ Provider is generated from Terraform provider [jfrog/artifactory v12.9.1](https:
 ## Getting Started
 
 Install the provider by using the following command after changing the image tag
-to the [latest release](https://marketplace.upbound.io/providers/hmlkao/provider-artifactory):
+to the [latest release](https://marketplace.upbound.io/providers/hmlkao/provider-jfrog-artifactory):
 
 ```bash
-up ctp provider install hmlkao/provider-artifactory:v0.2.0
+up ctp provider install hmlkao/provider-jfrog-artifactory:v0.2.0
 ```
 
 Alternatively, you can use declarative installation:
@@ -50,13 +50,13 @@ kind: Provider
 metadata:
   name: provider-artifactory
 spec:
-  package: hmlkao/provider-artifactory:v0.2.0
+  package: hmlkao/provider-jfrog-artifactory:v0.2.0
 EOF
 ```
 
 Notice that in this example Provider resource is referencing ControllerConfig with debug enabled.
 
-You can see the API reference [here](https://doc.crds.dev/github.com/hmlkao/provider-artifactory).
+You can see the API reference [here](https://doc.crds.dev/github.com/hmlkao/provider-jfrog-artifactory).
 
 ## Naming convention decision
 
@@ -374,4 +374,4 @@ make build
 
 ## Report a Bug
 
-For filing bugs, suggesting improvements, or requesting new features, please open an [issue](https://github.com/hmlkao/provider-artifactory/issues).
+For filing bugs, suggesting improvements, or requesting new features, please open an [issue](https://github.com/hmlkao/provider-jfrog-artifactory/issues).

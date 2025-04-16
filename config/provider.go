@@ -10,19 +10,19 @@ import (
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
-	itemproperties "github.com/hmlkao/provider-artifactory/config/artifact/item_properties"
-	localansiblerepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_ansible_repository"
-	localdockerv2repository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_docker_v2_repository"
-	localgenericrepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_generic_repository"
-	localocirepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_oci_repository"
-	localterraformproviderrepository "github.com/hmlkao/provider-artifactory/config/local_repositories/local_terraform_provider_repository"
-	"github.com/hmlkao/provider-artifactory/config/security/keypair"
-	anonymoususer "github.com/hmlkao/provider-artifactory/config/user/anonymous_user"
+	itemproperties "github.com/hmlkao/provider-jfrog-artifactory/config/artifact/item_properties"
+	localansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_ansible_repository"
+	localdockerv2repository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_docker_v2_repository"
+	localgenericrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_generic_repository"
+	localocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_oci_repository"
+	localterraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_terraform_provider_repository"
+	"github.com/hmlkao/provider-jfrog-artifactory/config/security/keypair"
+	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/user/anonymous_user"
 )
 
 const (
 	resourcePrefix = "artifactory"
-	modulePath     = "github.com/hmlkao/provider-artifactory"
+	modulePath     = "github.com/hmlkao/provider-jfrog-artifactory"
 )
 
 //go:embed schema.json

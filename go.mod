@@ -1,4 +1,4 @@
-module github.com/hmlkao/provider-artifactory
+module github.com/hmlkao/provider-jfrog-artifactory
 
 go 1.24.1
 
