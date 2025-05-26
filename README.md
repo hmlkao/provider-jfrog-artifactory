@@ -73,7 +73,8 @@ So, I decided to use `artifactory.jfrog.crossplane.io` base group for this Cross
 
 1. (*current naming convention*) `artifactory.jfrog.crossplane.io` as base group and resource is `LocalOCIRepository`
 
-    - :heavy_plus_sign: Get rid of `ShortGroup` config and use `artifactory.jfrog.crossplane.io` for initial config instead
+    - :heavy_plus_sign: `ShortGroup` doesn't have to be set for all resources
+    - :heavy_minus_sign: Still need to specify `ShortGroup` for the most of resources
     - Auto generated `ShortGroup` for Group of resources like `local.artifactory.jfrog.crossplane.io` for Local Repositories according to Terraform provider (by default)
       - :heavy_minus_sign: Can be less clear, because there will be the same resources, e.g. `AlpineRepository` for groups `local.artifactory.jfrog.crossplane.io`, `remote.artifactory.jfrog.crossplane.io`, etc.
       - :heavy_minus_sign: All resources must have specified `ShortGroup` as `""` (empty string) to override default behavior

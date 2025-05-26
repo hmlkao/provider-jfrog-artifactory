@@ -1,0 +1,57 @@
+name: Bump versions
+
+on:
+  workflow_dispatch: ~
+  schedule:
+    - cron: '0 10 * * Mon' # Every Monday at 10 o'clock UTC
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  bump-tfm-provider-version:
+    name: Bump TFM provider version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Get current version
+        id: current-version
+        run: |
+          current_version=$(grep 'export TERRAFORM_PROVIDER_VERSION' < Makefile | cut -d' ' -f4)
+          echo "TFM_PROVIDER_VERSION_CURRENT=${current_version}" >> $GITHUB_OUTPUT
+
+      - name: Get new version
+        id: new-version
+        run: |
+          new_version=$(curl -sSL https://api.github.com/repos/jfrog/terraform-provider-artifactory/releases/latest | jq -r '.tag_name' | tr -d 'v')
+          echo "TFM_PROVIDER_VERSION_NEW=${new_version}" >> $GITHUB_OUTPUT
+
+      - name: Bump version
+        if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW }}
+        run: hack/bump_tfm_provider_version.sh "${{steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT}}" "${{steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW}}"
+
+      - name: Create PR
+        # Previous step must be successful
+        #   https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#success
+        # The success() function evaluates to true even if the previous step was skipped, so we must check the same condition anyway
+        if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW && success() }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: Bump TFM provider to v${{steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW}}
+          commit-message: Bump Terraform provider version to v${{steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW}}
+          branch: bump-version/tfm-provider
+          labels: bump-version, tfm-provider
+          # Cannot use GITHUB_TOKEN, because other workflows are not triggered with it, PAT must be used
+          #   https://github.com/peter-evans/create-pull-request/tree/v7/?tab=readme-ov-file#token
+          token: ${{ secrets.BUMP_VERSION_TOKEN }}
+
+  #bump-go-version:
+  #bump-up-version:
+  #bump-kind-version:
+  #bump-alpine-version:
