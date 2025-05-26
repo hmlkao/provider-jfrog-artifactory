@@ -171,7 +171,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 
 16. Build provider
 
-    The `make generate` command is used to generate the necessary Crossplane Custom Resource Definitions (CRDs) and other artifacts required for the provider. This step ensures that the provider is correctly configured and ready for deployment. (check [Troubleshooting](#make-generate-fails-with-error) in case it fails)
+    The `make generate` command is used to generate the necessary Crossplane Custom Resource Definitions (CRDs) and other artifacts required for the provider. This step ensures that the provider is correctly configured and ready for deployment. (check [Troubleshooting](#failed-to-scrape-resource-metadata-error) in case it fails)
 
     ```sh
     make generate
