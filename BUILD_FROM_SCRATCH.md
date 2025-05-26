@@ -76,10 +76,10 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     ```bash
     export TERRAFORM_PROVIDER_SOURCE ?= jfrog/artifactory
     export TERRAFORM_PROVIDER_REPO ?= https://github.com/jfrog/terraform-provider-artifactory
-    export TERRAFORM_PROVIDER_VERSION ?= 12.9.1
+    export TERRAFORM_PROVIDER_VERSION ?= 12.9.4
     export TERRAFORM_PROVIDER_DOWNLOAD_NAME ?= terraform-provider-artifactory
     export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX ?= https://github.com/jfrog/$(TERRAFORM_PROVIDER_DOWNLOAD_NAME)/releases/download/v$(TERRAFORM_PROVIDER_VERSION)
-    export TERRAFORM_NATIVE_PROVIDER_BINARY ?= terraform-provider-artifactory_v12.9.1
+    export TERRAFORM_NATIVE_PROVIDER_BINARY ?= terraform-provider-artifactory_v12.9.4
     export TERRAFORM_DOCS_PATH ?= docs/resources
     ```
 
@@ -105,7 +105,7 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
     ujconfig.WithRootGroup("artifactory.jfrog.crossplane.io"),
     ```
 
-9. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs#argument-reference)
+9. Add `ProviderConfig` logic to `internal/clients/artifactory.go` according to [Terraform provider argument reference](https://registry.terraform.io/providers/jfrog/artifactory/12.9.4/docs#argument-reference)
 
     It means to add provider configuration arguments. For the Artifactory Terraform provider, the arguments `url`, `access_token`, `oidc_provider_name`, and `tfc_credential_tag_name` are optional. The `api_key` argument can be omitted as it is deprecated (in v12.9.1).
 
@@ -396,7 +396,7 @@ This is a workaround which generates valid Markdown files which are unfortunatel
 
     ```sh
     # Example
-    git checkout v12.9.1
+    git checkout v12.9.4
     ```
 
 3. Check version of `github.com/hashicorp/terraform-plugin-docs` in `go.mod` file
@@ -550,8 +550,8 @@ needs to be recompiled to support the latest protocol.: 	{"type": "Warning", "ob
     ```bash
     $ TF_LOG=debug .cache/tools/darwin_arm64/terraform-1.5.7 -chdir=.work/terraform/ providers schema -json=true
     ...
-    2025-04-08T14:14:52.068+0200 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1 pid=25512
-    2025-04-08T14:14:52.068+0200 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    2025-04-08T14:14:52.068+0200 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4 pid=25512
+    2025-04-08T14:14:52.068+0200 [DEBUG] provider: waiting for RPC address: path=.terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     ╷
     │ Error: Failed to load plugin schemas
     │
@@ -566,19 +566,19 @@ needs to be recompiled to support the latest protocol.: 	{"type": "Warning", "ob
     ```bash
     $ ps ax | grep terraform
     34519 s002  S+     0:00.00 grep terraform
-    60678 s002  S      0:04.03 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    60678 s002  S      0:04.03 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     7399 s005  S      0:00.53 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
-    7400 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    7400 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     8404 s005  S      0:00.51 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
-    8407 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    8407 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     24394 s005  S      0:00.25 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
-    24395 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    24395 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     25509 s005  S+     0:00.21 .cache/tools/darwin_arm64/terraform-1.5.7 -chdir=.work/terraform/ providers schema -json=true
-    25512 s005  UE+    0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    25512 s005  UE+    0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     92484 s005  S      0:00.76 /Users/homolkao/Work/provider-artifactory/.cache/tools/darwin_arm64/terraform-1.5.7 -chdir=/Users/homolkao/Work/provider-artifactory/.work/terraform providers schema -json=true
-    92485 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    92485 s005  UE     0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     82693 s010  S+     0:00.84 terraform plan
-    82694 s010  UE+    0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.1/darwin_arm64/terraform-provider-artifactory_v12.9.1
+    82694 s010  UE+    0:00.00 .terraform/providers/registry.terraform.io/jfrog/artifactory/12.9.4/darwin_arm64/terraform-provider-artifactory_v12.9.4
     ```
 
     From `man ps`, `UE` stat means
