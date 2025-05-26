@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalMavenRepository
+metadata:
+  name: maven-crossplane-repository
+spec:
+  forProvider: {}
+    # key: maven-crossplane-repository
+  providerConfigRef:
+    name: default

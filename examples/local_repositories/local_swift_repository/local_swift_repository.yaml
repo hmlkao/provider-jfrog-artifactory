@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalSwiftRepository
+metadata:
+  name: swift-crossplane-repository
+spec:
+  forProvider: {}
+    # key: swift-crossplane-repository
+  providerConfigRef:
+    name: default

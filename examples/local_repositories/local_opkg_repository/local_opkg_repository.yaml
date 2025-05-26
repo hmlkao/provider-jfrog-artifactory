@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalOpkgRepository
+metadata:
+  name: opkg-crossplane-repository
+spec:
+  forProvider: {}
+    # key: opkg-crossplane-repository
+  providerConfigRef:
+    name: default

@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalNpmRepository
+metadata:
+  name: npm-crossplane-repository
+spec:
+  forProvider: {}
+    # key: npm-crossplane-repository
+  providerConfigRef:
+    name: default

@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalMachinelearningRepository
+metadata:
+  name: machinelearning-crossplane-repository
+spec:
+  forProvider: {}
+    # key: machinelearning-crossplane-repository
+  providerConfigRef:
+    name: default

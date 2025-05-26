@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalDockerV1Repository
+metadata:
+  name: docker-v1-crossplane-repository
+spec:
+  forProvider: {}
+    # key: docker-v1-crossplane-repository
+  providerConfigRef:
+    name: default

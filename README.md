@@ -169,46 +169,45 @@ List of all resources of [Terraform provider v12.9.4](https://registry.terraform
 
 ### Local Repositories
 
-| Resource                                          | Supported          | Kind                               |
-|---------------------------------------------------|--------------------|------------------------------------|
-| `artifactory_local_alpine_repository`             | :x:                |                                    |
-| `artifactory_local_ansible_repository`            | :heavy_check_mark: | `LocalAnsibleRepository`           |
-| `artifactory_local_bower_repository`              | :x:                |                                    |
-| `artifactory_local_cargo_repository`              | :x:                |                                    |
-| `artifactory_local_chef_repository`               | :x:                |                                    |
-| `artifactory_local_cocoapods_repository`          | :x:                |                                    |
-| `artifactory_local_composer_repository`           | :x:                |                                    |
-| `artifactory_local_conan_repository`              | :x:                |                                    |
-| `artifactory_local_conda_repository`              | :x:                |                                    |
-| `artifactory_local_cran_repository`               | :x:                |                                    |
-| `artifactory_local_debian_repository`             | :x:                |                                    |
-| `artifactory_local_docker_v1_repository`          | :x:                |                                    |
-| `artifactory_local_docker_v2_repository`          | :heavy_check_mark: | `LocalDockerV2Repository`          |
-| `artifactory_local_gems_repository`               | :x:                |                                    |
-| `artifactory_local_generic_repository`            | :heavy_check_mark: | `LocalGenericRepository`           |
-| `artifactory_local_gitlfs_repository`             | :x:                |                                    |
-| `artifactory_local_go_repository`                 | :x:                |                                    |
-| `artifactory_local_gradle_repository`             | :x:                |                                    |
-| `artifactory_local_helm_repository`               | :x:                |                                    |
-| `artifactory_local_helmoci_repository`            | :x:                |                                    |
-| `artifactory_local_huggingfaceml_repository`      | :x:                |                                    |
-| `artifactory_local_ivy_repository`                | :x:                |                                    |
-| `artifactory_local_machinelearning_repository`    | :x:                |                                    |
-| `artifactory_local_maven_repository`              | :x:                |                                    |
-| `artifactory_local_npm_repository`                | :x:                |                                    |
-| `artifactory_local_nuget_repository`              | :x:                |                                    |
-| `artifactory_local_oci_repository`                | :heavy_check_mark: | `LocalOCIRepository`               |
-| `artifactory_local_opkg_repository`               | :x:                |                                    |
-| `artifactory_local_pub_repository`                | :x:                |                                    |
-| `artifactory_local_puppet_repository`             | :x:                |                                    |
-| `artifactory_local_pypi_repository`               | :x:                |                                    |
-| `artifactory_local_rpm_repository`                | :x:                |                                    |
-| `artifactory_local_sbt_repository`                | :x:                |                                    |
-| `artifactory_local_swift_repository`              | :x:                |                                    |
-| `artifactory_local_terraform_module_repository`   | :x:                |                                    |
-| `artifactory_local_terraform_provider_repository` | :heavy_check_mark: | `LocalTerraformProviderRepository` |
-| `artifactory_local_terraformbackend_repository`   | :x:                |                                    |
-| `artifactory_local_vagrant_repository`            | :x:                |                                    |
+| Resource                                          | Supported          | Kind                              |
+|---------------------------------------------------|--------------------|-----------------------------------|
+| `artifactory_local_alpine_repository`             | :heavy_check_mark: | `LocalAlpineRepository`           |
+| `artifactory_local_ansible_repository`            | :heavy_check_mark: | `LocalAnsibleRepository`          |
+| `artifactory_local_bower_repository`              | :heavy_check_mark: | `LocalBowerRepository`            |
+| `artifactory_local_cargo_repository`              | :heavy_check_mark: | `LocalCargoRepository`            |
+| `artifactory_local_chef_repository`               | :heavy_check_mark: | `LocalChefRepository`             |
+| `artifactory_local_cocoapods_repository`          | :heavy_check_mark: | `LocalCocoapodsRepository`        |
+| `artifactory_local_composer_repository`           | :heavy_check_mark: | `LocalComposerRepository`         |
+| `artifactory_local_conan_repository`              | :heavy_check_mark: | `LocalConanRepository`            |
+| `artifactory_local_conda_repository`              | :heavy_check_mark: | `LocalCondaRepository`            |
+| `artifactory_local_cran_repository`               | :heavy_check_mark: | `LocalCranRepository`             |
+| `artifactory_local_debian_repository`             | :heavy_check_mark: | `LocalDebianRepository`           |
+| `artifactory_local_docker_v1_repository`          | :heavy_check_mark: | `LocalDockerV1Repository`         |
+| `artifactory_local_docker_v2_repository`          | :heavy_check_mark: | `LocalDockerV2Repository`         |
+| `artifactory_local_gems_repository`               | :heavy_check_mark: | `LocalGemsRepository`             |
+| `artifactory_local_generic_repository`            | :heavy_check_mark: | `LocalGenericRepository`          |
+| `artifactory_local_gitlfs_repository`             | :heavy_check_mark: | `LocalGitLFSRepository`           |
+| `artifactory_local_go_repository`                 | :heavy_check_mark: | `LocalGoRepository`               |
+| `artifactory_local_gradle_repository`             | :heavy_check_mark: | `LocalGradleRepository`           |
+| `artifactory_local_helm_repository`               | :heavy_check_mark: | `LocalHelmRepository`             |
+| `artifactory_local_helmoci_repository`            | :heavy_check_mark: | `LocalHelmOCIRepository`          |
+| `artifactory_local_huggingfaceml_repository`      | :heavy_check_mark: | `LocalHuggingfacemlRepository`    |
+| `artifactory_local_ivy_repository`                | :heavy_check_mark: | `LocalIvyRepository`              |
+| `artifactory_local_machinelearning_repository`    | :heavy_check_mark: | `LocalMachinelearningRepository`  |
+| `artifactory_local_maven_repository`              | :heavy_check_mark: | `LocalMavenRepository`            |
+| `artifactory_local_npm_repository`                | :heavy_check_mark: | `LocalNpmRepository`              |
+| `artifactory_local_nuget_repository`              | :heavy_check_mark: | `LocalNugetRepository`            |
+| `artifactory_local_oci_repository`                | :heavy_check_mark: | `LocalOCIRepository`              |
+| `artifactory_local_opkg_repository`               | :heavy_check_mark: | `LocalOpkgRepository`             |
+| `artifactory_local_pub_repository`                | :heavy_check_mark: | `LocalPubRepository`              |
+| `artifactory_local_puppet_repository`             | :heavy_check_mark: | `LocalPuppetRepository`           |
+| `artifactory_local_pypi_repository`               | :heavy_check_mark: | `LocalPypiRepository`             |
+| `artifactory_local_rpm_repository`                | :heavy_check_mark: | `LocalRPMRepository`              |
+| `artifactory_local_sbt_repository`                | :heavy_check_mark: | `LocalSbtRepository`              |
+| `artifactory_local_swift_repository`              | :heavy_check_mark: | `LocalSwiftRepository`            |
+| `artifactory_local_terraform_module_repository`   | :heavy_check_mark: | `LocalTerraformModuleRepository`  |
+| `artifactory_local_terraformbackend_repository`   | :heavy_check_mark: | `LocalTerraformbackendRepository` |
+| `artifactory_local_vagrant_repository`            | :heavy_check_mark: | `LocalVagrantRepository`          |
 
 ### Remote Repositories
 

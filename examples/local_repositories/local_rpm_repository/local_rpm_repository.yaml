@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalRpmRepository
+metadata:
+  name: rpm-crossplane-repository
+spec:
+  forProvider: {}
+    # key: rpm-crossplane-repository
+  providerConfigRef:
+    name: default

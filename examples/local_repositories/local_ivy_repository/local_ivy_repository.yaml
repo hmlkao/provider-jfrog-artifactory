@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalIvyRepository
+metadata:
+  name: ivy-crossplane-repository
+spec:
+  forProvider: {}
+    # key: ivy-crossplane-repository
+  providerConfigRef:
+    name: default

@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalGemsRepository
+metadata:
+  name: gems-crossplane-repository
+spec:
+  forProvider: {}
+    # key: gems-crossplane-repository
+  providerConfigRef:
+    name: default
