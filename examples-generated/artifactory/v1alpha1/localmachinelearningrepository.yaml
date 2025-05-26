@@ -1,0 +1,10 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalMachinelearningRepository
+metadata:
+  annotations:
+    meta.upbound.io/example-id: artifactory/v1alpha1/localmachinelearningrepository
+  labels:
+    testing.upbound.io/example-name: my-machinelearning-local
+  name: my-machinelearning-local
+spec:
+  forProvider: {}

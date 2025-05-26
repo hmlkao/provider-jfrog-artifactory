@@ -16,7 +16,40 @@ func (tr *ItemProperties) Hub() {}
 func (tr *Keypair) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *LocalAlpineRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *LocalAnsibleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalBowerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalCargoRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalChefRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalCocoapodsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalComposerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalConanRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalCondaRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalCranRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalDebianRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalDockerV1Repository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *LocalDockerV2Repository) Hub() {}
@@ -25,7 +58,58 @@ func (tr *LocalDockerV2Repository) Hub() {}
 func (tr *LocalGenericRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *LocalGradleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalHuggingfacemlRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalIvyRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalMachinelearningRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalMavenRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalNpmRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalNugetRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *LocalOCIRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *LocalOpkgRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalPubRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalPuppetRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalPypiRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalRPMRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalSbtRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalSwiftRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalTerraformbackendRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalTerraformModuleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *LocalTerraformProviderRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *LocalVagrantRepository) Hub() {}

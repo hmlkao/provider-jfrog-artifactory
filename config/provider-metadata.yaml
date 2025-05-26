@@ -3436,7 +3436,7 @@ resources:
             default_value: (Boolean) Whether the value is selected by default in the UI.
             multiple_choice: (Boolean) Whether or not user can select multiple values. closed_predefined_values should be set to true.
             name: (String) Property set name.
-            predefined_value: (Block Set) Properties in the property set. (see below for nested schema)
+            predefined_value: (Block Set) Properties in the property set. Predefined values is mandatory when closed_predefined_values or multiple_choice is set to 'true' (see below for nested schema)
             property: (Block Set) A list of properties that will be part of the property set. (see below for nested schema)
             visible: (Boolean) Defines if the list visible and assignable to the repository or artifact.
         importStatements: []
@@ -3626,6 +3626,71 @@ resources:
             started: (String) Timestamp when the build was created. If omitted, the system uses the latest build run, as identified by the name and number combination. The timestamp is provided according to the ISO 8601 standard.
             version: (String) Version to promote
         importStatements: []
+    artifactory_release_bundle_v2_cleanup_policy:
+        subCategory: ""
+        description: Provides an Artifactory Release Bundles Cleanup Policy resource. The following APIs are used to configure and maintain JFrog cleanup policies for Release Bundles V2. See Cleanup Policies Release Bundles https://jfrog.com/help/r/jfrog-rest-apis/cleanup-policies-release-bundles-v2-apis for more details.
+        name: artifactory_release_bundle_v2_cleanup_policy
+        title: artifactory_release_bundle_v2_cleanup_policy Resource - terraform-provider-artifactory
+        examples:
+            - name: my-resource-bundle-v2-cleanup-policy
+              manifest: |-
+                {
+                  "cron_expression": "0 0 2 * * ?",
+                  "description": "Cleanup policy description",
+                  "duration_in_minutes": 60,
+                  "enabled": true,
+                  "key": "my-release-bundle-v2-policy-key",
+                  "search_criteria": {
+                    "exclude_promoted_environments": [
+                      "**"
+                    ],
+                    "include_all_projects": true,
+                    "included_projects": [],
+                    "release_bundles": [
+                      {
+                        "name": "my-release-bundle-v2-rb",
+                        "project_key": ""
+                      }
+                    ]
+                  }
+                }
+              dependencies:
+                artifactory_release_bundle_v2.my-release-bundle-v2-rb: |-
+                    {
+                      "keypair_name": "my-keypair-name",
+                      "name": "my-release-bundle-v2-rb",
+                      "skip_docker_manifest_resolution": true,
+                      "source": {
+                        "release_bundles": [
+                          {
+                            "name": "my-rb-name",
+                            "version": "1.0.0"
+                          }
+                        ]
+                      },
+                      "source_type": "release_bundles",
+                      "version": "2.0.0"
+                    }
+        argumentDocs:
+            created_before_in_months: (Number) Specifies the time frame for filtering based on item creation date (for example, 24 months).
+            cron_expression: (String) The cron expression determines when the policy is run. This parameter is not mandatory, however if left empty the policy will not run automatically and can only be triggered manually.
+            description: (String)
+            duration_in_minutes: (Number) The maximum duration (in minutes) for policy execution, after which the policy will stop running even if not completed. While setting a maximum run duration for a policy is useful for adhering to a strict archive V2 schedule, it can cause the policy to stop before completion.
+            enabled: (Boolean) Enables or disabled the release bundle cleanup policy. This allows the user to run the policy manually. If a policy has a valid cron expression, then it will be scheduled for execution based on it. If a policy is disabled, its future executions will be unscheduled. Defaults to true
+            exclude_promoted_environments: (Set of String) A list of environments to exclude from the cleanup process. To exclude all, set to **
+            include_all_projects: (Boolean) Set this value to true if you want the policy to run on all Artifactory projects. The default value is false.
+            included_projects: (Set of String) List of projects on which you want this policy to run. To include repositories that are not assigned to any project, enter the project key default.
+            item_type: (String) Needs to be set to releaseBundle.
+            key: (String) An ID that is used to identify the release bundle cleanup policy. A minimum of three characters is required and can include letters, numbers, underscore and hyphen.
+            name: (String) The name of the release bundle. Set '**' to include all bundles.
+            project_key: (String) The project identifier associated with the release bundle. This key is obtained from the Project Settings screen. Leave the field blank to apply at a global level.
+            release_bundles: (Attributes Set) Specify the release bundles to include in the cleanup policy. The policy will only clean up the release bundles that match the specified criteria. (see below for nested schema)
+            search_criteria: (Attributes) (see below for nested schema)
+        importStatements:
+            - |-
+              terraform import artifactory_release_bundle_v2_cleanup_policy.my-cleanup-policy my-policy
+
+              terraform import artifactory_release_bundle_v2_cleanup_policy.my-cleanup-policy my-policy:myproj
     artifactory_release_bundle_v2_custom_webhook Resource - terraform-provider-artifactory:
         subCategory: ""
         description: 'Provides an Artifactory webhook resource. This can be used to register and manage Artifactory webhook subscription which enables you to be notified or notify other users when such events take place in Artifactory.:'
@@ -6016,9 +6081,11 @@ resources:
         argumentDocs:
             <actions>: '- comma-separated list of action acronyms. The actions allowed are r, w, d, a, m, x, s, or any combination of these actions. To allow all actions - use *'
             <resource-type>: '- one of the permission resource types, from a predefined closed list. Currently, the only resource type that is supported is the artifact resource type.'
-            <resource-type>:<target>[/<sub-resource>]:<actions>: ""
             <sub-resource>: '- optional, the target sub-resource, can be exact name or a pattern'
             <target>: '- the target resource, can be exact name or a pattern'
+            '["system:livelogs:r", "system:metrics:r,w,d"]': |-
+                ->The scope to assign to the token should be provided as a list of scope tokens, limited to 500 characters in total.
+                From Artifactory 7.84.3, project admins can create access tokens that are tied to the projects in which they hold administrative privileges.
             access_token: (String, Sensitive) Returns the access token to authenticate to Artifactory.
             applied-permissions/admin: '- the scope assigned to admin users.'
             applied-permissions/groups: '- this scope assigns permissions to groups using the following format: applied-permissions/groups:<group-name>[,<group-name>...]'
@@ -6034,14 +6101,13 @@ resources:
             include_reference_token: (Boolean) Also create a reference token which can be used like an API key. Default is false.
             issued_at: (Number) Returns the token issued at date/time.
             issuer: (String) Returns the token issuer.
+            metrics|livelogs|identities|permissions: '- one of these options can be chosen      - <actions> - comma-separated list of action acronyms. The actions allowed are r, w, d, a, m, x, s, or any combination of these actions. To allow all actions - use *'
             project_key: (String) The project for which this token is created. Enter the project name on which you want to apply this token.
             reference_token: (String, Sensitive) Reference Token (alias to Access Token).
             refresh_token: (String, Sensitive) Refresh token.
             refreshable: (Boolean) Is this token refreshable? Default is false.
             scopes: '(Set of String) The scope of access that the token provides. Access to the REST API is always provided by default. Administrators can set any scope, while non-admin users can only set the scope to a subset of the groups to which they belong. The supported scopes include:'
             subject: (String) Returns the token type.
-            system:livelogs:r: '- for getting the service livelogs'
-            system:metrics:r: '- for getting the service metrics'
             token_type: (String) Returns the token type.
             username: '(String) The user name for which this token is created. The username is based on the authenticated user - either from the user of the authenticated token or based on the username (if basic auth was used). The username is then used to set the subject of the token: /users/. Limited to 255 characters.'
         importStatements: []
