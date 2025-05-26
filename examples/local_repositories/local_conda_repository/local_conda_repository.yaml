@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalCondaRepository
+metadata:
+  name: conda-crossplane-repository
+spec:
+  forProvider: {}
+    # key: conda-crossplane-repository
+  providerConfigRef:
+    name: default

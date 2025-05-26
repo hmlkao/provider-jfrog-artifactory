@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: LocalCocoapodsRepository
+metadata:
+  name: cocoapods-crossplane-repository
+spec:
+  forProvider: {}
+    # key: cocoapods-crossplane-repository
+  providerConfigRef:
+    name: default
