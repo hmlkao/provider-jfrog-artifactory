@@ -16,16 +16,18 @@ Artifactory API.
   - [Publish provider](#publish-provider)
   - [Publish to Upbound Marketplace](#publish-to-upbound-marketplace)
   - [Troubleshooting](#troubleshooting)
-    - [`make generate` fails with error](#make-generate-fails-with-error)
+    - [`failed to scrape resource metadata` error](#failed-to-scrape-resource-metadata-error)
       - [Solution](#solution)
     - [`cannot find id in tfstate` in provider output](#cannot-find-id-in-tfstate-in-provider-output)
       - [Solution](#solution-1)
-    - [`make build` fails with error](#make-build-fails-with-error)
+    - [Cannot connect to the Docker daemon](#cannot-connect-to-the-docker-daemon)
       - [Solution](#solution-2)
     - [Tag GH workflow fails](#tag-gh-workflow-fails)
       - [Solution](#solution-3)
     - [Failed to instantiate provider "xxx" to obtain schema](#failed-to-instantiate-provider-xxx-to-obtain-schema)
       - [Solution](#solution-4)
+    - [`no such file or directory` error](#no-such-file-or-directory-error)
+      - [Solution](#solution-5)
 
 ## Steps to build using template
 
@@ -365,7 +367,9 @@ All current and new versions with semver tag will be published.
 
 ## Troubleshooting
 
-### `make generate` fails with error
+### `failed to scrape resource metadata` error
+
+When you run `make generate`, you get following error message:
 
 ```text
 scraper: error: Failed to scrape Terraform provider metadata: cannot scrape Terraform registry: failed to scrape resource metadata from path: ../.work/jfrog/artifactory/docs/resources/anonymous_user.md: failed to find the prelude of the document using the xpath expressions: //text()[contains(., "description") and contains(., "page_title")]
@@ -479,7 +483,7 @@ func Configure(p *config.Provider) {
 }
 ```
 
-### `make build` fails with error
+### Cannot connect to the Docker daemon
 
 When you use Podman as container runtime on MacOS.
 
@@ -530,7 +534,7 @@ permissions:
 
 ### Failed to instantiate provider "xxx" to obtain schema
 
-When you run `make run` and you'll get following error message:
+When you run `make run`, you get following error message:
 
 ```log
 2025-04-08T13:05:11+02:00	DEBUG	events	cannot run refresh: refresh failed: failed to read schema for artifactory_item_properties.my-folder-properties in registry.terraform.io/jfrog/artifactory: failed to instantiate provider "registry.terraform.io/jfrog/artifactory" to obtain schema: Unrecognized remote plugin message:
@@ -584,4 +588,22 @@ needs to be recompiled to support the latest protocol.: 	{"type": "Warning", "ob
 
     These processes cannot be killed (even using `kill -9`). The only way I found to get rid of it is to restart laptop...
 
-    However, you can kill at least terraform processes `kill -9 terraform`, it may unblock laptop to run `make run` again.
+    However, you can kill at least terraform processes `pkill -9 terraform`, it may unblock laptop to run `make run` again.
+
+### `no such file or directory` error
+
+When you run `make generate`, you get following error message:
+
+```text
+angryjet: error: error loading packages using pattern ./...: /Users/homolkao/Work/provider-jfrog-platform/apis/platform/v1alpha1/zz_generated.managed.go:252:11: undefined: Role
+exit status 1
+apis/generate.go:31: running "go": exit status 1
+generate: open /Users/homolkao/Work/provider-jfrog-platform/apis/platform/v1alpha1/zz_role_terraformed.go: no such file or directory
+11:36:24 [FAIL]
+make[1]: *** [go.generate] Error 1
+make: *** [generate] Error 2
+```
+
+#### Solution
+
+You've probably changed `ShortName` or done some another change in resource group. If so, just remove related group from `apis/` folder.
