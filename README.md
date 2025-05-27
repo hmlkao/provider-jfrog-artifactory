@@ -213,7 +213,7 @@ List of all resources of [Terraform provider v12.9.4](https://registry.terraform
 
 | Resource                                           | Supported          | Kind                           |
 |----------------------------------------------------|--------------------|--------------------------------|
-| `artifactory_remote_alpine_repository`             | :x:                |                                |
+| `artifactory_remote_alpine_repository`             | :heavy_check_mark: | `RemoteAlpineRepository`       |
 | `artifactory_remote_ansible_repository`            | :x:                |                                |
 | `artifactory_remote_bower_repository`              | :x:                |                                |
 | `artifactory_remote_cargo_repository`              | :x:                |                                |
