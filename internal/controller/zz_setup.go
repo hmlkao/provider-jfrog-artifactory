@@ -45,6 +45,7 @@ import (
 	localterraformmodulerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/localterraformmodulerepository"
 	localterraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/localterraformproviderrepository"
 	localvagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/localvagrantrepository"
+	remotealpinerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotealpinerepository"
 	providerconfig "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/providerconfig"
 )
 
@@ -88,6 +89,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		localterraformmodulerepository.Setup,
 		localterraformproviderrepository.Setup,
 		localvagrantrepository.Setup,
+		remotealpinerepository.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
