@@ -11,6 +11,7 @@ import (
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
 	itemproperties "github.com/hmlkao/provider-jfrog-artifactory/config/artifact/item_properties"
+	backup "github.com/hmlkao/provider-jfrog-artifactory/config/configuration/backup"
 	localalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_alpine_repository"
 	localansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_ansible_repository"
 	localbowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_bower_repository"
@@ -80,6 +81,7 @@ func GetProvider() *ujconfig.Provider {
 		itemproperties.Configure,
 		// Configuration
 		// archivepolicy.Configure,
+		backup.Configure,
 		// Local Repositories
 		localansiblerepository.Configure,
 		localalpinerepository.Configure,

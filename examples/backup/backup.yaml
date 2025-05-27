@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: Backup
+metadata:
+  name: artifactory-backup
+spec:
+  forProvider: {}
+    # key: artifactory-backup
+  providerConfigRef:
+    name: default

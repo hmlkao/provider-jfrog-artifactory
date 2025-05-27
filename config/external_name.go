@@ -13,6 +13,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_item_properties": config.IdentifierFromProvider,
 	// Configuration
 	// "artifactory_archive_policy": config.IdentifierFromProvider,
+	"artifactory_backup": config.ParameterAsIdentifier("key"),
 	// Local Repositories
 	"artifactory_local_ansible_repository":            config.ParameterAsIdentifier("key"),
 	"artifactory_local_alpine_repository":             config.ParameterAsIdentifier("key"),

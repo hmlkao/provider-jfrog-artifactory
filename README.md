@@ -56,7 +56,7 @@ EOF
 
 Notice that in this example Provider resource is referencing ControllerConfig with debug enabled.
 
-You can see the API reference [here](https://doc.crds.dev/github.com/hmlkao/provider-jfrog-artifactory).
+You can see the API reference at [doc.crds.dev](https://doc.crds.dev/github.com/hmlkao/provider-jfrog-artifactory).
 
 ## Naming convention decision
 
@@ -105,7 +105,7 @@ List of all resources of [Terraform provider v12.9.4](https://registry.terraform
 | Resource                             | Supported                                              | Kind                           |
 |--------------------------------------|--------------------------------------------------------|--------------------------------|
 | `artifactory_archive_policy`         | :x: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema)) |                                |
-| `artifactory_backup`                 | :x:                                                    |                                |
+| `artifactory_backup`                 | :heavy_check_mark:                                     | `Backup`                       |
 | `artifactory_general_security`       | :x:                                                    |                                |
 | `artifactory_ldap_group_setting`     | :x:                                                    |                                |
 | `artifactory_ldap_group_setting_v2`  | :x:                                                    |                                |
