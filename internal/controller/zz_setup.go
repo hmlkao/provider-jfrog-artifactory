@@ -10,6 +10,7 @@ import (
 	"github.com/crossplane/upjet/pkg/controller"
 
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/anonymoususer"
+	backup "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/backup"
 	itemproperties "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/itemproperties"
 	keypair "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/keypair"
 	localalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/localalpinerepository"
@@ -54,6 +55,7 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		anonymoususer.Setup,
+		backup.Setup,
 		itemproperties.Setup,
 		keypair.Setup,
 		localalpinerepository.Setup,

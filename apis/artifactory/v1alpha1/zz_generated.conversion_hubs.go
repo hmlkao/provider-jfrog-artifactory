@@ -10,6 +10,9 @@ package v1alpha1
 func (tr *AnonymousUser) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *Backup) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *ItemProperties) Hub() {}
 
 // Hub marks this type as a conversion hub.
