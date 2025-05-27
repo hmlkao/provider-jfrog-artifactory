@@ -113,3 +113,6 @@ func (tr *LocalTerraformProviderRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *LocalVagrantRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteAlpineRepository) Hub() {}
