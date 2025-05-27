@@ -48,7 +48,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
-  name: provider-artifactory
+  name: provider-jfrog-artifactory
 spec:
   package: hmlkao/provider-jfrog-artifactory:v0.4.0
 EOF

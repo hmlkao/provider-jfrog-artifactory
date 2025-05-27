@@ -34,7 +34,7 @@ jobs:
 
       - name: Bump version
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW }}
-        run: hack/bump_tfm_provider_version.sh "${{steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT}}" "${{steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW}}"
+        run: scripts/bump_tfm_provider_version.sh "${{steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT}}" "${{steps.new-version.outputs.TFM_PROVIDER_VERSION_NEW}}"
 
       - name: Create PR
         # Previous step must be successful
@@ -74,7 +74,7 @@ jobs:
 
       - name: Bump version
         if: ${{ steps.current-version.outputs.CROSSPLANE_VERSION_CURRENT != steps.new-version.outputs.CROSSPLANE_VERSION_NEW }}
-        run: hack/bump_crossplane_version.sh "${{steps.current-version.outputs.CROSSPLANE_VERSION_CURRENT}}" "${{steps.new-version.outputs.CROSSPLANE_VERSION_NEW}}"
+        run: scripts/bump_crossplane_version.sh "${{steps.current-version.outputs.CROSSPLANE_VERSION_CURRENT}}" "${{steps.new-version.outputs.CROSSPLANE_VERSION_NEW}}"
 
       - name: Create PR
         # Previous step must be successful
