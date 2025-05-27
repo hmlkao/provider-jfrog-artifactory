@@ -49,6 +49,7 @@ import (
 	localterraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_terraform_provider_repository"
 	localterraformbackendrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_terraformbackend_repository"
 	localvagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_vagrant_repository"
+	remotealpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_alpine_repository"
 	"github.com/hmlkao/provider-jfrog-artifactory/config/security/keypair"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/user/anonymous_user"
 )
@@ -120,6 +121,8 @@ func GetProvider() *ujconfig.Provider {
 		localvagrantrepository.Configure,
 		// Security
 		keypair.Configure,
+		// Remote Repositories
+		remotealpinerepository.Configure,
 		// User
 		anonymoususer.Configure,
 		// manageduser.Configure,

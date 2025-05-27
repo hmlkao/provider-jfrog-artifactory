@@ -49,6 +49,8 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_local_vagrant_repository":            config.ParameterAsIdentifier("key"),
 	// Security
 	"artifactory_keypair": config.ParameterAsIdentifier("pair_name"),
+	// Remote Repositories
+	"artifactory_remote_alpine_repository": config.ParameterAsIdentifier("key"),
 	// User
 	"artifactory_anonymous_user": config.NameAsIdentifier,
 	// "artifactory_managed_user": config.NameAsIdentifier,
