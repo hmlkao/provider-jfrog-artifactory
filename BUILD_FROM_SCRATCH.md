@@ -44,7 +44,6 @@ Followed steps in [Generating a Crossplane provider](https://github.com/crosspla
 3. Fetch submodule
 
     > [!WARNING]
-    > Submodule `Avarei/build` is used for the `build/` path, which contains essential scripts and configurations for the build process. This submodule is necessary because [this PR](https://github.com/crossplane/build/pull/14), which integrates these changes into the main repository, has not been merged yet.
     > There is unfortunetly no tags used for [crossplane/build](https://github.com/crossplane/build) repo, so we pull the latest version from `main` branch.
 
     Update `crossplane/build` submodule to the latest version
