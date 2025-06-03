@@ -1,8 +1,3 @@
 [submodule "build"]
 	path = build
-	# TODO: PR fixes issue with authorization to Upbound
-	#   https://github.com/crossplane/build/pull/14
-	# Switch back to original once PR is merged
-	#url = https://github.com/crossplane/build
-	url = https://github.com/Avarei/build
-	branch = feat/xpkg-with-crossplane-cli
+	url = https://github.com/crossplane/build
