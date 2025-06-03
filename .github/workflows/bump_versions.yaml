@@ -24,12 +24,14 @@ jobs:
         id: current-version
         run: |
           current_version=$(grep 'export TERRAFORM_PROVIDER_VERSION' < Makefile | cut -d' ' -f4)
+          echo "Current version used for build is '${current_version}'"
           echo "TFM_PROVIDER_VERSION_CURRENT=${current_version}" >> $GITHUB_OUTPUT
 
       - name: Get new version
         id: new-version
         run: |
           new_version=$(curl -sSL https://api.github.com/repos/jfrog/terraform-provider-artifactory/releases/latest | jq -r '.tag_name' | tr -d 'v')
+          echo "The latest version is '${new_version}'"
           echo "TFM_PROVIDER_VERSION_NEW=${new_version}" >> $GITHUB_OUTPUT
 
       - name: Bump version
