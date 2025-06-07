@@ -119,3 +119,102 @@ func (tr *LocalVagrantRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *RemoteAlpineRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteAnsibleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteBowerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteCargoRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteChefRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteCocoapodsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteComposerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteCondaRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteCranRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteDebianRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteDockerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteGemsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteGenericRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteGitLFSRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteGoRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteGradleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteHelmOCIRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteHelmRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteHuggingfacemlRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteIvyRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteMavenRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteNpmRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteNugetRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteOCIRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteOpkgRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteP2Repository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemotePubRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemotePuppetRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemotePyPIRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteRPMRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteSBTRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteSwiftRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteTerraformRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *RemoteVCSRepository) Hub() {}
