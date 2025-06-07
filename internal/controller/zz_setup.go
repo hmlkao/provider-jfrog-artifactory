@@ -47,6 +47,39 @@ import (
 	localterraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/localterraformproviderrepository"
 	localvagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/localvagrantrepository"
 	remotealpinerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotealpinerepository"
+	remoteansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoteansiblerepository"
+	remotebowerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotebowerrepository"
+	remotecargorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotecargorepository"
+	remotechefrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotechefrepository"
+	remotecocoapodsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotecocoapodsrepository"
+	remotecomposerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotecomposerrepository"
+	remotecondarepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotecondarepository"
+	remotecranrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotecranrepository"
+	remotedebianrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotedebianrepository"
+	remotedockerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotedockerrepository"
+	remotegemsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotegemsrepository"
+	remotegenericrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotegenericrepository"
+	remotegitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotegitlfsrepository"
+	remotegorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotegorepository"
+	remotegradlerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotegradlerepository"
+	remotehelmocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotehelmocirepository"
+	remotehelmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotehelmrepository"
+	remotehuggingfacemlrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotehuggingfacemlrepository"
+	remoteivyrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoteivyrepository"
+	remotemavenrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotemavenrepository"
+	remotenpmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotenpmrepository"
+	remotenugetrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotenugetrepository"
+	remoteocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoteocirepository"
+	remoteopkgrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoteopkgrepository"
+	remotep2repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotep2repository"
+	remotepubrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotepubrepository"
+	remotepuppetrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotepuppetrepository"
+	remotepypirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotepypirepository"
+	remoterpmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoterpmrepository"
+	remotesbtrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotesbtrepository"
+	remoteswiftrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoteswiftrepository"
+	remoteterraformrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remoteterraformrepository"
+	remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/artifactory/remotevcsrepository"
 	providerconfig "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/providerconfig"
 )
 
@@ -92,6 +125,39 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		localterraformproviderrepository.Setup,
 		localvagrantrepository.Setup,
 		remotealpinerepository.Setup,
+		remoteansiblerepository.Setup,
+		remotebowerrepository.Setup,
+		remotecargorepository.Setup,
+		remotechefrepository.Setup,
+		remotecocoapodsrepository.Setup,
+		remotecomposerrepository.Setup,
+		remotecondarepository.Setup,
+		remotecranrepository.Setup,
+		remotedebianrepository.Setup,
+		remotedockerrepository.Setup,
+		remotegemsrepository.Setup,
+		remotegenericrepository.Setup,
+		remotegitlfsrepository.Setup,
+		remotegorepository.Setup,
+		remotegradlerepository.Setup,
+		remotehelmocirepository.Setup,
+		remotehelmrepository.Setup,
+		remotehuggingfacemlrepository.Setup,
+		remoteivyrepository.Setup,
+		remotemavenrepository.Setup,
+		remotenpmrepository.Setup,
+		remotenugetrepository.Setup,
+		remoteocirepository.Setup,
+		remoteopkgrepository.Setup,
+		remotep2repository.Setup,
+		remotepubrepository.Setup,
+		remotepuppetrepository.Setup,
+		remotepypirepository.Setup,
+		remoterpmrepository.Setup,
+		remotesbtrepository.Setup,
+		remoteswiftrepository.Setup,
+		remoteterraformrepository.Setup,
+		remotevcsrepository.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
