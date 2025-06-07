@@ -1,0 +1,11 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteGenericRepository
+metadata:
+  name: remote-generic-repository-example
+spec:
+  forProvider:
+    key: "remote-generic-repo"
+    url: "https://generic.example.com"
+    description: "Example Generic remote repository"
+  providerConfigRef:
+    name: default

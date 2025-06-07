@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteChefRepository
+metadata:
+  name: chef-remote-repository
+spec:
+  forProvider: {}
+    # key: chef-remote-repository
+  providerConfigRef:
+    name: default

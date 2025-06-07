@@ -1,0 +1,11 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteDebianRepository
+metadata:
+  name: remote-debian-repository-example
+spec:
+  forProvider:
+    key: "remote-debian-repo"
+    url: "https://debian.example.com"
+    description: "Example Debian remote repository"
+  providerConfigRef:
+    name: default

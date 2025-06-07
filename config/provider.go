@@ -51,6 +51,41 @@ import (
 	localterraformbackendrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_terraformbackend_repository"
 	localvagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/config/local_repositories/local_vagrant_repository"
 	remotealpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_alpine_repository"
+	remoteansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_ansible_repository"
+	remotebowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_bower_repository"
+	remotecargorepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_cargo_repository"
+	remotechefrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_chef_repository"
+	remotecocoapodsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_cocoapods_repository"
+	remotecomposerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_composer_repository"
+	remoteconanrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_conan_repository"
+	remotecondarepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_conda_repository"
+	remotecranrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_cran_repository"
+	remotedebianrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_debian_repository"
+	remotedockerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_docker_repository"
+	remotegemsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_gems_repository"
+	remotegenericrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_generic_repository"
+	remotegitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_gitlfs_repository"
+	remotegorepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_go_repository"
+	remotegradlerepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_gradle_repository"
+	remotehelmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_helm_repository"
+	remotehelmocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_helmoci_repository"
+	remotehuggingfacemlrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_huggingfaceml_repository"
+	remoteivyrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_ivy_repository"
+	remotemavenrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_maven_repository"
+	remotenpmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_npm_repository"
+	remotenugetrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_nuget_repository"
+	remoteocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_oci_repository"
+	remoteopkgrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_opkg_repository"
+	remotep2repository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_p2_repository"
+	remotepubrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_pub_repository"
+	remotepuppetrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_puppet_repository"
+	remotepypirepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_pypi_repository"
+	remoterpmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_rpm_repository"
+	remotesbtrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_sbt_repository"
+	remoteswiftrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_swift_repository"
+	remoteterrraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_terraform_provider_repository"
+	remoteterrraformrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_terraform_repository"
+	remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_vcs_repository"
 	"github.com/hmlkao/provider-jfrog-artifactory/config/security/keypair"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/user/anonymous_user"
 )
@@ -125,6 +160,41 @@ func GetProvider() *ujconfig.Provider {
 		keypair.Configure,
 		// Remote Repositories
 		remotealpinerepository.Configure,
+		remoteansiblerepository.Configure,
+		remotebowerrepository.Configure,
+		remotecargorepository.Configure,
+		remotechefrepository.Configure,
+		remotecocoapodsrepository.Configure,
+		remotecomposerrepository.Configure,
+		remoteconanrepository.Configure,
+		remotecondarepository.Configure,
+		remotecranrepository.Configure,
+		remotedebianrepository.Configure,
+		remotedockerrepository.Configure,
+		remotegemsrepository.Configure,
+		remotegenericrepository.Configure,
+		remotegitlfsrepository.Configure,
+		remotegorepository.Configure,
+		remotegradlerepository.Configure,
+		remotehelmrepository.Configure,
+		remotehelmocirepository.Configure,
+		remotehuggingfacemlrepository.Configure,
+		remoteivyrepository.Configure,
+		remotemavenrepository.Configure,
+		remotenpmrepository.Configure,
+		remotenugetrepository.Configure,
+		remoteocirepository.Configure,
+		remoteopkgrepository.Configure,
+		remotep2repository.Configure,
+		remotepubrepository.Configure,
+		remotepuppetrepository.Configure,
+		remotepypirepository.Configure,
+		remoterpmrepository.Configure,
+		remotesbtrepository.Configure,
+		remoteswiftrepository.Configure,
+		remoteterrraformrepository.Configure,
+		remoteterrraformproviderrepository.Configure,
+		remotevcsrepository.Configure,
 		// User
 		anonymoususer.Configure,
 		// manageduser.Configure,
