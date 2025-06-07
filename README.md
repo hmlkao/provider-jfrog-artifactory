@@ -211,44 +211,44 @@ List of all resources of [Terraform provider v12.9.4](https://registry.terraform
 
 ### Remote Repositories
 
-| Resource                                           | Supported          | Kind                           |
-|----------------------------------------------------|--------------------|--------------------------------|
-| `artifactory_remote_alpine_repository`             | :heavy_check_mark: | `RemoteAlpineRepository`       |
-| `artifactory_remote_ansible_repository`            | :x:                |                                |
-| `artifactory_remote_bower_repository`              | :x:                |                                |
-| `artifactory_remote_cargo_repository`              | :x:                |                                |
-| `artifactory_remote_chef_repository`               | :x:                |                                |
-| `artifactory_remote_cocoapods_repository`          | :x:                |                                |
-| `artifactory_remote_composer_repository`           | :x:                |                                |
-| `artifactory_remote_conan_repository`              | :x:                |                                |
-| `artifactory_remote_conda_repository`              | :x:                |                                |
-| `artifactory_remote_cran_repository`               | :x:                |                                |
-| `artifactory_remote_debian_repository`             | :x:                |                                |
-| `artifactory_remote_docker_repository`             | :x:                |                                |
-| `artifactory_remote_gems_repository`               | :x:                |                                |
-| `artifactory_remote_generic_repository`            | :x:                |                                |
-| `artifactory_remote_gitlfs_repository`             | :x:                |                                |
-| `artifactory_remote_go_repository`                 | :x:                |                                |
-| `artifactory_remote_gradle_repository`             | :x:                |                                |
-| `artifactory_remote_helm_repository`               | :x:                |                                |
-| `artifactory_remote_helmoci_repository`            | :x:                |                                |
-| `artifactory_remote_huggingfaceml_repository`      | :x:                |                                |
-| `artifactory_remote_ivy_repository`                | :x:                |                                |
-| `artifactory_remote_maven_repository`              | :x:                |                                |
-| `artifactory_remote_npm_repository`                | :x:                |                                |
-| `artifactory_remote_nuget_repository`              | :x:                |                                |
-| `artifactory_remote_oci_repository`                | :x:                |                                |
-| `artifactory_remote_opkg_repository`               | :x:                |                                |
-| `artifactory_remote_p2_repository`                 | :x:                |                                |
-| `artifactory_remote_pub_repository`                | :x:                |                                |
-| `artifactory_remote_puppet_repository`             | :x:                |                                |
-| `artifactory_remote_pypi_repository`               | :x:                |                                |
-| `artifactory_remote_rpm_repository`                | :x:                |                                |
-| `artifactory_remote_sbt_repository`                | :x:                |                                |
-| `artifactory_remote_swift_repository`              | :x:                |                                |
-| `artifactory_remote_terraform_repository`          | :x:                |                                |
-| `artifactory_remote_terraform_provider_repository` | :x:                |                                |
-| `artifactory_remote_vcs_repository`                | :x:                |                                |
+| Resource                                           | Supported          | Kind                                |
+|----------------------------------------------------|--------------------|-------------------------------------|
+| `artifactory_remote_alpine_repository`             | :heavy_check_mark: | `RemoteAlpineRepository`            |
+| `artifactory_remote_ansible_repository`            | :heavy_check_mark: | `RemoteAnsibleRepository`           |
+| `artifactory_remote_bower_repository`              | :heavy_check_mark: | `RemoteBowerRepository`             |
+| `artifactory_remote_cargo_repository`              | :heavy_check_mark: | `RemoteCargoRepository`             |
+| `artifactory_remote_chef_repository`               | :heavy_check_mark: | `RemoteChefRepository`              |
+| `artifactory_remote_cocoapods_repository`          | :heavy_check_mark: | `RemoteCocoapodsRepository`         |
+| `artifactory_remote_composer_repository`           | :heavy_check_mark: | `RemoteComposerRepository`          |
+| `artifactory_remote_conan_repository`              | :heavy_check_mark: | `RemoteConanRepository`             |
+| `artifactory_remote_conda_repository`              | :heavy_check_mark: | `RemoteCondaRepository`             |
+| `artifactory_remote_cran_repository`               | :heavy_check_mark: | `RemoteCranRepository`              |
+| `artifactory_remote_debian_repository`             | :heavy_check_mark: | `RemoteDebianRepository`            |
+| `artifactory_remote_docker_repository`             | :heavy_check_mark: | `RemoteDockerRepository`            |
+| `artifactory_remote_gems_repository`               | :heavy_check_mark: | `RemoteGemsRepository`              |
+| `artifactory_remote_generic_repository`            | :heavy_check_mark: | `RemoteGenericRepository`           |
+| `artifactory_remote_gitlfs_repository`             | :heavy_check_mark: | `RemoteGitLFSRepository`            |
+| `artifactory_remote_go_repository`                 | :heavy_check_mark: | `RemoteGoRepository`                |
+| `artifactory_remote_gradle_repository`             | :heavy_check_mark: | `RemoteGradleRepository`            |
+| `artifactory_remote_helm_repository`               | :heavy_check_mark: | `RemoteHelmRepository`              |
+| `artifactory_remote_helmoci_repository`            | :heavy_check_mark: | `RemoteHelmOCIRepository`           |
+| `artifactory_remote_huggingfaceml_repository`      | :heavy_check_mark: | `RemoteHuggingFaceMLRepository`     |
+| `artifactory_remote_ivy_repository`                | :heavy_check_mark: | `RemoteIvyRepository`               |
+| `artifactory_remote_maven_repository`              | :heavy_check_mark: | `RemoteMavenRepository`             |
+| `artifactory_remote_npm_repository`                | :heavy_check_mark: | `RemoteNPMRepository`               |
+| `artifactory_remote_nuget_repository`              | :heavy_check_mark: | `RemoteNuGetRepository`             |
+| `artifactory_remote_oci_repository`                | :heavy_check_mark: | `RemoteOCIRepository`               |
+| `artifactory_remote_opkg_repository`               | :heavy_check_mark: | `RemoteOPKGRepository`              |
+| `artifactory_remote_p2_repository`                 | :heavy_check_mark: | `RemoteP2Repository`                |
+| `artifactory_remote_pub_repository`                | :heavy_check_mark: | `RemotePubRepository`               |
+| `artifactory_remote_puppet_repository`             | :heavy_check_mark: | `RemotePuppetRepository`            |
+| `artifactory_remote_pypi_repository`               | :heavy_check_mark: | `RemotePyPIRepository`              |
+| `artifactory_remote_rpm_repository`                | :heavy_check_mark: | `RemoteRPMRepository`               |
+| `artifactory_remote_sbt_repository`                | :heavy_check_mark: | `RemoteSBTRepository`               |
+| `artifactory_remote_swift_repository`              | :heavy_check_mark: | `RemoteSwiftRepository`             |
+| `artifactory_remote_terraform_repository`          | :heavy_check_mark: | `RemoteTerraformRepository`         |
+| `artifactory_remote_terraform_provider_repository` | :heavy_check_mark: | `RemoteTerraformProviderRepository` |
+| `artifactory_remote_vcs_repository`                | :heavy_check_mark: | `RemoteVCSRepository`               |
 
 ### Replication
 

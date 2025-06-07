@@ -1,0 +1,11 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteGemsRepository
+metadata:
+  name: remote-gems-repository-example
+spec:
+  forProvider:
+    key: "remote-gems-repo"
+    url: "https://gems.example.com"
+    description: "Example Gems remote repository"
+  providerConfigRef:
+    name: default

@@ -1,0 +1,11 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteDockerRepository
+metadata:
+  name: remote-docker-repository-example
+spec:
+  forProvider:
+    key: "remote-docker-repo"
+    url: "https://docker.example.com"
+    description: "Example Docker remote repository"
+  providerConfigRef:
+    name: default

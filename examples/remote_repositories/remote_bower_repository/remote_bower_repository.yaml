@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteBowerRepository
+metadata:
+  name: bower-remote-repository
+spec:
+  forProvider: {}
+    # key: bower-remote-repository
+  providerConfigRef:
+    name: default

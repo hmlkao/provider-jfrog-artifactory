@@ -1,0 +1,11 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteGoRepository
+metadata:
+  name: remote-go-repository-example
+spec:
+  forProvider:
+    key: "remote-go-repo"
+    url: "https://go.example.com"
+    description: "Example Go remote repository"
+  providerConfigRef:
+    name: default

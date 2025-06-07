@@ -1,0 +1,9 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteCargoRepository
+metadata:
+  name: cargo-remote-repository
+spec:
+  forProvider: {}
+    # key: cargo-remote-repository
+  providerConfigRef:
+    name: default

@@ -1,0 +1,11 @@
+apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+kind: RemoteHelmRepository
+metadata:
+  name: remote-helm-repository-example
+spec:
+  forProvider:
+    key: "remote-helm-repo"
+    url: "https://helm.example.com"
+    description: "Example Helm remote repository"
+  providerConfigRef:
+    name: default
