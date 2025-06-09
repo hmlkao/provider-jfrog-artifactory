@@ -18,16 +18,11 @@ if [[ -z "$new_version" ]]; then
 fi
 
 main() {
-  sed -i "s|export TERRAFORM_PROVIDER_VERSION ?= ${current_version}|export TERRAFORM_PROVIDER_VERSION ?= ${new_version}|" "$dir/../Makefile"
-  sed -i "s|terraform-provider-artifactory_v${current_version}|terraform-provider-artifactory_v${new_version}|" "$dir/../Makefile"
+  sed -i "s|export TERRAFORM_PROVIDER_VERSION ?= ${current_version}|export TERRAFORM_PROVIDER_VERSION ?= ${new_version}|g" "$dir/../Makefile"
+  sed -i "s|terraform-provider-artifactory_v${current_version}|terraform-provider-artifactory_v${new_version}|g" "$dir/../Makefile"
   sed -i "s|jfrog/artifactory v${current_version}|jfrog/artifactory v${new_version}|g" "$dir/../README.md"
   sed -i "s|Terraform provider v${current_version}|Terraform provider v${new_version}|g" "$dir/../README.md"
-  sed -i "s|jfrog/artifactory/${current_version}|jfrog/artifactory/${new_version}|" "$dir/../README.md"
-  sed -i "s|git checkout v${current_version}|git checkout v${new_version}|" "$dir/../BUILD_FROM_SCRATCH.md"
-  sed -i "s|export TERRAFORM_PROVIDER_VERSION ?= ${current_version}|export TERRAFORM_PROVIDER_VERSION ?= ${new_version}|" "$dir/../BUILD_FROM_SCRATCH"
-  sed -i "s|terraform-provider-artifactory_v${current_version}|terraform-provider-artifactory_v${new_version}|" "$dir/../BUILD_FROM_SCRATCH"
-  sed -i "s|jfrog/artifactory v${current_version}|jfrog/artifactory v${new_version}|g" "$dir/../BUILD_FROM_SCRATCH.md"
-  sed -i "s|jfrog/artifactory/${current_version}|jfrog/artifactory/${new_version}|g" "$dir/../BUILD_FROM_SCRATCH.md"
+  sed -i "s|jfrog/artifactory/${current_version}|jfrog/artifactory/${new_version}|g" "$dir/../README.md"
 }
 
 main "$@"
