@@ -394,8 +394,9 @@ This is a workaround which generates valid Markdown files which are unfortunatel
 2. Checkout to the same version as you specify in [`Makefile`](./Makefile) variable `TERRAFORM_PROVIDER_VERSION`
 
     ```sh
-    # Example
-    git checkout v12.9.4
+    provider_path=../provider-jfrog-artifactory # Path to this repository
+    current_version=$(grep 'export TERRAFORM_PROVIDER_VERSION' < "${provider_path}/Makefile" | cut -d' ' -f4)
+    git checkout "v${current_version}"
     ```
 
 3. Check version of `github.com/hashicorp/terraform-plugin-docs` in `go.mod` file
@@ -410,7 +411,7 @@ This is a workaround which generates valid Markdown files which are unfortunatel
     go get github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@v0.21.0
     go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@v0.21.0
     # Verify that it is possible to find binary
-    which tfplugindocs
+    command -v tfplugindocs
     ```
 
 5. Generate docs
@@ -605,4 +606,4 @@ make: *** [generate] Error 2
 
 #### Solution
 
-You've probably changed `ShortName` or done some another change in resource group. If so, just remove related group from `apis/` folder.
+You've probably changed `ShortName` or did some another change in resource group. If so, just remove related group from `apis/` folder.
