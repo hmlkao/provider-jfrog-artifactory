@@ -10,6 +10,10 @@ permissions:
   pull-requests: write
   issues: write
 
+env:
+  # Common versions
+  GO_VERSION: '1.24'
+
 jobs:
   bump-tfm-provider-version:
     name: Bump TFM provider version
@@ -32,11 +36,38 @@ jobs:
         id: latest-version
         run: |
           latest_version=$(curl -sSL https://api.github.com/repos/jfrog/terraform-provider-artifactory/releases/latest | jq -r '.tag_name' | tr -d 'v')
+          if [[ "${latest_version}" == "null" ]]; then
+            echo "Failed to fetch the latest Terraform provider version"
+            exit 1
+          fi
           echo "The latest version is '${latest_version}'"
           echo "TFM_PROVIDER_VERSION_LATEST=${latest_version}" >> $GITHUB_OUTPUT
       - name: Bump version
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
         run: scripts/bump_tfm_provider_version.sh "${{steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT}}" "${{steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST}}"
+
+      #####
+      # Generate files
+      # Copy/paste from ci.yml workflow
+      #####
+      - name: Setup Go
+        if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ env.GO_VERSION }}
+      - name: Vendor Dependencies
+        if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
+        run: make vendor vendor.check
+      - name: Fix Terraform provider docs
+        if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
+        run: scripts/fix_tfm_provider_docs.sh
+      - name: Generate files
+        if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
+        run: make generate
+      #####
+      # Generate files (end)
+      #####
+
       - name: Create PR
         # Previous step must be successful
         #   https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#success
@@ -75,6 +106,10 @@ jobs:
         id: latest-version
         run: |
           latest_version=$(curl -sSL https://api.github.com/repos/crossplane/crossplane/releases/latest | jq -r '.tag_name' | tr -d 'v')
+          if [[ "${latest_version}" == "null" ]]; then
+            echo "Failed to fetch the latest Crossplane version"
+            exit 1
+          fi
           echo "The latest version is '${latest_version}'"
           echo "CROSSPLANE_VERSION_LATEST=${latest_version}" >> $GITHUB_OUTPUT
 
