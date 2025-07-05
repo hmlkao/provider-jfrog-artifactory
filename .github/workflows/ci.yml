@@ -147,13 +147,19 @@ jobs:
       - name: Vendor Dependencies
         run: make vendor vendor.check
 
-      - name: Check Diff
-        # [Workaround] Skip this step, because of 'make generate' fails with error
-        #   scraper: error: Failed to scrape Terraform provider metadata: cannot scrape Terraform registry: failed to scrape resource metadata from path: ../.work/jfrog/artifactory/docs/resources/anonymous_user.md: failed to find the prelude of the document using the xpath expressions: //text()[contains(., "description") and contains(., "page_title")]
-        #   exit status 1
-        # Check Troubleshooting in BUILD_FROM_SCRATCH.md#make-generate-fails-with-error for more details.
-        # run: make check-diff
-        run: echo "Skip this step"
+      # Workaround still doesn't work even if we fix docs, 'make check-diff' fails with error
+      #   scraper: error: Failed to scrape Terraform provider metadata: cannot scrape Terraform registry: failed to scrape resource metadata from path: ../.work/jfrog/artifactory/docs/resources/anonymous_user.md: failed to find the prelude of the document using the xpath expressions: //text()[contains(., "description") and contains(., "page_title")]
+      #   exit status 1
+      # Check Troubleshooting in BUILD_FROM_SCRATCH.md#make-generate-fails-with-error for more details.
+      # - name: Generate files
+      #   # [Workaround] We know it fails, we just need to create required folders to be able to fix docs and run 'make check-diff'
+      #   run: make generate || true
+      #
+      # - name: Fix Terraform provider docs
+      #   run: scripts/fix_tfm_provider_docs.sh
+      #
+      # - name: Check Diff
+      #   run: make check-diff
 
   unit-tests:
     runs-on: ubuntu-24.04
