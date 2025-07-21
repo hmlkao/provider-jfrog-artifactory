@@ -144,7 +144,7 @@ type RemoteVCSRepositoryInitParameters struct {
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
-	// Project environment for assigning this repository to. Allow values: "DEV", "PROD", or one of custom environment. Before Artifactory 7.53.1, up to 2 values ("DEV" and "PROD") are allowed. From 7.53.1 onward, only one value is allowed. The attribute should only be used if the repository is already assigned to the existing project.
+	// Before Artifactory 7.53.1, up to 2 values (`DEV` and `PROD`) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// +listType=set
 	ProjectEnvironments []*string `json:"projectEnvironments,omitempty" tf:"project_environments,omitempty"`
 
@@ -281,7 +281,7 @@ type RemoteVCSRepositoryObservation struct {
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
-	// Project environment for assigning this repository to. Allow values: "DEV", "PROD", or one of custom environment. Before Artifactory 7.53.1, up to 2 values ("DEV" and "PROD") are allowed. From 7.53.1 onward, only one value is allowed. The attribute should only be used if the repository is already assigned to the existing project.
+	// Before Artifactory 7.53.1, up to 2 values (`DEV` and `PROD`) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// +listType=set
 	ProjectEnvironments []*string `json:"projectEnvironments,omitempty" tf:"project_environments,omitempty"`
 
@@ -445,7 +445,7 @@ type RemoteVCSRepositoryParameters struct {
 	// +kubebuilder:validation:Optional
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
-	// Project environment for assigning this repository to. Allow values: "DEV", "PROD", or one of custom environment. Before Artifactory 7.53.1, up to 2 values ("DEV" and "PROD") are allowed. From 7.53.1 onward, only one value is allowed. The attribute should only be used if the repository is already assigned to the existing project.
+	// Before Artifactory 7.53.1, up to 2 values (`DEV` and `PROD`) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	ProjectEnvironments []*string `json:"projectEnvironments,omitempty" tf:"project_environments,omitempty"`
