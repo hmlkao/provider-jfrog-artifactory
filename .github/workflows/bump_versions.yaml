@@ -48,16 +48,15 @@ jobs:
 
       #####
       # Generate files
-      # Copy/paste from ci.yml workflow
       #####
       - name: Setup Go
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
         uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
-      - name: Vendor Dependencies
+      - name: Initialize generate
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
-        run: make vendor vendor.check
+        run: make generate.init
       - name: Fix Terraform provider docs
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
         run: scripts/fix_tfm_provider_docs.sh

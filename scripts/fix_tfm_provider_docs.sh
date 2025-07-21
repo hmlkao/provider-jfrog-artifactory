@@ -44,13 +44,14 @@ generate_docs() {
 
     # Fix missing description in the generated docs which was not fixed by make doc command
     # Use -i.bak for compatibility with macOS and GNU sed
-    sed -i.bak 's/subcategory: "User"/subcategory: "User"\nDescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/anonymous_user.md"
+    sed -i.bak 's/subcategory: "User"/subcategory: "User"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/anonymous_user.md"
     sed -i.bak 's/subcategory: "Security"/subcategory: "Security"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/global_environment.md"
     sed -i.bak 's/subcategory: "Security"/subcategory: "Security"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/group.md"
     sed -i.bak 's/subcategory: "Configuration"/subcategory: "Configuration"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/ldap_group_setting_v2.md"
     sed -i.bak 's/subcategory: "Configuration"/subcategory: "Configuration"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/ldap_setting_v2.md"
     sed -i.bak 's/subcategory: "Configuration"/subcategory: "Configuration"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/mail_server.md"
     sed -i.bak 's/subcategory: "User"/subcategory: "User"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/managed_user.md"
+    sed -i.bak 's/subcategory: "Security"/subcategory: "Security"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/scoped_token.md"
     sed -i.bak 's/subcategory: "User"/subcategory: "User"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/user.md"
 
     # Clean up backup files created by sed
