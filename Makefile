@@ -12,10 +12,10 @@ TERRAFORM_VERSION_VALID := $(shell [ "$(TERRAFORM_VERSION)" = "`printf "$(TERRAF
 
 export TERRAFORM_PROVIDER_SOURCE ?= jfrog/artifactory
 export TERRAFORM_PROVIDER_REPO ?= https://github.com/jfrog/terraform-provider-artifactory
-export TERRAFORM_PROVIDER_VERSION ?= 12.9.6
+export TERRAFORM_PROVIDER_VERSION ?= 12.10.0
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME ?= terraform-provider-artifactory
 export TERRAFORM_PROVIDER_DOWNLOAD_URL_PREFIX ?= https://github.com/jfrog/$(TERRAFORM_PROVIDER_DOWNLOAD_NAME)/releases/download/v$(TERRAFORM_PROVIDER_VERSION)
-export TERRAFORM_NATIVE_PROVIDER_BINARY ?= terraform-provider-artifactory_v12.9.6
+export TERRAFORM_NATIVE_PROVIDER_BINARY ?= terraform-provider-artifactory_v12.10.0
 export TERRAFORM_DOCS_PATH ?= docs/resources
 
 
