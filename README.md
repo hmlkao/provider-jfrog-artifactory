@@ -30,6 +30,7 @@ Provider is generated from Terraform provider [jfrog/artifactory v12.10.0](https
     - [Webhook](#webhook)
   - [Build provider from scratch](#build-provider-from-scratch)
   - [Developing](#developing)
+  - [JFrog Artifactory icon](#jfrog-artifactory-icon)
   - [Report a Bug](#report-a-bug)
 
 ## Getting Started
@@ -371,6 +372,12 @@ Build binary:
 ```console
 make build
 ```
+
+## JFrog Artifactory icon
+
+Package icon was pulled from [JFrog Brand Guidelines](https://jfrog.com/brand-guidelines/).
+
+Icon is stored in [`package/extensions/icons/`](./package/extensions/icons/) folder according to instructions [Adding documentation, icons, and other assets to your package](https://docs.upbound.io/upbound-marketplace/packages#adding-documentation-icons-and-other-assets-to-your-package).
 
 ## Report a Bug
 
