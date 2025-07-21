@@ -2,6 +2,7 @@ name: jfrog/artifactory
 resources:
     artifactory_anonymous_user:
         subCategory: User
+        description: '""'
         name: artifactory_anonymous_user
         title: artifactory_anonymous_user Resource - terraform-provider-artifactory
         examples:
@@ -1979,6 +1980,7 @@ resources:
         importStatements: []
     artifactory_global_environment:
         subCategory: Security
+        description: '""'
         name: artifactory_global_environment
         title: artifactory_global_environment Resource - terraform-provider-artifactory
         examples:
@@ -1994,6 +1996,7 @@ resources:
             - terraform import artifactory_global_environment.dev-env myenv
     artifactory_group:
         subCategory: Security
+        description: '""'
         name: artifactory_group
         title: artifactory_group Resource - terraform-provider-artifactory
         examples:
@@ -2107,6 +2110,7 @@ resources:
         importStatements: []
     artifactory_ldap_group_setting_v2:
         subCategory: Configuration
+        description: '""'
         name: artifactory_ldap_group_setting_v2
         title: artifactory_ldap_group_setting_v2 Resource - terraform-provider-artifactory
         examples:
@@ -2162,6 +2166,7 @@ resources:
         importStatements: []
     artifactory_ldap_setting_v2:
         subCategory: Configuration
+        description: '""'
         name: artifactory_ldap_setting_v2
         title: artifactory_ldap_setting_v2 Resource - terraform-provider-artifactory
         examples:
@@ -3231,6 +3236,7 @@ resources:
         importStatements: []
     artifactory_mail_server:
         subCategory: Configuration
+        description: '""'
         name: artifactory_mail_server
         title: artifactory_mail_server Resource - terraform-provider-artifactory
         examples:
@@ -3263,6 +3269,7 @@ resources:
             - terraform import artifactory_mail_server.my-mail-server mymailserver
     artifactory_managed_user:
         subCategory: User
+        description: '""'
         name: artifactory_managed_user
         title: artifactory_managed_user Resource - terraform-provider-artifactory
         examples:
@@ -5962,6 +5969,7 @@ resources:
         importStatements: []
     artifactory_scoped_token:
         subCategory: Security
+        description: '""'
         name: artifactory_scoped_token
         title: artifactory_scoped_token Resource - terraform-provider-artifactory
         examples:
@@ -6135,6 +6143,7 @@ resources:
         importStatements: []
     artifactory_user:
         subCategory: User
+        description: '""'
         name: artifactory_user
         title: artifactory_user Resource - terraform-provider-artifactory
         examples:
