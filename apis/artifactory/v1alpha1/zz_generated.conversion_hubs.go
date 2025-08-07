@@ -218,3 +218,93 @@ func (tr *RemoteTerraformRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *RemoteVCSRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualAlpineRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualAnsibleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualBowerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualCocoapodsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualComposerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualConanRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualCondaRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualCranRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualDebianRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualDockerRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualGemsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualGenericRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualGitlfsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualGoRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualGradleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualHelmociRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualHelmRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualIvyRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualMavenRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualNpmRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualNugetRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualOciRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualP2Repository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualPubRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualPuppetRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualPypiRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualRpmRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualSbtRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualSwiftRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *VirtualTerraformRepository) Hub() {}
