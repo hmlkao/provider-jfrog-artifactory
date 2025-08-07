@@ -88,6 +88,36 @@ import (
 	remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/remote_repositories/remote_vcs_repository"
 	"github.com/hmlkao/provider-jfrog-artifactory/config/security/keypair"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/user/anonymous_user"
+	virtualalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_alpine_repository"
+	virtualansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_ansible_repository"
+	virtualbowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_bower_repository"
+	virtualcocoapodsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_cocoapods_repository"
+	virtualcomposerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_composer_repository"
+	virtualconanrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_conan_repository"
+	virtualcondarepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_conda_repository"
+	virtualcranrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_cran_repository"
+	virtualdebianrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_debian_repository"
+	virtualdockerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_docker_repository"
+	virtualgemsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_gems_repository"
+	virtualgenericrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_generic_repository"
+	virtualgitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_gitlfs_repository"
+	virtualgorepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_go_repository"
+	virtualgradlerepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_gradle_repository"
+	virtualhelmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_helm_repository"
+	virtualhelmocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_helmoci_repository"
+	virtualivyrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_ivy_repository"
+	virtualmavenrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_maven_repository"
+	virtualnpmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_npm_repository"
+	virtualnugetrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_nuget_repository"
+	virtualocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_oci_repository"
+	virtualp2repository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_p2_repository"
+	virtualpubrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_pub_repository"
+	virtualpuppetrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_puppet_repository"
+	virtualpyyrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_pypi_repository"
+	virtualrpmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_rpm_repository"
+	virtualsbtrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_sbt_repository"
+	virtualswiftrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_swift_repository"
+	virtualterraformrepository "github.com/hmlkao/provider-jfrog-artifactory/config/virtual_repositories/virtual_terraform_repository"
 )
 
 const (
@@ -200,6 +230,36 @@ func GetProvider() *ujconfig.Provider {
 		// manageduser.Configure,
 		// unmanageduser.Configure,
 		// user.Configure,
+		virtualalpinerepository.Configure,
+		virtualansiblerepository.Configure,
+		virtualbowerrepository.Configure,
+		virtualcocoapodsrepository.Configure,
+		virtualcomposerrepository.Configure,
+		virtualconanrepository.Configure,
+		virtualcondarepository.Configure,
+		virtualcranrepository.Configure,
+		virtualdebianrepository.Configure,
+		virtualdockerrepository.Configure,
+		virtualgemsrepository.Configure,
+		virtualgenericrepository.Configure,
+		virtualgitlfsrepository.Configure,
+		virtualgorepository.Configure,
+		virtualgradlerepository.Configure,
+		virtualhelmrepository.Configure,
+		virtualhelmocirepository.Configure,
+		virtualivyrepository.Configure,
+		virtualnpmrepository.Configure,
+		virtualnugetrepository.Configure,
+		virtualmavenrepository.Configure,
+		virtualocirepository.Configure,
+		virtualp2repository.Configure,
+		virtualpubrepository.Configure,
+		virtualpuppetrepository.Configure,
+		virtualpyyrepository.Configure,
+		virtualrpmrepository.Configure,
+		virtualsbtrepository.Configure,
+		virtualswiftrepository.Configure,
+		virtualterraformrepository.Configure,
 	} {
 		configure(pc)
 	}
