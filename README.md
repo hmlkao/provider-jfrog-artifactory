@@ -282,39 +282,39 @@ List of all resources of [Terraform provider v12.10.0](https://registry.terrafor
 
 ### Virtual Repositories
 
-| Resource                                   | Supported          | Kind                           |
-|--------------------------------------------|--------------------|--------------------------------|
-| `artifactory_virtual_alpine_repository`    | :x:                |                                |
-| `artifactory_virtual_ansible_repository`   | :x:                |                                |
-| `artifactory_virtual_bower_repository`     | :x:                |                                |
-| `artifactory_virtual_chef_repository`      | :x:                |                                |
-| `artifactory_virtual_cocoapods_repository` | :x:                |                                |
-| `artifactory_virtual_composer_repository`  | :x:                |                                |
-| `artifactory_virtual_conan_repository`     | :x:                |                                |
-| `artifactory_virtual_conda_repository`     | :x:                |                                |
-| `artifactory_virtual_cran_repository`      | :x:                |                                |
-| `artifactory_virtual_debian_repository`    | :x:                |                                |
-| `artifactory_virtual_docker_repository`    | :x:                |                                |
-| `artifactory_virtual_gems_repository`      | :x:                |                                |
-| `artifactory_virtual_generic_repository`   | :x:                |                                |
-| `artifactory_virtual_gitlfs_repository`    | :x:                |                                |
-| `artifactory_virtual_go_repository`        | :x:                |                                |
-| `artifactory_virtual_gradle_repository`    | :x:                |                                |
-| `artifactory_virtual_helm_repository`      | :x:                |                                |
-| `artifactory_virtual_helmoci_repository`   | :x:                |                                |
-| `artifactory_virtual_ivy_repository`       | :x:                |                                |
-| `artifactory_virtual_maven_repository`     | :x:                |                                |
-| `artifactory_virtual_npm_repository`       | :x:                |                                |
-| `artifactory_virtual_nuget_repository`     | :x:                |                                |
-| `artifactory_virtual_oci_repository`       | :x:                |                                |
-| `artifactory_virtual_p2_repository`        | :x:                |                                |
-| `artifactory_virtual_pub_repository`       | :x:                |                                |
-| `artifactory_virtual_puppet_repository`    | :x:                |                                |
-| `artifactory_virtual_pypi_repository`      | :x:                |                                |
-| `artifactory_virtual_rpm_repository`       | :x:                |                                |
-| `artifactory_virtual_sbt_repository`       | :x:                |                                |
-| `artifactory_virtual_swift_repository`     | :x:                |                                |
-| `artifactory_virtual_terraform_repository` | :x:                |                                |
+| Resource                                   | Supported          | Kind                         |
+|--------------------------------------------|--------------------|------------------------------|
+| `artifactory_virtual_alpine_repository`    | :heavy_check_mark: | `VirtualAlpineRepository`    |
+| `artifactory_virtual_ansible_repository`   | :heavy_check_mark: | `VirtualAnsibleRepository`   |
+| `artifactory_virtual_bower_repository`     | :heavy_check_mark: | `VirtualBowerRepository`     |
+| `artifactory_virtual_chef_repository`      | :heavy_check_mark: | `VirtualChefRepository`      |
+| `artifactory_virtual_cocoapods_repository` | :heavy_check_mark: | `VirtualCocoapodsRepository` |
+| `artifactory_virtual_composer_repository`  | :heavy_check_mark: | `VirtualComposerRepository`  |
+| `artifactory_virtual_conan_repository`     | :heavy_check_mark: | `VirtualConanRepository`     |
+| `artifactory_virtual_conda_repository`     | :heavy_check_mark: | `VirtualCondaRepository`     |
+| `artifactory_virtual_cran_repository`      | :heavy_check_mark: | `VirtualCranRepository`      |
+| `artifactory_virtual_debian_repository`    | :heavy_check_mark: | `VirtualDebianRepository`    |
+| `artifactory_virtual_docker_repository`    | :heavy_check_mark: | `VirtualDockerRepository`    |
+| `artifactory_virtual_gems_repository`      | :heavy_check_mark: | `VirtualGemsRepository`      |
+| `artifactory_virtual_generic_repository`   | :heavy_check_mark: | `VirtualGenericRepository`   |
+| `artifactory_virtual_gitlfs_repository`    | :heavy_check_mark: | `VirtualGitLFSRepository`    |
+| `artifactory_virtual_go_repository`        | :heavy_check_mark: | `VirtualGoRepository`        |
+| `artifactory_virtual_gradle_repository`    | :heavy_check_mark: | `VirtualGradleRepository`    |
+| `artifactory_virtual_helm_repository`      | :heavy_check_mark: | `VirtualHelmRepository`      |
+| `artifactory_virtual_helmoci_repository`   | :heavy_check_mark: | `VirtualHelmOCIRepository`   |
+| `artifactory_virtual_ivy_repository`       | :heavy_check_mark: | `VirtualIvyRepository`       |
+| `artifactory_virtual_maven_repository`     | :heavy_check_mark: | `VirtualMavenRepository`     |
+| `artifactory_virtual_npm_repository`       | :heavy_check_mark: | `VirtualNpmRepository`       |
+| `artifactory_virtual_nuget_repository`     | :heavy_check_mark: | `VirtualNugetRepository`     |
+| `artifactory_virtual_oci_repository`       | :heavy_check_mark: | `VirtualOCIRepository`       |
+| `artifactory_virtual_p2_repository`        | :heavy_check_mark: | `VirtualP2Repository`        |
+| `artifactory_virtual_pub_repository`       | :heavy_check_mark: | `VirtualPubRepository`       |
+| `artifactory_virtual_puppet_repository`    | :heavy_check_mark: | `VirtualPuppetRepository`    |
+| `artifactory_virtual_pypi_repository`      | :heavy_check_mark: | `VirtualPypiRepository`      |
+| `artifactory_virtual_rpm_repository`       | :heavy_check_mark: | `VirtualRPMRepository`       |
+| `artifactory_virtual_sbt_repository`       | :heavy_check_mark: | `VirtualSbtRepository`       |
+| `artifactory_virtual_swift_repository`     | :heavy_check_mark: | `VirtualSwiftRepository`     |
+| `artifactory_virtual_terraform_repository` | :heavy_check_mark: | `VirtualTerraformRepository` |
 
 ### Webhook
 
