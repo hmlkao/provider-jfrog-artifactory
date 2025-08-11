@@ -65,7 +65,7 @@ UPTEST_VERSION = v1.3.0
 # DO NOT COMMENT OUT CROSSPLANE_CLI_VERSION variable, it causes race condition
 #   Error: Text file busy
 # https://github.com/crossplane/crossplane/releases
-#CROSSPLANE_CLI_VERSION ?= v1.20.0
+#CROSSPLANE_CLI_VERSION ?= v1.20.1
 -include build/makelib/k8s_tools.mk
 
 # ====================================================================================
@@ -182,7 +182,7 @@ run: go.build
 # End to End Testing
 # https://docs.crossplane.io/latest/getting-started/introduction/
 # https://github.com/crossplane/crossplane/releases
-CROSSPLANE_VERSION = 1.20.0
+CROSSPLANE_VERSION = 1.20.1
 CROSSPLANE_NAMESPACE = upbound-system
 -include build/makelib/local.xpkg.mk
 -include build/makelib/controlplane.mk
