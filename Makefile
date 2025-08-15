@@ -58,7 +58,7 @@ GO_SUBDIRS += cmd internal apis
 # https://github.com/kubernetes-sigs/kind/releases
 KIND_VERSION = v0.27.0
 # https://cli.upbound.io/stable?prefix=stable/
-UP_VERSION = v0.38.4
+UP_VERSION = v0.40.0
 UP_CHANNEL = stable
 # https://github.com/crossplane/uptest/releases
 UPTEST_VERSION = v1.3.0
@@ -267,3 +267,6 @@ help-special: crossplane.help
 # TODO(negz): Update CI to use these targets.
 vendor: modules.download
 vendor.check: modules.check
+
+# This file contains custom make targets
+-include custom.mk
