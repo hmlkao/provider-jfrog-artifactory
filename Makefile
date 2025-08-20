@@ -56,12 +56,12 @@ GO_SUBDIRS += cmd internal apis
 # Setup Kubernetes tools
 
 # https://github.com/kubernetes-sigs/kind/releases
-KIND_VERSION = v0.27.0
+KIND_VERSION = v0.29.0
 # https://cli.upbound.io/stable?prefix=stable/
-UP_VERSION = v0.40.0
+UP_VERSION = v0.40.2
 UP_CHANNEL = stable
 # https://github.com/crossplane/uptest/releases
-UPTEST_VERSION = v1.3.0
+UPTEST_VERSION = v1.4.0
 # DO NOT COMMENT OUT CROSSPLANE_CLI_VERSION variable, it causes race condition
 #   Error: Text file busy
 # https://github.com/crossplane/crossplane/releases

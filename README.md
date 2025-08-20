@@ -377,7 +377,7 @@ make build
 
 Package icon was pulled from [JFrog Brand Guidelines](https://jfrog.com/brand-guidelines/).
 
-Icon is stored in [`extensions/icons/`](./extensions/icons/) folder according to instructions [Adding documentation, icons, and other assets to your package](https://docs.upbound.io/upbound-marketplace/packages#adding-documentation-icons-and-other-assets-to-your-package).
+Icon is stored in [`extensions/icons/`](./extensions/icons/) folder according to instructions [Add documentation, icons, and other assets to your package](https://docs.upbound.io/manuals/marketplace/packages#add-documentation-icons-and-other-assets-to-your-package).
 
 ## Report a Bug
 
