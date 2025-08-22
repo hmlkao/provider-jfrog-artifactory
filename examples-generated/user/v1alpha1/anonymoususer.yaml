@@ -1,0 +1,10 @@
+apiVersion: user.artifactory.jfrog.crossplane.io/v1alpha1
+kind: AnonymousUser
+metadata:
+  annotations:
+    meta.upbound.io/example-id: user/v1alpha1/anonymoususer
+  labels:
+    testing.upbound.io/example-name: anonymous
+  name: anonymous
+spec:
+  forProvider: {}

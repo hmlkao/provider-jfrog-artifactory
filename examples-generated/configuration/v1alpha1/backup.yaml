@@ -1,0 +1,20 @@
+apiVersion: configuration.artifactory.jfrog.crossplane.io/v1alpha1
+kind: Backup
+metadata:
+  annotations:
+    meta.upbound.io/example-id: configuration/v1alpha1/backup
+  labels:
+    testing.upbound.io/example-name: backup_config_name
+  name: backup-config-name
+spec:
+  forProvider:
+    createArchive: false
+    cronExp: 0 0 12 * * ? *
+    enabled: true
+    excludeNewRepositories: true
+    excludedRepositories:
+    - my-docker-local
+    exportMissionControl: true
+    retentionPeriodHours: 1000
+    sendMailOnError: true
+    verifyDiskSpace: true
