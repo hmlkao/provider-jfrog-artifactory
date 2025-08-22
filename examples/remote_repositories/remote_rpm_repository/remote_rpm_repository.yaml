@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: RPMRepository
+metadata:
+  name: rpm-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://rpm.example.com
+  providerConfigRef:
+    name: default

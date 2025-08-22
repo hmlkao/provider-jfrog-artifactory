@@ -1,11 +1,10 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteGitLFSRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GitLFSRepository
 metadata:
-  name: remote-gitlfs-repository-example
+  name: gitlfs-example-crossplane-remote
 spec:
   forProvider:
-    key: "remote-gitlfs-repo"
-    url: "https://git-lfs.example.com"
-    description: "Example Git LFS remote repository"
+    url: https://git-lfs.example.com
+    description: Example Git LFS remote repository
   providerConfigRef:
     name: default

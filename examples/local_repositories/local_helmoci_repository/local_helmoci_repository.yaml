@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalHelmOCIRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmOCIRepository
 metadata:
-  name: helmoci-crossplane-repository
+  name: helmoci-example-crossplane-local
 spec:
   forProvider: {}
-    # key: helmoci-crossplane-repository
+    # key: helmoci-example-crossplane-local
   providerConfigRef:
     name: default

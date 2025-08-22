@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: VcsRepository
+metadata:
+  name: vcs-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://vcs.example.com
+  providerConfigRef:
+    name: default

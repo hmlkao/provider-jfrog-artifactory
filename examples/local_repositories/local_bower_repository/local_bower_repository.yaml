@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalBowerRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: BowerRepository
 metadata:
-  name: bower-crossplane-repository
+  name: bower-example-crossplane-local
 spec:
   forProvider: {}
-    # key: bower-crossplane-repository
+    # key: bower-example-crossplane-local
   providerConfigRef:
     name: default

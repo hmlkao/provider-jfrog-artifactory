@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: OCIRepository
+metadata:
+  name: oci-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://oci.example.com
+  providerConfigRef:
+    name: default

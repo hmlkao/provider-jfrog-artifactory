@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalPypiRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: PypiRepository
 metadata:
-  name: pypi-crossplane-repository
+  name: pypi-example-crossplane-local
 spec:
   forProvider: {}
-    # key: pypi-crossplane-repository
+    # key: pypi-example-crossplane-local
   providerConfigRef:
     name: default

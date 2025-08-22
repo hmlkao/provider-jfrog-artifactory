@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalHelmRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmRepository
 metadata:
-  name: helm-crossplane-repository
+  name: helm-example-crossplane-local
 spec:
   forProvider: {}
-    # key: helm-crossplane-repository
+    # key: helm-example-crossplane-local
   providerConfigRef:
     name: default

@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmOCIRepository
+metadata:
+  name: helmoci-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://example.com/helmoci
+  providerConfigRef:
+    name: default

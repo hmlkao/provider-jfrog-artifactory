@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: OpkgRepository
+metadata:
+  name: opkg-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://example.com/opkg
+  providerConfigRef:
+    name: default

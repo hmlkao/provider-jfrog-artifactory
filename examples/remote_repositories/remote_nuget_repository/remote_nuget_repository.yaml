@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: NugetRepository
+metadata:
+  name: nuget-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://example.com/nuget
+  providerConfigRef:
+    name: default

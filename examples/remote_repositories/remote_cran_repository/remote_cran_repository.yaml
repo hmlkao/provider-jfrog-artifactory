@@ -1,11 +1,10 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteCranRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CranRepository
 metadata:
-  name: remote-cran-repository-example
+  name: cran-example-crossplane-remote
 spec:
   forProvider:
-    key: "remote-cran-repo"
-    url: "https://cran.example.com"
-    description: "Example CRAN remote repository"
+    url: https://cran.example.com
+    description: Example CRAN remote repository
   providerConfigRef:
     name: default

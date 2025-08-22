@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalGradleRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GradleRepository
 metadata:
-  name: gradle-crossplane-repository
+  name: gradle-example-crossplane-local
 spec:
   forProvider: {}
-    # key: gradle-crossplane-repository
+    # key: gradle-example-crossplane-local
   providerConfigRef:
     name: default

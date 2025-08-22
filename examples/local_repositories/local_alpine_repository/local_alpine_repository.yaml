@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalAlpineRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: AlpineRepository
 metadata:
-  name: alpine-crossplane-repository
+  name: alpine-example-crossplane-local
 spec:
   forProvider: {}
-    # key: alpine-crossplane-repository
+    # key: alpine-example-crossplane-local
   providerConfigRef:
     name: default

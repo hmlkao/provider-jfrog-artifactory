@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalDebianRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DebianRepository
 metadata:
-  name: debian-crossplane-repository
+  name: debian-example-crossplane-local
 spec:
   forProvider: {}
-    # key: debian-crossplane-repository
+    # key: debian-example-crossplane-local
   providerConfigRef:
     name: default

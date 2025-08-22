@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalChefRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ChefRepository
 metadata:
-  name: chef-crossplane-repository
+  name: chef-example-crossplane-local
 spec:
   forProvider: {}
-    # key: chef-crossplane-repository
+    # key: chef-example-crossplane-local
   providerConfigRef:
     name: default

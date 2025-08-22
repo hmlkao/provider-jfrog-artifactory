@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteConanRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ConanRepository
 metadata:
-  name: conan-remote-repository
+  name: conan-example-crossplane-remote
 spec:
   forProvider:
-    # key: conan-remote-repository
+    url: https://conan.example.com
   providerConfigRef:
     name: default

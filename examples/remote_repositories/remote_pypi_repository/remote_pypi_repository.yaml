@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: PypiRepository
+metadata:
+  name: pypi-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://pypi.example.com
+  providerConfigRef:
+    name: default

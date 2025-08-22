@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalComposerRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ComposerRepository
 metadata:
-  name: composer-crossplane-repository
+  name: composer-example-crossplane-local
 spec:
   forProvider: {}
-    # key: composer-crossplane-repository
+    # key: composer-example-crossplane-local
   providerConfigRef:
     name: default

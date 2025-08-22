@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalPuppetRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: PuppetRepository
 metadata:
-  name: puppet-crossplane-repository
+  name: puppet-example-crossplane-local
 spec:
   forProvider: {}
-    # key: puppet-crossplane-repository
+    # key: puppet-example-crossplane-local
   providerConfigRef:
     name: default

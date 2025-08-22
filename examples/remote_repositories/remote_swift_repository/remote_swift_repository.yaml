@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: SwiftRepository
+metadata:
+  name: swift-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://swift.example.com
+  providerConfigRef:
+    name: default

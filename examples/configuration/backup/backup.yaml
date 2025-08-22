@@ -1,4 +1,4 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+apiVersion: configuration.artifactory.jfrog.crossplane.io/v1alpha1
 kind: Backup
 metadata:
   name: artifactory-backup

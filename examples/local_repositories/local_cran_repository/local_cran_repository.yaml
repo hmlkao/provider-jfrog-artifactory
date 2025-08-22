@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalCranRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CranRepository
 metadata:
-  name: cran-crossplane-repository
+  name: cran-example-crossplane-local
 spec:
   forProvider: {}
-    # key: cran-crossplane-repository
+    # key: cran-example-crossplane-local
   providerConfigRef:
     name: default

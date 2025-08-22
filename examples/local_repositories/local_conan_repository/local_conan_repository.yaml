@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalConanRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ConanRepository
 metadata:
-  name: conan-crossplane-repository
+  name: conan-example-crossplane-local
 spec:
   forProvider: {}
-    # key: conan-crossplane-repository
+    # key: conan-example-crossplane-local
   providerConfigRef:
     name: default

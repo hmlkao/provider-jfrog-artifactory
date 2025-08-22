@@ -1,11 +1,10 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteCondaRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CondaRepository
 metadata:
-  name: remote-conda-repository-example
+  name: conda-example-crossplane-remote
 spec:
   forProvider:
-    key: "remote-conda-repo"
-    url: "https://conda.example.com"
-    description: "Example Conda remote repository"
+    url: https://conda.example.com
+    description: Example Conda remote repository
   providerConfigRef:
     name: default
