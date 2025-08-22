@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalDockerV1Repository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DockerV1Repository
 metadata:
   name: docker-v1-crossplane-repository
 spec:

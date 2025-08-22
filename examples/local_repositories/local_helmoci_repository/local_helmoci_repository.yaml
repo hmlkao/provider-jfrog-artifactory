@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalHelmOCIRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmOCIRepository
 metadata:
   name: helmoci-crossplane-repository
 spec:

@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteCondaRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CondaRepository
 metadata:
   name: remote-conda-repository-example
 spec:

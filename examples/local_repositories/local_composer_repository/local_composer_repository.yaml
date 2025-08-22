@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalComposerRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ComposerRepository
 metadata:
   name: composer-crossplane-repository
 spec:

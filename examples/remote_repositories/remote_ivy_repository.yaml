@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteIvyRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: IvyRepository
 metadata:
   name: example-remote-ivy-repository
 spec:

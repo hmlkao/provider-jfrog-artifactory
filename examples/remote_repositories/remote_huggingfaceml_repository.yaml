@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteHuggingFaceMLRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HuggingFaceMLRepository
 metadata:
   name: example-remote-huggingfaceml-repository
 spec:

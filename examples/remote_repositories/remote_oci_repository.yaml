@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteOCIRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: OCIRepository
 metadata:
   name: example-remote-oci-repository
 spec:

@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteDebianRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DebianRepository
 metadata:
   name: remote-debian-repository-example
 spec:

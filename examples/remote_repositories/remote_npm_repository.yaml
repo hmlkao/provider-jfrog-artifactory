@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteNPMRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: NPMRepository
 metadata:
   name: example-remote-npm-repository
 spec:
