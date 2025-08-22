@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteConanRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ConanRepository
 metadata:
   name: conan-remote-repository
 spec:

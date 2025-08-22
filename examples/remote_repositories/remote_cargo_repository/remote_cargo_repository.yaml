@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteCargoRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CargoRepository
 metadata:
   name: cargo-remote-repository
 spec:

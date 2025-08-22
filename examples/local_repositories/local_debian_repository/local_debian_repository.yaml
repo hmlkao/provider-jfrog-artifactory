@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalDebianRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DebianRepository
 metadata:
   name: debian-crossplane-repository
 spec:

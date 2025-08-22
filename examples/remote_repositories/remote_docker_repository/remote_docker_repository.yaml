@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteDockerRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DockerRepository
 metadata:
   name: remote-docker-repository-example
 spec:

@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalGenericRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GenericRepository
 metadata:
   name: generic-crossplane-repository
 spec:

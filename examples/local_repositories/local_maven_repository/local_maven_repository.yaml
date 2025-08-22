@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalMavenRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: MavenRepository
 metadata:
   name: maven-crossplane-repository
 spec:

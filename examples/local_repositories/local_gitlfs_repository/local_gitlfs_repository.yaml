@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalGitLFSRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GitLFSRepository
 metadata:
   name: gitlfs-crossplane-repository
 spec:

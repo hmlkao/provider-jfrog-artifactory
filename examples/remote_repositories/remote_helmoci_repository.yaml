@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteHelmOCIRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmOCIRepository
 metadata:
   name: example-remote-helmoci-repository
 spec:

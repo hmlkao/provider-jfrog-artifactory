@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteMavenRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: MavenRepository
 metadata:
   name: example-remote-maven-repository
 spec:

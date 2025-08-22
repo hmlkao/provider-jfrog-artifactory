@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalBowerRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: BowerRepository
 metadata:
   name: bower-crossplane-repository
 spec:

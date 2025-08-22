@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalRpmRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: RpmRepository
 metadata:
   name: rpm-crossplane-repository
 spec:

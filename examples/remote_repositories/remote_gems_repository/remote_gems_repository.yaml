@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteGemsRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GemsRepository
 metadata:
   name: remote-gems-repository-example
 spec:

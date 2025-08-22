@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalSwiftRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: SwiftRepository
 metadata:
   name: swift-crossplane-repository
 spec:

@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalAlpineRepository
+apiVersion: local.local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: AlpineRepository
 metadata:
   name: alpine-crossplane-repository
 spec:

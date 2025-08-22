@@ -1,5 +1,5 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteHelmRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmRepository
 metadata:
   name: remote-helm-repository-example
 spec:
