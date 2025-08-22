@@ -1,13 +1,13 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalTerraformProviderRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: TerraformProviderRepository
 metadata:
-  name: terraform-provider-crossplane-repository
+  name: terraform-provider-example-crossplane-local
 spec:
   forProvider: {}
     # We don't need to set up the 'key' parameter, even if it is mandatory,
     #   because it is set up as a name of the resource
     # Otherwise, there would be two different parameters,
     #   one for resource name and the second for repository name which is confusing
-    #key: terraform-provider-crossplane-repository
+    #key: terraform-provider-example-crossplane-local
   providerConfigRef:
     name: default

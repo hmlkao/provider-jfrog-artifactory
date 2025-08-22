@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteCocoapodsRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CocoapodsRepository
 metadata:
-  name: cocoapods-remote-repository
+  name: cocoapods-example-crossplane-remote
 spec:
-  forProvider: {}
-    # key: cocoapods-remote-repository
+  forProvider:
+    url: https://cocoapods.example.com
   providerConfigRef:
     name: default

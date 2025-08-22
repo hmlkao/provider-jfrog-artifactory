@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: PuppetRepository
+metadata:
+  name: puppet-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://puppet.example.com
+  providerConfigRef:
+    name: default

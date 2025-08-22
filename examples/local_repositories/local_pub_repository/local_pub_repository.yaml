@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalPubRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: PubRepository
 metadata:
-  name: pub-crossplane-repository
+  name: pub-example-crossplane-local
 spec:
   forProvider: {}
-    # key: pub-crossplane-repository
+    # key: pub-example-crossplane-local
   providerConfigRef:
     name: default

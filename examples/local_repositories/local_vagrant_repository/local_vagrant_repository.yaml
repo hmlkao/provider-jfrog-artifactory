@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalVagrantRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: VagrantRepository
 metadata:
-  name: vagrant-crossplane-repository
+  name: vagrant-example-crossplane-local
 spec:
   forProvider: {}
-    # key: vagrant-crossplane-repository
+    # key: vagrant-example-crossplane-local
   providerConfigRef:
     name: default

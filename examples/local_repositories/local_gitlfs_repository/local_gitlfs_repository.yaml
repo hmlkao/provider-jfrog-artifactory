@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalGitLFSRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GitLFSRepository
 metadata:
-  name: gitlfs-crossplane-repository
+  name: gitlfs-example-crossplane-local
 spec:
   forProvider: {}
-    # key: gitlfs-crossplane-repository
+    # key: gitlfs-example-crossplane-local
   providerConfigRef:
     name: default

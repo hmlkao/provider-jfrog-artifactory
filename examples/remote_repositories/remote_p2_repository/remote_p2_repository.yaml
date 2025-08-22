@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: P2Repository
+metadata:
+  name: p2-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://p2.example.com
+  providerConfigRef:
+    name: default

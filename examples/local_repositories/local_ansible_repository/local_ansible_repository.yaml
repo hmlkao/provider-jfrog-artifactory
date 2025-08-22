@@ -1,14 +1,14 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalAnsibleRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: AnsibleRepository
 metadata:
-  name: ansible-crossplane-repository
+  name: ansible-example-crossplane-local
 spec:
   forProvider:
     # We don't need to set up the 'key' parameter, even if it is mandatory,
     #   because it is set up as a name of the resource
     # Otherwise, there would be two different parameters,
     #   one for resource name and the second for repository name which is confusing
-    #key: ansible-crossplane-repository
+    #key: ansible-example-crossplane-local
     primaryKeypairRef: my-crossplane-keypair
   providerConfigRef:
     name: default

@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteComposerRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ComposerRepository
 metadata:
-  name: composer-remote-repository
+  name: composer-example-crossplane-remote
 spec:
-  forProvider: {}
-    # key: composer-remote-repository
+  forProvider:
+    url: https://composer.example.com
   providerConfigRef:
     name: default

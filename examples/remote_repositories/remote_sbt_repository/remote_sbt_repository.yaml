@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: SbtRepository
+metadata:
+  name: sbt-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://sbt.example.com
+  providerConfigRef:
+    name: default

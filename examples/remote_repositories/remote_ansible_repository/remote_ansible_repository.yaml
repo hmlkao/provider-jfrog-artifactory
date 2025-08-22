@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteAnsibleRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: AnsibleRepository
 metadata:
-  name: ansible-remote-repository
+  name: ansible-example-crossplane-remote
 spec:
-  forProvider: {}
-    # key: ansible-remote-repository
+  forProvider:
+    url: https://ansible.example.com
   providerConfigRef:
     name: default

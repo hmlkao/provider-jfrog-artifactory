@@ -1,13 +1,13 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalDockerV2Repository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DockerV2Repository
 metadata:
-  name: docker-v2-crossplane-repository
+  name: docker-v2-example-crossplane-local
 spec:
   forProvider: {}
     # We don't need to set up the 'key' parameter, even if it is mandatory,
     #   because it is set up as a name of the resource
     # Otherwise, there would be two different parameters,
     #   one for resource name and the second for repository name which is confusing
-    #key: docker-v2-crossplane-repository
+    #key: docker-v2-example-crossplane-local
   providerConfigRef:
     name: default

@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteAlpineRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: AlpineRepository
 metadata:
-  name: alpine-remote-repository
+  name: alpine-example-crossplane-remote
 spec:
-  forProvider: {}
-    # key: alpine-remote-repository
+  forProvider:
+    url: https://alpine.example.com
   providerConfigRef:
     name: default

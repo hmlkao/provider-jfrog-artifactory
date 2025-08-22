@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalNugetRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: NugetRepository
 metadata:
-  name: nuget-crossplane-repository
+  name: nuget-example-crossplane-local
 spec:
   forProvider: {}
-    # key: nuget-crossplane-repository
+    # key: nuget-example-crossplane-local
   providerConfigRef:
     name: default

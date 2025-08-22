@@ -1,0 +1,9 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HuggingFaceMLRepository
+metadata:
+  name: huggingfaceml-example-crossplane-remote
+spec:
+  forProvider:
+    url: https://example.com/huggingfaceml
+  providerConfigRef:
+    name: default

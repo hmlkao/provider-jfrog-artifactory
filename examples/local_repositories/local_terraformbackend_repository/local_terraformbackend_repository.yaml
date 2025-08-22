@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalTerraformbackendRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: TerraformbackendRepository
 metadata:
-  name: terraformbackend-crossplane-repository
+  name: terraformbackend-example-crossplane-local
 spec:
   forProvider: {}
-    # key: terraformbackend-crossplane-repository
+    # key: terraformbackend-example-crossplane-local
   providerConfigRef:
     name: default

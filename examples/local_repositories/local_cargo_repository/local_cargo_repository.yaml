@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalCargoRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CargoRepository
 metadata:
-  name: cargo-crossplane-repository
+  name: cargo-example-crossplane-local
 spec:
   forProvider: {}
-    # key: cargo-crossplane-repository
+    # key: cargo-example-crossplane-local
   providerConfigRef:
     name: default

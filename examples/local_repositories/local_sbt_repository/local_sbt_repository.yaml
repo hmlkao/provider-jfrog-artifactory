@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalSbtRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: SbtRepository
 metadata:
-  name: sbt-crossplane-repository
+  name: sbt-example-crossplane-local
 spec:
   forProvider: {}
-    # key: sbt-crossplane-repository
+    # key: sbt-example-crossplane-local
   providerConfigRef:
     name: default

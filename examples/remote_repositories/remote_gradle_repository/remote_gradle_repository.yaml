@@ -1,11 +1,10 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: RemoteGradleRepository
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GradleRepository
 metadata:
-  name: remote-gradle-repository-example
+  name: gradle-example-crossplane-remote
 spec:
   forProvider:
-    key: "remote-gradle-repo"
-    url: "https://gradle.example.com"
-    description: "Example Gradle remote repository"
+    url: https://gradle.example.com
+    description: Example Gradle remote repository
   providerConfigRef:
     name: default

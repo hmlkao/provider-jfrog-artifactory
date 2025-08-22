@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalHuggingfacemlRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HuggingfacemlRepository
 metadata:
-  name: huggingfaceml-crossplane-repository
+  name: huggingfaceml-example-crossplane-local
 spec:
   forProvider: {}
-    # key: huggingfaceml-crossplane-repository
+    # key: huggingfaceml-example-crossplane-local
   providerConfigRef:
     name: default

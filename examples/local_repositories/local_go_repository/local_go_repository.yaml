@@ -1,9 +1,9 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
-kind: LocalGoRepository
+apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
+kind: GoRepository
 metadata:
-  name: go-crossplane-repository
+  name: go-example-crossplane-local
 spec:
   forProvider: {}
-    # key: go-crossplane-repository
+    # key: go-example-crossplane-local
   providerConfigRef:
     name: default

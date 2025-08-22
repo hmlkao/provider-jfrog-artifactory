@@ -1,4 +1,4 @@
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+apiVersion: artifact.artifactory.jfrog.crossplane.io/v1alpha1
 kind: ItemProperties
 metadata:
   name: my-repo-properties
@@ -13,7 +13,7 @@ spec:
 
 ---
 
-apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
+apiVersion: artifact.artifactory.jfrog.crossplane.io/v1alpha1
 kind: ItemProperties
 metadata:
   name: my-folder-properties
