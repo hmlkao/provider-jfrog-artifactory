@@ -6,12 +6,10 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
-const shortGroup string = ""
-
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_virtual_go_repository", func(r *config.Resource) {
-		r.ShortGroup = shortGroup
-		r.Kind = "VirtualGoRepository"
+		// r.ShortGroup = ""
+		// r.Kind = "VirtualGoRepository"
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil
