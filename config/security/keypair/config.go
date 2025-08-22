@@ -6,12 +6,10 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
-const shortGroup string = "" // Otherwise, 'security' is used
-
 // Configure configures individual resources by adding custom ResourceConfigurators.
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_keypair", func(r *config.Resource) {
-		r.ShortGroup = shortGroup
+		r.ShortGroup = "security" // Otherwise, '' is used
 		// Set custom func to get external name because there is no 'id' stored in Terraform state
 		// Keypair can be imported using the pair name, e.g.
 		//   terraform import artifactory_keypair.my-keypair my-keypair-name

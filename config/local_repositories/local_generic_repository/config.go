@@ -6,14 +6,11 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
-const shortGroup string = "" // Otherwise, 'local' is used
-
 // Configure configures individual resources by adding custom ResourceConfigurators.
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_local_generic_repository", func(r *config.Resource) {
-		r.ShortGroup = shortGroup
-		// Specify Kubernetes kind, otherwise, 'GenericRepository' is used
-		r.Kind = "LocalGenericRepository"
+		// r.ShortGroup = ""
+		// r.Kind = "LocalGenericRepository"
 		// Set custom func to get external name because there is no 'id' stored in Terraform state
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {

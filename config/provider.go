@@ -145,7 +145,6 @@ func GetProvider() *ujconfig.Provider {
 		// Artifact
 		itemproperties.Configure,
 		// Configuration
-		// archivepolicy.Configure,
 		backup.Configure,
 		// Local Repositories
 		localansiblerepository.Configure,
@@ -227,9 +226,7 @@ func GetProvider() *ujconfig.Provider {
 		remotevcsrepository.Configure,
 		// User
 		anonymoususer.Configure,
-		// manageduser.Configure,
-		// unmanageduser.Configure,
-		// user.Configure,
+		// Virtual Repositories
 		virtualalpinerepository.Configure,
 		virtualansiblerepository.Configure,
 		virtualbowerrepository.Configure,
