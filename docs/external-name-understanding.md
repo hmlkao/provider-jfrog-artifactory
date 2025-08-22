@@ -188,7 +188,7 @@ var ExternalNameAsID GetIDFn = func(_ context.Context, externalName string, _ ma
 
 ## Puzzle pieces
 
-`LocalGenericRepository` resource as is defined by user:
+`GenericRepository` resource as is defined by user:
 
 ```yaml
 apiVersion: artifactory.jfrog.crossplane.io/v1alpha1
@@ -270,7 +270,7 @@ Generated Terraform code used to apply changes to Artifactory
 }
 ```
 
-Real `LocalGenericRepository` resource as is stored in Kubernetes
+Real `GenericRepository` resource as is stored in Kubernetes
 
 ```yaml
 apiVersion: artifactory.jfrog.crossplane.io/v1alpha1

@@ -1,13 +1,17 @@
 <!-- markdownlint-disable no-duplicate-heading no-hard-tabs -->
 # Build provider from scratch
 
+> [!WARNING] OUTDATED!
+> This document describes how I built the provider for the first time.
+> Some information might be OUTDATED and may not be valid anymore!
+
 `provider-jfrog-artifactory` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/crossplane/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
 
-> [!WARNING]
-> This repo targets to do as fewer changes as possible in source code to successfully build the provider with explanation.
+> [!NOTE]
+> This repo aims to make as few changes as possible in the source code to successfully build the provider, with explanations.
 
 - [Build provider from scratch](#build-provider-from-scratch)
   - [Steps to build using template](#steps-to-build-using-template)
