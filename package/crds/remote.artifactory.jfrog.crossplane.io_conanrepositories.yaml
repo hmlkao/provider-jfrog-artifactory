@@ -4,7 +4,7 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.14.0
-  name: huggingfacemlrepositories.remote.artifactory.jfrog.crossplane.io
+  name: conanrepositories.remote.artifactory.jfrog.crossplane.io
 spec:
   group: remote.artifactory.jfrog.crossplane.io
   names:
@@ -12,10 +12,10 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: HuggingFaceMLRepository
-    listKind: HuggingFaceMLRepositoryList
-    plural: huggingfacemlrepositories
-    singular: huggingfacemlrepository
+    kind: ConanRepository
+    listKind: ConanRepositoryList
+    plural: conanrepositories
+    singular: conanrepository
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -34,8 +34,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: HuggingFaceMLRepository is the Schema for the HuggingFaceMLRepositorys
-          API. <no value>
+        description: ConanRepository is the Schema for the ConanRepositorys API. <no
+          value>
         properties:
           apiVersion:
             description: |-
@@ -55,8 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: HuggingFaceMLRepositorySpec defines the desired state of
-              HuggingFaceMLRepository
+            description: ConanRepositorySpec defines the desired state of ConanRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -183,6 +182,10 @@ spec:
                       artifact requests, in the form of `x/y/**/z/*`.By default no
                       artifacts are excluded.
                     type: string
+                  forceConanAuthentication:
+                    description: Force basic authentication credentials in order to
+                      use this repository. Default value is 'false'.
+                    type: boolean
                   hardFail:
                     description: When set, Artifactory will return an error to the
                       client that causes the build to fail if there is a failure to
@@ -326,7 +329,8 @@ spec:
                       automatic cleanup of cached artifacts is disabled.
                     type: number
                   url:
-                    description: The remote repo URL. Default to 'https://huggingface.co'
+                    description: This is a URL to the remote registry. Consider using
+                      HTTPS to ensure a secure connection.
                     type: string
                   username:
                     type: string
@@ -458,6 +462,10 @@ spec:
                       artifact requests, in the form of `x/y/**/z/*`.By default no
                       artifacts are excluded.
                     type: string
+                  forceConanAuthentication:
+                    description: Force basic authentication credentials in order to
+                      use this repository. Default value is 'false'.
+                    type: boolean
                   hardFail:
                     description: When set, Artifactory will return an error to the
                       client that causes the build to fail if there is a failure to
@@ -601,7 +609,8 @@ spec:
                       automatic cleanup of cached artifacts is disabled.
                     type: number
                   url:
-                    description: The remote repo URL. Default to 'https://huggingface.co'
+                    description: This is a URL to the remote registry. Consider using
+                      HTTPS to ensure a secure connection.
                     type: string
                   username:
                     type: string
@@ -778,9 +787,13 @@ spec:
             required:
             - forProvider
             type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.url is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.url)
+                || (has(self.initProvider) && has(self.initProvider.url))'
           status:
-            description: HuggingFaceMLRepositoryStatus defines the observed state
-              of HuggingFaceMLRepository.
+            description: ConanRepositoryStatus defines the observed state of ConanRepository.
             properties:
               atProvider:
                 properties:
@@ -893,6 +906,10 @@ spec:
                       artifact requests, in the form of `x/y/**/z/*`.By default no
                       artifacts are excluded.
                     type: string
+                  forceConanAuthentication:
+                    description: Force basic authentication credentials in order to
+                      use this repository. Default value is 'false'.
+                    type: boolean
                   hardFail:
                     description: When set, Artifactory will return an error to the
                       client that causes the build to fail if there is a failure to
@@ -1020,7 +1037,8 @@ spec:
                       automatic cleanup of cached artifacts is disabled.
                     type: number
                   url:
-                    description: The remote repo URL. Default to 'https://huggingface.co'
+                    description: This is a URL to the remote registry. Consider using
+                      HTTPS to ensure a secure connection.
                     type: string
                   username:
                     type: string

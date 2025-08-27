@@ -71,6 +71,15 @@ func (l *ComposerRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this ConanRepositoryList.
+func (l *ConanRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this CondaRepositoryList.
 func (l *CondaRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
@@ -170,8 +179,8 @@ func (l *HelmRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this HuggingfacemlRepositoryList.
-func (l *HuggingfacemlRepositoryList) GetItems() []resource.Managed {
+// GetItems of this HuggingFaceMLRepositoryList.
+func (l *HuggingFaceMLRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

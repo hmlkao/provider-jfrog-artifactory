@@ -428,6 +428,66 @@ func (mg *ComposerRepository) SetWriteConnectionSecretToReference(r *xpv1.Secret
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
+// GetCondition of this ConanRepository.
+func (mg *ConanRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+	return mg.Status.GetCondition(ct)
+}
+
+// GetDeletionPolicy of this ConanRepository.
+func (mg *ConanRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+	return mg.Spec.DeletionPolicy
+}
+
+// GetManagementPolicies of this ConanRepository.
+func (mg *ConanRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+	return mg.Spec.ManagementPolicies
+}
+
+// GetProviderConfigReference of this ConanRepository.
+func (mg *ConanRepository) GetProviderConfigReference() *xpv1.Reference {
+	return mg.Spec.ProviderConfigReference
+}
+
+// GetPublishConnectionDetailsTo of this ConanRepository.
+func (mg *ConanRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+	return mg.Spec.PublishConnectionDetailsTo
+}
+
+// GetWriteConnectionSecretToReference of this ConanRepository.
+func (mg *ConanRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+	return mg.Spec.WriteConnectionSecretToReference
+}
+
+// SetConditions of this ConanRepository.
+func (mg *ConanRepository) SetConditions(c ...xpv1.Condition) {
+	mg.Status.SetConditions(c...)
+}
+
+// SetDeletionPolicy of this ConanRepository.
+func (mg *ConanRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+	mg.Spec.DeletionPolicy = r
+}
+
+// SetManagementPolicies of this ConanRepository.
+func (mg *ConanRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+	mg.Spec.ManagementPolicies = r
+}
+
+// SetProviderConfigReference of this ConanRepository.
+func (mg *ConanRepository) SetProviderConfigReference(r *xpv1.Reference) {
+	mg.Spec.ProviderConfigReference = r
+}
+
+// SetPublishConnectionDetailsTo of this ConanRepository.
+func (mg *ConanRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+	mg.Spec.PublishConnectionDetailsTo = r
+}
+
+// SetWriteConnectionSecretToReference of this ConanRepository.
+func (mg *ConanRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+	mg.Spec.WriteConnectionSecretToReference = r
+}
+
 // GetCondition of this CondaRepository.
 func (mg *CondaRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
@@ -1088,63 +1148,63 @@ func (mg *HelmRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretRefe
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
