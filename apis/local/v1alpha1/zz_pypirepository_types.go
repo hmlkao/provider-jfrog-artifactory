@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type PypiRepositoryInitParameters struct {
+type PyPIRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -61,7 +61,7 @@ type PypiRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type PypiRepositoryObservation struct {
+type PyPIRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -111,7 +111,7 @@ type PypiRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type PypiRepositoryParameters struct {
+type PyPIRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -173,10 +173,10 @@ type PypiRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// PypiRepositorySpec defines the desired state of PypiRepository
-type PypiRepositorySpec struct {
+// PyPIRepositorySpec defines the desired state of PyPIRepository
+type PyPIRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     PypiRepositoryParameters `json:"forProvider"`
+	ForProvider     PyPIRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -187,49 +187,49 @@ type PypiRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider PypiRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider PyPIRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// PypiRepositoryStatus defines the observed state of PypiRepository.
-type PypiRepositoryStatus struct {
+// PyPIRepositoryStatus defines the observed state of PyPIRepository.
+type PyPIRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        PypiRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        PyPIRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// PypiRepository is the Schema for the PypiRepositorys API. <no value>
+// PyPIRepository is the Schema for the PyPIRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type PypiRepository struct {
+type PyPIRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              PypiRepositorySpec   `json:"spec"`
-	Status            PypiRepositoryStatus `json:"status,omitempty"`
+	Spec              PyPIRepositorySpec   `json:"spec"`
+	Status            PyPIRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// PypiRepositoryList contains a list of PypiRepositorys
-type PypiRepositoryList struct {
+// PyPIRepositoryList contains a list of PyPIRepositorys
+type PyPIRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []PypiRepository `json:"items"`
+	Items           []PyPIRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	PypiRepository_Kind             = "PypiRepository"
-	PypiRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: PypiRepository_Kind}.String()
-	PypiRepository_KindAPIVersion   = PypiRepository_Kind + "." + CRDGroupVersion.String()
-	PypiRepository_GroupVersionKind = CRDGroupVersion.WithKind(PypiRepository_Kind)
+	PyPIRepository_Kind             = "PyPIRepository"
+	PyPIRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: PyPIRepository_Kind}.String()
+	PyPIRepository_KindAPIVersion   = PyPIRepository_Kind + "." + CRDGroupVersion.String()
+	PyPIRepository_GroupVersionKind = CRDGroupVersion.WithKind(PyPIRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&PypiRepository{}, &PypiRepositoryList{})
+	SchemeBuilder.Register(&PyPIRepository{}, &PyPIRepositoryList{})
 }

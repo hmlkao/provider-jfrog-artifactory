@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type CocoapodsRepositoryInitParameters struct {
+type CocoaPodsRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -61,7 +61,7 @@ type CocoapodsRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CocoapodsRepositoryObservation struct {
+type CocoaPodsRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -111,7 +111,7 @@ type CocoapodsRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CocoapodsRepositoryParameters struct {
+type CocoaPodsRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -173,10 +173,10 @@ type CocoapodsRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// CocoapodsRepositorySpec defines the desired state of CocoapodsRepository
-type CocoapodsRepositorySpec struct {
+// CocoaPodsRepositorySpec defines the desired state of CocoaPodsRepository
+type CocoaPodsRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     CocoapodsRepositoryParameters `json:"forProvider"`
+	ForProvider     CocoaPodsRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -187,49 +187,49 @@ type CocoapodsRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider CocoapodsRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider CocoaPodsRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// CocoapodsRepositoryStatus defines the observed state of CocoapodsRepository.
-type CocoapodsRepositoryStatus struct {
+// CocoaPodsRepositoryStatus defines the observed state of CocoaPodsRepository.
+type CocoaPodsRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        CocoapodsRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        CocoaPodsRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// CocoapodsRepository is the Schema for the CocoapodsRepositorys API. <no value>
+// CocoaPodsRepository is the Schema for the CocoaPodsRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type CocoapodsRepository struct {
+type CocoaPodsRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              CocoapodsRepositorySpec   `json:"spec"`
-	Status            CocoapodsRepositoryStatus `json:"status,omitempty"`
+	Spec              CocoaPodsRepositorySpec   `json:"spec"`
+	Status            CocoaPodsRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// CocoapodsRepositoryList contains a list of CocoapodsRepositorys
-type CocoapodsRepositoryList struct {
+// CocoaPodsRepositoryList contains a list of CocoaPodsRepositorys
+type CocoaPodsRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []CocoapodsRepository `json:"items"`
+	Items           []CocoaPodsRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	CocoapodsRepository_Kind             = "CocoapodsRepository"
-	CocoapodsRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CocoapodsRepository_Kind}.String()
-	CocoapodsRepository_KindAPIVersion   = CocoapodsRepository_Kind + "." + CRDGroupVersion.String()
-	CocoapodsRepository_GroupVersionKind = CRDGroupVersion.WithKind(CocoapodsRepository_Kind)
+	CocoaPodsRepository_Kind             = "CocoaPodsRepository"
+	CocoaPodsRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CocoaPodsRepository_Kind}.String()
+	CocoaPodsRepository_KindAPIVersion   = CocoaPodsRepository_Kind + "." + CRDGroupVersion.String()
+	CocoaPodsRepository_GroupVersionKind = CRDGroupVersion.WithKind(CocoaPodsRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&CocoapodsRepository{}, &CocoapodsRepositoryList{})
+	SchemeBuilder.Register(&CocoaPodsRepository{}, &CocoaPodsRepositoryList{})
 }

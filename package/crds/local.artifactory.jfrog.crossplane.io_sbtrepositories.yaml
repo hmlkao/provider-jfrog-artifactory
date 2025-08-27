@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: SbtRepository
-    listKind: SbtRepositoryList
+    kind: SBTRepository
+    listKind: SBTRepositoryList
     plural: sbtrepositories
     singular: sbtrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: SbtRepository is the Schema for the SbtRepositorys API. <no value>
+        description: SBTRepository is the Schema for the SBTRepositorys API. <no value>
         properties:
           apiVersion:
             description: |-
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: SbtRepositorySpec defines the desired state of SbtRepository
+            description: SBTRepositorySpec defines the desired state of SBTRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -483,7 +483,7 @@ spec:
             - forProvider
             type: object
           status:
-            description: SbtRepositoryStatus defines the observed state of SbtRepository.
+            description: SBTRepositoryStatus defines the observed state of SBTRepository.
             properties:
               atProvider:
                 properties:

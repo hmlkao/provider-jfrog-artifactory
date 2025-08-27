@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: OpkgRepository
-    listKind: OpkgRepositoryList
+    kind: OPKGRepository
+    listKind: OPKGRepositoryList
     plural: opkgrepositories
     singular: opkgrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: OpkgRepository is the Schema for the OpkgRepositorys API. <no
+        description: OPKGRepository is the Schema for the OPKGRepositorys API. <no
           value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: OpkgRepositorySpec defines the desired state of OpkgRepository
+            description: OPKGRepositorySpec defines the desired state of OPKGRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -777,7 +777,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.url)
                 || (has(self.initProvider) && has(self.initProvider.url))'
           status:
-            description: OpkgRepositoryStatus defines the observed state of OpkgRepository.
+            description: OPKGRepositoryStatus defines the observed state of OPKGRepository.
             properties:
               atProvider:
                 properties:

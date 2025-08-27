@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type OpkgRepositoryContentSynchronisationInitParameters struct {
+type OPKGRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type OpkgRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type OpkgRepositoryContentSynchronisationObservation struct {
+type OPKGRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type OpkgRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type OpkgRepositoryContentSynchronisationParameters struct {
+type OPKGRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type OpkgRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type OpkgRepositoryInitParameters struct {
+type OPKGRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type OpkgRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []OpkgRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []OPKGRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -190,7 +190,7 @@ type OpkgRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type OpkgRepositoryObservation struct {
+type OPKGRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -217,7 +217,7 @@ type OpkgRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []OpkgRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []OPKGRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -318,7 +318,7 @@ type OpkgRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type OpkgRepositoryParameters struct {
+type OPKGRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -354,7 +354,7 @@ type OpkgRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []OpkgRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []OPKGRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	// +kubebuilder:validation:Optional
@@ -488,10 +488,10 @@ type OpkgRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// OpkgRepositorySpec defines the desired state of OpkgRepository
-type OpkgRepositorySpec struct {
+// OPKGRepositorySpec defines the desired state of OPKGRepository
+type OPKGRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     OpkgRepositoryParameters `json:"forProvider"`
+	ForProvider     OPKGRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -502,50 +502,50 @@ type OpkgRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider OpkgRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider OPKGRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// OpkgRepositoryStatus defines the observed state of OpkgRepository.
-type OpkgRepositoryStatus struct {
+// OPKGRepositoryStatus defines the observed state of OPKGRepository.
+type OPKGRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        OpkgRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        OPKGRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// OpkgRepository is the Schema for the OpkgRepositorys API. <no value>
+// OPKGRepository is the Schema for the OPKGRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type OpkgRepository struct {
+type OPKGRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
-	Spec   OpkgRepositorySpec   `json:"spec"`
-	Status OpkgRepositoryStatus `json:"status,omitempty"`
+	Spec   OPKGRepositorySpec   `json:"spec"`
+	Status OPKGRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// OpkgRepositoryList contains a list of OpkgRepositorys
-type OpkgRepositoryList struct {
+// OPKGRepositoryList contains a list of OPKGRepositorys
+type OPKGRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []OpkgRepository `json:"items"`
+	Items           []OPKGRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	OpkgRepository_Kind             = "OpkgRepository"
-	OpkgRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: OpkgRepository_Kind}.String()
-	OpkgRepository_KindAPIVersion   = OpkgRepository_Kind + "." + CRDGroupVersion.String()
-	OpkgRepository_GroupVersionKind = CRDGroupVersion.WithKind(OpkgRepository_Kind)
+	OPKGRepository_Kind             = "OPKGRepository"
+	OPKGRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: OPKGRepository_Kind}.String()
+	OPKGRepository_KindAPIVersion   = OPKGRepository_Kind + "." + CRDGroupVersion.String()
+	OPKGRepository_GroupVersionKind = CRDGroupVersion.WithKind(OPKGRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&OpkgRepository{}, &OpkgRepositoryList{})
+	SchemeBuilder.Register(&OPKGRepository{}, &OPKGRepositoryList{})
 }

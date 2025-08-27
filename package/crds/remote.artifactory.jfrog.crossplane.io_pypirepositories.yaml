@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: PypiRepository
-    listKind: PypiRepositoryList
+    kind: PyPIRepository
+    listKind: PyPIRepositoryList
     plural: pypirepositories
     singular: pypirepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PypiRepository is the Schema for the PypiRepositorys API. <no
+        description: PyPIRepository is the Schema for the PyPIRepositorys API. <no
           value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: PypiRepositorySpec defines the desired state of PypiRepository
+            description: PyPIRepositorySpec defines the desired state of PyPIRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -807,7 +807,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.url)
                 || (has(self.initProvider) && has(self.initProvider.url))'
           status:
-            description: PypiRepositoryStatus defines the observed state of PypiRepository.
+            description: PyPIRepositoryStatus defines the observed state of PyPIRepository.
             properties:
               atProvider:
                 properties:

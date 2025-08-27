@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type PypiRepositoryContentSynchronisationInitParameters struct {
+type PyPIRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type PypiRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type PypiRepositoryContentSynchronisationObservation struct {
+type PyPIRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type PypiRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type PypiRepositoryContentSynchronisationParameters struct {
+type PyPIRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type PypiRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type PypiRepositoryInitParameters struct {
+type PyPIRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type PypiRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []PypiRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []PyPIRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -199,7 +199,7 @@ type PypiRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type PypiRepositoryObservation struct {
+type PyPIRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -226,7 +226,7 @@ type PypiRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []PypiRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []PyPIRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -336,7 +336,7 @@ type PypiRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type PypiRepositoryParameters struct {
+type PyPIRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -372,7 +372,7 @@ type PypiRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []PypiRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []PyPIRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	// +kubebuilder:validation:Optional
@@ -518,10 +518,10 @@ type PypiRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// PypiRepositorySpec defines the desired state of PypiRepository
-type PypiRepositorySpec struct {
+// PyPIRepositorySpec defines the desired state of PyPIRepository
+type PyPIRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     PypiRepositoryParameters `json:"forProvider"`
+	ForProvider     PyPIRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -532,50 +532,50 @@ type PypiRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider PypiRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider PyPIRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// PypiRepositoryStatus defines the observed state of PypiRepository.
-type PypiRepositoryStatus struct {
+// PyPIRepositoryStatus defines the observed state of PyPIRepository.
+type PyPIRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        PypiRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        PyPIRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// PypiRepository is the Schema for the PypiRepositorys API. <no value>
+// PyPIRepository is the Schema for the PyPIRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type PypiRepository struct {
+type PyPIRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
-	Spec   PypiRepositorySpec   `json:"spec"`
-	Status PypiRepositoryStatus `json:"status,omitempty"`
+	Spec   PyPIRepositorySpec   `json:"spec"`
+	Status PyPIRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// PypiRepositoryList contains a list of PypiRepositorys
-type PypiRepositoryList struct {
+// PyPIRepositoryList contains a list of PyPIRepositorys
+type PyPIRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []PypiRepository `json:"items"`
+	Items           []PyPIRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	PypiRepository_Kind             = "PypiRepository"
-	PypiRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: PypiRepository_Kind}.String()
-	PypiRepository_KindAPIVersion   = PypiRepository_Kind + "." + CRDGroupVersion.String()
-	PypiRepository_GroupVersionKind = CRDGroupVersion.WithKind(PypiRepository_Kind)
+	PyPIRepository_Kind             = "PyPIRepository"
+	PyPIRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: PyPIRepository_Kind}.String()
+	PyPIRepository_KindAPIVersion   = PyPIRepository_Kind + "." + CRDGroupVersion.String()
+	PyPIRepository_GroupVersionKind = CRDGroupVersion.WithKind(PyPIRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&PypiRepository{}, &PypiRepositoryList{})
+	SchemeBuilder.Register(&PyPIRepository{}, &PyPIRepositoryList{})
 }
