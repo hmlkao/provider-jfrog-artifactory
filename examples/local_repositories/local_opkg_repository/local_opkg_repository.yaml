@@ -1,5 +1,5 @@
 apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
-kind: OpkgRepository
+kind: OPKGRepository
 metadata:
   name: opkg-example-crossplane-local
 spec:

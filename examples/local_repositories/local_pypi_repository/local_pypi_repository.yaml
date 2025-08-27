@@ -1,5 +1,5 @@
 apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
-kind: PypiRepository
+kind: PyPIRepository
 metadata:
   name: pypi-example-crossplane-local
 spec:

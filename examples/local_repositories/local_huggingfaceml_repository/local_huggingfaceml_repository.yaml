@@ -1,5 +1,5 @@
 apiVersion: local.artifactory.jfrog.crossplane.io/v1alpha1
-kind: HuggingfacemlRepository
+kind: HuggingFaceMLRepository
 metadata:
   name: huggingfaceml-example-crossplane-local
 spec:

@@ -9,7 +9,7 @@ import (
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_virtual_nuget_repository", func(r *config.Resource) {
 		// r.ShortGroup = ""
-		// r.Kind = "VirtualNugetRepository"
+		r.Kind = "NuGetRepository" // Otherwise, "NugetRepository" is used
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil

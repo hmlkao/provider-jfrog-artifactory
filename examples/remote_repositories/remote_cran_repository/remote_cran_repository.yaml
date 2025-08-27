@@ -1,5 +1,5 @@
 apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
-kind: CranRepository
+kind: CRANRepository
 metadata:
   name: cran-example-crossplane-remote
 spec:
