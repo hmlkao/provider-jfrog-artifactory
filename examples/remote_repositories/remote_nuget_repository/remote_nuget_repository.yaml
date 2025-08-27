@@ -1,5 +1,5 @@
 apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
-kind: NugetRepository
+kind: NuGetRepository
 metadata:
   name: nuget-example-crossplane-remote
 spec:

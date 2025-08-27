@@ -1,5 +1,5 @@
 apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
-kind: PypiRepository
+kind: PyPIRepository
 metadata:
   name: pypi-example-crossplane-remote
 spec:

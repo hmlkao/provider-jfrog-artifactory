@@ -1,5 +1,5 @@
 apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
-kind: CocoapodsRepository
+kind: CocoaPodsRepository
 metadata:
   name: cocoapods-example-crossplane-remote
 spec:

@@ -9,7 +9,7 @@ import (
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_local_cocoapods_repository", func(r *config.Resource) {
 		// r.ShortGroup = ""
-		// r.Kind = "LocalCocoapodsRepository"
+		r.Kind = "CocoaPodsRepository" // Otherwise, "CocoapodsRepository" is used
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil

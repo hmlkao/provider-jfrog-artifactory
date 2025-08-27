@@ -9,7 +9,7 @@ import (
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_local_huggingfaceml_repository", func(r *config.Resource) {
 		// r.ShortGroup = ""
-		// r.Kind = "LocalHuggingfacemlRepository"
+		r.Kind = "HuggingFaceMLRepository" // Otherwise, "HuggingfacemlRepository" is used
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil
