@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: HuggingfacemlRepository
-    listKind: HuggingfacemlRepositoryList
+    kind: HuggingFaceMLRepository
+    listKind: HuggingFaceMLRepositoryList
     plural: huggingfacemlrepositories
     singular: huggingfacemlrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: HuggingfacemlRepository is the Schema for the HuggingfacemlRepositorys
+        description: HuggingFaceMLRepository is the Schema for the HuggingFaceMLRepositorys
           API. <no value>
         properties:
           apiVersion:
@@ -55,8 +55,8 @@ spec:
           metadata:
             type: object
           spec:
-            description: HuggingfacemlRepositorySpec defines the desired state of
-              HuggingfacemlRepository
+            description: HuggingFaceMLRepositorySpec defines the desired state of
+              HuggingFaceMLRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -407,8 +407,8 @@ spec:
             - forProvider
             type: object
           status:
-            description: HuggingfacemlRepositoryStatus defines the observed state
-              of HuggingfacemlRepository.
+            description: HuggingFaceMLRepositoryStatus defines the observed state
+              of HuggingFaceMLRepository.
             properties:
               atProvider:
                 properties:

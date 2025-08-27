@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type SbtRepositoryContentSynchronisationInitParameters struct {
+type SBTRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type SbtRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type SbtRepositoryContentSynchronisationObservation struct {
+type SBTRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type SbtRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type SbtRepositoryContentSynchronisationParameters struct {
+type SBTRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type SbtRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type SbtRepositoryInitParameters struct {
+type SBTRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type SbtRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []SbtRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []SBTRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -214,7 +214,7 @@ type SbtRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type SbtRepositoryObservation struct {
+type SBTRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -241,7 +241,7 @@ type SbtRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []SbtRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []SBTRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -366,7 +366,7 @@ type SbtRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type SbtRepositoryParameters struct {
+type SBTRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -402,7 +402,7 @@ type SbtRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []SbtRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []SBTRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	// +kubebuilder:validation:Optional
@@ -568,10 +568,10 @@ type SbtRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// SbtRepositorySpec defines the desired state of SbtRepository
-type SbtRepositorySpec struct {
+// SBTRepositorySpec defines the desired state of SBTRepository
+type SBTRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     SbtRepositoryParameters `json:"forProvider"`
+	ForProvider     SBTRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -582,50 +582,50 @@ type SbtRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider SbtRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider SBTRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// SbtRepositoryStatus defines the observed state of SbtRepository.
-type SbtRepositoryStatus struct {
+// SBTRepositoryStatus defines the observed state of SBTRepository.
+type SBTRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        SbtRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        SBTRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// SbtRepository is the Schema for the SbtRepositorys API. <no value>
+// SBTRepository is the Schema for the SBTRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type SbtRepository struct {
+type SBTRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
-	Spec   SbtRepositorySpec   `json:"spec"`
-	Status SbtRepositoryStatus `json:"status,omitempty"`
+	Spec   SBTRepositorySpec   `json:"spec"`
+	Status SBTRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// SbtRepositoryList contains a list of SbtRepositorys
-type SbtRepositoryList struct {
+// SBTRepositoryList contains a list of SBTRepositorys
+type SBTRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []SbtRepository `json:"items"`
+	Items           []SBTRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	SbtRepository_Kind             = "SbtRepository"
-	SbtRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: SbtRepository_Kind}.String()
-	SbtRepository_KindAPIVersion   = SbtRepository_Kind + "." + CRDGroupVersion.String()
-	SbtRepository_GroupVersionKind = CRDGroupVersion.WithKind(SbtRepository_Kind)
+	SBTRepository_Kind             = "SBTRepository"
+	SBTRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: SBTRepository_Kind}.String()
+	SBTRepository_KindAPIVersion   = SBTRepository_Kind + "." + CRDGroupVersion.String()
+	SBTRepository_GroupVersionKind = CRDGroupVersion.WithKind(SBTRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&SbtRepository{}, &SbtRepositoryList{})
+	SchemeBuilder.Register(&SBTRepository{}, &SBTRepositoryList{})
 }

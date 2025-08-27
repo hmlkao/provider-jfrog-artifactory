@@ -188,63 +188,123 @@ func (mg *BowerRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretRef
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this CRANRepository.
+func (mg *CRANRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this CRANRepository.
+func (mg *CRANRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this CRANRepository.
+func (mg *CRANRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this CRANRepository.
+func (mg *CRANRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this CRANRepository.
+func (mg *CRANRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this CRANRepository.
+func (mg *CRANRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this CRANRepository.
+func (mg *CRANRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this CRANRepository.
+func (mg *CRANRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this CRANRepository.
+func (mg *CRANRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this CRANRepository.
+func (mg *CRANRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this CRANRepository.
+func (mg *CRANRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this CRANRepository.
+func (mg *CRANRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+	mg.Spec.WriteConnectionSecretToReference = r
+}
+
+// GetCondition of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+	return mg.Status.GetCondition(ct)
+}
+
+// GetDeletionPolicy of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+	return mg.Spec.DeletionPolicy
+}
+
+// GetManagementPolicies of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+	return mg.Spec.ManagementPolicies
+}
+
+// GetProviderConfigReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetProviderConfigReference() *xpv1.Reference {
+	return mg.Spec.ProviderConfigReference
+}
+
+// GetPublishConnectionDetailsTo of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+	return mg.Spec.PublishConnectionDetailsTo
+}
+
+// GetWriteConnectionSecretToReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+	return mg.Spec.WriteConnectionSecretToReference
+}
+
+// SetConditions of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetConditions(c ...xpv1.Condition) {
+	mg.Status.SetConditions(c...)
+}
+
+// SetDeletionPolicy of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+	mg.Spec.DeletionPolicy = r
+}
+
+// SetManagementPolicies of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+	mg.Spec.ManagementPolicies = r
+}
+
+// SetProviderConfigReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetProviderConfigReference(r *xpv1.Reference) {
+	mg.Spec.ProviderConfigReference = r
+}
+
+// SetPublishConnectionDetailsTo of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+	mg.Spec.PublishConnectionDetailsTo = r
+}
+
+// SetWriteConnectionSecretToReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -425,66 +485,6 @@ func (mg *CondaRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnecti
 
 // SetWriteConnectionSecretToReference of this CondaRepository.
 func (mg *CondaRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
-	mg.Spec.WriteConnectionSecretToReference = r
-}
-
-// GetCondition of this CranRepository.
-func (mg *CranRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
-	return mg.Status.GetCondition(ct)
-}
-
-// GetDeletionPolicy of this CranRepository.
-func (mg *CranRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
-	return mg.Spec.DeletionPolicy
-}
-
-// GetManagementPolicies of this CranRepository.
-func (mg *CranRepository) GetManagementPolicies() xpv1.ManagementPolicies {
-	return mg.Spec.ManagementPolicies
-}
-
-// GetProviderConfigReference of this CranRepository.
-func (mg *CranRepository) GetProviderConfigReference() *xpv1.Reference {
-	return mg.Spec.ProviderConfigReference
-}
-
-// GetPublishConnectionDetailsTo of this CranRepository.
-func (mg *CranRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
-	return mg.Spec.PublishConnectionDetailsTo
-}
-
-// GetWriteConnectionSecretToReference of this CranRepository.
-func (mg *CranRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
-	return mg.Spec.WriteConnectionSecretToReference
-}
-
-// SetConditions of this CranRepository.
-func (mg *CranRepository) SetConditions(c ...xpv1.Condition) {
-	mg.Status.SetConditions(c...)
-}
-
-// SetDeletionPolicy of this CranRepository.
-func (mg *CranRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
-	mg.Spec.DeletionPolicy = r
-}
-
-// SetManagementPolicies of this CranRepository.
-func (mg *CranRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
-	mg.Spec.ManagementPolicies = r
-}
-
-// SetProviderConfigReference of this CranRepository.
-func (mg *CranRepository) SetProviderConfigReference(r *xpv1.Reference) {
-	mg.Spec.ProviderConfigReference = r
-}
-
-// SetPublishConnectionDetailsTo of this CranRepository.
-func (mg *CranRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
-	mg.Spec.PublishConnectionDetailsTo = r
-}
-
-// SetWriteConnectionSecretToReference of this CranRepository.
-func (mg *CranRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -1148,123 +1148,123 @@ func (mg *MavenRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretRef
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this NpmRepository.
-func (mg *NpmRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this NPMRepository.
+func (mg *NPMRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this NpmRepository.
-func (mg *NpmRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this NPMRepository.
+func (mg *NPMRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this NpmRepository.
-func (mg *NpmRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this NPMRepository.
+func (mg *NPMRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this NpmRepository.
-func (mg *NpmRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this NPMRepository.
+func (mg *NPMRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this NpmRepository.
-func (mg *NpmRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this NPMRepository.
+func (mg *NPMRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this NpmRepository.
-func (mg *NpmRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this NPMRepository.
+func (mg *NPMRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this NpmRepository.
-func (mg *NpmRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this NPMRepository.
+func (mg *NPMRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this NpmRepository.
-func (mg *NpmRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this NPMRepository.
+func (mg *NPMRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this NpmRepository.
-func (mg *NpmRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this NPMRepository.
+func (mg *NPMRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this NpmRepository.
-func (mg *NpmRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this NPMRepository.
+func (mg *NPMRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this NpmRepository.
-func (mg *NpmRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this NPMRepository.
+func (mg *NPMRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this NpmRepository.
-func (mg *NpmRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this NPMRepository.
+func (mg *NPMRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this NugetRepository.
-func (mg *NugetRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this NuGetRepository.
+func (mg *NuGetRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this NugetRepository.
-func (mg *NugetRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this NuGetRepository.
+func (mg *NuGetRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this NugetRepository.
-func (mg *NugetRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this NuGetRepository.
+func (mg *NuGetRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this NugetRepository.
-func (mg *NugetRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this NuGetRepository.
+func (mg *NuGetRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this NugetRepository.
-func (mg *NugetRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this NuGetRepository.
+func (mg *NuGetRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this NugetRepository.
-func (mg *NugetRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this NuGetRepository.
+func (mg *NuGetRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this NugetRepository.
-func (mg *NugetRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this NuGetRepository.
+func (mg *NuGetRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this NugetRepository.
-func (mg *NugetRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this NuGetRepository.
+func (mg *NuGetRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this NugetRepository.
-func (mg *NugetRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this NuGetRepository.
+func (mg *NuGetRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this NugetRepository.
-func (mg *NugetRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this NuGetRepository.
+func (mg *NuGetRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this NugetRepository.
-func (mg *NugetRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this NuGetRepository.
+func (mg *NuGetRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this NugetRepository.
-func (mg *NugetRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this NuGetRepository.
+func (mg *NuGetRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -1508,63 +1508,63 @@ func (mg *PuppetRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretRe
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this PypiRepository.
-func (mg *PypiRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this PyPIRepository.
+func (mg *PyPIRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this PypiRepository.
-func (mg *PypiRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this PyPIRepository.
+func (mg *PyPIRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this PypiRepository.
-func (mg *PypiRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this PyPIRepository.
+func (mg *PyPIRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this PypiRepository.
-func (mg *PypiRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this PyPIRepository.
+func (mg *PyPIRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this PypiRepository.
-func (mg *PypiRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this PyPIRepository.
+func (mg *PyPIRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this PypiRepository.
-func (mg *PypiRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this PyPIRepository.
+func (mg *PyPIRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this PypiRepository.
-func (mg *PypiRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this PyPIRepository.
+func (mg *PyPIRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this PypiRepository.
-func (mg *PypiRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this PyPIRepository.
+func (mg *PyPIRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this PypiRepository.
-func (mg *PypiRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this PyPIRepository.
+func (mg *PyPIRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this PypiRepository.
-func (mg *PypiRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this PyPIRepository.
+func (mg *PyPIRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this PypiRepository.
-func (mg *PypiRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this PyPIRepository.
+func (mg *PyPIRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this PypiRepository.
-func (mg *PypiRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this PyPIRepository.
+func (mg *PyPIRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -1628,63 +1628,63 @@ func (mg *RPMRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretRefer
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this SbtRepository.
-func (mg *SbtRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this SBTRepository.
+func (mg *SBTRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this SbtRepository.
-func (mg *SbtRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this SBTRepository.
+func (mg *SBTRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this SbtRepository.
-func (mg *SbtRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this SBTRepository.
+func (mg *SBTRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this SbtRepository.
-func (mg *SbtRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this SBTRepository.
+func (mg *SBTRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this SbtRepository.
-func (mg *SbtRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this SBTRepository.
+func (mg *SBTRepository) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this SbtRepository.
-func (mg *SbtRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this SBTRepository.
+func (mg *SBTRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this SbtRepository.
-func (mg *SbtRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this SBTRepository.
+func (mg *SBTRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this SbtRepository.
-func (mg *SbtRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this SBTRepository.
+func (mg *SBTRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this SbtRepository.
-func (mg *SbtRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this SBTRepository.
+func (mg *SBTRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this SbtRepository.
-func (mg *SbtRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this SBTRepository.
+func (mg *SBTRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this SbtRepository.
-func (mg *SbtRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this SBTRepository.
+func (mg *SBTRepository) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this SbtRepository.
-func (mg *SbtRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this SBTRepository.
+func (mg *SBTRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 

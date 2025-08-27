@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type NpmRepositoryContentSynchronisationInitParameters struct {
+type NPMRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type NpmRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type NpmRepositoryContentSynchronisationObservation struct {
+type NPMRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type NpmRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type NpmRepositoryContentSynchronisationParameters struct {
+type NPMRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type NpmRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type NpmRepositoryInitParameters struct {
+type NPMRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type NpmRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []NpmRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []NPMRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -193,7 +193,7 @@ type NpmRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NpmRepositoryObservation struct {
+type NPMRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -220,7 +220,7 @@ type NpmRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []NpmRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []NPMRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -324,7 +324,7 @@ type NpmRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NpmRepositoryParameters struct {
+type NPMRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -360,7 +360,7 @@ type NpmRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []NpmRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []NPMRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	// +kubebuilder:validation:Optional
@@ -498,10 +498,10 @@ type NpmRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// NpmRepositorySpec defines the desired state of NpmRepository
-type NpmRepositorySpec struct {
+// NPMRepositorySpec defines the desired state of NPMRepository
+type NPMRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     NpmRepositoryParameters `json:"forProvider"`
+	ForProvider     NPMRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -512,49 +512,49 @@ type NpmRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider NpmRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider NPMRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// NpmRepositoryStatus defines the observed state of NpmRepository.
-type NpmRepositoryStatus struct {
+// NPMRepositoryStatus defines the observed state of NPMRepository.
+type NPMRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        NpmRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        NPMRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// NpmRepository is the Schema for the NpmRepositorys API. <no value>
+// NPMRepository is the Schema for the NPMRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type NpmRepository struct {
+type NPMRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              NpmRepositorySpec   `json:"spec"`
-	Status            NpmRepositoryStatus `json:"status,omitempty"`
+	Spec              NPMRepositorySpec   `json:"spec"`
+	Status            NPMRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// NpmRepositoryList contains a list of NpmRepositorys
-type NpmRepositoryList struct {
+// NPMRepositoryList contains a list of NPMRepositorys
+type NPMRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []NpmRepository `json:"items"`
+	Items           []NPMRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	NpmRepository_Kind             = "NpmRepository"
-	NpmRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NpmRepository_Kind}.String()
-	NpmRepository_KindAPIVersion   = NpmRepository_Kind + "." + CRDGroupVersion.String()
-	NpmRepository_GroupVersionKind = CRDGroupVersion.WithKind(NpmRepository_Kind)
+	NPMRepository_Kind             = "NPMRepository"
+	NPMRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NPMRepository_Kind}.String()
+	NPMRepository_KindAPIVersion   = NPMRepository_Kind + "." + CRDGroupVersion.String()
+	NPMRepository_GroupVersionKind = CRDGroupVersion.WithKind(NPMRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&NpmRepository{}, &NpmRepositoryList{})
+	SchemeBuilder.Register(&NPMRepository{}, &NPMRepositoryList{})
 }

@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this NpmRepository
-func (mg *NpmRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this NPMRepository
+func (mg *NPMRepository) GetTerraformResourceType() string {
 	return "artifactory_virtual_npm_repository"
 }
 
-// GetConnectionDetailsMapping for this NpmRepository
-func (tr *NpmRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this NPMRepository
+func (tr *NPMRepository) GetConnectionDetailsMapping() map[string]string {
 	return nil
 }
 
-// GetObservation of this NpmRepository
-func (tr *NpmRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this NPMRepository
+func (tr *NPMRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *NpmRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this NpmRepository
-func (tr *NpmRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this NPMRepository
+func (tr *NPMRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *NpmRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this NpmRepository
-func (tr *NpmRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this NPMRepository
+func (tr *NPMRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this NpmRepository
-func (tr *NpmRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this NPMRepository
+func (tr *NPMRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *NpmRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this NpmRepository
-func (tr *NpmRepository) SetParameters(params map[string]any) error {
+// SetParameters for this NPMRepository
+func (tr *NPMRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *NpmRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this NpmRepository
-func (tr *NpmRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this NPMRepository
+func (tr *NPMRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *NpmRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this NpmRepository
-func (tr *NpmRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this NPMRepository
+func (tr *NPMRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource '%q'", tr.GetName())
@@ -110,10 +110,10 @@ func (tr *NpmRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[
 	return params, nil
 }
 
-// LateInitialize this NpmRepository using its observed tfState.
+// LateInitialize this NPMRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *NpmRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &NpmRepositoryParameters{}
+func (tr *NPMRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &NPMRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *NpmRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *NpmRepository) GetTerraformSchemaVersion() int {
+func (tr *NPMRepository) GetTerraformSchemaVersion() int {
 	return 1
 }

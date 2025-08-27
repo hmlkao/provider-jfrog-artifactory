@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this NugetRepository
-func (mg *NugetRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this NuGetRepository
+func (mg *NuGetRepository) GetTerraformResourceType() string {
 	return "artifactory_remote_nuget_repository"
 }
 
-// GetConnectionDetailsMapping for this NugetRepository
-func (tr *NugetRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this NuGetRepository
+func (tr *NuGetRepository) GetConnectionDetailsMapping() map[string]string {
 	return map[string]string{"password": "passwordSecretRef"}
 }
 
-// GetObservation of this NugetRepository
-func (tr *NugetRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this NuGetRepository
+func (tr *NuGetRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *NugetRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this NugetRepository
-func (tr *NugetRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this NuGetRepository
+func (tr *NuGetRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *NugetRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this NugetRepository
-func (tr *NugetRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this NuGetRepository
+func (tr *NuGetRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this NugetRepository
-func (tr *NugetRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this NuGetRepository
+func (tr *NuGetRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *NugetRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this NugetRepository
-func (tr *NugetRepository) SetParameters(params map[string]any) error {
+// SetParameters for this NuGetRepository
+func (tr *NuGetRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *NugetRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this NugetRepository
-func (tr *NugetRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this NuGetRepository
+func (tr *NuGetRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *NugetRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this NugetRepository
-func (tr *NugetRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this NuGetRepository
+func (tr *NuGetRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource '%q'", tr.GetName())
@@ -110,10 +110,10 @@ func (tr *NugetRepository) GetMergedParameters(shouldMergeInitProvider bool) (ma
 	return params, nil
 }
 
-// LateInitialize this NugetRepository using its observed tfState.
+// LateInitialize this NuGetRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *NugetRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &NugetRepositoryParameters{}
+func (tr *NuGetRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &NuGetRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *NugetRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *NugetRepository) GetTerraformSchemaVersion() int {
+func (tr *NuGetRepository) GetTerraformSchemaVersion() int {
 	return 3
 }

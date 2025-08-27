@@ -35,6 +35,15 @@ func (l *BowerRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this CRANRepositoryList.
+func (l *CRANRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this CargoRepositoryList.
 func (l *CargoRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
@@ -53,8 +62,8 @@ func (l *ChefRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this CocoapodsRepositoryList.
-func (l *CocoapodsRepositoryList) GetItems() []resource.Managed {
+// GetItems of this CocoaPodsRepositoryList.
+func (l *CocoaPodsRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -82,15 +91,6 @@ func (l *ConanRepositoryList) GetItems() []resource.Managed {
 
 // GetItems of this CondaRepositoryList.
 func (l *CondaRepositoryList) GetItems() []resource.Managed {
-	items := make([]resource.Managed, len(l.Items))
-	for i := range l.Items {
-		items[i] = &l.Items[i]
-	}
-	return items
-}
-
-// GetItems of this CranRepositoryList.
-func (l *CranRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -206,8 +206,8 @@ func (l *MavenRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this NpmRepositoryList.
-func (l *NpmRepositoryList) GetItems() []resource.Managed {
+// GetItems of this NPMRepositoryList.
+func (l *NPMRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -215,8 +215,8 @@ func (l *NpmRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this NugetRepositoryList.
-func (l *NugetRepositoryList) GetItems() []resource.Managed {
+// GetItems of this NuGetRepositoryList.
+func (l *NuGetRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -233,8 +233,8 @@ func (l *OCIRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this OpkgRepositoryList.
-func (l *OpkgRepositoryList) GetItems() []resource.Managed {
+// GetItems of this OPKGRepositoryList.
+func (l *OPKGRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -269,8 +269,8 @@ func (l *PuppetRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this PypiRepositoryList.
-func (l *PypiRepositoryList) GetItems() []resource.Managed {
+// GetItems of this PyPIRepositoryList.
+func (l *PyPIRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -287,8 +287,8 @@ func (l *RPMRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this SbtRepositoryList.
-func (l *SbtRepositoryList) GetItems() []resource.Managed {
+// GetItems of this SBTRepositoryList.
+func (l *SBTRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type CranRepositoryContentSynchronisationInitParameters struct {
+type CRANRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type CranRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type CranRepositoryContentSynchronisationObservation struct {
+type CRANRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type CranRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type CranRepositoryContentSynchronisationParameters struct {
+type CRANRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type CranRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type CranRepositoryInitParameters struct {
+type CRANRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type CranRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []CranRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []CRANRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -190,7 +190,7 @@ type CranRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CranRepositoryObservation struct {
+type CRANRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -217,7 +217,7 @@ type CranRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []CranRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []CRANRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -318,7 +318,7 @@ type CranRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CranRepositoryParameters struct {
+type CRANRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -354,7 +354,7 @@ type CranRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []CranRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []CRANRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	// +kubebuilder:validation:Optional
@@ -488,10 +488,10 @@ type CranRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// CranRepositorySpec defines the desired state of CranRepository
-type CranRepositorySpec struct {
+// CRANRepositorySpec defines the desired state of CRANRepository
+type CRANRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     CranRepositoryParameters `json:"forProvider"`
+	ForProvider     CRANRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -502,50 +502,50 @@ type CranRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider CranRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider CRANRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// CranRepositoryStatus defines the observed state of CranRepository.
-type CranRepositoryStatus struct {
+// CRANRepositoryStatus defines the observed state of CRANRepository.
+type CRANRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        CranRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        CRANRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// CranRepository is the Schema for the CranRepositorys API. <no value>
+// CRANRepository is the Schema for the CRANRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type CranRepository struct {
+type CRANRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
-	Spec   CranRepositorySpec   `json:"spec"`
-	Status CranRepositoryStatus `json:"status,omitempty"`
+	Spec   CRANRepositorySpec   `json:"spec"`
+	Status CRANRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// CranRepositoryList contains a list of CranRepositorys
-type CranRepositoryList struct {
+// CRANRepositoryList contains a list of CRANRepositorys
+type CRANRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []CranRepository `json:"items"`
+	Items           []CRANRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	CranRepository_Kind             = "CranRepository"
-	CranRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CranRepository_Kind}.String()
-	CranRepository_KindAPIVersion   = CranRepository_Kind + "." + CRDGroupVersion.String()
-	CranRepository_GroupVersionKind = CRDGroupVersion.WithKind(CranRepository_Kind)
+	CRANRepository_Kind             = "CRANRepository"
+	CRANRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CRANRepository_Kind}.String()
+	CRANRepository_KindAPIVersion   = CRANRepository_Kind + "." + CRDGroupVersion.String()
+	CRANRepository_GroupVersionKind = CRDGroupVersion.WithKind(CRANRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&CranRepository{}, &CranRepositoryList{})
+	SchemeBuilder.Register(&CRANRepository{}, &CRANRepositoryList{})
 }

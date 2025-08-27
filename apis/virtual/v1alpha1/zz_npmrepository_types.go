@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type NpmRepositoryInitParameters struct {
+type NPMRepositoryInitParameters struct {
 
 	// Whether the virtual repository should search through remote repositories when trying to resolve an artifact requested by another Artifactory instance.
 	ArtifactoryRequestsCanRetrieveRemoteArtifacts *bool `json:"artifactoryRequestsCanRetrieveRemoteArtifacts,omitempty" tf:"artifactory_requests_can_retrieve_remote_artifacts,omitempty"`
@@ -59,7 +59,7 @@ type NpmRepositoryInitParameters struct {
 	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 }
 
-type NpmRepositoryObservation struct {
+type NPMRepositoryObservation struct {
 
 	// Whether the virtual repository should search through remote repositories when trying to resolve an artifact requested by another Artifactory instance.
 	ArtifactoryRequestsCanRetrieveRemoteArtifacts *bool `json:"artifactoryRequestsCanRetrieveRemoteArtifacts,omitempty" tf:"artifactory_requests_can_retrieve_remote_artifacts,omitempty"`
@@ -109,7 +109,7 @@ type NpmRepositoryObservation struct {
 	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 }
 
-type NpmRepositoryParameters struct {
+type NPMRepositoryParameters struct {
 
 	// Whether the virtual repository should search through remote repositories when trying to resolve an artifact requested by another Artifactory instance.
 	// +kubebuilder:validation:Optional
@@ -169,10 +169,10 @@ type NpmRepositoryParameters struct {
 	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 }
 
-// NpmRepositorySpec defines the desired state of NpmRepository
-type NpmRepositorySpec struct {
+// NPMRepositorySpec defines the desired state of NPMRepository
+type NPMRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     NpmRepositoryParameters `json:"forProvider"`
+	ForProvider     NPMRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -183,49 +183,49 @@ type NpmRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider NpmRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider NPMRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// NpmRepositoryStatus defines the observed state of NpmRepository.
-type NpmRepositoryStatus struct {
+// NPMRepositoryStatus defines the observed state of NPMRepository.
+type NPMRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        NpmRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        NPMRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// NpmRepository is the Schema for the NpmRepositorys API. <no value>
+// NPMRepository is the Schema for the NPMRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type NpmRepository struct {
+type NPMRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              NpmRepositorySpec   `json:"spec"`
-	Status            NpmRepositoryStatus `json:"status,omitempty"`
+	Spec              NPMRepositorySpec   `json:"spec"`
+	Status            NPMRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// NpmRepositoryList contains a list of NpmRepositorys
-type NpmRepositoryList struct {
+// NPMRepositoryList contains a list of NPMRepositorys
+type NPMRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []NpmRepository `json:"items"`
+	Items           []NPMRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	NpmRepository_Kind             = "NpmRepository"
-	NpmRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NpmRepository_Kind}.String()
-	NpmRepository_KindAPIVersion   = NpmRepository_Kind + "." + CRDGroupVersion.String()
-	NpmRepository_GroupVersionKind = CRDGroupVersion.WithKind(NpmRepository_Kind)
+	NPMRepository_Kind             = "NPMRepository"
+	NPMRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NPMRepository_Kind}.String()
+	NPMRepository_KindAPIVersion   = NPMRepository_Kind + "." + CRDGroupVersion.String()
+	NPMRepository_GroupVersionKind = CRDGroupVersion.WithKind(NPMRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&NpmRepository{}, &NpmRepositoryList{})
+	SchemeBuilder.Register(&NPMRepository{}, &NPMRepositoryList{})
 }

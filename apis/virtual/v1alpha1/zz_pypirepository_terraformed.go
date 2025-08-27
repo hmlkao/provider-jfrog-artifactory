@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this PypiRepository
-func (mg *PypiRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this PyPIRepository
+func (mg *PyPIRepository) GetTerraformResourceType() string {
 	return "artifactory_virtual_pypi_repository"
 }
 
-// GetConnectionDetailsMapping for this PypiRepository
-func (tr *PypiRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this PyPIRepository
+func (tr *PyPIRepository) GetConnectionDetailsMapping() map[string]string {
 	return nil
 }
 
-// GetObservation of this PypiRepository
-func (tr *PypiRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this PyPIRepository
+func (tr *PyPIRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *PypiRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this PypiRepository
-func (tr *PypiRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this PyPIRepository
+func (tr *PyPIRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *PypiRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this PypiRepository
-func (tr *PypiRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this PyPIRepository
+func (tr *PyPIRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this PypiRepository
-func (tr *PypiRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this PyPIRepository
+func (tr *PyPIRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *PypiRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this PypiRepository
-func (tr *PypiRepository) SetParameters(params map[string]any) error {
+// SetParameters for this PyPIRepository
+func (tr *PyPIRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *PypiRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this PypiRepository
-func (tr *PypiRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this PyPIRepository
+func (tr *PyPIRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *PypiRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this PypiRepository
-func (tr *PypiRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this PyPIRepository
+func (tr *PyPIRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource '%q'", tr.GetName())
@@ -110,10 +110,10 @@ func (tr *PypiRepository) GetMergedParameters(shouldMergeInitProvider bool) (map
 	return params, nil
 }
 
-// LateInitialize this PypiRepository using its observed tfState.
+// LateInitialize this PyPIRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *PypiRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &PypiRepositoryParameters{}
+func (tr *PyPIRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &PyPIRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *PypiRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *PypiRepository) GetTerraformSchemaVersion() int {
+func (tr *PyPIRepository) GetTerraformSchemaVersion() int {
 	return 1
 }

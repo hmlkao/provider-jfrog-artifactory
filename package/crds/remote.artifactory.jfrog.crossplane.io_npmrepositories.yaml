@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: NpmRepository
-    listKind: NpmRepositoryList
+    kind: NPMRepository
+    listKind: NPMRepositoryList
     plural: npmrepositories
     singular: npmrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: NpmRepository is the Schema for the NpmRepositorys API. <no value>
+        description: NPMRepository is the Schema for the NPMRepositorys API. <no value>
         properties:
           apiVersion:
             description: |-
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: NpmRepositorySpec defines the desired state of NpmRepository
+            description: NPMRepositorySpec defines the desired state of NPMRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -777,7 +777,7 @@ spec:
             - forProvider
             type: object
           status:
-            description: NpmRepositoryStatus defines the observed state of NpmRepository.
+            description: NPMRepositoryStatus defines the observed state of NPMRepository.
             properties:
               atProvider:
                 properties:

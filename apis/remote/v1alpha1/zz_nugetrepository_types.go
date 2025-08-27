@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type NugetRepositoryContentSynchronisationInitParameters struct {
+type NuGetRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type NugetRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type NugetRepositoryContentSynchronisationObservation struct {
+type NuGetRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type NugetRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type NugetRepositoryContentSynchronisationParameters struct {
+type NuGetRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type NugetRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type NugetRepositoryInitParameters struct {
+type NuGetRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type NugetRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []NugetRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []NuGetRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -208,7 +208,7 @@ type NugetRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NugetRepositoryObservation struct {
+type NuGetRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -235,7 +235,7 @@ type NugetRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []NugetRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []NuGetRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -354,7 +354,7 @@ type NugetRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NugetRepositoryParameters struct {
+type NuGetRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -390,7 +390,7 @@ type NugetRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []NugetRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []NuGetRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	// +kubebuilder:validation:Optional
@@ -548,10 +548,10 @@ type NugetRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// NugetRepositorySpec defines the desired state of NugetRepository
-type NugetRepositorySpec struct {
+// NuGetRepositorySpec defines the desired state of NuGetRepository
+type NuGetRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     NugetRepositoryParameters `json:"forProvider"`
+	ForProvider     NuGetRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -562,50 +562,50 @@ type NugetRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider NugetRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider NuGetRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// NugetRepositoryStatus defines the observed state of NugetRepository.
-type NugetRepositoryStatus struct {
+// NuGetRepositoryStatus defines the observed state of NuGetRepository.
+type NuGetRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        NugetRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        NuGetRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// NugetRepository is the Schema for the NugetRepositorys API. <no value>
+// NuGetRepository is the Schema for the NuGetRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type NugetRepository struct {
+type NuGetRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
-	Spec   NugetRepositorySpec   `json:"spec"`
-	Status NugetRepositoryStatus `json:"status,omitempty"`
+	Spec   NuGetRepositorySpec   `json:"spec"`
+	Status NuGetRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// NugetRepositoryList contains a list of NugetRepositorys
-type NugetRepositoryList struct {
+// NuGetRepositoryList contains a list of NuGetRepositorys
+type NuGetRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []NugetRepository `json:"items"`
+	Items           []NuGetRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	NugetRepository_Kind             = "NugetRepository"
-	NugetRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NugetRepository_Kind}.String()
-	NugetRepository_KindAPIVersion   = NugetRepository_Kind + "." + CRDGroupVersion.String()
-	NugetRepository_GroupVersionKind = CRDGroupVersion.WithKind(NugetRepository_Kind)
+	NuGetRepository_Kind             = "NuGetRepository"
+	NuGetRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NuGetRepository_Kind}.String()
+	NuGetRepository_KindAPIVersion   = NuGetRepository_Kind + "." + CRDGroupVersion.String()
+	NuGetRepository_GroupVersionKind = CRDGroupVersion.WithKind(NuGetRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&NugetRepository{}, &NugetRepositoryList{})
+	SchemeBuilder.Register(&NuGetRepository{}, &NuGetRepositoryList{})
 }
