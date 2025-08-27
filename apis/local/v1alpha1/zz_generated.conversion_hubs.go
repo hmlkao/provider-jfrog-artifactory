@@ -46,10 +46,25 @@ func (tr *DockerV1Repository) Hub() {}
 func (tr *DockerV2Repository) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *GemsRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *GenericRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *GitLFSRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *GoRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *GradleRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *HelmOCIRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *HelmRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *HuggingfacemlRepository) Hub() {}

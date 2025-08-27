@@ -28,6 +28,9 @@ func (tr *CocoapodsRepository) Hub() {}
 func (tr *ComposerRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *ConanRepository) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *CondaRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
@@ -61,7 +64,7 @@ func (tr *HelmOCIRepository) Hub() {}
 func (tr *HelmRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *HuggingfacemlRepository) Hub() {}
+func (tr *HuggingFaceMLRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *IvyRepository) Hub() {}

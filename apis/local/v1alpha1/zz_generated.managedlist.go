@@ -125,6 +125,15 @@ func (l *DockerV2RepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this GemsRepositoryList.
+func (l *GemsRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this GenericRepositoryList.
 func (l *GenericRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
@@ -134,8 +143,44 @@ func (l *GenericRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this GitLFSRepositoryList.
+func (l *GitLFSRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
+// GetItems of this GoRepositoryList.
+func (l *GoRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this GradleRepositoryList.
 func (l *GradleRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
+// GetItems of this HelmOCIRepositoryList.
+func (l *HelmOCIRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
+// GetItems of this HelmRepositoryList.
+func (l *HelmRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

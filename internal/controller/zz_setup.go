@@ -24,8 +24,13 @@ import (
 	debianrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/debianrepository"
 	dockerv1repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/dockerv1repository"
 	dockerv2repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/dockerv2repository"
+	gemsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/gemsrepository"
 	genericrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/genericrepository"
+	gitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/gitlfsrepository"
+	gorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/gorepository"
 	gradlerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/gradlerepository"
+	helmocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/helmocirepository"
+	helmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/helmrepository"
 	huggingfacemlrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/huggingfacemlrepository"
 	ivyrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/ivyrepository"
 	machinelearningrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/local/machinelearningrepository"
@@ -52,17 +57,18 @@ import (
 	chefrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/chefrepository"
 	cocoapodsrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/cocoapodsrepository"
 	composerrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/composerrepository"
+	conanrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/conanrepository"
 	condarepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/condarepository"
 	cranrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/cranrepository"
 	debianrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/debianrepository"
 	dockerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/dockerrepository"
-	gemsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gemsrepository"
+	gemsrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gemsrepository"
 	genericrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/genericrepository"
-	gitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gitlfsrepository"
-	gorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gorepository"
+	gitlfsrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gitlfsrepository"
+	gorepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gorepository"
 	gradlerepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/gradlerepository"
-	helmocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/helmocirepository"
-	helmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/helmrepository"
+	helmocirepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/helmocirepository"
+	helmrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/helmrepository"
 	huggingfacemlrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/huggingfacemlrepository"
 	ivyrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/ivyrepository"
 	mavenrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/remote/mavenrepository"
@@ -132,8 +138,13 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		debianrepository.Setup,
 		dockerv1repository.Setup,
 		dockerv2repository.Setup,
+		gemsrepository.Setup,
 		genericrepository.Setup,
+		gitlfsrepository.Setup,
+		gorepository.Setup,
 		gradlerepository.Setup,
+		helmocirepository.Setup,
+		helmrepository.Setup,
 		huggingfacemlrepository.Setup,
 		ivyrepository.Setup,
 		machinelearningrepository.Setup,
@@ -160,17 +171,18 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		chefrepositoryremote.Setup,
 		cocoapodsrepositoryremote.Setup,
 		composerrepositoryremote.Setup,
+		conanrepositoryremote.Setup,
 		condarepositoryremote.Setup,
 		cranrepositoryremote.Setup,
 		debianrepositoryremote.Setup,
 		dockerrepository.Setup,
-		gemsrepository.Setup,
+		gemsrepositoryremote.Setup,
 		genericrepositoryremote.Setup,
-		gitlfsrepository.Setup,
-		gorepository.Setup,
+		gitlfsrepositoryremote.Setup,
+		gorepositoryremote.Setup,
 		gradlerepositoryremote.Setup,
-		helmocirepository.Setup,
-		helmrepository.Setup,
+		helmocirepositoryremote.Setup,
+		helmrepositoryremote.Setup,
 		huggingfacemlrepositoryremote.Setup,
 		ivyrepositoryremote.Setup,
 		mavenrepositoryremote.Setup,

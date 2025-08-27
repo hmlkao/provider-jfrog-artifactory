@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 )
 
-type HuggingFaceMLRepositoryContentSynchronisationInitParameters struct {
+type ConanRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type HuggingFaceMLRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type HuggingFaceMLRepositoryContentSynchronisationObservation struct {
+type ConanRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type HuggingFaceMLRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type HuggingFaceMLRepositoryContentSynchronisationParameters struct {
+type ConanRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type HuggingFaceMLRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type HuggingFaceMLRepositoryInitParameters struct {
+type ConanRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type HuggingFaceMLRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []HuggingFaceMLRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []ConanRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -111,6 +111,9 @@ type HuggingFaceMLRepositoryInitParameters struct {
 
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
+
+	// Force basic authentication credentials in order to use this repository. Default value is 'false'.
+	ForceConanAuthentication *bool `json:"forceConanAuthentication,omitempty" tf:"force_conan_authentication,omitempty"`
 
 	// When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	HardFail *bool `json:"hardFail,omitempty" tf:"hard_fail,omitempty"`
@@ -181,7 +184,7 @@ type HuggingFaceMLRepositoryInitParameters struct {
 	// When set, remote artifacts are fetched along with their properties.
 	SynchronizeProperties *bool `json:"synchronizeProperties,omitempty" tf:"synchronize_properties,omitempty"`
 
-	// The remote repo URL. Default to 'https://huggingface.co'
+	// This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
 	// Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
@@ -193,7 +196,7 @@ type HuggingFaceMLRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type HuggingFaceMLRepositoryObservation struct {
+type ConanRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -220,7 +223,7 @@ type HuggingFaceMLRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []HuggingFaceMLRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []ConanRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
@@ -242,6 +245,9 @@ type HuggingFaceMLRepositoryObservation struct {
 
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
+
+	// Force basic authentication credentials in order to use this repository. Default value is 'false'.
+	ForceConanAuthentication *bool `json:"forceConanAuthentication,omitempty" tf:"force_conan_authentication,omitempty"`
 
 	// When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	HardFail *bool `json:"hardFail,omitempty" tf:"hard_fail,omitempty"`
@@ -312,7 +318,7 @@ type HuggingFaceMLRepositoryObservation struct {
 	// When set, remote artifacts are fetched along with their properties.
 	SynchronizeProperties *bool `json:"synchronizeProperties,omitempty" tf:"synchronize_properties,omitempty"`
 
-	// The remote repo URL. Default to 'https://huggingface.co'
+	// This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
 	// Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
@@ -324,7 +330,7 @@ type HuggingFaceMLRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type HuggingFaceMLRepositoryParameters struct {
+type ConanRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -360,7 +366,7 @@ type HuggingFaceMLRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []HuggingFaceMLRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []ConanRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Enable repository to be protected by the Curation service.
 	// +kubebuilder:validation:Optional
@@ -389,6 +395,10 @@ type HuggingFaceMLRepositoryParameters struct {
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	// +kubebuilder:validation:Optional
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
+
+	// Force basic authentication credentials in order to use this repository. Default value is 'false'.
+	// +kubebuilder:validation:Optional
+	ForceConanAuthentication *bool `json:"forceConanAuthentication,omitempty" tf:"force_conan_authentication,omitempty"`
 
 	// When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	// +kubebuilder:validation:Optional
@@ -482,7 +492,7 @@ type HuggingFaceMLRepositoryParameters struct {
 	// +kubebuilder:validation:Optional
 	SynchronizeProperties *bool `json:"synchronizeProperties,omitempty" tf:"synchronize_properties,omitempty"`
 
-	// The remote repo URL. Default to 'https://huggingface.co'
+	// This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	// +kubebuilder:validation:Optional
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
@@ -498,10 +508,10 @@ type HuggingFaceMLRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// HuggingFaceMLRepositorySpec defines the desired state of HuggingFaceMLRepository
-type HuggingFaceMLRepositorySpec struct {
+// ConanRepositorySpec defines the desired state of ConanRepository
+type ConanRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     HuggingFaceMLRepositoryParameters `json:"forProvider"`
+	ForProvider     ConanRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -512,49 +522,50 @@ type HuggingFaceMLRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider HuggingFaceMLRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider ConanRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// HuggingFaceMLRepositoryStatus defines the observed state of HuggingFaceMLRepository.
-type HuggingFaceMLRepositoryStatus struct {
+// ConanRepositoryStatus defines the observed state of ConanRepository.
+type ConanRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        HuggingFaceMLRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        ConanRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// HuggingFaceMLRepository is the Schema for the HuggingFaceMLRepositorys API. <no value>
+// ConanRepository is the Schema for the ConanRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type HuggingFaceMLRepository struct {
+type ConanRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              HuggingFaceMLRepositorySpec   `json:"spec"`
-	Status            HuggingFaceMLRepositoryStatus `json:"status,omitempty"`
+	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
+	Spec   ConanRepositorySpec   `json:"spec"`
+	Status ConanRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// HuggingFaceMLRepositoryList contains a list of HuggingFaceMLRepositorys
-type HuggingFaceMLRepositoryList struct {
+// ConanRepositoryList contains a list of ConanRepositorys
+type ConanRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []HuggingFaceMLRepository `json:"items"`
+	Items           []ConanRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	HuggingFaceMLRepository_Kind             = "HuggingFaceMLRepository"
-	HuggingFaceMLRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: HuggingFaceMLRepository_Kind}.String()
-	HuggingFaceMLRepository_KindAPIVersion   = HuggingFaceMLRepository_Kind + "." + CRDGroupVersion.String()
-	HuggingFaceMLRepository_GroupVersionKind = CRDGroupVersion.WithKind(HuggingFaceMLRepository_Kind)
+	ConanRepository_Kind             = "ConanRepository"
+	ConanRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: ConanRepository_Kind}.String()
+	ConanRepository_KindAPIVersion   = ConanRepository_Kind + "." + CRDGroupVersion.String()
+	ConanRepository_GroupVersionKind = CRDGroupVersion.WithKind(ConanRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&HuggingFaceMLRepository{}, &HuggingFaceMLRepositoryList{})
+	SchemeBuilder.Register(&ConanRepository{}, &ConanRepositoryList{})
 }
