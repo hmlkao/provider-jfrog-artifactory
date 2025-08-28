@@ -213,7 +213,7 @@ $ TF_LOG=debug terraform apply -refresh-only -auto-approve -input=false -lock=fa
 ==============================================================================
 ~~~ REQUEST ~~~
 GET  /artifactory/api/security/keypair/  HTTP/1.1
-HOST   : artifacts-testing.merck.com
+HOST   : artifacts-testing.example.com
 HEADERS:
         Accept: */*
         Authorization: <REDACTED>
@@ -250,7 +250,7 @@ $ TF_LOG=debug terraform apply -refresh-only -auto-approve -input=false -lock=fa
 ==============================================================================
 ~~~ REQUEST ~~~
 GET  /artifactory/api/security/keypair/  HTTP/1.1
-HOST   : artifacts-testing.merck.com
+HOST   : artifacts-testing.example.com
 HEADERS:
         Accept: */*
         Authorization: <REDACTED>
