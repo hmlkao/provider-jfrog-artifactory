@@ -8,7 +8,7 @@ import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
 
-	ujconfig "github.com/crossplane/upjet/pkg/config"
+	ujconfig "github.com/crossplane/upjet/v2/pkg/config"
 
 	itemproperties "github.com/hmlkao/provider-jfrog-artifactory/config/artifact/item_properties"
 	backup "github.com/hmlkao/provider-jfrog-artifactory/config/configuration/backup"
