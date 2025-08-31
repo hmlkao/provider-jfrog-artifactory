@@ -20,6 +20,8 @@ export TERRAFORM_DOCS_PATH ?= docs/resources
 
 
 PLATFORMS ?= linux_amd64 linux_arm64
+# By default, we only release from the main branch, but we want to publish images also for PRs
+RELEASE_BRANCH_FILTER ?= main master release-% merge/%
 
 # -include will silently skip missing files, which allows us
 # to load those files with a target in the Makefile. If only
