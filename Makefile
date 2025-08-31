@@ -134,7 +134,7 @@ $(TERRAFORM_PROVIDER_SCHEMA): $(TERRAFORM)
 	@mkdir -p $(TERRAFORM_WORKDIR)
 	@echo '{"terraform":[{"required_providers":[{"provider":{"source":"'"$(TERRAFORM_PROVIDER_SOURCE)"'","version":"'"$(TERRAFORM_PROVIDER_VERSION)"'"}}],"required_version":"'"$(TERRAFORM_VERSION)"'"}]}' > $(TERRAFORM_WORKDIR)/main.tf.json
 	@$(INFO) Check $(TERRAFORM_WORKDIR)/terraform-logs.txt if this is the last message you see.
-	@$(TERRAFORM) -chdir=$(TERRAFORM_WORKDIR) init > $(TERRAFORM_WORKDIR)/terraform-logs.txt 2>&1
+	@$(TERRAFORM) -chdir=$(TERRAFORM_WORKDIR) init -upgrade > $(TERRAFORM_WORKDIR)/terraform-logs.txt 2>&1
 	@$(TERRAFORM) -chdir=$(TERRAFORM_WORKDIR) providers schema -json=true > $(TERRAFORM_PROVIDER_SCHEMA) 2>> $(TERRAFORM_WORKDIR)/terraform-logs.txt
 	@$(OK) generating provider schema for $(TERRAFORM_PROVIDER_SOURCE) $(TERRAFORM_PROVIDER_VERSION)
 
@@ -268,7 +268,8 @@ help-special: crossplane.help
 .PHONY: crossplane.help help-special
 
 # TODO(negz): Update CI to use these targets.
-vendor: modules.download
+# Add $(CROSSPLANE_CLI), because it's missing and needed by 'make local-deploy' and 'make build'
+vendor: modules.download $(CROSSPLANE_CLI)
 vendor.check: modules.check
 
 # This file contains custom make targets
