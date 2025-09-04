@@ -103,7 +103,10 @@ List of all resources of [Terraform provider v12.10.0](https://registry.terrafor
 
 ### Artifact
 
-Short group is `artifact`, so the `apiGroup` is `artifact.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `artifact`, so the `apiGroup` is:
+
+- `artifact.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `artifact.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                      | Supported                                                                                  | Kind             |
 |-------------------------------|--------------------------------------------------------------------------------------------|------------------|
@@ -112,7 +115,10 @@ Short group is `artifact`, so the `apiGroup` is `artifact.artifactory.jfrog.cros
 
 ### Configuration
 
-Short group is `configuration`, so the `apiGroup` is `configuration.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `configuration`, so the `apiGroup` is:
+
+- `configuration.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `configuration.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                             | Supported                                              | Kind                           |
 |--------------------------------------|--------------------------------------------------------|--------------------------------|
@@ -133,7 +139,10 @@ Short group is `configuration`, so the `apiGroup` is `configuration.artifactory.
 
 ### Federated Repositories
 
-Short group is `federated`, so the `apiGroup` is `federated.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `federated`, so the `apiGroup` is:
+
+- `federated.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `federated.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                              | Supported          | Kind                           |
 |-------------------------------------------------------|--------------------|--------------------------------|
@@ -176,7 +185,10 @@ Short group is `federated`, so the `apiGroup` is `federated.artifactory.jfrog.cr
 
 ### Lifecycle
 
-Short group is `lifecycle`, so the `apiGroup` is `lifecycle.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `lifecycle`, so the `apiGroup` is:
+
+- `lifecycle.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `lifecycle.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                  | Supported          | Kind                           |
 |-------------------------------------------|--------------------|--------------------------------|
@@ -185,7 +197,10 @@ Short group is `lifecycle`, so the `apiGroup` is `lifecycle.artifactory.jfrog.cr
 
 ### Local Repositories
 
-Short group is `local`, so the `apiGroup` is `local.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `local`, so the `apiGroup` is
+
+- `local.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `local.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                          | Supported          | Kind                         |
 |---------------------------------------------------|--------------------|------------------------------|
@@ -229,7 +244,10 @@ Short group is `local`, so the `apiGroup` is `local.artifactory.jfrog.crossplane
 
 ### Remote Repositories
 
-Short group is `remote`, so the `apiGroup` is `remote.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `remote`, so the `apiGroup` is:
+
+- `remote.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `remote.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                           | Supported          | Kind                          |
 |----------------------------------------------------|--------------------|-------------------------------|
@@ -272,7 +290,10 @@ Short group is `remote`, so the `apiGroup` is `remote.artifactory.jfrog.crosspla
 
 ### Replication
 
-Short group is `replication`, so the `apiGroup` is `replication.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `replication`, so the `apiGroup` is :
+
+- `replication.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `replication.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                          | Supported          | Kind                           |
 |---------------------------------------------------|--------------------|--------------------------------|
@@ -282,7 +303,10 @@ Short group is `replication`, so the `apiGroup` is `replication.artifactory.jfro
 
 ### Security
 
-Short group is `security`, so the `apiGroup` is `security.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `security`, so the `apiGroup` is:
+
+- `security.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `security.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                 | Supported                                                      | Kind                           |
 |------------------------------------------|----------------------------------------------------------------|--------------------------------|
@@ -296,7 +320,10 @@ Short group is `security`, so the `apiGroup` is `security.artifactory.jfrog.cros
 
 ### User
 
-Short group is `user`, so the `apiGroup` is `user.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `user`, so the `apiGroup` is:
+
+- `user.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `user.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                     | Supported                                              | Kind            |
 |------------------------------|--------------------------------------------------------|-----------------|
@@ -307,7 +334,10 @@ Short group is `user`, so the `apiGroup` is `user.artifactory.jfrog.crossplane.i
 
 ### Virtual Repositories
 
-Short group is `virtual`, so the `apiGroup` is `virtual.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `virtual`, so the `apiGroup` is:
+
+- `virtual.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `virtual.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                   | Supported          | Kind                  |
 |--------------------------------------------|--------------------|-----------------------|
@@ -345,7 +375,10 @@ Short group is `virtual`, so the `apiGroup` is `virtual.artifactory.jfrog.crossp
 
 ### Webhook
 
-Short group is `webhook`, so the `apiGroup` is `webhook.artifactory.jfrog.crossplane.io` for cluster-scoped resources.
+Short group is `webhook`, so the `apiGroup` is:
+
+- `webhook.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
+- `webhook.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                                 | Supported          | Kind                           |
 |----------------------------------------------------------|--------------------|--------------------------------|
