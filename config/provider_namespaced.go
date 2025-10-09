@@ -120,6 +120,7 @@ import (
 	remoteterrraformrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/remote_repositories/remote_terraform_repository"
 	remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/remote_repositories/remote_vcs_repository"
 	"github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/security/keypair"
+	scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/security/scoped_token"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/user/anonymous_user"
 	virtualalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/virtual_repositories/virtual_alpine_repository"
 	virtualansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/virtual_repositories/virtual_ansible_repository"
@@ -246,6 +247,7 @@ func GetProviderNamespaced() *ujconfig.Provider {
 		localvagrantrepository.Configure,
 		// Security
 		keypair.Configure,
+		scopedtoken.Configure,
 		// Remote Repositories
 		remotealpinerepository.Configure,
 		remoteansiblerepository.Configure,

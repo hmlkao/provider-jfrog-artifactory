@@ -145,7 +145,7 @@ Short group is `federated`, so the `apiGroup` is:
 - `federated.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
 | Resource                                              | Supported          | Kind                          |
-|-------------------------------------------------------|--------------------|-------------------------------|
+| ----------------------------------------------------- | ------------------ | ----------------------------- |
 | `artifactory_federated_alpine_repository`             | :heavy_check_mark: | `AlpineRepository`            |
 | `artifactory_federated_ansible_repository`            | :heavy_check_mark: | `AnsibleRepository`           |
 | `artifactory_federated_bower_repository`              | :heavy_check_mark: | `BowerRepository`             |
@@ -315,7 +315,7 @@ Short group is `security`, so the `apiGroup` is:
 | `artifactory_global_environment`         | :x:                                                            |                                |
 | `artifactory_keypair`                    | :heavy_check_mark: ([Known Issues](./KNOWN_ISSUES.md#keypair)) | `Keypair`                      |
 | `artifactory_password_expiration_policy` | :x:                                                            |                                |
-| `artifactory_scoped_token`               | :x:                                                            |                                |
+| `artifactory_scoped_token`               | :heavy_check_mark: ([Known Issues](./KNOWN_ISSUES.md#tokens))  | `ScopedToken`                  |
 | `artifactory_user_lock_policy`           | :x:                                                            |                                |
 
 ### User

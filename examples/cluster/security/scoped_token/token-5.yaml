@@ -1,0 +1,12 @@
+apiVersion: security.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ScopedToken
+metadata:
+  name: example-token-5
+spec:
+  forProvider:
+    username: admin
+    scopes:
+    - applied-permissions/admin
+  writeConnectionSecretToRef:
+    name: example-token-5
+    namespace: crossplane-system

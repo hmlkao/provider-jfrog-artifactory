@@ -1,0 +1,12 @@
+apiVersion: security.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ScopedToken
+metadata:
+  name: example-token-2
+spec:
+  forProvider:
+    scopes:
+    - applied-permissions/groups:readers
+    - artifact:example-repo-local:r,a
+  writeConnectionSecretToRef:
+    name: example-token-2
+    namespace: crossplane-system
