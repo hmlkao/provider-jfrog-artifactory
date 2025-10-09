@@ -1,3 +1,4 @@
+
 <!-- markdownlint-disable no-hard-tabs -->
 # Known issues
 
@@ -119,3 +120,11 @@ This is also [mentioned](https://registry.terraform.io/providers/jfrog/artifacto
 So, it seems it's possible to CREATE or UPDATE resource, but **it's not possible to refresh Terraform state**.
 
 More details from the investigation are [here](./docs/security/keypair/cannot-find-pair-name-in-tfstate.md).
+
+## `tokens`
+
+You must remember to include the `writeConnectionSecretToRef` object in your `Token` definitions in order for the token secrets to be stored in a Kubernetes secret. See [Managed Resources](https://docs.crossplane.io/v2.0/managed-resources/managed-resources/#writeconnectionsecrettoref) for details.
+
+Token would not be saved by Artifactory if `expires_in` is less than the persistency threshold value (default to 10800 seconds) set in Access configuration. See [Persistency Threshold](https://jfrog.com/help/r/jfrog-platform-administration-documentation/use-the-revocable-and-persistency-thresholds) for details.
+
+You may only create and delete tokens managed using this provider. Existing tokens cannot be imported nor updated. Attempting to change any parameter of the `forProvider` object will fail and cause the controller to retry repeatedly. Tokens that are revoked or refreshed on Artifactory do not cause this provider to attempt to reconcile its state.

@@ -122,6 +122,7 @@ import (
 	terraformrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/terraformrepository"
 	vcsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/vcsrepository"
 	keypair "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/keypair"
+	scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/scopedtoken"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/user/anonymoususer"
 	alpinerepositoryvirtual "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/virtual/alpinerepository"
 	ansiblerepositoryvirtual "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/virtual/ansiblerepository"
@@ -272,6 +273,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		terraformrepository.Setup,
 		vcsrepository.Setup,
 		keypair.Setup,
+		scopedtoken.Setup,
 		anonymoususer.Setup,
 		alpinerepositoryvirtual.Setup,
 		ansiblerepositoryvirtual.Setup,
@@ -428,6 +430,7 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		terraformrepository.SetupGated,
 		vcsrepository.SetupGated,
 		keypair.SetupGated,
+		scopedtoken.SetupGated,
 		anonymoususer.SetupGated,
 		alpinerepositoryvirtual.SetupGated,
 		ansiblerepositoryvirtual.SetupGated,

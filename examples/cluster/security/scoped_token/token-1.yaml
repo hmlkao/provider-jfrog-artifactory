@@ -1,0 +1,12 @@
+apiVersion: security.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ScopedToken
+metadata:
+  name: example-token-1
+spec:
+  forProvider:
+    username: admin
+    description: "This is an example token created via Crossplane"
+    includeReferenceToken: true
+  writeConnectionSecretToRef:
+    name: example-token-1
+    namespace: crossplane-system

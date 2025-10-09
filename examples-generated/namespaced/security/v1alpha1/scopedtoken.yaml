@@ -1,0 +1,12 @@
+apiVersion: security.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: ScopedToken
+metadata:
+  annotations:
+    meta.upbound.io/example-id: security/v1alpha1/scopedtoken
+  labels:
+    testing.upbound.io/example-name: scoped_token
+  name: scoped-token
+  namespace: upbound-system
+spec:
+  forProvider:
+    username: existing-user
