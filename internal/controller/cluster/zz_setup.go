@@ -124,6 +124,7 @@ import (
 	keypair "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/keypair"
 	scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/scopedtoken"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/user/anonymoususer"
+	user "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/user/user"
 	alpinerepositoryvirtual "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/virtual/alpinerepository"
 	ansiblerepositoryvirtual "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/virtual/ansiblerepository"
 	bowerrepositoryvirtual "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/virtual/bowerrepository"
@@ -275,6 +276,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		keypair.Setup,
 		scopedtoken.Setup,
 		anonymoususer.Setup,
+		user.Setup,
 		alpinerepositoryvirtual.Setup,
 		ansiblerepositoryvirtual.Setup,
 		bowerrepositoryvirtual.Setup,
@@ -432,6 +434,7 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		keypair.SetupGated,
 		scopedtoken.SetupGated,
 		anonymoususer.SetupGated,
+		user.SetupGated,
 		alpinerepositoryvirtual.SetupGated,
 		ansiblerepositoryvirtual.SetupGated,
 		bowerrepositoryvirtual.SetupGated,

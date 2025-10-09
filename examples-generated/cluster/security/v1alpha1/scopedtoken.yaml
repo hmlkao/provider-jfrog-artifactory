@@ -9,3 +9,19 @@ metadata:
 spec:
   forProvider:
     username: existing-user
+
+---
+
+apiVersion: user.artifactory.jfrog.crossplane.io/v1alpha1
+kind: User
+metadata:
+  annotations:
+    meta.upbound.io/example-id: security/v1alpha1/scopedtoken
+  labels:
+    testing.upbound.io/example-name: new_user
+  name: new-user
+spec:
+  forProvider:
+    email: new_user@somewhere.com
+    groups:
+    - readers

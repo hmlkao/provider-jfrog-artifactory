@@ -1,0 +1,28 @@
+apiVersion: user.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: User
+metadata:
+  annotations:
+    meta.upbound.io/example-id: user/v1alpha1/user
+  labels:
+    testing.upbound.io/example-name: test-user
+  name: test-user
+  namespace: upbound-system
+spec:
+  forProvider:
+    admin: false
+    disableUiAccess: false
+    email: test-user@artifactory-terraform.com
+    groups:
+    - readers
+    - logged-in-users
+    internalPasswordDisabled: false
+    passwordPolicy:
+      digit: 1
+      length: 10
+      lowercase: 1
+      specialChar: 1
+      uppercase: 1
+    passwordSecretRef:
+      key: example-key
+      name: example-secret
+    profileUpdatable: true
