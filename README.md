@@ -325,12 +325,12 @@ Short group is `user`, so the `apiGroup` is:
 - `user.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
 - `user.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
-| Resource                     | Supported                                              | Kind            |
-|------------------------------|--------------------------------------------------------|-----------------|
-| `artifactory_anonymous_user` | :heavy_check_mark:                                     | `AnonymousUser` |
-| `artifactory_managed_user`   | :x: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema)) |                 |
-| `artifactory_unmanaged_user` | :x: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema)) |                 |
-| `artifactory_user`           | :x: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema)) |                 |
+| Resource                     | Supported                                                             | Kind            |
+|------------------------------|-----------------------------------------------------------------------|-----------------|
+| `artifactory_anonymous_user` | :heavy_check_mark:                                                    | `AnonymousUser` |
+| `artifactory_managed_user`   | :x: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema))                |                 |
+| `artifactory_unmanaged_user` | :x: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema))                |                 |
+| `artifactory_user`           | :heavy_check_mark: ([Nested Schema](./KNOWN_ISSUES.md#nested-schema)) | `User`          |
 
 ### Virtual Repositories
 
