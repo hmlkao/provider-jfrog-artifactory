@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: TerraformModuleRepository
+metadata:
+  name: federated-terraform-module-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

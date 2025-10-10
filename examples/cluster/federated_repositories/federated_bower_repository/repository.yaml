@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.crossplane.io/v1alpha1
+kind: BowerRepository
+metadata:
+  name: federated-bower-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

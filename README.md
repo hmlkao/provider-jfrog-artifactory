@@ -144,44 +144,44 @@ Short group is `federated`, so the `apiGroup` is:
 - `federated.artifactory.jfrog.crossplane.io` for **cluster-scoped resources**
 - `federated.artifactory.jfrog.m.crossplane.io` for **namespace-scoped resources**
 
-| Resource                                              | Supported          | Kind                           |
-|-------------------------------------------------------|--------------------|--------------------------------|
-| `artifactory_federated_alpine_repository`             | :x:                |                                |
-| `artifactory_federated_ansible_repository`            | :x:                |                                |
-| `artifactory_federated_bower_repository`              | :x:                |                                |
-| `artifactory_federated_cargo_repository`              | :x:                |                                |
-| `artifactory_federated_chef_repository`               | :x:                |                                |
-| `artifactory_federated_cocoapods_repository`          | :x:                |                                |
-| `artifactory_federated_composer_repository`           | :x:                |                                |
-| `artifactory_federated_conan_repository`              | :x:                |                                |
-| `artifactory_federated_conda_repository`              | :x:                |                                |
-| `artifactory_federated_cran_repository`               | :x:                |                                |
-| `artifactory_federated_debian_repository`             | :x:                |                                |
-| `artifactory_federated_docker_repository`             | :x:                |                                |
-| `artifactory_federated_docker_v1_repository`          | :x:                |                                |
-| `artifactory_federated_docker_v2_repository`          | :x:                |                                |
-| `artifactory_federated_gems_repository`               | :x:                |                                |
-| `artifactory_federated_generic_repository`            | :x:                |                                |
-| `artifactory_federated_gitlfs_repository`             | :x:                |                                |
-| `artifactory_federated_go_repository`                 | :x:                |                                |
-| `artifactory_federated_gradle_repository`             | :x:                |                                |
-| `artifactory_federated_helm_repository`               | :x:                |                                |
-| `artifactory_federated_helmoci_repository`            | :x:                |                                |
-| `artifactory_federated_huggingfaceml_repository`      | :x:                |                                |
-| `artifactory_federated_ivy_repository`                | :x:                |                                |
-| `artifactory_federated_maven_repository`              | :x:                |                                |
-| `artifactory_federated_npm_repository`                | :x:                |                                |
-| `artifactory_federated_nuget_repository`              | :x:                |                                |
-| `artifactory_federated_oci_repository`                | :x:                |                                |
-| `artifactory_federated_opkg_repository`               | :x:                |                                |
-| `artifactory_federated_puppet_repository`             | :x:                |                                |
-| `artifactory_federated_pypi_repository`               | :x:                |                                |
-| `artifactory_federated_rpm_repository`                | :x:                |                                |
-| `artifactory_federated_sbt_repository`                | :x:                |                                |
-| `artifactory_federated_swift_repository`              | :x:                |                                |
-| `artifactory_federated_terraform_module_repository`   | :x:                |                                |
-| `artifactory_federated_terraform_provider_repository` | :x:                |                                |
-| `artifactory_federated_vagrant_repository`            | :x:                |                                |
+| Resource                                              | Supported          | Kind                          |
+|-------------------------------------------------------|--------------------|-------------------------------|
+| `artifactory_federated_alpine_repository`             | :heavy_check_mark: | `AlpineRepository`            |
+| `artifactory_federated_ansible_repository`            | :heavy_check_mark: | `AnsibleRepository`           |
+| `artifactory_federated_bower_repository`              | :heavy_check_mark: | `BowerRepository`             |
+| `artifactory_federated_cargo_repository`              | :heavy_check_mark: | `CargoRepository`             |
+| `artifactory_federated_chef_repository`               | :heavy_check_mark: | `ChefRepository`              |
+| `artifactory_federated_cocoapods_repository`          | :heavy_check_mark: | `CocoaPodsRepository`         |
+| `artifactory_federated_composer_repository`           | :heavy_check_mark: | `ComposerRepository`          |
+| `artifactory_federated_conan_repository`              | :heavy_check_mark: | `ConanRepository`             |
+| `artifactory_federated_conda_repository`              | :heavy_check_mark: | `CondaRepository`             |
+| `artifactory_federated_cran_repository`               | :heavy_check_mark: | `CRANRepository`              |
+| `artifactory_federated_debian_repository`             | :heavy_check_mark: | `DebianRepository`            |
+| `artifactory_federated_docker_repository`             | :heavy_check_mark: | `DockerRepository`            |
+| `artifactory_federated_docker_v1_repository`          | :heavy_check_mark: | `DockerV1Repository`          |
+| `artifactory_federated_docker_v2_repository`          | :heavy_check_mark: | `DockerV2Repository`          |
+| `artifactory_federated_gems_repository`               | :heavy_check_mark: | `GemsRepository`              |
+| `artifactory_federated_generic_repository`            | :heavy_check_mark: | `GenericRepository`           |
+| `artifactory_federated_gitlfs_repository`             | :heavy_check_mark: | `GitLFSRepository`            |
+| `artifactory_federated_go_repository`                 | :heavy_check_mark: | `GoRepository`                |
+| `artifactory_federated_gradle_repository`             | :heavy_check_mark: | `GradleRepository`            |
+| `artifactory_federated_helm_repository`               | :heavy_check_mark: | `HelmRepository`              |
+| `artifactory_federated_helmoci_repository`            | :heavy_check_mark: | `HelmOCIRepository`           |
+| `artifactory_federated_huggingfaceml_repository`      | :heavy_check_mark: | `HuggingFaceMLRepository`     |
+| `artifactory_federated_ivy_repository`                | :heavy_check_mark: | `IvyRepository`               |
+| `artifactory_federated_maven_repository`              | :heavy_check_mark: | `MavenRepository`             |
+| `artifactory_federated_npm_repository`                | :heavy_check_mark: | `NPMRepository`               |
+| `artifactory_federated_nuget_repository`              | :heavy_check_mark: | `NuGetRepository`             |
+| `artifactory_federated_oci_repository`                | :heavy_check_mark: | `OCIRepository`               |
+| `artifactory_federated_opkg_repository`               | :heavy_check_mark: | `OpkgRepository`              |
+| `artifactory_federated_puppet_repository`             | :heavy_check_mark: | `PuppetRepository`            |
+| `artifactory_federated_pypi_repository`               | :heavy_check_mark: | `PypiRepository`              |
+| `artifactory_federated_rpm_repository`                | :heavy_check_mark: | `RPMRepository`               |
+| `artifactory_federated_sbt_repository`                | :heavy_check_mark: | `SbtRepository`               |
+| `artifactory_federated_swift_repository`              | :heavy_check_mark: | `SwiftRepository`             |
+| `artifactory_federated_terraform_module_repository`   | :heavy_check_mark: | `TerraformModuleRepository`   |
+| `artifactory_federated_terraform_provider_repository` | :heavy_check_mark: | `TerraformProviderRepository` |
+| `artifactory_federated_vagrant_repository`            | :heavy_check_mark: | `VagrantRepository`           |
 
 ### Lifecycle
 

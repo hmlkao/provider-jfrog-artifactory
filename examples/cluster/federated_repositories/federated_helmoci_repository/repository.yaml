@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HelmociRepository
+metadata:
+  name: federated-helmoci-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

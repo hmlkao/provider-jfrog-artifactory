@@ -9,6 +9,42 @@ import (
 
 	itemproperties "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/artifact/item_properties"
 	backup "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/configuration/backup"
+	federatedalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_alpine_repository"
+	federatedansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_ansible_repository"
+	federatedbowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_bower_repository"
+	federatedcargorepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_cargo_repository"
+	federatedchefrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_chef_repository"
+	federatedcocoapodsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_cocoapods_repository"
+	federatedcomposerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_composer_repository"
+	federatedconanrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_conan_repository"
+	federatedcondarepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_conda_repository"
+	federatedcranrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_cran_repository"
+	federateddebianrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_debian_repository"
+	federateddockerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_docker_repository"
+	federateddockerv1repository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_docker_v1_repository"
+	federateddockerv2repository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_docker_v2_repository"
+	federatedgemsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_gems_repository"
+	federatedgenericrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_generic_repository"
+	federatedgitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_gitlfs_repository"
+	federatedgorepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_go_repository"
+	federatedgradlerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_gradle_repository"
+	federatedhelmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_helm_repository"
+	federatedhelmocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_helmoci_repository"
+	federatedhuggingfacemlrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_huggingfaceml_repository"
+	federatedivyrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_ivy_repository"
+	federatedmavenrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_maven_repository"
+	federatednpmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_npm_repository"
+	federatednugetrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_nuget_repository"
+	federatedocirepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_oci_repository"
+	federatedopkgrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_opkg_repository"
+	federatedpuppetrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_puppet_repository"
+	federatedpypirepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_pypi_repository"
+	federatedrpmrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_rpm_repository"
+	federatedsbtrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_sbt_repository"
+	federatedswiftrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_swift_repository"
+	federatedterraformmodulerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_terraform_module_repository"
+	federatedterraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_terraform_provider_repository"
+	federatedvagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/federated_repositories/federated_vagrant_repository"
 	localalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/local_repositories/local_alpine_repository"
 	localansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/local_repositories/local_ansible_repository"
 	localbowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/local_repositories/local_bower_repository"
@@ -132,6 +168,43 @@ func GetProviderNamespaced() *ujconfig.Provider {
 		itemproperties.Configure,
 		// Configuration
 		backup.Configure,
+		// Federated Repositories
+		federatedalpinerepository.Configure,
+		federatedansiblerepository.Configure,
+		federatedbowerrepository.Configure,
+		federatedcargorepository.Configure,
+		federatedchefrepository.Configure,
+		federatedcocoapodsrepository.Configure,
+		federatedcomposerrepository.Configure,
+		federatedconanrepository.Configure,
+		federatedcondarepository.Configure,
+		federatedcranrepository.Configure,
+		federateddebianrepository.Configure,
+		federateddockerrepository.Configure,
+		federateddockerv1repository.Configure,
+		federateddockerv2repository.Configure,
+		federatedgemsrepository.Configure,
+		federatedgenericrepository.Configure,
+		federatedgitlfsrepository.Configure,
+		federatedgorepository.Configure,
+		federatedgradlerepository.Configure,
+		federatedhelmrepository.Configure,
+		federatedhelmocirepository.Configure,
+		federatedhuggingfacemlrepository.Configure,
+		federatedivyrepository.Configure,
+		federatedmavenrepository.Configure,
+		federatednpmrepository.Configure,
+		federatednugetrepository.Configure,
+		federatedocirepository.Configure,
+		federatedopkgrepository.Configure,
+		federatedpuppetrepository.Configure,
+		federatedpypirepository.Configure,
+		federatedrpmrepository.Configure,
+		federatedsbtrepository.Configure,
+		federatedswiftrepository.Configure,
+		federatedterraformmodulerepository.Configure,
+		federatedterraformproviderrepository.Configure,
+		federatedvagrantrepository.Configure,
 		// Local Repositories
 		localansiblerepository.Configure,
 		localalpinerepository.Configure,

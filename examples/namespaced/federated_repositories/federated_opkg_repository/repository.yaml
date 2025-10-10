@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: OpkgRepository
+metadata:
+  name: federated-opkg-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default
