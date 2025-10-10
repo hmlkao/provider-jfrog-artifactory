@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DockerV2Repository
+metadata:
+  name: federated-dockerv2-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

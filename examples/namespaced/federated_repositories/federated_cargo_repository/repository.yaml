@@ -1,0 +1,13 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: CargoRepository
+metadata:
+  name: federated-cargo-example
+spec:
+  forProvider:
+    key: "federated-cargo-example"
+    anonymousAccess: true
+    member:
+      - url: "http://localhost:8082/artifactory/federated-cargo-example"
+        enabled: true
+  providerConfigRef:
+    name: default

@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: CranRepository
+metadata:
+  name: federated-cran-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

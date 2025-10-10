@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: MavenRepository
+metadata:
+  name: federated-maven-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

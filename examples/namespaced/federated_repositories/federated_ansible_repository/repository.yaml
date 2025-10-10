@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: AnsibleRepository
+metadata:
+  name: federated-ansible-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

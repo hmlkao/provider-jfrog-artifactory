@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.crossplane.io/v1alpha1
+kind: HuggingfacemlRepository
+metadata:
+  name: federated-huggingfaceml-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

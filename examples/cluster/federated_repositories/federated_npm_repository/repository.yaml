@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.crossplane.io/v1alpha1
+kind: NpmRepository
+metadata:
+  name: federated-npm-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default

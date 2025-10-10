@@ -1,0 +1,8 @@
+apiVersion: federated.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: SbtRepository
+metadata:
+  name: federated-sbt-example
+spec:
+  forProvider: {}
+  providerConfigRef:
+    name: default
