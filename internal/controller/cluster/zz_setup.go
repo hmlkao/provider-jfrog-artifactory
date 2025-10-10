@@ -11,44 +11,80 @@ import (
 
 	itemproperties "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/artifact/itemproperties"
 	backup "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/configuration/backup"
-	alpinerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/alpinerepository"
-	ansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/ansiblerepository"
-	bowerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/bowerrepository"
-	cargorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/cargorepository"
-	chefrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/chefrepository"
-	cocoapodsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/cocoapodsrepository"
-	composerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/composerrepository"
-	conanrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/conanrepository"
-	condarepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/condarepository"
-	cranrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/cranrepository"
-	debianrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/debianrepository"
-	dockerv1repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/dockerv1repository"
-	dockerv2repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/dockerv2repository"
-	gemsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gemsrepository"
-	genericrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/genericrepository"
-	gitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gitlfsrepository"
-	gorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gorepository"
-	gradlerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gradlerepository"
-	helmocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/helmocirepository"
-	helmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/helmrepository"
-	huggingfacemlrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/huggingfacemlrepository"
-	ivyrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/ivyrepository"
+	alpinerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/alpinerepository"
+	ansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/ansiblerepository"
+	bowerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/bowerrepository"
+	cargorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/cargorepository"
+	chefrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/chefrepository"
+	cocoapodsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/cocoapodsrepository"
+	composerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/composerrepository"
+	conanrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/conanrepository"
+	condarepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/condarepository"
+	cranrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/cranrepository"
+	debianrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/debianrepository"
+	dockerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/dockerrepository"
+	dockerv1repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/dockerv1repository"
+	dockerv2repository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/dockerv2repository"
+	gemsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/gemsrepository"
+	genericrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/genericrepository"
+	gitlfsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/gitlfsrepository"
+	gorepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/gorepository"
+	gradlerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/gradlerepository"
+	helmocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/helmocirepository"
+	helmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/helmrepository"
+	huggingfacemlrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/huggingfacemlrepository"
+	ivyrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/ivyrepository"
+	mavenrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/mavenrepository"
+	npmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/npmrepository"
+	nugetrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/nugetrepository"
+	ocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/ocirepository"
+	opkgrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/opkgrepository"
+	puppetrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/puppetrepository"
+	pypirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/pypirepository"
+	rpmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/rpmrepository"
+	sbtrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/sbtrepository"
+	swiftrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/swiftrepository"
+	terraformmodulerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/terraformmodulerepository"
+	terraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/terraformproviderrepository"
+	vagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/federated/vagrantrepository"
+	alpinerepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/alpinerepository"
+	ansiblerepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/ansiblerepository"
+	bowerrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/bowerrepository"
+	cargorepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/cargorepository"
+	chefrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/chefrepository"
+	cocoapodsrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/cocoapodsrepository"
+	composerrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/composerrepository"
+	conanrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/conanrepository"
+	condarepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/condarepository"
+	cranrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/cranrepository"
+	debianrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/debianrepository"
+	dockerv1repositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/dockerv1repository"
+	dockerv2repositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/dockerv2repository"
+	gemsrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gemsrepository"
+	genericrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/genericrepository"
+	gitlfsrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gitlfsrepository"
+	gorepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gorepository"
+	gradlerepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/gradlerepository"
+	helmocirepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/helmocirepository"
+	helmrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/helmrepository"
+	huggingfacemlrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/huggingfacemlrepository"
+	ivyrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/ivyrepository"
 	machinelearningrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/machinelearningrepository"
-	mavenrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/mavenrepository"
-	npmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/npmrepository"
-	nugetrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/nugetrepository"
-	ocirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/ocirepository"
-	opkgrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/opkgrepository"
+	mavenrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/mavenrepository"
+	npmrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/npmrepository"
+	nugetrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/nugetrepository"
+	ocirepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/ocirepository"
+	opkgrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/opkgrepository"
 	pubrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/pubrepository"
-	puppetrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/puppetrepository"
-	pypirepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/pypirepository"
-	rpmrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/rpmrepository"
-	sbtrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/sbtrepository"
-	swiftrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/swiftrepository"
+	puppetrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/puppetrepository"
+	pypirepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/pypirepository"
+	rpmrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/rpmrepository"
+	sbtrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/sbtrepository"
+	swiftrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/swiftrepository"
 	terraformbackendrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/terraformbackendrepository"
-	terraformmodulerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/terraformmodulerepository"
-	terraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/terraformproviderrepository"
-	vagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/vagrantrepository"
+	terraformmodulerepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/terraformmodulerepository"
+	terraformproviderrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/terraformproviderrepository"
+	vagrantrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/local/vagrantrepository"
 	providerconfig "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/providerconfig"
 	alpinerepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/alpinerepository"
 	ansiblerepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/ansiblerepository"
@@ -61,7 +97,7 @@ import (
 	condarepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/condarepository"
 	cranrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/cranrepository"
 	debianrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/debianrepository"
-	dockerrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/dockerrepository"
+	dockerrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/dockerrepository"
 	gemsrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/gemsrepository"
 	genericrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/genericrepository"
 	gitlfsrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/gitlfsrepository"
@@ -136,6 +172,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		condarepository.Setup,
 		cranrepository.Setup,
 		debianrepository.Setup,
+		dockerrepository.Setup,
 		dockerv1repository.Setup,
 		dockerv2repository.Setup,
 		gemsrepository.Setup,
@@ -147,22 +184,57 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		helmrepository.Setup,
 		huggingfacemlrepository.Setup,
 		ivyrepository.Setup,
-		machinelearningrepository.Setup,
 		mavenrepository.Setup,
 		npmrepository.Setup,
 		nugetrepository.Setup,
 		ocirepository.Setup,
 		opkgrepository.Setup,
-		pubrepository.Setup,
 		puppetrepository.Setup,
 		pypirepository.Setup,
 		rpmrepository.Setup,
 		sbtrepository.Setup,
 		swiftrepository.Setup,
-		terraformbackendrepository.Setup,
 		terraformmodulerepository.Setup,
 		terraformproviderrepository.Setup,
 		vagrantrepository.Setup,
+		alpinerepositorylocal.Setup,
+		ansiblerepositorylocal.Setup,
+		bowerrepositorylocal.Setup,
+		cargorepositorylocal.Setup,
+		chefrepositorylocal.Setup,
+		cocoapodsrepositorylocal.Setup,
+		composerrepositorylocal.Setup,
+		conanrepositorylocal.Setup,
+		condarepositorylocal.Setup,
+		cranrepositorylocal.Setup,
+		debianrepositorylocal.Setup,
+		dockerv1repositorylocal.Setup,
+		dockerv2repositorylocal.Setup,
+		gemsrepositorylocal.Setup,
+		genericrepositorylocal.Setup,
+		gitlfsrepositorylocal.Setup,
+		gorepositorylocal.Setup,
+		gradlerepositorylocal.Setup,
+		helmocirepositorylocal.Setup,
+		helmrepositorylocal.Setup,
+		huggingfacemlrepositorylocal.Setup,
+		ivyrepositorylocal.Setup,
+		machinelearningrepository.Setup,
+		mavenrepositorylocal.Setup,
+		npmrepositorylocal.Setup,
+		nugetrepositorylocal.Setup,
+		ocirepositorylocal.Setup,
+		opkgrepositorylocal.Setup,
+		pubrepository.Setup,
+		puppetrepositorylocal.Setup,
+		pypirepositorylocal.Setup,
+		rpmrepositorylocal.Setup,
+		sbtrepositorylocal.Setup,
+		swiftrepositorylocal.Setup,
+		terraformbackendrepository.Setup,
+		terraformmodulerepositorylocal.Setup,
+		terraformproviderrepositorylocal.Setup,
+		vagrantrepositorylocal.Setup,
 		providerconfig.Setup,
 		alpinerepositoryremote.Setup,
 		ansiblerepositoryremote.Setup,
@@ -175,7 +247,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		condarepositoryremote.Setup,
 		cranrepositoryremote.Setup,
 		debianrepositoryremote.Setup,
-		dockerrepository.Setup,
+		dockerrepositoryremote.Setup,
 		gemsrepositoryremote.Setup,
 		genericrepositoryremote.Setup,
 		gitlfsrepositoryremote.Setup,
@@ -256,6 +328,7 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		condarepository.SetupGated,
 		cranrepository.SetupGated,
 		debianrepository.SetupGated,
+		dockerrepository.SetupGated,
 		dockerv1repository.SetupGated,
 		dockerv2repository.SetupGated,
 		gemsrepository.SetupGated,
@@ -267,22 +340,57 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		helmrepository.SetupGated,
 		huggingfacemlrepository.SetupGated,
 		ivyrepository.SetupGated,
-		machinelearningrepository.SetupGated,
 		mavenrepository.SetupGated,
 		npmrepository.SetupGated,
 		nugetrepository.SetupGated,
 		ocirepository.SetupGated,
 		opkgrepository.SetupGated,
-		pubrepository.SetupGated,
 		puppetrepository.SetupGated,
 		pypirepository.SetupGated,
 		rpmrepository.SetupGated,
 		sbtrepository.SetupGated,
 		swiftrepository.SetupGated,
-		terraformbackendrepository.SetupGated,
 		terraformmodulerepository.SetupGated,
 		terraformproviderrepository.SetupGated,
 		vagrantrepository.SetupGated,
+		alpinerepositorylocal.SetupGated,
+		ansiblerepositorylocal.SetupGated,
+		bowerrepositorylocal.SetupGated,
+		cargorepositorylocal.SetupGated,
+		chefrepositorylocal.SetupGated,
+		cocoapodsrepositorylocal.SetupGated,
+		composerrepositorylocal.SetupGated,
+		conanrepositorylocal.SetupGated,
+		condarepositorylocal.SetupGated,
+		cranrepositorylocal.SetupGated,
+		debianrepositorylocal.SetupGated,
+		dockerv1repositorylocal.SetupGated,
+		dockerv2repositorylocal.SetupGated,
+		gemsrepositorylocal.SetupGated,
+		genericrepositorylocal.SetupGated,
+		gitlfsrepositorylocal.SetupGated,
+		gorepositorylocal.SetupGated,
+		gradlerepositorylocal.SetupGated,
+		helmocirepositorylocal.SetupGated,
+		helmrepositorylocal.SetupGated,
+		huggingfacemlrepositorylocal.SetupGated,
+		ivyrepositorylocal.SetupGated,
+		machinelearningrepository.SetupGated,
+		mavenrepositorylocal.SetupGated,
+		npmrepositorylocal.SetupGated,
+		nugetrepositorylocal.SetupGated,
+		ocirepositorylocal.SetupGated,
+		opkgrepositorylocal.SetupGated,
+		pubrepository.SetupGated,
+		puppetrepositorylocal.SetupGated,
+		pypirepositorylocal.SetupGated,
+		rpmrepositorylocal.SetupGated,
+		sbtrepositorylocal.SetupGated,
+		swiftrepositorylocal.SetupGated,
+		terraformbackendrepository.SetupGated,
+		terraformmodulerepositorylocal.SetupGated,
+		terraformproviderrepositorylocal.SetupGated,
+		vagrantrepositorylocal.SetupGated,
 		providerconfig.SetupGated,
 		alpinerepositoryremote.SetupGated,
 		ansiblerepositoryremote.SetupGated,
@@ -295,7 +403,7 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		condarepositoryremote.SetupGated,
 		cranrepositoryremote.SetupGated,
 		debianrepositoryremote.SetupGated,
-		dockerrepository.SetupGated,
+		dockerrepositoryremote.SetupGated,
 		gemsrepositoryremote.SetupGated,
 		genericrepositoryremote.SetupGated,
 		gitlfsrepositoryremote.SetupGated,
