@@ -12,3 +12,6 @@ metadata:
       Provider Artifactory is a Crossplane provider for [JFrog Artifactory](https://jfrog.com/artifactory/).
       If you encounter an issue please create an issue in the
       [hmlkao/provider-jfrog-artifactory](https://github.com/hmlkao/provider-jfrog-artifactory/issues) repo.
+spec:
+  capabilities:
+  - SafeStart
