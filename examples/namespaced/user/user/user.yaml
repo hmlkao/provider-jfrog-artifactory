@@ -1,0 +1,12 @@
+apiVersion: user.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: User
+metadata:
+  name: test-user
+  namespace: example-namespace
+spec:
+  forProvider:
+    # name: test-user # metadata.name is used as identifier
+    email: test-user@artifactory-terraform.com
+  providerConfigRef:
+    kind: ProviderConfig
+    name: default

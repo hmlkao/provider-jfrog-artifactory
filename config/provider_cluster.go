@@ -122,6 +122,7 @@ import (
 	"github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/keypair"
 	scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/scoped_token"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/user/anonymous_user"
+	"github.com/hmlkao/provider-jfrog-artifactory/config/cluster/user/user"
 	virtualalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/virtual_repositories/virtual_alpine_repository"
 	virtualansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/virtual_repositories/virtual_ansible_repository"
 	virtualbowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/virtual_repositories/virtual_bower_repository"
@@ -287,6 +288,7 @@ func GetProvider() *ujconfig.Provider {
 		remotevcsrepository.Configure,
 		// User
 		anonymoususer.Configure,
+		user.Configure,
 		// Virtual Repositories
 		virtualalpinerepository.Configure,
 		virtualansiblerepository.Configure,

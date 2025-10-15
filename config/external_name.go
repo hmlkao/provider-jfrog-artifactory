@@ -93,6 +93,11 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_remote_terraform_repository":          config.ParameterAsIdentifier("key"),
 	"artifactory_remote_terraform_provider_repository": config.ParameterAsIdentifier("key"),
 	"artifactory_remote_vcs_repository":                config.ParameterAsIdentifier("key"),
+	// User
+	"artifactory_anonymous_user": config.NameAsIdentifier,
+	// "artifactory_managed_user": config.NameAsIdentifier,
+	// "artifactory_unmanaged_user": config.NameAsIdentifier,
+	"artifactory_user": config.NameAsIdentifier,
 	// Virtual Repositories
 	"artifactory_virtual_alpine_repository":    config.ParameterAsIdentifier("key"),
 	"artifactory_virtual_ansible_repository":   config.ParameterAsIdentifier("key"),
@@ -124,11 +129,6 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_virtual_sbt_repository":       config.ParameterAsIdentifier("key"),
 	"artifactory_virtual_swift_repository":     config.ParameterAsIdentifier("key"),
 	"artifactory_virtual_terraform_repository": config.ParameterAsIdentifier("key"),
-	// User
-	"artifactory_anonymous_user": config.NameAsIdentifier,
-	// "artifactory_managed_user": config.NameAsIdentifier,
-	// "artifactory_unmanaged_user": config.NameAsIdentifier,
-	// "artifactory_user": config.NameAsIdentifier,
 	// Federated Repositories
 	"artifactory_federated_alpine_repository":             config.ParameterAsIdentifier("key"),
 	"artifactory_federated_ansible_repository":            config.ParameterAsIdentifier("key"),

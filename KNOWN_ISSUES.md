@@ -28,7 +28,10 @@ artifactory_artifact.my-local-artifact: Importing from ID "artifact"...
 
 ## Nested Schema
 
-Terraform resource contains [Nested Schema](https://developer.hashicorp.com/terraform/plugin/framework/handling-data/attributes#nested-attribute-types) and Upjet is not able to generate provider, it fails with error:
+> [!NOTE]
+> The issue [crossplane/upjet#372](https://github.com/crossplane/upjet/issues/372) was solved and nested schema is not a problem anymore.
+
+The Terraform resource contains a [Nested Schema](https://developer.hashicorp.com/terraform/plugin/framework/handling-data/attributes#nested-attribute-types) and Upjet is not able to generate a provider, it fails with an error.
 
 Example for [`search_criteria` attribute](https://registry.terraform.io/providers/jfrog/artifactory/12.9.1/docs/resources/archive_policy#nested-schema-for-search_criteria) of resource `artifactory_archive_policy`:
 
