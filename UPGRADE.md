@@ -10,28 +10,32 @@ If you used `providerconfigs.artifactory.jfrog.m.crossplane.io` to set up `Provi
 
 1. Create `ClusterProviderConfig` with the same configuration as you have in the current `ProviderConfig`
 2. Change `spec.providerConfigRef.kind` of all resources from `ProviderConfig` to `ClusterProviderConfig`
-3. Remove all `providerconfigusages.artifactory.jfrog.m.crossplane.io` resources
-4. Remove all `providerconfigs.artifactory.jfrog.m.crossplane.io` resources
-5. Remove CRD `providerconfigusages.artifactory.jfrog.m.crossplane.io`
+3. Upgrade the provider to the `v0.9.1` version
+4. Remove all `providerconfigusages.artifactory.jfrog.m.crossplane.io` resources
+5. Remove all `providerconfigs.artifactory.jfrog.m.crossplane.io` resources
+
+    If is `ProviderConfig` not removed, check `ProviderConfigUsages` again.
+
+6. Remove CRD `providerconfigusages.artifactory.jfrog.m.crossplane.io`
 
     ```shell
     kubectl delete crd providerconfigusages.artifactory.jfrog.m.crossplane.io
     ```
 
-6. Remove CRD `providerconfigs.artifactory.jfrog.m.crossplane.io`
+7. Remove CRD `providerconfigs.artifactory.jfrog.m.crossplane.io`
 
     ```shell
     kubectl delete crd providerconfigs.artifactory.jfrog.m.crossplane.io
     ```
 
-7. Upgrade the provider to the `v0.9.1` version
-8. Check if is the provider healthy
+8. Check if is the provider healthy (may take up to 5 minutes)
 
     ```shell
     kubectl get providers provider-jfrog-artifactory
     ```
 
-9.  Create some resource using this provider to ensure it works properly
+9. Edit some resource which was already in cluster and check if was the change applied properly
+10. Create some resource using this provider to ensure it works properly
 
 ## `v0.9.0`
 
@@ -41,8 +45,8 @@ If you used `providerconfigs.artifactory.jfrog.m.crossplane.io` to set up `Provi
 
 1. Create `ClusterProviderConfig` with the same configuration as you have in the current `ProviderConfig`
 2. Change `spec.providerConfigRef.kind` of all resources from `ProviderConfig` to `ClusterProviderConfig`
-3. Remove all `providerconfigs.artifactory.jfrog.m.crossplane.io` resources
-4. Remove CRD `providerconfigs.artifactory.jfrog.m.crossplane.io`
-5. Upgrade the provider to the `v0.9.0` version
+3. Upgrade the provider to the `v0.9.0` version
+4. Remove all `providerconfigs.artifactory.jfrog.m.crossplane.io` resources
+5. Remove CRD `providerconfigs.artifactory.jfrog.m.crossplane.io`
 6. Check if is the provider healthy
 7. Create some resource using this provider to it works properly
