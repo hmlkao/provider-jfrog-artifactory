@@ -8,5 +8,5 @@ spec:
     # name: test-user # metadata.name is used as identifier
     email: test-user@artifactory-terraform.com
   providerConfigRef:
-    kind: ProviderConfig
+    kind: ClusterProviderConfig
     name: default
