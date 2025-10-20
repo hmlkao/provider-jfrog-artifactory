@@ -1,8 +1,7 @@
 apiVersion: artifactory.jfrog.m.crossplane.io/v1beta1
-kind: ProviderConfig
+kind: ClusterProviderConfig
 metadata:
   name: default
-  namespace: product-artifactory
 spec:
   credentials:
     source: Secret
