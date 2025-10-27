@@ -314,8 +314,8 @@ func (l *TerraformRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this VcsRepositoryList.
-func (l *VcsRepositoryList) GetItems() []resource.Managed {
+// GetItems of this VCSRepositoryList.
+func (l *VCSRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

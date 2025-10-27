@@ -314,6 +314,15 @@ func (l *SwiftRepositoryList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this TerraformBackendRepositoryList.
+func (l *TerraformBackendRepositoryList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this TerraformModuleRepositoryList.
 func (l *TerraformModuleRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
@@ -325,15 +334,6 @@ func (l *TerraformModuleRepositoryList) GetItems() []resource.Managed {
 
 // GetItems of this TerraformProviderRepositoryList.
 func (l *TerraformProviderRepositoryList) GetItems() []resource.Managed {
-	items := make([]resource.Managed, len(l.Items))
-	for i := range l.Items {
-		items[i] = &l.Items[i]
-	}
-	return items
-}
-
-// GetItems of this TerraformbackendRepositoryList.
-func (l *TerraformbackendRepositoryList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

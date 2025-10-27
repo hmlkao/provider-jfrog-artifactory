@@ -1708,6 +1708,56 @@ func (mg *SwiftRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretRef
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
+// GetCondition of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+	return mg.Status.GetCondition(ct)
+}
+
+// GetDeletionPolicy of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+	return mg.Spec.DeletionPolicy
+}
+
+// GetManagementPolicies of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+	return mg.Spec.ManagementPolicies
+}
+
+// GetProviderConfigReference of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) GetProviderConfigReference() *xpv1.Reference {
+	return mg.Spec.ProviderConfigReference
+}
+
+// GetWriteConnectionSecretToReference of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+	return mg.Spec.WriteConnectionSecretToReference
+}
+
+// SetConditions of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) SetConditions(c ...xpv1.Condition) {
+	mg.Status.SetConditions(c...)
+}
+
+// SetDeletionPolicy of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+	mg.Spec.DeletionPolicy = r
+}
+
+// SetManagementPolicies of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+	mg.Spec.ManagementPolicies = r
+}
+
+// SetProviderConfigReference of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) SetProviderConfigReference(r *xpv1.Reference) {
+	mg.Spec.ProviderConfigReference = r
+}
+
+// SetWriteConnectionSecretToReference of this TerraformBackendRepository.
+func (mg *TerraformBackendRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+	mg.Spec.WriteConnectionSecretToReference = r
+}
+
 // GetCondition of this TerraformModuleRepository.
 func (mg *TerraformModuleRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
@@ -1805,56 +1855,6 @@ func (mg *TerraformProviderRepository) SetProviderConfigReference(r *xpv1.Refere
 
 // SetWriteConnectionSecretToReference of this TerraformProviderRepository.
 func (mg *TerraformProviderRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
-	mg.Spec.WriteConnectionSecretToReference = r
-}
-
-// GetCondition of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
-	return mg.Status.GetCondition(ct)
-}
-
-// GetDeletionPolicy of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
-	return mg.Spec.DeletionPolicy
-}
-
-// GetManagementPolicies of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) GetManagementPolicies() xpv1.ManagementPolicies {
-	return mg.Spec.ManagementPolicies
-}
-
-// GetProviderConfigReference of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) GetProviderConfigReference() *xpv1.Reference {
-	return mg.Spec.ProviderConfigReference
-}
-
-// GetWriteConnectionSecretToReference of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
-	return mg.Spec.WriteConnectionSecretToReference
-}
-
-// SetConditions of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) SetConditions(c ...xpv1.Condition) {
-	mg.Status.SetConditions(c...)
-}
-
-// SetDeletionPolicy of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
-	mg.Spec.DeletionPolicy = r
-}
-
-// SetManagementPolicies of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
-	mg.Spec.ManagementPolicies = r
-}
-
-// SetProviderConfigReference of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) SetProviderConfigReference(r *xpv1.Reference) {
-	mg.Spec.ProviderConfigReference = r
-}
-
-// SetWriteConnectionSecretToReference of this TerraformbackendRepository.
-func (mg *TerraformbackendRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 

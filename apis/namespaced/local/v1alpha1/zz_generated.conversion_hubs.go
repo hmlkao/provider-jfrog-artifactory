@@ -109,7 +109,7 @@ func (tr *SBTRepository) Hub() {}
 func (tr *SwiftRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *TerraformbackendRepository) Hub() {}
+func (tr *TerraformBackendRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *TerraformModuleRepository) Hub() {}

@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type VcsRepositoryContentSynchronisationInitParameters struct {
+type VCSRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -28,7 +28,7 @@ type VcsRepositoryContentSynchronisationInitParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type VcsRepositoryContentSynchronisationObservation struct {
+type VCSRepositoryContentSynchronisationObservation struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -43,7 +43,7 @@ type VcsRepositoryContentSynchronisationObservation struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type VcsRepositoryContentSynchronisationParameters struct {
+type VCSRepositoryContentSynchronisationParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
@@ -62,7 +62,7 @@ type VcsRepositoryContentSynchronisationParameters struct {
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
-type VcsRepositoryInitParameters struct {
+type VCSRepositoryInitParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -89,7 +89,7 @@ type VcsRepositoryInitParameters struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []VcsRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []VCSRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -199,7 +199,7 @@ type VcsRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type VcsRepositoryObservation struct {
+type VCSRepositoryObservation struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
@@ -226,7 +226,7 @@ type VcsRepositoryObservation struct {
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
-	ContentSynchronisation []VcsRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []VCSRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -336,7 +336,7 @@ type VcsRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type VcsRepositoryParameters struct {
+type VCSRepositoryParameters struct {
 
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
@@ -372,7 +372,7 @@ type VcsRepositoryParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	// +kubebuilder:validation:Optional
-	ContentSynchronisation []VcsRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+	ContentSynchronisation []VCSRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
 	// Public description.
 	// +kubebuilder:validation:Optional
@@ -518,10 +518,10 @@ type VcsRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// VcsRepositorySpec defines the desired state of VcsRepository
-type VcsRepositorySpec struct {
+// VCSRepositorySpec defines the desired state of VCSRepository
+type VCSRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     VcsRepositoryParameters `json:"forProvider"`
+	ForProvider     VCSRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -532,50 +532,50 @@ type VcsRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider VcsRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider VCSRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// VcsRepositoryStatus defines the observed state of VcsRepository.
-type VcsRepositoryStatus struct {
+// VCSRepositoryStatus defines the observed state of VCSRepository.
+type VCSRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        VcsRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        VCSRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// VcsRepository is the Schema for the VcsRepositorys API. <no value>
+// VCSRepository is the Schema for the VCSRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type VcsRepository struct {
+type VCSRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.url) || (has(self.initProvider) && has(self.initProvider.url))",message="spec.forProvider.url is a required parameter"
-	Spec   VcsRepositorySpec   `json:"spec"`
-	Status VcsRepositoryStatus `json:"status,omitempty"`
+	Spec   VCSRepositorySpec   `json:"spec"`
+	Status VCSRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// VcsRepositoryList contains a list of VcsRepositorys
-type VcsRepositoryList struct {
+// VCSRepositoryList contains a list of VCSRepositorys
+type VCSRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []VcsRepository `json:"items"`
+	Items           []VCSRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	VcsRepository_Kind             = "VcsRepository"
-	VcsRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: VcsRepository_Kind}.String()
-	VcsRepository_KindAPIVersion   = VcsRepository_Kind + "." + CRDGroupVersion.String()
-	VcsRepository_GroupVersionKind = CRDGroupVersion.WithKind(VcsRepository_Kind)
+	VCSRepository_Kind             = "VCSRepository"
+	VCSRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: VCSRepository_Kind}.String()
+	VCSRepository_KindAPIVersion   = VCSRepository_Kind + "." + CRDGroupVersion.String()
+	VCSRepository_GroupVersionKind = CRDGroupVersion.WithKind(VCSRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&VcsRepository{}, &VcsRepositoryList{})
+	SchemeBuilder.Register(&VCSRepository{}, &VCSRepositoryList{})
 }

@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: VcsRepository
-    listKind: VcsRepositoryList
+    kind: VCSRepository
+    listKind: VCSRepositoryList
     plural: vcsrepositories
     singular: vcsrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: VcsRepository is the Schema for the VcsRepositorys API. <no value>
+        description: VCSRepository is the Schema for the VCSRepositorys API. <no value>
         properties:
           apiVersion:
             description: |-
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: VcsRepositorySpec defines the desired state of VcsRepository
+            description: VCSRepositorySpec defines the desired state of VCSRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -727,7 +727,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.url)
                 || (has(self.initProvider) && has(self.initProvider.url))'
           status:
-            description: VcsRepositoryStatus defines the observed state of VcsRepository.
+            description: VCSRepositoryStatus defines the observed state of VCSRepository.
             properties:
               atProvider:
                 properties:

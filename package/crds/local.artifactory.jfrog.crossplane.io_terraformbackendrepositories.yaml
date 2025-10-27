@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: TerraformbackendRepository
-    listKind: TerraformbackendRepositoryList
+    kind: TerraformBackendRepository
+    listKind: TerraformBackendRepositoryList
     plural: terraformbackendrepositories
     singular: terraformbackendrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: TerraformbackendRepository is the Schema for the TerraformbackendRepositorys
+        description: TerraformBackendRepository is the Schema for the TerraformBackendRepositorys
           API. <no value>
         properties:
           apiVersion:
@@ -55,8 +55,8 @@ spec:
           metadata:
             type: object
           spec:
-            description: TerraformbackendRepositorySpec defines the desired state
-              of TerraformbackendRepository
+            description: TerraformBackendRepositorySpec defines the desired state
+              of TerraformBackendRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -326,8 +326,8 @@ spec:
             - forProvider
             type: object
           status:
-            description: TerraformbackendRepositoryStatus defines the observed state
-              of TerraformbackendRepository.
+            description: TerraformBackendRepositoryStatus defines the observed state
+              of TerraformBackendRepository.
             properties:
               atProvider:
                 properties:

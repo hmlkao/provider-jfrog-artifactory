@@ -1368,42 +1368,42 @@ func (mg *TerraformRepository) SetWriteConnectionSecretToReference(r *xpv1.Local
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this VcsRepository.
-func (mg *VcsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this VCSRepository.
+func (mg *VCSRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this VcsRepository.
-func (mg *VcsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this VCSRepository.
+func (mg *VCSRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this VcsRepository.
-func (mg *VcsRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this VCSRepository.
+func (mg *VCSRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this VcsRepository.
-func (mg *VcsRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this VCSRepository.
+func (mg *VCSRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this VcsRepository.
-func (mg *VcsRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this VCSRepository.
+func (mg *VCSRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this VcsRepository.
-func (mg *VcsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this VCSRepository.
+func (mg *VCSRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this VcsRepository.
-func (mg *VcsRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this VCSRepository.
+func (mg *VCSRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this VcsRepository.
-func (mg *VcsRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this VCSRepository.
+func (mg *VCSRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }

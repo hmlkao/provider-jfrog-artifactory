@@ -109,4 +109,4 @@ func (tr *SwiftRepository) Hub() {}
 func (tr *TerraformRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *VcsRepository) Hub() {}
+func (tr *VCSRepository) Hub() {}
