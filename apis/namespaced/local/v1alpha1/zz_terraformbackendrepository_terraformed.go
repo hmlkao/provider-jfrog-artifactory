@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this TerraformbackendRepository
-func (mg *TerraformbackendRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this TerraformBackendRepository
+func (mg *TerraformBackendRepository) GetTerraformResourceType() string {
 	return "artifactory_local_terraformbackend_repository"
 }
 
-// GetConnectionDetailsMapping for this TerraformbackendRepository
-func (tr *TerraformbackendRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this TerraformBackendRepository
+func (tr *TerraformBackendRepository) GetConnectionDetailsMapping() map[string]string {
 	return nil
 }
 
-// GetObservation of this TerraformbackendRepository
-func (tr *TerraformbackendRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this TerraformBackendRepository
+func (tr *TerraformBackendRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *TerraformbackendRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this TerraformbackendRepository
-func (tr *TerraformbackendRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this TerraformBackendRepository
+func (tr *TerraformBackendRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *TerraformbackendRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this TerraformbackendRepository
-func (tr *TerraformbackendRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this TerraformBackendRepository
+func (tr *TerraformBackendRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this TerraformbackendRepository
-func (tr *TerraformbackendRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this TerraformBackendRepository
+func (tr *TerraformBackendRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *TerraformbackendRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this TerraformbackendRepository
-func (tr *TerraformbackendRepository) SetParameters(params map[string]any) error {
+// SetParameters for this TerraformBackendRepository
+func (tr *TerraformBackendRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *TerraformbackendRepository) SetParameters(params map[string]any) error
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this TerraformbackendRepository
-func (tr *TerraformbackendRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this TerraformBackendRepository
+func (tr *TerraformBackendRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *TerraformbackendRepository) GetInitParameters() (map[string]any, error
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this TerraformbackendRepository
-func (tr *TerraformbackendRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this TerraformBackendRepository
+func (tr *TerraformBackendRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource \"%s/%s\"", tr.GetNamespace(), tr.GetName())
@@ -110,10 +110,10 @@ func (tr *TerraformbackendRepository) GetMergedParameters(shouldMergeInitProvide
 	return params, nil
 }
 
-// LateInitialize this TerraformbackendRepository using its observed tfState.
+// LateInitialize this TerraformBackendRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *TerraformbackendRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &TerraformbackendRepositoryParameters{}
+func (tr *TerraformBackendRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &TerraformBackendRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *TerraformbackendRepository) LateInitialize(attrs []byte) (bool, error)
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *TerraformbackendRepository) GetTerraformSchemaVersion() int {
+func (tr *TerraformBackendRepository) GetTerraformSchemaVersion() int {
 	return 1
 }

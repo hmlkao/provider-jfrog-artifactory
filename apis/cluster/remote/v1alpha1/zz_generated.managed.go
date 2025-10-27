@@ -1708,52 +1708,52 @@ func (mg *TerraformRepository) SetWriteConnectionSecretToReference(r *xpv1.Secre
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this VcsRepository.
-func (mg *VcsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this VCSRepository.
+func (mg *VCSRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this VcsRepository.
-func (mg *VcsRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this VCSRepository.
+func (mg *VCSRepository) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this VcsRepository.
-func (mg *VcsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this VCSRepository.
+func (mg *VCSRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this VcsRepository.
-func (mg *VcsRepository) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this VCSRepository.
+func (mg *VCSRepository) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this VcsRepository.
-func (mg *VcsRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this VCSRepository.
+func (mg *VCSRepository) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this VcsRepository.
-func (mg *VcsRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this VCSRepository.
+func (mg *VCSRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this VcsRepository.
-func (mg *VcsRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this VCSRepository.
+func (mg *VCSRepository) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this VcsRepository.
-func (mg *VcsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this VCSRepository.
+func (mg *VCSRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this VcsRepository.
-func (mg *VcsRepository) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this VCSRepository.
+func (mg *VCSRepository) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this VcsRepository.
-func (mg *VcsRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this VCSRepository.
+func (mg *VCSRepository) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }

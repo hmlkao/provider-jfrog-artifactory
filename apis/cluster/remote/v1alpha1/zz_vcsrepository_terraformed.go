@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this VcsRepository
-func (mg *VcsRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this VCSRepository
+func (mg *VCSRepository) GetTerraformResourceType() string {
 	return "artifactory_remote_vcs_repository"
 }
 
-// GetConnectionDetailsMapping for this VcsRepository
-func (tr *VcsRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this VCSRepository
+func (tr *VCSRepository) GetConnectionDetailsMapping() map[string]string {
 	return map[string]string{"password": "passwordSecretRef"}
 }
 
-// GetObservation of this VcsRepository
-func (tr *VcsRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this VCSRepository
+func (tr *VCSRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *VcsRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this VcsRepository
-func (tr *VcsRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this VCSRepository
+func (tr *VCSRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *VcsRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this VcsRepository
-func (tr *VcsRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this VCSRepository
+func (tr *VCSRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this VcsRepository
-func (tr *VcsRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this VCSRepository
+func (tr *VCSRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *VcsRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this VcsRepository
-func (tr *VcsRepository) SetParameters(params map[string]any) error {
+// SetParameters for this VCSRepository
+func (tr *VCSRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *VcsRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this VcsRepository
-func (tr *VcsRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this VCSRepository
+func (tr *VCSRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *VcsRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this VcsRepository
-func (tr *VcsRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this VCSRepository
+func (tr *VCSRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource \"%s/%s\"", tr.GetNamespace(), tr.GetName())
@@ -110,10 +110,10 @@ func (tr *VcsRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[
 	return params, nil
 }
 
-// LateInitialize this VcsRepository using its observed tfState.
+// LateInitialize this VCSRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *VcsRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &VcsRepositoryParameters{}
+func (tr *VCSRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &VCSRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *VcsRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *VcsRepository) GetTerraformSchemaVersion() int {
+func (tr *VCSRepository) GetTerraformSchemaVersion() int {
 	return 3
 }

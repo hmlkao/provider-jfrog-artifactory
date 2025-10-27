@@ -14,7 +14,7 @@ import (
 	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
 )
 
-type TerraformbackendRepositoryInitParameters struct {
+type TerraformBackendRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -62,7 +62,7 @@ type TerraformbackendRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type TerraformbackendRepositoryObservation struct {
+type TerraformBackendRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -112,7 +112,7 @@ type TerraformbackendRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type TerraformbackendRepositoryParameters struct {
+type TerraformBackendRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -174,10 +174,10 @@ type TerraformbackendRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// TerraformbackendRepositorySpec defines the desired state of TerraformbackendRepository
-type TerraformbackendRepositorySpec struct {
+// TerraformBackendRepositorySpec defines the desired state of TerraformBackendRepository
+type TerraformBackendRepositorySpec struct {
 	v2.ManagedResourceSpec `json:",inline"`
-	ForProvider            TerraformbackendRepositoryParameters `json:"forProvider"`
+	ForProvider            TerraformBackendRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -188,49 +188,49 @@ type TerraformbackendRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider TerraformbackendRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider TerraformBackendRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// TerraformbackendRepositoryStatus defines the observed state of TerraformbackendRepository.
-type TerraformbackendRepositoryStatus struct {
+// TerraformBackendRepositoryStatus defines the observed state of TerraformBackendRepository.
+type TerraformBackendRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        TerraformbackendRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        TerraformBackendRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// TerraformbackendRepository is the Schema for the TerraformbackendRepositorys API. <no value>
+// TerraformBackendRepository is the Schema for the TerraformBackendRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Namespaced,categories={crossplane,managed,artifactory}
-type TerraformbackendRepository struct {
+type TerraformBackendRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
-	Spec              TerraformbackendRepositorySpec   `json:"spec"`
-	Status            TerraformbackendRepositoryStatus `json:"status,omitempty"`
+	Spec              TerraformBackendRepositorySpec   `json:"spec"`
+	Status            TerraformBackendRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// TerraformbackendRepositoryList contains a list of TerraformbackendRepositorys
-type TerraformbackendRepositoryList struct {
+// TerraformBackendRepositoryList contains a list of TerraformBackendRepositorys
+type TerraformBackendRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []TerraformbackendRepository `json:"items"`
+	Items           []TerraformBackendRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	TerraformbackendRepository_Kind             = "TerraformbackendRepository"
-	TerraformbackendRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: TerraformbackendRepository_Kind}.String()
-	TerraformbackendRepository_KindAPIVersion   = TerraformbackendRepository_Kind + "." + CRDGroupVersion.String()
-	TerraformbackendRepository_GroupVersionKind = CRDGroupVersion.WithKind(TerraformbackendRepository_Kind)
+	TerraformBackendRepository_Kind             = "TerraformBackendRepository"
+	TerraformBackendRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: TerraformBackendRepository_Kind}.String()
+	TerraformBackendRepository_KindAPIVersion   = TerraformBackendRepository_Kind + "." + CRDGroupVersion.String()
+	TerraformBackendRepository_GroupVersionKind = CRDGroupVersion.WithKind(TerraformBackendRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&TerraformbackendRepository{}, &TerraformbackendRepositoryList{})
+	SchemeBuilder.Register(&TerraformBackendRepository{}, &TerraformBackendRepositoryList{})
 }
