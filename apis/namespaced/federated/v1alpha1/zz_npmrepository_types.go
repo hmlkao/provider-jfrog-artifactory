@@ -14,7 +14,7 @@ import (
 	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
 )
 
-type NpmRepositoryInitParameters struct {
+type NPMRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -45,7 +45,7 @@ type NpmRepositoryInitParameters struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []NpmRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []NPMRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -74,7 +74,7 @@ type NpmRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NpmRepositoryMemberInitParameters struct {
+type NPMRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -86,7 +86,7 @@ type NpmRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type NpmRepositoryMemberObservation struct {
+type NPMRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -95,7 +95,7 @@ type NpmRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type NpmRepositoryMemberParameters struct {
+type NPMRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -110,7 +110,7 @@ type NpmRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type NpmRepositoryObservation struct {
+type NPMRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -143,7 +143,7 @@ type NpmRepositoryObservation struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []NpmRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []NPMRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -174,7 +174,7 @@ type NpmRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NpmRepositoryParameters struct {
+type NPMRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -215,7 +215,7 @@ type NpmRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []NpmRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []NPMRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -252,10 +252,10 @@ type NpmRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// NpmRepositorySpec defines the desired state of NpmRepository
-type NpmRepositorySpec struct {
+// NPMRepositorySpec defines the desired state of NPMRepository
+type NPMRepositorySpec struct {
 	v2.ManagedResourceSpec `json:",inline"`
-	ForProvider            NpmRepositoryParameters `json:"forProvider"`
+	ForProvider            NPMRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -266,50 +266,50 @@ type NpmRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider NpmRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider NPMRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// NpmRepositoryStatus defines the observed state of NpmRepository.
-type NpmRepositoryStatus struct {
+// NPMRepositoryStatus defines the observed state of NPMRepository.
+type NPMRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        NpmRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        NPMRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// NpmRepository is the Schema for the NpmRepositorys API. <no value>
+// NPMRepository is the Schema for the NPMRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Namespaced,categories={crossplane,managed,artifactory}
-type NpmRepository struct {
+type NPMRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   NpmRepositorySpec   `json:"spec"`
-	Status NpmRepositoryStatus `json:"status,omitempty"`
+	Spec   NPMRepositorySpec   `json:"spec"`
+	Status NPMRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// NpmRepositoryList contains a list of NpmRepositorys
-type NpmRepositoryList struct {
+// NPMRepositoryList contains a list of NPMRepositorys
+type NPMRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []NpmRepository `json:"items"`
+	Items           []NPMRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	NpmRepository_Kind             = "NpmRepository"
-	NpmRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NpmRepository_Kind}.String()
-	NpmRepository_KindAPIVersion   = NpmRepository_Kind + "." + CRDGroupVersion.String()
-	NpmRepository_GroupVersionKind = CRDGroupVersion.WithKind(NpmRepository_Kind)
+	NPMRepository_Kind             = "NPMRepository"
+	NPMRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NPMRepository_Kind}.String()
+	NPMRepository_KindAPIVersion   = NPMRepository_Kind + "." + CRDGroupVersion.String()
+	NPMRepository_GroupVersionKind = CRDGroupVersion.WithKind(NPMRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&NpmRepository{}, &NpmRepositoryList{})
+	SchemeBuilder.Register(&NPMRepository{}, &NPMRepositoryList{})
 }

@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: RpmRepository
-    listKind: RpmRepositoryList
+    kind: RPMRepository
+    listKind: RPMRepositoryList
     plural: rpmrepositories
     singular: rpmrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: RpmRepository is the Schema for the RpmRepositorys API. <no value>
+        description: RPMRepository is the Schema for the RPMRepositorys API. <no value>
         properties:
           apiVersion:
             description: |-
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: RpmRepositorySpec defines the desired state of RpmRepository
+            description: RPMRepositorySpec defines the desired state of RPMRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -485,7 +485,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: RpmRepositoryStatus defines the observed state of RpmRepository.
+            description: RPMRepositoryStatus defines the observed state of RPMRepository.
             properties:
               atProvider:
                 properties:

@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: NugetRepository
-    listKind: NugetRepositoryList
+    kind: NuGetRepository
+    listKind: NuGetRepositoryList
     plural: nugetrepositories
     singular: nugetrepository
   scope: Namespaced
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: NugetRepository is the Schema for the NugetRepositorys API. <no
+        description: NuGetRepository is the Schema for the NuGetRepositorys API. <no
           value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: NugetRepositorySpec defines the desired state of NugetRepository
+            description: NuGetRepositorySpec defines the desired state of NuGetRepository
             properties:
               forProvider:
                 properties:
@@ -404,7 +404,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: NugetRepositoryStatus defines the observed state of NugetRepository.
+            description: NuGetRepositoryStatus defines the observed state of NuGetRepository.
             properties:
               atProvider:
                 properties:

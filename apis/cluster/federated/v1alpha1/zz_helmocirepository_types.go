@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type HelmociRepositoryInitParameters struct {
+type HelmOCIRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -49,7 +49,7 @@ type HelmociRepositoryInitParameters struct {
 	MaxUniqueTags *float64 `json:"maxUniqueTags,omitempty" tf:"max_unique_tags,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []HelmociRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []HelmOCIRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -81,7 +81,7 @@ type HelmociRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type HelmociRepositoryMemberInitParameters struct {
+type HelmOCIRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -93,7 +93,7 @@ type HelmociRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type HelmociRepositoryMemberObservation struct {
+type HelmOCIRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -102,7 +102,7 @@ type HelmociRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type HelmociRepositoryMemberParameters struct {
+type HelmOCIRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -117,7 +117,7 @@ type HelmociRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type HelmociRepositoryObservation struct {
+type HelmOCIRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -155,7 +155,7 @@ type HelmociRepositoryObservation struct {
 	MaxUniqueTags *float64 `json:"maxUniqueTags,omitempty" tf:"max_unique_tags,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []HelmociRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []HelmOCIRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -189,7 +189,7 @@ type HelmociRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type HelmociRepositoryParameters struct {
+type HelmOCIRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -236,7 +236,7 @@ type HelmociRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []HelmociRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []HelmOCIRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -277,10 +277,10 @@ type HelmociRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// HelmociRepositorySpec defines the desired state of HelmociRepository
-type HelmociRepositorySpec struct {
+// HelmOCIRepositorySpec defines the desired state of HelmOCIRepository
+type HelmOCIRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     HelmociRepositoryParameters `json:"forProvider"`
+	ForProvider     HelmOCIRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -291,50 +291,50 @@ type HelmociRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider HelmociRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider HelmOCIRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// HelmociRepositoryStatus defines the observed state of HelmociRepository.
-type HelmociRepositoryStatus struct {
+// HelmOCIRepositoryStatus defines the observed state of HelmOCIRepository.
+type HelmOCIRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        HelmociRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        HelmOCIRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// HelmociRepository is the Schema for the HelmociRepositorys API. <no value>
+// HelmOCIRepository is the Schema for the HelmOCIRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type HelmociRepository struct {
+type HelmOCIRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   HelmociRepositorySpec   `json:"spec"`
-	Status HelmociRepositoryStatus `json:"status,omitempty"`
+	Spec   HelmOCIRepositorySpec   `json:"spec"`
+	Status HelmOCIRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// HelmociRepositoryList contains a list of HelmociRepositorys
-type HelmociRepositoryList struct {
+// HelmOCIRepositoryList contains a list of HelmOCIRepositorys
+type HelmOCIRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []HelmociRepository `json:"items"`
+	Items           []HelmOCIRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	HelmociRepository_Kind             = "HelmociRepository"
-	HelmociRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: HelmociRepository_Kind}.String()
-	HelmociRepository_KindAPIVersion   = HelmociRepository_Kind + "." + CRDGroupVersion.String()
-	HelmociRepository_GroupVersionKind = CRDGroupVersion.WithKind(HelmociRepository_Kind)
+	HelmOCIRepository_Kind             = "HelmOCIRepository"
+	HelmOCIRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: HelmOCIRepository_Kind}.String()
+	HelmOCIRepository_KindAPIVersion   = HelmOCIRepository_Kind + "." + CRDGroupVersion.String()
+	HelmOCIRepository_GroupVersionKind = CRDGroupVersion.WithKind(HelmOCIRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&HelmociRepository{}, &HelmociRepositoryList{})
+	SchemeBuilder.Register(&HelmOCIRepository{}, &HelmOCIRepositoryList{})
 }

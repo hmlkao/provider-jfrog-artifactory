@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this CocoapodsRepository
-func (mg *CocoapodsRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this CocoaPodsRepository
+func (mg *CocoaPodsRepository) GetTerraformResourceType() string {
 	return "artifactory_federated_cocoapods_repository"
 }
 
-// GetConnectionDetailsMapping for this CocoapodsRepository
-func (tr *CocoapodsRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this CocoaPodsRepository
+func (tr *CocoaPodsRepository) GetConnectionDetailsMapping() map[string]string {
 	return map[string]string{"member[*].access_token": "member[*].accessTokenSecretRef"}
 }
 
-// GetObservation of this CocoapodsRepository
-func (tr *CocoapodsRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this CocoaPodsRepository
+func (tr *CocoaPodsRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *CocoapodsRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this CocoapodsRepository
-func (tr *CocoapodsRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this CocoaPodsRepository
+func (tr *CocoaPodsRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *CocoapodsRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this CocoapodsRepository
-func (tr *CocoapodsRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this CocoaPodsRepository
+func (tr *CocoaPodsRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this CocoapodsRepository
-func (tr *CocoapodsRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this CocoaPodsRepository
+func (tr *CocoaPodsRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *CocoapodsRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this CocoapodsRepository
-func (tr *CocoapodsRepository) SetParameters(params map[string]any) error {
+// SetParameters for this CocoaPodsRepository
+func (tr *CocoaPodsRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *CocoapodsRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this CocoapodsRepository
-func (tr *CocoapodsRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this CocoaPodsRepository
+func (tr *CocoaPodsRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *CocoapodsRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this CocoapodsRepository
-func (tr *CocoapodsRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this CocoaPodsRepository
+func (tr *CocoaPodsRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource \"%s/%s\"", tr.GetNamespace(), tr.GetName())
@@ -110,10 +110,10 @@ func (tr *CocoapodsRepository) GetMergedParameters(shouldMergeInitProvider bool)
 	return params, nil
 }
 
-// LateInitialize this CocoapodsRepository using its observed tfState.
+// LateInitialize this CocoaPodsRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *CocoapodsRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &CocoapodsRepositoryParameters{}
+func (tr *CocoaPodsRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &CocoaPodsRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *CocoapodsRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *CocoapodsRepository) GetTerraformSchemaVersion() int {
+func (tr *CocoaPodsRepository) GetTerraformSchemaVersion() int {
 	return 4
 }

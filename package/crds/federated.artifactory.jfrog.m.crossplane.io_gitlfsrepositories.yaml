@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: GitlfsRepository
-    listKind: GitlfsRepositoryList
+    kind: GitLFSRepository
+    listKind: GitLFSRepositoryList
     plural: gitlfsrepositories
     singular: gitlfsrepository
   scope: Namespaced
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: GitlfsRepository is the Schema for the GitlfsRepositorys API.
+        description: GitLFSRepository is the Schema for the GitLFSRepositorys API.
           <no value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: GitlfsRepositorySpec defines the desired state of GitlfsRepository
+            description: GitLFSRepositorySpec defines the desired state of GitLFSRepository
             properties:
               forProvider:
                 properties:
@@ -384,7 +384,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: GitlfsRepositoryStatus defines the observed state of GitlfsRepository.
+            description: GitLFSRepositoryStatus defines the observed state of GitLFSRepository.
             properties:
               atProvider:
                 properties:

@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: CocoapodsRepository
-    listKind: CocoapodsRepositoryList
+    kind: CocoaPodsRepository
+    listKind: CocoaPodsRepositoryList
     plural: cocoapodsrepositories
     singular: cocoapodsrepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: CocoapodsRepository is the Schema for the CocoapodsRepositorys
+        description: CocoaPodsRepository is the Schema for the CocoaPodsRepositorys
           API. <no value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: CocoapodsRepositorySpec defines the desired state of CocoapodsRepository
+            description: CocoaPodsRepositorySpec defines the desired state of CocoaPodsRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -436,7 +436,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: CocoapodsRepositoryStatus defines the observed state of CocoapodsRepository.
+            description: CocoaPodsRepositoryStatus defines the observed state of CocoaPodsRepository.
             properties:
               atProvider:
                 properties:

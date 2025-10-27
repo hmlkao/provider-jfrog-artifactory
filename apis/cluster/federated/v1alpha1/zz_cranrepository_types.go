@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type CranRepositoryInitParameters struct {
+type CRANRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -44,7 +44,7 @@ type CranRepositoryInitParameters struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []CranRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []CRANRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -73,7 +73,7 @@ type CranRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CranRepositoryMemberInitParameters struct {
+type CRANRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -85,7 +85,7 @@ type CranRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type CranRepositoryMemberObservation struct {
+type CRANRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -94,7 +94,7 @@ type CranRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type CranRepositoryMemberParameters struct {
+type CRANRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -109,7 +109,7 @@ type CranRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type CranRepositoryObservation struct {
+type CRANRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -142,7 +142,7 @@ type CranRepositoryObservation struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []CranRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []CRANRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -173,7 +173,7 @@ type CranRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CranRepositoryParameters struct {
+type CRANRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -214,7 +214,7 @@ type CranRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []CranRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []CRANRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -251,10 +251,10 @@ type CranRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// CranRepositorySpec defines the desired state of CranRepository
-type CranRepositorySpec struct {
+// CRANRepositorySpec defines the desired state of CRANRepository
+type CRANRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     CranRepositoryParameters `json:"forProvider"`
+	ForProvider     CRANRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -265,50 +265,50 @@ type CranRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider CranRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider CRANRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// CranRepositoryStatus defines the observed state of CranRepository.
-type CranRepositoryStatus struct {
+// CRANRepositoryStatus defines the observed state of CRANRepository.
+type CRANRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        CranRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        CRANRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// CranRepository is the Schema for the CranRepositorys API. <no value>
+// CRANRepository is the Schema for the CRANRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type CranRepository struct {
+type CRANRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   CranRepositorySpec   `json:"spec"`
-	Status CranRepositoryStatus `json:"status,omitempty"`
+	Spec   CRANRepositorySpec   `json:"spec"`
+	Status CRANRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// CranRepositoryList contains a list of CranRepositorys
-type CranRepositoryList struct {
+// CRANRepositoryList contains a list of CRANRepositorys
+type CRANRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []CranRepository `json:"items"`
+	Items           []CRANRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	CranRepository_Kind             = "CranRepository"
-	CranRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CranRepository_Kind}.String()
-	CranRepository_KindAPIVersion   = CranRepository_Kind + "." + CRDGroupVersion.String()
-	CranRepository_GroupVersionKind = CRDGroupVersion.WithKind(CranRepository_Kind)
+	CRANRepository_Kind             = "CRANRepository"
+	CRANRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CRANRepository_Kind}.String()
+	CRANRepository_KindAPIVersion   = CRANRepository_Kind + "." + CRDGroupVersion.String()
+	CRANRepository_GroupVersionKind = CRDGroupVersion.WithKind(CRANRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&CranRepository{}, &CranRepositoryList{})
+	SchemeBuilder.Register(&CRANRepository{}, &CRANRepositoryList{})
 }

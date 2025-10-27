@@ -22,7 +22,7 @@ func (tr *CargoRepository) Hub() {}
 func (tr *ChefRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *CocoapodsRepository) Hub() {}
+func (tr *CocoaPodsRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *ComposerRepository) Hub() {}
@@ -34,7 +34,7 @@ func (tr *ConanRepository) Hub() {}
 func (tr *CondaRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *CranRepository) Hub() {}
+func (tr *CRANRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *DebianRepository) Hub() {}
@@ -55,7 +55,7 @@ func (tr *GemsRepository) Hub() {}
 func (tr *GenericRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *GitlfsRepository) Hub() {}
+func (tr *GitLFSRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *GoRepository) Hub() {}
@@ -64,13 +64,13 @@ func (tr *GoRepository) Hub() {}
 func (tr *GradleRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *HelmociRepository) Hub() {}
+func (tr *HelmOCIRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *HelmRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *HuggingfacemlRepository) Hub() {}
+func (tr *HuggingFaceMLRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *IvyRepository) Hub() {}
@@ -79,28 +79,28 @@ func (tr *IvyRepository) Hub() {}
 func (tr *MavenRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *NpmRepository) Hub() {}
+func (tr *NPMRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *NugetRepository) Hub() {}
+func (tr *NuGetRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *OciRepository) Hub() {}
+func (tr *OCIRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *OpkgRepository) Hub() {}
+func (tr *OPKGRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *PuppetRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *PypiRepository) Hub() {}
+func (tr *PyPIRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *RpmRepository) Hub() {}
+func (tr *RPMRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *SbtRepository) Hub() {}
+func (tr *SBTRepository) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *SwiftRepository) Hub() {}

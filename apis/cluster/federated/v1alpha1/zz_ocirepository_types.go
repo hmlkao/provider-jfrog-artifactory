@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type OciRepositoryInitParameters struct {
+type OCIRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -48,7 +48,7 @@ type OciRepositoryInitParameters struct {
 	MaxUniqueTags *float64 `json:"maxUniqueTags,omitempty" tf:"max_unique_tags,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []OciRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []OCIRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -80,7 +80,7 @@ type OciRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type OciRepositoryMemberInitParameters struct {
+type OCIRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -92,7 +92,7 @@ type OciRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type OciRepositoryMemberObservation struct {
+type OCIRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -101,7 +101,7 @@ type OciRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type OciRepositoryMemberParameters struct {
+type OCIRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -116,7 +116,7 @@ type OciRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type OciRepositoryObservation struct {
+type OCIRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -153,7 +153,7 @@ type OciRepositoryObservation struct {
 	MaxUniqueTags *float64 `json:"maxUniqueTags,omitempty" tf:"max_unique_tags,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []OciRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []OCIRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -187,7 +187,7 @@ type OciRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type OciRepositoryParameters struct {
+type OCIRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -233,7 +233,7 @@ type OciRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []OciRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []OCIRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -274,10 +274,10 @@ type OciRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// OciRepositorySpec defines the desired state of OciRepository
-type OciRepositorySpec struct {
+// OCIRepositorySpec defines the desired state of OCIRepository
+type OCIRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     OciRepositoryParameters `json:"forProvider"`
+	ForProvider     OCIRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -288,50 +288,50 @@ type OciRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider OciRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider OCIRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// OciRepositoryStatus defines the observed state of OciRepository.
-type OciRepositoryStatus struct {
+// OCIRepositoryStatus defines the observed state of OCIRepository.
+type OCIRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        OciRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        OCIRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// OciRepository is the Schema for the OciRepositorys API. <no value>
+// OCIRepository is the Schema for the OCIRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type OciRepository struct {
+type OCIRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   OciRepositorySpec   `json:"spec"`
-	Status OciRepositoryStatus `json:"status,omitempty"`
+	Spec   OCIRepositorySpec   `json:"spec"`
+	Status OCIRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// OciRepositoryList contains a list of OciRepositorys
-type OciRepositoryList struct {
+// OCIRepositoryList contains a list of OCIRepositorys
+type OCIRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []OciRepository `json:"items"`
+	Items           []OCIRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	OciRepository_Kind             = "OciRepository"
-	OciRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: OciRepository_Kind}.String()
-	OciRepository_KindAPIVersion   = OciRepository_Kind + "." + CRDGroupVersion.String()
-	OciRepository_GroupVersionKind = CRDGroupVersion.WithKind(OciRepository_Kind)
+	OCIRepository_Kind             = "OCIRepository"
+	OCIRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: OCIRepository_Kind}.String()
+	OCIRepository_KindAPIVersion   = OCIRepository_Kind + "." + CRDGroupVersion.String()
+	OCIRepository_GroupVersionKind = CRDGroupVersion.WithKind(OCIRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&OciRepository{}, &OciRepositoryList{})
+	SchemeBuilder.Register(&OCIRepository{}, &OCIRepositoryList{})
 }

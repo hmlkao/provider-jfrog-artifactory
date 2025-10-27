@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type RpmRepositoryInitParameters struct {
+type RPMRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -48,7 +48,7 @@ type RpmRepositoryInitParameters struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []RpmRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []RPMRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -89,7 +89,7 @@ type RpmRepositoryInitParameters struct {
 	YumRootDepth *float64 `json:"yumRootDepth,omitempty" tf:"yum_root_depth,omitempty"`
 }
 
-type RpmRepositoryMemberInitParameters struct {
+type RPMRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -101,7 +101,7 @@ type RpmRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type RpmRepositoryMemberObservation struct {
+type RPMRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -110,7 +110,7 @@ type RpmRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type RpmRepositoryMemberParameters struct {
+type RPMRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -125,7 +125,7 @@ type RpmRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type RpmRepositoryObservation struct {
+type RPMRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -162,7 +162,7 @@ type RpmRepositoryObservation struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []RpmRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []RPMRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -205,7 +205,7 @@ type RpmRepositoryObservation struct {
 	YumRootDepth *float64 `json:"yumRootDepth,omitempty" tf:"yum_root_depth,omitempty"`
 }
 
-type RpmRepositoryParameters struct {
+type RPMRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -252,7 +252,7 @@ type RpmRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []RpmRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []RPMRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -305,10 +305,10 @@ type RpmRepositoryParameters struct {
 	YumRootDepth *float64 `json:"yumRootDepth,omitempty" tf:"yum_root_depth,omitempty"`
 }
 
-// RpmRepositorySpec defines the desired state of RpmRepository
-type RpmRepositorySpec struct {
+// RPMRepositorySpec defines the desired state of RPMRepository
+type RPMRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     RpmRepositoryParameters `json:"forProvider"`
+	ForProvider     RPMRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -319,50 +319,50 @@ type RpmRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider RpmRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider RPMRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// RpmRepositoryStatus defines the observed state of RpmRepository.
-type RpmRepositoryStatus struct {
+// RPMRepositoryStatus defines the observed state of RPMRepository.
+type RPMRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        RpmRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        RPMRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// RpmRepository is the Schema for the RpmRepositorys API. <no value>
+// RPMRepository is the Schema for the RPMRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type RpmRepository struct {
+type RPMRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   RpmRepositorySpec   `json:"spec"`
-	Status RpmRepositoryStatus `json:"status,omitempty"`
+	Spec   RPMRepositorySpec   `json:"spec"`
+	Status RPMRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// RpmRepositoryList contains a list of RpmRepositorys
-type RpmRepositoryList struct {
+// RPMRepositoryList contains a list of RPMRepositorys
+type RPMRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []RpmRepository `json:"items"`
+	Items           []RPMRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	RpmRepository_Kind             = "RpmRepository"
-	RpmRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: RpmRepository_Kind}.String()
-	RpmRepository_KindAPIVersion   = RpmRepository_Kind + "." + CRDGroupVersion.String()
-	RpmRepository_GroupVersionKind = CRDGroupVersion.WithKind(RpmRepository_Kind)
+	RPMRepository_Kind             = "RPMRepository"
+	RPMRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: RPMRepository_Kind}.String()
+	RPMRepository_KindAPIVersion   = RPMRepository_Kind + "." + CRDGroupVersion.String()
+	RPMRepository_GroupVersionKind = CRDGroupVersion.WithKind(RPMRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&RpmRepository{}, &RpmRepositoryList{})
+	SchemeBuilder.Register(&RPMRepository{}, &RPMRepositoryList{})
 }

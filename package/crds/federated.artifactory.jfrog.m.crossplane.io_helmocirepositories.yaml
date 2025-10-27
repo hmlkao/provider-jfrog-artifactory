@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: HelmociRepository
-    listKind: HelmociRepositoryList
+    kind: HelmOCIRepository
+    listKind: HelmOCIRepositoryList
     plural: helmocirepositories
     singular: helmocirepository
   scope: Namespaced
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: HelmociRepository is the Schema for the HelmociRepositorys API.
+        description: HelmOCIRepository is the Schema for the HelmOCIRepositorys API.
           <no value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: HelmociRepositorySpec defines the desired state of HelmociRepository
+            description: HelmOCIRepositorySpec defines the desired state of HelmOCIRepository
             properties:
               forProvider:
                 properties:
@@ -406,7 +406,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: HelmociRepositoryStatus defines the observed state of HelmociRepository.
+            description: HelmOCIRepositoryStatus defines the observed state of HelmOCIRepository.
             properties:
               atProvider:
                 properties:

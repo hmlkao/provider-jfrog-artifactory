@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type NugetRepositoryInitParameters struct {
+type NuGetRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -52,7 +52,7 @@ type NugetRepositoryInitParameters struct {
 	MaxUniqueSnapshots *float64 `json:"maxUniqueSnapshots,omitempty" tf:"max_unique_snapshots,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []NugetRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []NuGetRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -81,7 +81,7 @@ type NugetRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NugetRepositoryMemberInitParameters struct {
+type NuGetRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -93,7 +93,7 @@ type NugetRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type NugetRepositoryMemberObservation struct {
+type NuGetRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -102,7 +102,7 @@ type NugetRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type NugetRepositoryMemberParameters struct {
+type NuGetRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -117,7 +117,7 @@ type NugetRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type NugetRepositoryObservation struct {
+type NuGetRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -158,7 +158,7 @@ type NugetRepositoryObservation struct {
 	MaxUniqueSnapshots *float64 `json:"maxUniqueSnapshots,omitempty" tf:"max_unique_snapshots,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []NugetRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []NuGetRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -189,7 +189,7 @@ type NugetRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type NugetRepositoryParameters struct {
+type NuGetRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -240,7 +240,7 @@ type NugetRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []NugetRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []NuGetRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -277,10 +277,10 @@ type NugetRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// NugetRepositorySpec defines the desired state of NugetRepository
-type NugetRepositorySpec struct {
+// NuGetRepositorySpec defines the desired state of NuGetRepository
+type NuGetRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     NugetRepositoryParameters `json:"forProvider"`
+	ForProvider     NuGetRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -291,50 +291,50 @@ type NugetRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider NugetRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider NuGetRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// NugetRepositoryStatus defines the observed state of NugetRepository.
-type NugetRepositoryStatus struct {
+// NuGetRepositoryStatus defines the observed state of NuGetRepository.
+type NuGetRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        NugetRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        NuGetRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// NugetRepository is the Schema for the NugetRepositorys API. <no value>
+// NuGetRepository is the Schema for the NuGetRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type NugetRepository struct {
+type NuGetRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   NugetRepositorySpec   `json:"spec"`
-	Status NugetRepositoryStatus `json:"status,omitempty"`
+	Spec   NuGetRepositorySpec   `json:"spec"`
+	Status NuGetRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// NugetRepositoryList contains a list of NugetRepositorys
-type NugetRepositoryList struct {
+// NuGetRepositoryList contains a list of NuGetRepositorys
+type NuGetRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []NugetRepository `json:"items"`
+	Items           []NuGetRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	NugetRepository_Kind             = "NugetRepository"
-	NugetRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NugetRepository_Kind}.String()
-	NugetRepository_KindAPIVersion   = NugetRepository_Kind + "." + CRDGroupVersion.String()
-	NugetRepository_GroupVersionKind = CRDGroupVersion.WithKind(NugetRepository_Kind)
+	NuGetRepository_Kind             = "NuGetRepository"
+	NuGetRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: NuGetRepository_Kind}.String()
+	NuGetRepository_KindAPIVersion   = NuGetRepository_Kind + "." + CRDGroupVersion.String()
+	NuGetRepository_GroupVersionKind = CRDGroupVersion.WithKind(NuGetRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&NugetRepository{}, &NugetRepositoryList{})
+	SchemeBuilder.Register(&NuGetRepository{}, &NuGetRepositoryList{})
 }

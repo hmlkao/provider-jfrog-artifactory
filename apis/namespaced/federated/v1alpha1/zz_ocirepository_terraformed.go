@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this OciRepository
-func (mg *OciRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this OCIRepository
+func (mg *OCIRepository) GetTerraformResourceType() string {
 	return "artifactory_federated_oci_repository"
 }
 
-// GetConnectionDetailsMapping for this OciRepository
-func (tr *OciRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this OCIRepository
+func (tr *OCIRepository) GetConnectionDetailsMapping() map[string]string {
 	return map[string]string{"member[*].access_token": "member[*].accessTokenSecretRef"}
 }
 
-// GetObservation of this OciRepository
-func (tr *OciRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this OCIRepository
+func (tr *OCIRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *OciRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this OciRepository
-func (tr *OciRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this OCIRepository
+func (tr *OCIRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *OciRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this OciRepository
-func (tr *OciRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this OCIRepository
+func (tr *OCIRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this OciRepository
-func (tr *OciRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this OCIRepository
+func (tr *OCIRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *OciRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this OciRepository
-func (tr *OciRepository) SetParameters(params map[string]any) error {
+// SetParameters for this OCIRepository
+func (tr *OCIRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *OciRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this OciRepository
-func (tr *OciRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this OCIRepository
+func (tr *OCIRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *OciRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this OciRepository
-func (tr *OciRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this OCIRepository
+func (tr *OCIRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource \"%s/%s\"", tr.GetNamespace(), tr.GetName())
@@ -110,10 +110,10 @@ func (tr *OciRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[
 	return params, nil
 }
 
-// LateInitialize this OciRepository using its observed tfState.
+// LateInitialize this OCIRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *OciRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &OciRepositoryParameters{}
+func (tr *OCIRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &OCIRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *OciRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *OciRepository) GetTerraformSchemaVersion() int {
+func (tr *OCIRepository) GetTerraformSchemaVersion() int {
 	return 4
 }
