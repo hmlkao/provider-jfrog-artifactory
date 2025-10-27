@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this OpkgRepository
-func (mg *OpkgRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this OPKGRepository
+func (mg *OPKGRepository) GetTerraformResourceType() string {
 	return "artifactory_federated_opkg_repository"
 }
 
-// GetConnectionDetailsMapping for this OpkgRepository
-func (tr *OpkgRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this OPKGRepository
+func (tr *OPKGRepository) GetConnectionDetailsMapping() map[string]string {
 	return map[string]string{"member[*].access_token": "member[*].accessTokenSecretRef"}
 }
 
-// GetObservation of this OpkgRepository
-func (tr *OpkgRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this OPKGRepository
+func (tr *OPKGRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *OpkgRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this OpkgRepository
-func (tr *OpkgRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this OPKGRepository
+func (tr *OPKGRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *OpkgRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this OpkgRepository
-func (tr *OpkgRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this OPKGRepository
+func (tr *OPKGRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this OpkgRepository
-func (tr *OpkgRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this OPKGRepository
+func (tr *OPKGRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *OpkgRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this OpkgRepository
-func (tr *OpkgRepository) SetParameters(params map[string]any) error {
+// SetParameters for this OPKGRepository
+func (tr *OPKGRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *OpkgRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this OpkgRepository
-func (tr *OpkgRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this OPKGRepository
+func (tr *OPKGRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *OpkgRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this OpkgRepository
-func (tr *OpkgRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this OPKGRepository
+func (tr *OPKGRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource \"%s/%s\"", tr.GetNamespace(), tr.GetName())
@@ -110,10 +110,10 @@ func (tr *OpkgRepository) GetMergedParameters(shouldMergeInitProvider bool) (map
 	return params, nil
 }
 
-// LateInitialize this OpkgRepository using its observed tfState.
+// LateInitialize this OPKGRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *OpkgRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &OpkgRepositoryParameters{}
+func (tr *OPKGRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &OPKGRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *OpkgRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *OpkgRepository) GetTerraformSchemaVersion() int {
+func (tr *OPKGRepository) GetTerraformSchemaVersion() int {
 	return 4
 }

@@ -14,18 +14,18 @@ import (
 	"github.com/crossplane/upjet/v2/pkg/resource/json"
 )
 
-// GetTerraformResourceType returns Terraform resource type for this HelmociRepository
-func (mg *HelmociRepository) GetTerraformResourceType() string {
+// GetTerraformResourceType returns Terraform resource type for this HelmOCIRepository
+func (mg *HelmOCIRepository) GetTerraformResourceType() string {
 	return "artifactory_federated_helmoci_repository"
 }
 
-// GetConnectionDetailsMapping for this HelmociRepository
-func (tr *HelmociRepository) GetConnectionDetailsMapping() map[string]string {
+// GetConnectionDetailsMapping for this HelmOCIRepository
+func (tr *HelmOCIRepository) GetConnectionDetailsMapping() map[string]string {
 	return map[string]string{"member[*].access_token": "member[*].accessTokenSecretRef"}
 }
 
-// GetObservation of this HelmociRepository
-func (tr *HelmociRepository) GetObservation() (map[string]any, error) {
+// GetObservation of this HelmOCIRepository
+func (tr *HelmOCIRepository) GetObservation() (map[string]any, error) {
 	o, err := json.TFParser.Marshal(tr.Status.AtProvider)
 	if err != nil {
 		return nil, err
@@ -34,8 +34,8 @@ func (tr *HelmociRepository) GetObservation() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(o, &base)
 }
 
-// SetObservation for this HelmociRepository
-func (tr *HelmociRepository) SetObservation(obs map[string]any) error {
+// SetObservation for this HelmOCIRepository
+func (tr *HelmOCIRepository) SetObservation(obs map[string]any) error {
 	p, err := json.TFParser.Marshal(obs)
 	if err != nil {
 		return err
@@ -43,16 +43,16 @@ func (tr *HelmociRepository) SetObservation(obs map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Status.AtProvider)
 }
 
-// GetID returns ID of underlying Terraform resource of this HelmociRepository
-func (tr *HelmociRepository) GetID() string {
+// GetID returns ID of underlying Terraform resource of this HelmOCIRepository
+func (tr *HelmOCIRepository) GetID() string {
 	if tr.Status.AtProvider.ID == nil {
 		return ""
 	}
 	return *tr.Status.AtProvider.ID
 }
 
-// GetParameters of this HelmociRepository
-func (tr *HelmociRepository) GetParameters() (map[string]any, error) {
+// GetParameters of this HelmOCIRepository
+func (tr *HelmOCIRepository) GetParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.ForProvider)
 	if err != nil {
 		return nil, err
@@ -61,8 +61,8 @@ func (tr *HelmociRepository) GetParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// SetParameters for this HelmociRepository
-func (tr *HelmociRepository) SetParameters(params map[string]any) error {
+// SetParameters for this HelmOCIRepository
+func (tr *HelmOCIRepository) SetParameters(params map[string]any) error {
 	p, err := json.TFParser.Marshal(params)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func (tr *HelmociRepository) SetParameters(params map[string]any) error {
 	return json.TFParser.Unmarshal(p, &tr.Spec.ForProvider)
 }
 
-// GetInitParameters of this HelmociRepository
-func (tr *HelmociRepository) GetInitParameters() (map[string]any, error) {
+// GetInitParameters of this HelmOCIRepository
+func (tr *HelmOCIRepository) GetInitParameters() (map[string]any, error) {
 	p, err := json.TFParser.Marshal(tr.Spec.InitProvider)
 	if err != nil {
 		return nil, err
@@ -80,8 +80,8 @@ func (tr *HelmociRepository) GetInitParameters() (map[string]any, error) {
 	return base, json.TFParser.Unmarshal(p, &base)
 }
 
-// GetInitParameters of this HelmociRepository
-func (tr *HelmociRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
+// GetInitParameters of this HelmOCIRepository
+func (tr *HelmOCIRepository) GetMergedParameters(shouldMergeInitProvider bool) (map[string]any, error) {
 	params, err := tr.GetParameters()
 	if err != nil {
 		return nil, errors.Wrapf(err, "cannot get parameters for resource \"%s/%s\"", tr.GetNamespace(), tr.GetName())
@@ -110,10 +110,10 @@ func (tr *HelmociRepository) GetMergedParameters(shouldMergeInitProvider bool) (
 	return params, nil
 }
 
-// LateInitialize this HelmociRepository using its observed tfState.
+// LateInitialize this HelmOCIRepository using its observed tfState.
 // returns True if there are any spec changes for the resource.
-func (tr *HelmociRepository) LateInitialize(attrs []byte) (bool, error) {
-	params := &HelmociRepositoryParameters{}
+func (tr *HelmOCIRepository) LateInitialize(attrs []byte) (bool, error) {
+	params := &HelmOCIRepositoryParameters{}
 	if err := json.TFParser.Unmarshal(attrs, params); err != nil {
 		return false, errors.Wrap(err, "failed to unmarshal Terraform state parameters for late-initialization")
 	}
@@ -124,6 +124,6 @@ func (tr *HelmociRepository) LateInitialize(attrs []byte) (bool, error) {
 }
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
-func (tr *HelmociRepository) GetTerraformSchemaVersion() int {
+func (tr *HelmOCIRepository) GetTerraformSchemaVersion() int {
 	return 4
 }

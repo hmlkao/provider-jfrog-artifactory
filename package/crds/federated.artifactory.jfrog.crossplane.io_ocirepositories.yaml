@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: OciRepository
-    listKind: OciRepositoryList
+    kind: OCIRepository
+    listKind: OCIRepositoryList
     plural: ocirepositories
     singular: ocirepository
   scope: Cluster
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: OciRepository is the Schema for the OciRepositorys API. <no value>
+        description: OCIRepository is the Schema for the OCIRepositorys API. <no value>
         properties:
           apiVersion:
             description: |-
@@ -54,7 +54,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: OciRepositorySpec defines the desired state of OciRepository
+            description: OCIRepositorySpec defines the desired state of OCIRepository
             properties:
               deletionPolicy:
                 default: Delete
@@ -453,7 +453,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: OciRepositoryStatus defines the observed state of OciRepository.
+            description: OCIRepositoryStatus defines the observed state of OCIRepository.
             properties:
               atProvider:
                 properties:

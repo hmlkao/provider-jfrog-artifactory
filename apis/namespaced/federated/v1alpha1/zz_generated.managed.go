@@ -128,6 +128,46 @@ func (mg *BowerRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecr
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
+// GetCondition of this CRANRepository.
+func (mg *CRANRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+	return mg.Status.GetCondition(ct)
+}
+
+// GetManagementPolicies of this CRANRepository.
+func (mg *CRANRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+	return mg.Spec.ManagementPolicies
+}
+
+// GetProviderConfigReference of this CRANRepository.
+func (mg *CRANRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+	return mg.Spec.ProviderConfigReference
+}
+
+// GetWriteConnectionSecretToReference of this CRANRepository.
+func (mg *CRANRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+	return mg.Spec.WriteConnectionSecretToReference
+}
+
+// SetConditions of this CRANRepository.
+func (mg *CRANRepository) SetConditions(c ...xpv1.Condition) {
+	mg.Status.SetConditions(c...)
+}
+
+// SetManagementPolicies of this CRANRepository.
+func (mg *CRANRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+	mg.Spec.ManagementPolicies = r
+}
+
+// SetProviderConfigReference of this CRANRepository.
+func (mg *CRANRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+	mg.Spec.ProviderConfigReference = r
+}
+
+// SetWriteConnectionSecretToReference of this CRANRepository.
+func (mg *CRANRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+	mg.Spec.WriteConnectionSecretToReference = r
+}
+
 // GetCondition of this CargoRepository.
 func (mg *CargoRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
@@ -208,43 +248,43 @@ func (mg *ChefRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecre
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this CocoapodsRepository.
-func (mg *CocoapodsRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this CocoaPodsRepository.
+func (mg *CocoaPodsRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -365,46 +405,6 @@ func (mg *CondaRepository) SetProviderConfigReference(r *xpv1.ProviderConfigRefe
 
 // SetWriteConnectionSecretToReference of this CondaRepository.
 func (mg *CondaRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
-	mg.Spec.WriteConnectionSecretToReference = r
-}
-
-// GetCondition of this CranRepository.
-func (mg *CranRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
-	return mg.Status.GetCondition(ct)
-}
-
-// GetManagementPolicies of this CranRepository.
-func (mg *CranRepository) GetManagementPolicies() xpv1.ManagementPolicies {
-	return mg.Spec.ManagementPolicies
-}
-
-// GetProviderConfigReference of this CranRepository.
-func (mg *CranRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
-	return mg.Spec.ProviderConfigReference
-}
-
-// GetWriteConnectionSecretToReference of this CranRepository.
-func (mg *CranRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
-	return mg.Spec.WriteConnectionSecretToReference
-}
-
-// SetConditions of this CranRepository.
-func (mg *CranRepository) SetConditions(c ...xpv1.Condition) {
-	mg.Status.SetConditions(c...)
-}
-
-// SetManagementPolicies of this CranRepository.
-func (mg *CranRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
-	mg.Spec.ManagementPolicies = r
-}
-
-// SetProviderConfigReference of this CranRepository.
-func (mg *CranRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
-	mg.Spec.ProviderConfigReference = r
-}
-
-// SetWriteConnectionSecretToReference of this CranRepository.
-func (mg *CranRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -648,43 +648,43 @@ func (mg *GenericRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSe
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this GitlfsRepository.
-func (mg *GitlfsRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this GitLFSRepository.
+func (mg *GitLFSRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this GitlfsRepository.
-func (mg *GitlfsRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this GitLFSRepository.
+func (mg *GitLFSRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this GitlfsRepository.
-func (mg *GitlfsRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this GitLFSRepository.
+func (mg *GitLFSRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this GitlfsRepository.
-func (mg *GitlfsRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this GitLFSRepository.
+func (mg *GitLFSRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this GitlfsRepository.
-func (mg *GitlfsRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this GitLFSRepository.
+func (mg *GitLFSRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this GitlfsRepository.
-func (mg *GitlfsRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this GitLFSRepository.
+func (mg *GitLFSRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this GitlfsRepository.
-func (mg *GitlfsRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this GitLFSRepository.
+func (mg *GitLFSRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this GitlfsRepository.
-func (mg *GitlfsRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this GitLFSRepository.
+func (mg *GitLFSRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -768,6 +768,46 @@ func (mg *GradleRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSec
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
+// GetCondition of this HelmOCIRepository.
+func (mg *HelmOCIRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+	return mg.Status.GetCondition(ct)
+}
+
+// GetManagementPolicies of this HelmOCIRepository.
+func (mg *HelmOCIRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+	return mg.Spec.ManagementPolicies
+}
+
+// GetProviderConfigReference of this HelmOCIRepository.
+func (mg *HelmOCIRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+	return mg.Spec.ProviderConfigReference
+}
+
+// GetWriteConnectionSecretToReference of this HelmOCIRepository.
+func (mg *HelmOCIRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+	return mg.Spec.WriteConnectionSecretToReference
+}
+
+// SetConditions of this HelmOCIRepository.
+func (mg *HelmOCIRepository) SetConditions(c ...xpv1.Condition) {
+	mg.Status.SetConditions(c...)
+}
+
+// SetManagementPolicies of this HelmOCIRepository.
+func (mg *HelmOCIRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+	mg.Spec.ManagementPolicies = r
+}
+
+// SetProviderConfigReference of this HelmOCIRepository.
+func (mg *HelmOCIRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+	mg.Spec.ProviderConfigReference = r
+}
+
+// SetWriteConnectionSecretToReference of this HelmOCIRepository.
+func (mg *HelmOCIRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+	mg.Spec.WriteConnectionSecretToReference = r
+}
+
 // GetCondition of this HelmRepository.
 func (mg *HelmRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
@@ -808,83 +848,43 @@ func (mg *HelmRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecre
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this HelmociRepository.
-func (mg *HelmociRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this HelmociRepository.
-func (mg *HelmociRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this HelmociRepository.
-func (mg *HelmociRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this HelmociRepository.
-func (mg *HelmociRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this HelmociRepository.
-func (mg *HelmociRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this HelmociRepository.
-func (mg *HelmociRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this HelmociRepository.
-func (mg *HelmociRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this HelmociRepository.
-func (mg *HelmociRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
-	mg.Spec.WriteConnectionSecretToReference = r
-}
-
-// GetCondition of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
-	return mg.Status.GetCondition(ct)
-}
-
-// GetManagementPolicies of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetManagementPolicies() xpv1.ManagementPolicies {
-	return mg.Spec.ManagementPolicies
-}
-
-// GetProviderConfigReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
-	return mg.Spec.ProviderConfigReference
-}
-
-// GetWriteConnectionSecretToReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
-	return mg.Spec.WriteConnectionSecretToReference
-}
-
-// SetConditions of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetConditions(c ...xpv1.Condition) {
-	mg.Status.SetConditions(c...)
-}
-
-// SetManagementPolicies of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
-	mg.Spec.ManagementPolicies = r
-}
-
-// SetProviderConfigReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
-	mg.Spec.ProviderConfigReference = r
-}
-
-// SetWriteConnectionSecretToReference of this HuggingfacemlRepository.
-func (mg *HuggingfacemlRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this HuggingFaceMLRepository.
+func (mg *HuggingFaceMLRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -968,163 +968,163 @@ func (mg *MavenRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecr
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this NpmRepository.
-func (mg *NpmRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this NPMRepository.
+func (mg *NPMRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this NpmRepository.
-func (mg *NpmRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this NPMRepository.
+func (mg *NPMRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this NpmRepository.
-func (mg *NpmRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this NPMRepository.
+func (mg *NPMRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this NpmRepository.
-func (mg *NpmRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this NPMRepository.
+func (mg *NPMRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this NpmRepository.
-func (mg *NpmRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this NPMRepository.
+func (mg *NPMRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this NpmRepository.
-func (mg *NpmRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this NPMRepository.
+func (mg *NPMRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this NpmRepository.
-func (mg *NpmRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this NPMRepository.
+func (mg *NPMRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this NpmRepository.
-func (mg *NpmRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this NPMRepository.
+func (mg *NPMRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this NugetRepository.
-func (mg *NugetRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this NuGetRepository.
+func (mg *NuGetRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this NugetRepository.
-func (mg *NugetRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this NuGetRepository.
+func (mg *NuGetRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this NugetRepository.
-func (mg *NugetRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this NuGetRepository.
+func (mg *NuGetRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this NugetRepository.
-func (mg *NugetRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this NuGetRepository.
+func (mg *NuGetRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this NugetRepository.
-func (mg *NugetRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this NuGetRepository.
+func (mg *NuGetRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this NugetRepository.
-func (mg *NugetRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this NuGetRepository.
+func (mg *NuGetRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this NugetRepository.
-func (mg *NugetRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this NuGetRepository.
+func (mg *NuGetRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this NugetRepository.
-func (mg *NugetRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this NuGetRepository.
+func (mg *NuGetRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this OciRepository.
-func (mg *OciRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this OCIRepository.
+func (mg *OCIRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this OciRepository.
-func (mg *OciRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this OCIRepository.
+func (mg *OCIRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this OciRepository.
-func (mg *OciRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this OCIRepository.
+func (mg *OCIRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this OciRepository.
-func (mg *OciRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this OCIRepository.
+func (mg *OCIRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this OciRepository.
-func (mg *OciRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this OCIRepository.
+func (mg *OCIRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this OciRepository.
-func (mg *OciRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this OCIRepository.
+func (mg *OCIRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this OciRepository.
-func (mg *OciRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this OCIRepository.
+func (mg *OCIRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this OciRepository.
-func (mg *OciRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this OCIRepository.
+func (mg *OCIRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this OpkgRepository.
-func (mg *OpkgRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this OPKGRepository.
+func (mg *OPKGRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this OpkgRepository.
-func (mg *OpkgRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this OPKGRepository.
+func (mg *OPKGRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this OpkgRepository.
-func (mg *OpkgRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this OPKGRepository.
+func (mg *OPKGRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this OpkgRepository.
-func (mg *OpkgRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this OPKGRepository.
+func (mg *OPKGRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this OpkgRepository.
-func (mg *OpkgRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this OPKGRepository.
+func (mg *OPKGRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this OpkgRepository.
-func (mg *OpkgRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this OPKGRepository.
+func (mg *OPKGRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this OpkgRepository.
-func (mg *OpkgRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this OPKGRepository.
+func (mg *OPKGRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this OpkgRepository.
-func (mg *OpkgRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this OPKGRepository.
+func (mg *OPKGRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -1168,123 +1168,123 @@ func (mg *PuppetRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSec
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this PypiRepository.
-func (mg *PypiRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this PyPIRepository.
+func (mg *PyPIRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this PypiRepository.
-func (mg *PypiRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this PyPIRepository.
+func (mg *PyPIRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this PypiRepository.
-func (mg *PypiRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this PyPIRepository.
+func (mg *PyPIRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this PypiRepository.
-func (mg *PypiRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this PyPIRepository.
+func (mg *PyPIRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this PypiRepository.
-func (mg *PypiRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this PyPIRepository.
+func (mg *PyPIRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this PypiRepository.
-func (mg *PypiRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this PyPIRepository.
+func (mg *PyPIRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this PypiRepository.
-func (mg *PypiRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this PyPIRepository.
+func (mg *PyPIRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this PypiRepository.
-func (mg *PypiRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this PyPIRepository.
+func (mg *PyPIRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this RpmRepository.
-func (mg *RpmRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this RPMRepository.
+func (mg *RPMRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this RpmRepository.
-func (mg *RpmRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this RPMRepository.
+func (mg *RPMRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this RpmRepository.
-func (mg *RpmRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this RPMRepository.
+func (mg *RPMRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this RpmRepository.
-func (mg *RpmRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this RPMRepository.
+func (mg *RPMRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this RpmRepository.
-func (mg *RpmRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this RPMRepository.
+func (mg *RPMRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this RpmRepository.
-func (mg *RpmRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this RPMRepository.
+func (mg *RPMRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this RpmRepository.
-func (mg *RpmRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this RPMRepository.
+func (mg *RPMRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this RpmRepository.
-func (mg *RpmRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this RPMRepository.
+func (mg *RPMRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this SbtRepository.
-func (mg *SbtRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this SBTRepository.
+func (mg *SBTRepository) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetManagementPolicies of this SbtRepository.
-func (mg *SbtRepository) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this SBTRepository.
+func (mg *SBTRepository) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this SbtRepository.
-func (mg *SbtRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
+// GetProviderConfigReference of this SBTRepository.
+func (mg *SBTRepository) GetProviderConfigReference() *xpv1.ProviderConfigReference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetWriteConnectionSecretToReference of this SbtRepository.
-func (mg *SbtRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
+// GetWriteConnectionSecretToReference of this SBTRepository.
+func (mg *SBTRepository) GetWriteConnectionSecretToReference() *xpv1.LocalSecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this SbtRepository.
-func (mg *SbtRepository) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this SBTRepository.
+func (mg *SBTRepository) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetManagementPolicies of this SbtRepository.
-func (mg *SbtRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this SBTRepository.
+func (mg *SBTRepository) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this SbtRepository.
-func (mg *SbtRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
+// SetProviderConfigReference of this SBTRepository.
+func (mg *SBTRepository) SetProviderConfigReference(r *xpv1.ProviderConfigReference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetWriteConnectionSecretToReference of this SbtRepository.
-func (mg *SbtRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
+// SetWriteConnectionSecretToReference of this SBTRepository.
+func (mg *SBTRepository) SetWriteConnectionSecretToReference(r *xpv1.LocalSecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 

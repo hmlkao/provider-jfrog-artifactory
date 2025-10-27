@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type SbtRepositoryInitParameters struct {
+type SBTRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -58,7 +58,7 @@ type SbtRepositoryInitParameters struct {
 	MaxUniqueSnapshots *float64 `json:"maxUniqueSnapshots,omitempty" tf:"max_unique_snapshots,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []SbtRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []SBTRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -99,7 +99,7 @@ type SbtRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type SbtRepositoryMemberInitParameters struct {
+type SBTRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -111,7 +111,7 @@ type SbtRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type SbtRepositoryMemberObservation struct {
+type SBTRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -120,7 +120,7 @@ type SbtRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type SbtRepositoryMemberParameters struct {
+type SBTRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -135,7 +135,7 @@ type SbtRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type SbtRepositoryObservation struct {
+type SBTRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -182,7 +182,7 @@ type SbtRepositoryObservation struct {
 	MaxUniqueSnapshots *float64 `json:"maxUniqueSnapshots,omitempty" tf:"max_unique_snapshots,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []SbtRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []SBTRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -225,7 +225,7 @@ type SbtRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type SbtRepositoryParameters struct {
+type SBTRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -284,7 +284,7 @@ type SbtRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []SbtRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []SBTRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -335,10 +335,10 @@ type SbtRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// SbtRepositorySpec defines the desired state of SbtRepository
-type SbtRepositorySpec struct {
+// SBTRepositorySpec defines the desired state of SBTRepository
+type SBTRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     SbtRepositoryParameters `json:"forProvider"`
+	ForProvider     SBTRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -349,50 +349,50 @@ type SbtRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider SbtRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider SBTRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// SbtRepositoryStatus defines the observed state of SbtRepository.
-type SbtRepositoryStatus struct {
+// SBTRepositoryStatus defines the observed state of SBTRepository.
+type SBTRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        SbtRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        SBTRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// SbtRepository is the Schema for the SbtRepositorys API. <no value>
+// SBTRepository is the Schema for the SBTRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type SbtRepository struct {
+type SBTRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   SbtRepositorySpec   `json:"spec"`
-	Status SbtRepositoryStatus `json:"status,omitempty"`
+	Spec   SBTRepositorySpec   `json:"spec"`
+	Status SBTRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// SbtRepositoryList contains a list of SbtRepositorys
-type SbtRepositoryList struct {
+// SBTRepositoryList contains a list of SBTRepositorys
+type SBTRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []SbtRepository `json:"items"`
+	Items           []SBTRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	SbtRepository_Kind             = "SbtRepository"
-	SbtRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: SbtRepository_Kind}.String()
-	SbtRepository_KindAPIVersion   = SbtRepository_Kind + "." + CRDGroupVersion.String()
-	SbtRepository_GroupVersionKind = CRDGroupVersion.WithKind(SbtRepository_Kind)
+	SBTRepository_Kind             = "SBTRepository"
+	SBTRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: SBTRepository_Kind}.String()
+	SBTRepository_KindAPIVersion   = SBTRepository_Kind + "." + CRDGroupVersion.String()
+	SBTRepository_GroupVersionKind = CRDGroupVersion.WithKind(SBTRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&SbtRepository{}, &SbtRepositoryList{})
+	SchemeBuilder.Register(&SBTRepository{}, &SBTRepositoryList{})
 }

@@ -14,7 +14,7 @@ import (
 	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
 )
 
-type CocoapodsRepositoryInitParameters struct {
+type CocoaPodsRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -45,7 +45,7 @@ type CocoapodsRepositoryInitParameters struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []CocoapodsRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []CocoaPodsRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -74,7 +74,7 @@ type CocoapodsRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CocoapodsRepositoryMemberInitParameters struct {
+type CocoaPodsRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -86,7 +86,7 @@ type CocoapodsRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type CocoapodsRepositoryMemberObservation struct {
+type CocoaPodsRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -95,7 +95,7 @@ type CocoapodsRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type CocoapodsRepositoryMemberParameters struct {
+type CocoaPodsRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -110,7 +110,7 @@ type CocoapodsRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type CocoapodsRepositoryObservation struct {
+type CocoaPodsRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -143,7 +143,7 @@ type CocoapodsRepositoryObservation struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []CocoapodsRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []CocoaPodsRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -174,7 +174,7 @@ type CocoapodsRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type CocoapodsRepositoryParameters struct {
+type CocoaPodsRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -215,7 +215,7 @@ type CocoapodsRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []CocoapodsRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []CocoaPodsRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -252,10 +252,10 @@ type CocoapodsRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// CocoapodsRepositorySpec defines the desired state of CocoapodsRepository
-type CocoapodsRepositorySpec struct {
+// CocoaPodsRepositorySpec defines the desired state of CocoaPodsRepository
+type CocoaPodsRepositorySpec struct {
 	v2.ManagedResourceSpec `json:",inline"`
-	ForProvider            CocoapodsRepositoryParameters `json:"forProvider"`
+	ForProvider            CocoaPodsRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -266,50 +266,50 @@ type CocoapodsRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider CocoapodsRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider CocoaPodsRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// CocoapodsRepositoryStatus defines the observed state of CocoapodsRepository.
-type CocoapodsRepositoryStatus struct {
+// CocoaPodsRepositoryStatus defines the observed state of CocoaPodsRepository.
+type CocoaPodsRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        CocoapodsRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        CocoaPodsRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// CocoapodsRepository is the Schema for the CocoapodsRepositorys API. <no value>
+// CocoaPodsRepository is the Schema for the CocoaPodsRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Namespaced,categories={crossplane,managed,artifactory}
-type CocoapodsRepository struct {
+type CocoaPodsRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   CocoapodsRepositorySpec   `json:"spec"`
-	Status CocoapodsRepositoryStatus `json:"status,omitempty"`
+	Spec   CocoaPodsRepositorySpec   `json:"spec"`
+	Status CocoaPodsRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// CocoapodsRepositoryList contains a list of CocoapodsRepositorys
-type CocoapodsRepositoryList struct {
+// CocoaPodsRepositoryList contains a list of CocoaPodsRepositorys
+type CocoaPodsRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []CocoapodsRepository `json:"items"`
+	Items           []CocoaPodsRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	CocoapodsRepository_Kind             = "CocoapodsRepository"
-	CocoapodsRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CocoapodsRepository_Kind}.String()
-	CocoapodsRepository_KindAPIVersion   = CocoapodsRepository_Kind + "." + CRDGroupVersion.String()
-	CocoapodsRepository_GroupVersionKind = CRDGroupVersion.WithKind(CocoapodsRepository_Kind)
+	CocoaPodsRepository_Kind             = "CocoaPodsRepository"
+	CocoaPodsRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: CocoaPodsRepository_Kind}.String()
+	CocoaPodsRepository_KindAPIVersion   = CocoaPodsRepository_Kind + "." + CRDGroupVersion.String()
+	CocoaPodsRepository_GroupVersionKind = CRDGroupVersion.WithKind(CocoaPodsRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&CocoapodsRepository{}, &CocoapodsRepositoryList{})
+	SchemeBuilder.Register(&CocoaPodsRepository{}, &CocoaPodsRepositoryList{})
 }

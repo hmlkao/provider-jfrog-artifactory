@@ -14,7 +14,7 @@ import (
 	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
 )
 
-type HuggingfacemlRepositoryInitParameters struct {
+type HuggingFaceMLRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -45,7 +45,7 @@ type HuggingfacemlRepositoryInitParameters struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []HuggingfacemlRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []HuggingFaceMLRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -74,7 +74,7 @@ type HuggingfacemlRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type HuggingfacemlRepositoryMemberInitParameters struct {
+type HuggingFaceMLRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -86,7 +86,7 @@ type HuggingfacemlRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type HuggingfacemlRepositoryMemberObservation struct {
+type HuggingFaceMLRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -95,7 +95,7 @@ type HuggingfacemlRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type HuggingfacemlRepositoryMemberParameters struct {
+type HuggingFaceMLRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -110,7 +110,7 @@ type HuggingfacemlRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type HuggingfacemlRepositoryObservation struct {
+type HuggingFaceMLRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -143,7 +143,7 @@ type HuggingfacemlRepositoryObservation struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []HuggingfacemlRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []HuggingFaceMLRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -174,7 +174,7 @@ type HuggingfacemlRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type HuggingfacemlRepositoryParameters struct {
+type HuggingFaceMLRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -215,7 +215,7 @@ type HuggingfacemlRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []HuggingfacemlRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []HuggingFaceMLRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -252,10 +252,10 @@ type HuggingfacemlRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// HuggingfacemlRepositorySpec defines the desired state of HuggingfacemlRepository
-type HuggingfacemlRepositorySpec struct {
+// HuggingFaceMLRepositorySpec defines the desired state of HuggingFaceMLRepository
+type HuggingFaceMLRepositorySpec struct {
 	v2.ManagedResourceSpec `json:",inline"`
-	ForProvider            HuggingfacemlRepositoryParameters `json:"forProvider"`
+	ForProvider            HuggingFaceMLRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -266,50 +266,50 @@ type HuggingfacemlRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider HuggingfacemlRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider HuggingFaceMLRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// HuggingfacemlRepositoryStatus defines the observed state of HuggingfacemlRepository.
-type HuggingfacemlRepositoryStatus struct {
+// HuggingFaceMLRepositoryStatus defines the observed state of HuggingFaceMLRepository.
+type HuggingFaceMLRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        HuggingfacemlRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        HuggingFaceMLRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// HuggingfacemlRepository is the Schema for the HuggingfacemlRepositorys API. <no value>
+// HuggingFaceMLRepository is the Schema for the HuggingFaceMLRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Namespaced,categories={crossplane,managed,artifactory}
-type HuggingfacemlRepository struct {
+type HuggingFaceMLRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   HuggingfacemlRepositorySpec   `json:"spec"`
-	Status HuggingfacemlRepositoryStatus `json:"status,omitempty"`
+	Spec   HuggingFaceMLRepositorySpec   `json:"spec"`
+	Status HuggingFaceMLRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// HuggingfacemlRepositoryList contains a list of HuggingfacemlRepositorys
-type HuggingfacemlRepositoryList struct {
+// HuggingFaceMLRepositoryList contains a list of HuggingFaceMLRepositorys
+type HuggingFaceMLRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []HuggingfacemlRepository `json:"items"`
+	Items           []HuggingFaceMLRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	HuggingfacemlRepository_Kind             = "HuggingfacemlRepository"
-	HuggingfacemlRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: HuggingfacemlRepository_Kind}.String()
-	HuggingfacemlRepository_KindAPIVersion   = HuggingfacemlRepository_Kind + "." + CRDGroupVersion.String()
-	HuggingfacemlRepository_GroupVersionKind = CRDGroupVersion.WithKind(HuggingfacemlRepository_Kind)
+	HuggingFaceMLRepository_Kind             = "HuggingFaceMLRepository"
+	HuggingFaceMLRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: HuggingFaceMLRepository_Kind}.String()
+	HuggingFaceMLRepository_KindAPIVersion   = HuggingFaceMLRepository_Kind + "." + CRDGroupVersion.String()
+	HuggingFaceMLRepository_GroupVersionKind = CRDGroupVersion.WithKind(HuggingFaceMLRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&HuggingfacemlRepository{}, &HuggingfacemlRepositoryList{})
+	SchemeBuilder.Register(&HuggingFaceMLRepository{}, &HuggingFaceMLRepositoryList{})
 }

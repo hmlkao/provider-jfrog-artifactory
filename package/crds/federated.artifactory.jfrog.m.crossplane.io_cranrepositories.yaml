@@ -12,8 +12,8 @@ spec:
     - crossplane
     - managed
     - artifactory
-    kind: CranRepository
-    listKind: CranRepositoryList
+    kind: CRANRepository
+    listKind: CRANRepositoryList
     plural: cranrepositories
     singular: cranrepository
   scope: Namespaced
@@ -34,7 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: CranRepository is the Schema for the CranRepositorys API. <no
+        description: CRANRepository is the Schema for the CRANRepositorys API. <no
           value>
         properties:
           apiVersion:
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: CranRepositorySpec defines the desired state of CranRepository
+            description: CRANRepositorySpec defines the desired state of CRANRepository
             properties:
               forProvider:
                 properties:
@@ -384,7 +384,7 @@ spec:
                 || ''Update'' in self.managementPolicies) || has(self.forProvider.member)
                 || (has(self.initProvider) && has(self.initProvider.member))'
           status:
-            description: CranRepositoryStatus defines the observed state of CranRepository.
+            description: CRANRepositoryStatus defines the observed state of CRANRepository.
             properties:
               atProvider:
                 properties:

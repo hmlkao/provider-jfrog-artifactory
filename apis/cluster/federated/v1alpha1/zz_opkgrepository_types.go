@@ -13,7 +13,7 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
-type OpkgRepositoryInitParameters struct {
+type OPKGRepositoryInitParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -44,7 +44,7 @@ type OpkgRepositoryInitParameters struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []OpkgRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []OPKGRepositoryMemberInitParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -73,7 +73,7 @@ type OpkgRepositoryInitParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type OpkgRepositoryMemberInitParameters struct {
+type OPKGRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
@@ -85,7 +85,7 @@ type OpkgRepositoryMemberInitParameters struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type OpkgRepositoryMemberObservation struct {
+type OPKGRepositoryMemberObservation struct {
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -94,7 +94,7 @@ type OpkgRepositoryMemberObservation struct {
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 }
 
-type OpkgRepositoryMemberParameters struct {
+type OPKGRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
@@ -109,7 +109,7 @@ type OpkgRepositoryMemberParameters struct {
 	URL *string `json:"url" tf:"url,omitempty"`
 }
 
-type OpkgRepositoryObservation struct {
+type OPKGRepositoryObservation struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -142,7 +142,7 @@ type OpkgRepositoryObservation struct {
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
-	Member []OpkgRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
+	Member []OPKGRepositoryMemberObservation `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
@@ -173,7 +173,7 @@ type OpkgRepositoryObservation struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-type OpkgRepositoryParameters struct {
+type OPKGRepositoryParameters struct {
 
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
@@ -214,7 +214,7 @@ type OpkgRepositoryParameters struct {
 
 	// The list of Federated members. If a Federated member receives a request that does not include the repository URL, it will automatically be added with the combination of the configured base URL and `key` field value. Note that each of the federated members will need to have a base URL set. Please follow the [instruction](https://www.jfrog.com/confluence/display/JFROG/Working+with+Federated+Repositories#WorkingwithFederatedRepositories-SettingUpaFederatedRepository) to set up Federated repositories correctly.
 	// +kubebuilder:validation:Optional
-	Member []OpkgRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
+	Member []OPKGRepositoryMemberParameters `json:"member,omitempty" tf:"member,omitempty"`
 
 	// Internal description.
 	// +kubebuilder:validation:Optional
@@ -251,10 +251,10 @@ type OpkgRepositoryParameters struct {
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
-// OpkgRepositorySpec defines the desired state of OpkgRepository
-type OpkgRepositorySpec struct {
+// OPKGRepositorySpec defines the desired state of OPKGRepository
+type OPKGRepositorySpec struct {
 	v1.ResourceSpec `json:",inline"`
-	ForProvider     OpkgRepositoryParameters `json:"forProvider"`
+	ForProvider     OPKGRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -265,50 +265,50 @@ type OpkgRepositorySpec struct {
 	// required on creation, but we do not desire to update them after creation,
 	// for example because of an external controller is managing them, like an
 	// autoscaler.
-	InitProvider OpkgRepositoryInitParameters `json:"initProvider,omitempty"`
+	InitProvider OPKGRepositoryInitParameters `json:"initProvider,omitempty"`
 }
 
-// OpkgRepositoryStatus defines the observed state of OpkgRepository.
-type OpkgRepositoryStatus struct {
+// OPKGRepositoryStatus defines the observed state of OPKGRepository.
+type OPKGRepositoryStatus struct {
 	v1.ResourceStatus `json:",inline"`
-	AtProvider        OpkgRepositoryObservation `json:"atProvider,omitempty"`
+	AtProvider        OPKGRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// OpkgRepository is the Schema for the OpkgRepositorys API. <no value>
+// OPKGRepository is the Schema for the OPKGRepositorys API. <no value>
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"
 // +kubebuilder:printcolumn:name="AGE",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:scope=Cluster,categories={crossplane,managed,artifactory}
-type OpkgRepository struct {
+type OPKGRepository struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 	// +kubebuilder:validation:XValidation:rule="!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.member) || (has(self.initProvider) && has(self.initProvider.member))",message="spec.forProvider.member is a required parameter"
-	Spec   OpkgRepositorySpec   `json:"spec"`
-	Status OpkgRepositoryStatus `json:"status,omitempty"`
+	Spec   OPKGRepositorySpec   `json:"spec"`
+	Status OPKGRepositoryStatus `json:"status,omitempty"`
 }
 
 // +kubebuilder:object:root=true
 
-// OpkgRepositoryList contains a list of OpkgRepositorys
-type OpkgRepositoryList struct {
+// OPKGRepositoryList contains a list of OPKGRepositorys
+type OPKGRepositoryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []OpkgRepository `json:"items"`
+	Items           []OPKGRepository `json:"items"`
 }
 
 // Repository type metadata.
 var (
-	OpkgRepository_Kind             = "OpkgRepository"
-	OpkgRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: OpkgRepository_Kind}.String()
-	OpkgRepository_KindAPIVersion   = OpkgRepository_Kind + "." + CRDGroupVersion.String()
-	OpkgRepository_GroupVersionKind = CRDGroupVersion.WithKind(OpkgRepository_Kind)
+	OPKGRepository_Kind             = "OPKGRepository"
+	OPKGRepository_GroupKind        = schema.GroupKind{Group: CRDGroup, Kind: OPKGRepository_Kind}.String()
+	OPKGRepository_KindAPIVersion   = OPKGRepository_Kind + "." + CRDGroupVersion.String()
+	OPKGRepository_GroupVersionKind = CRDGroupVersion.WithKind(OPKGRepository_Kind)
 )
 
 func init() {
-	SchemeBuilder.Register(&OpkgRepository{}, &OpkgRepositoryList{})
+	SchemeBuilder.Register(&OPKGRepository{}, &OPKGRepositoryList{})
 }
