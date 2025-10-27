@@ -67,7 +67,7 @@ UPTEST_VERSION = v2.2.0
 # DO NOT COMMENT OUT CROSSPLANE_CLI_VERSION variable, it causes race condition
 #   Error: Text file busy
 # https://github.com/crossplane/crossplane/releases
-#CROSSPLANE_CLI_VERSION ?= v2.0.2
+CROSSPLANE_CLI_VERSION ?= v2.0.2
 -include build/makelib/k8s_tools.mk
 
 # ====================================================================================
