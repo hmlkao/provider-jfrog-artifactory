@@ -173,11 +173,11 @@ Short group is `federated`, so the `apiGroup` is:
 | `artifactory_federated_npm_repository`                | :heavy_check_mark: | `NPMRepository`               |
 | `artifactory_federated_nuget_repository`              | :heavy_check_mark: | `NuGetRepository`             |
 | `artifactory_federated_oci_repository`                | :heavy_check_mark: | `OCIRepository`               |
-| `artifactory_federated_opkg_repository`               | :heavy_check_mark: | `OpkgRepository`              |
+| `artifactory_federated_opkg_repository`               | :heavy_check_mark: | `OPKGRepository`              |
 | `artifactory_federated_puppet_repository`             | :heavy_check_mark: | `PuppetRepository`            |
-| `artifactory_federated_pypi_repository`               | :heavy_check_mark: | `PypiRepository`              |
+| `artifactory_federated_pypi_repository`               | :heavy_check_mark: | `PyPIRepository`              |
 | `artifactory_federated_rpm_repository`                | :heavy_check_mark: | `RPMRepository`               |
-| `artifactory_federated_sbt_repository`                | :heavy_check_mark: | `SbtRepository`               |
+| `artifactory_federated_sbt_repository`                | :heavy_check_mark: | `SBTRepository`               |
 | `artifactory_federated_swift_repository`              | :heavy_check_mark: | `SwiftRepository`             |
 | `artifactory_federated_terraform_module_repository`   | :heavy_check_mark: | `TerraformModuleRepository`   |
 | `artifactory_federated_terraform_provider_repository` | :heavy_check_mark: | `TerraformProviderRepository` |

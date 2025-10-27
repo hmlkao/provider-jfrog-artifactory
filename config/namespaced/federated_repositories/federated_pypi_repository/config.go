@@ -8,6 +8,7 @@ import (
 
 func Configure(p *config.Provider) {
 	p.AddResourceConfigurator("artifactory_federated_pypi_repository", func(r *config.Resource) {
+		r.Kind = "PyPIRepository" // Otherwise, "PypiRepository" is used
 		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
 			if id, ok := tfstate["key"].(string); ok && id != "" {
 				return id, nil
