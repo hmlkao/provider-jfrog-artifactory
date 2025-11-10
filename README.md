@@ -239,7 +239,7 @@ Short group is `local`, so the `apiGroup` is
 | `artifactory_local_sbt_repository`                | :heavy_check_mark: | `SBTRepository`              |
 | `artifactory_local_swift_repository`              | :heavy_check_mark: | `SwiftRepository`            |
 | `artifactory_local_terraform_module_repository`   | :heavy_check_mark: | `TerraformModuleRepository`  |
-| `artifactory_local_terraformbackend_repository`   | :heavy_check_mark: | `TerraformbackendRepository` |
+| `artifactory_local_terraformbackend_repository`   | :heavy_check_mark: | `TerraformBackendRepository` |
 | `artifactory_local_vagrant_repository`            | :heavy_check_mark: | `VagrantRepository`          |
 
 ### Remote Repositories

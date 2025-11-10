@@ -2,6 +2,54 @@
 
 Follow these instructions for breaking changes.
 
+## `v0.11.1`
+
+The name of MRDs were changed and need to be removed first because the `spec.names` is immutable.
+
+If you use some of these MRDs, you have to remove created resources first.
+
+```shell
+kubectl delete mrds \
+terraformbackendrepositories.local.artifactory.jfrog.crossplane.io \
+terraformbackendrepositories.local.artifactory.jfrog.m.crossplane.io \
+vcsrepositories.remote.artifactory.jfrog.crossplane.io \
+vcsrepositories.remote.artifactory.jfrog.m.crossplane.io
+```
+
+## `v0.11.0`
+
+The name of MRDs were changed and need to be removed first because the `spec.names` is immutable.
+
+If you use some of these MRDs, you have to remove created resources first.
+
+```shell
+kubectl delete mrds \
+cocoapodsrepositories.federated.artifactory.jfrog.crossplane.io \
+cocoapodsrepositories.federated.artifactory.jfrog.m.crossplane.io \
+cranrepositories.federated.artifactory.jfrog.crossplane.io \
+cranrepositories.federated.artifactory.jfrog.m.crossplane.io \
+gitlfsrepositories.federated.artifactory.jfrog.crossplane.io \
+gitlfsrepositories.federated.artifactory.jfrog.m.crossplane.io \
+helmocirepositories.federated.artifactory.jfrog.crossplane.io \
+helmocirepositories.federated.artifactory.jfrog.m.crossplane.io \
+huggingfacemlrepositories.federated.artifactory.jfrog.crossplane.io \
+huggingfacemlrepositories.federated.artifactory.jfrog.m.crossplane.io \
+npmrepositories.federated.artifactory.jfrog.crossplane.io \
+npmrepositories.federated.artifactory.jfrog.m.crossplane.io \
+nugetrepositories.federated.artifactory.jfrog.crossplane.io \
+nugetrepositories.federated.artifactory.jfrog.m.crossplane.io \
+ocirepositories.federated.artifactory.jfrog.crossplane.io \
+ocirepositories.federated.artifactory.jfrog.m.crossplane.io \
+opkgrepositories.federated.artifactory.jfrog.crossplane.io \
+opkgrepositories.federated.artifactory.jfrog.m.crossplane.io \
+pypirepositories.federated.artifactory.jfrog.crossplane.io \
+pypirepositories.federated.artifactory.jfrog.m.crossplane.io \
+rpmrepositories.federated.artifactory.jfrog.crossplane.io \
+rpmrepositories.federated.artifactory.jfrog.m.crossplane.io \
+sbtrepositories.federated.artifactory.jfrog.crossplane.io \
+sbtrepositories.federated.artifactory.jfrog.m.crossplane.io
+```
+
 ## `v0.9.1`
 
 The scope for `providerconfigusages.artifactory.jfrog.m.crossplane.io` resource was changed from `Cluster` to `Namespaced`.
