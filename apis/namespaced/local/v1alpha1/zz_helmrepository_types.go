@@ -35,10 +35,10 @@ type HelmRepositoryInitParameters struct {
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
-	// Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.5 onward. Cannot be updated after it is set.
+	// Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.0 onward. Cannot be updated after it is set.
 	ForceMetadataNameVersion *bool `json:"forceMetadataNameVersion,omitempty" tf:"force_metadata_name_version,omitempty"`
 
-	// Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.5 onward. Cannot be updated after it is set.
+	// Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.0 onward. Cannot be updated after it is set.
 	ForceNonDuplicateChart *bool `json:"forceNonDuplicateChart,omitempty" tf:"force_non_duplicate_chart,omitempty"`
 
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
@@ -89,10 +89,10 @@ type HelmRepositoryObservation struct {
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
-	// Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.5 onward. Cannot be updated after it is set.
+	// Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.0 onward. Cannot be updated after it is set.
 	ForceMetadataNameVersion *bool `json:"forceMetadataNameVersion,omitempty" tf:"force_metadata_name_version,omitempty"`
 
-	// Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.5 onward. Cannot be updated after it is set.
+	// Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.0 onward. Cannot be updated after it is set.
 	ForceNonDuplicateChart *bool `json:"forceNonDuplicateChart,omitempty" tf:"force_non_duplicate_chart,omitempty"`
 
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
@@ -151,11 +151,11 @@ type HelmRepositoryParameters struct {
 	// +kubebuilder:validation:Optional
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
-	// Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.5 onward. Cannot be updated after it is set.
+	// Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.0 onward. Cannot be updated after it is set.
 	// +kubebuilder:validation:Optional
 	ForceMetadataNameVersion *bool `json:"forceMetadataNameVersion,omitempty" tf:"force_metadata_name_version,omitempty"`
 
-	// Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.5 onward. Cannot be updated after it is set.
+	// Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.0 onward. Cannot be updated after it is set.
 	// +kubebuilder:validation:Optional
 	ForceNonDuplicateChart *bool `json:"forceNonDuplicateChart,omitempty" tf:"force_non_duplicate_chart,omitempty"`
 

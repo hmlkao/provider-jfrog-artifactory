@@ -7683,6 +7683,11 @@ func (in *ConanRepositoryInitParameters) DeepCopyInto(out *ConanRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -7969,6 +7974,11 @@ func (in *ConanRepositoryObservation) DeepCopyInto(out *ConanRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -8210,6 +8220,11 @@ func (in *ConanRepositoryParameters) DeepCopyInto(out *ConanRepositoryParameters
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -10587,6 +10602,11 @@ func (in *DockerRepositoryInitParameters) DeepCopyInto(out *DockerRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -10899,6 +10919,11 @@ func (in *DockerRepositoryObservation) DeepCopyInto(out *DockerRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -11166,6 +11191,11 @@ func (in *DockerRepositoryParameters) DeepCopyInto(out *DockerRepositoryParamete
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -11585,6 +11615,11 @@ func (in *GemsRepositoryInitParameters) DeepCopyInto(out *GemsRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -11876,6 +11911,11 @@ func (in *GemsRepositoryObservation) DeepCopyInto(out *GemsRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -12122,6 +12162,11 @@ func (in *GemsRepositoryParameters) DeepCopyInto(out *GemsRepositoryParameters) 
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -14408,6 +14453,11 @@ func (in *GoRepositoryInitParameters) DeepCopyInto(out *GoRepositoryInitParamete
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -14704,6 +14754,11 @@ func (in *GoRepositoryObservation) DeepCopyInto(out *GoRepositoryObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -14955,6 +15010,11 @@ func (in *GoRepositoryParameters) DeepCopyInto(out *GoRepositoryParameters) {
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -15409,6 +15469,11 @@ func (in *GradleRepositoryInitParameters) DeepCopyInto(out *GradleRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -15730,6 +15795,11 @@ func (in *GradleRepositoryObservation) DeepCopyInto(out *GradleRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -16006,6 +16076,11 @@ func (in *GradleRepositoryParameters) DeepCopyInto(out *GradleRepositoryParamete
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -18408,6 +18483,11 @@ func (in *HuggingFaceMLRepositoryInitParameters) DeepCopyInto(out *HuggingFaceML
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -18689,6 +18769,11 @@ func (in *HuggingFaceMLRepositoryObservation) DeepCopyInto(out *HuggingFaceMLRep
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -18925,6 +19010,11 @@ func (in *HuggingFaceMLRepositoryParameters) DeepCopyInto(out *HuggingFaceMLRepo
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -20400,6 +20490,11 @@ func (in *MavenRepositoryInitParameters) DeepCopyInto(out *MavenRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -20721,6 +20816,11 @@ func (in *MavenRepositoryObservation) DeepCopyInto(out *MavenRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -20997,6 +21097,11 @@ func (in *MavenRepositoryParameters) DeepCopyInto(out *MavenRepositoryParameters
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -21426,6 +21531,11 @@ func (in *NPMRepositoryInitParameters) DeepCopyInto(out *NPMRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -21707,6 +21817,11 @@ func (in *NPMRepositoryObservation) DeepCopyInto(out *NPMRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -21943,6 +22058,11 @@ func (in *NPMRepositoryParameters) DeepCopyInto(out *NPMRepositoryParameters) {
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -22372,6 +22492,11 @@ func (in *NuGetRepositoryInitParameters) DeepCopyInto(out *NuGetRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -22678,6 +22803,11 @@ func (in *NuGetRepositoryObservation) DeepCopyInto(out *NuGetRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -22939,6 +23069,11 @@ func (in *NuGetRepositoryParameters) DeepCopyInto(out *NuGetRepositoryParameters
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -28021,6 +28156,11 @@ func (in *PyPIRepositoryInitParameters) DeepCopyInto(out *PyPIRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -28312,6 +28452,11 @@ func (in *PyPIRepositoryObservation) DeepCopyInto(out *PyPIRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -28558,6 +28703,11 @@ func (in *PyPIRepositoryParameters) DeepCopyInto(out *PyPIRepositoryParameters) 
 	}
 	if in.Offline != nil {
 		in, out := &in.Offline, &out.Offline
+		*out = new(bool)
+		**out = **in
+	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
 		*out = new(bool)
 		**out = **in
 	}

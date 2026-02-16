@@ -52,6 +52,7 @@ generate_docs() {
     sed -i.bak 's/subcategory: "Configuration"/subcategory: "Configuration"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/mail_server.md"
     sed -i.bak 's/subcategory: "User"/subcategory: "User"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/managed_user.md"
     sed -i.bak 's/subcategory: "Security"/subcategory: "Security"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/scoped_token.md"
+    sed -i.bak 's/subcategory: "Configuration"/subcategory: "Configuration"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/trashcan_config.md"
     sed -i.bak 's/subcategory: "User"/subcategory: "User"\ndescription: ""/' "${rootdir}/.work/jfrog/artifactory/docs/resources/user.md"
 
     # Clean up backup files created by sed
