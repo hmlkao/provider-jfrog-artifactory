@@ -227,6 +227,10 @@ spec:
                     description: If set, Artifactory does not try to fetch remote
                       artifacts. Only locally-cached artifacts are retrieved.
                     type: boolean
+                  passThrough:
+                    description: Enable Pass-through for Curation Audit. When enabled,
+                      allows artifacts to pass through the Curation audit process.
+                    type: boolean
                   passwordSecretRef:
                     description: A SecretKeySelector is a reference to a secret key
                       in an arbitrary namespace.
@@ -510,6 +514,10 @@ spec:
                   offline:
                     description: If set, Artifactory does not try to fetch remote
                       artifacts. Only locally-cached artifacts are retrieved.
+                    type: boolean
+                  passThrough:
+                    description: Enable Pass-through for Curation Audit. When enabled,
+                      allows artifacts to pass through the Curation audit process.
                     type: boolean
                   passwordSecretRef:
                     description: A SecretKeySelector is a reference to a secret key
@@ -879,6 +887,10 @@ spec:
                   offline:
                     description: If set, Artifactory does not try to fetch remote
                       artifacts. Only locally-cached artifacts are retrieved.
+                    type: boolean
+                  passThrough:
+                    description: Enable Pass-through for Curation Audit. When enabled,
+                      allows artifacts to pass through the Curation audit process.
                     type: boolean
                   priorityResolution:
                     description: Setting repositories with priority will cause metadata

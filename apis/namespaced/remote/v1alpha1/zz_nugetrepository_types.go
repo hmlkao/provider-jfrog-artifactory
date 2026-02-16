@@ -149,6 +149,9 @@ type NuGetRepositoryInitParameters struct {
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
 
+	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
+
 	PasswordSecretRef *v1.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
@@ -296,6 +299,9 @@ type NuGetRepositoryObservation struct {
 
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
+
+	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
 
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
@@ -468,6 +474,10 @@ type NuGetRepositoryParameters struct {
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	// +kubebuilder:validation:Optional
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
+
+	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	// +kubebuilder:validation:Optional
+	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
 
 	// +kubebuilder:validation:Optional
 	PasswordSecretRef *v1.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`

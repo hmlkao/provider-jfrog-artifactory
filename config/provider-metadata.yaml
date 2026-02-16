@@ -2715,8 +2715,8 @@ resources:
             description: (String) Public description.
             download_direct: (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only.
             excludes_pattern: (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-            force_metadata_name_version: (Boolean) Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.5 onward. Cannot be updated after it is set.
-            force_non_duplicate_chart: (Boolean) Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.5 onward. Cannot be updated after it is set.
+            force_metadata_name_version: (Boolean) Ensures that the chart name and version in the file name match the values in Chart.yaml and adhere to SemVer standards. Only available for 7.104.0 onward. Cannot be updated after it is set.
+            force_non_duplicate_chart: (Boolean) Prevents the deployment of charts with the same name and version in different repository paths. Only available for 7.104.0 onward. Cannot be updated after it is set.
             includes_pattern: (String) List of comma-separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
             key: (String) A mandatory identifier for the repository that must be unique. Must be 1 - 64 alphanumeric and hyphen characters. It cannot contain spaces or special characters.
             notes: (String) Internal description.
@@ -4402,6 +4402,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -4631,6 +4632,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -4689,6 +4691,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -4862,6 +4865,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -4927,6 +4931,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -5199,6 +5204,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -5325,6 +5331,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -5385,6 +5392,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -5445,6 +5453,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -5789,6 +5798,7 @@ resources:
             missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
             notes: (String) Internal description.
             offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
             password: (String, Sensitive)
             priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
             project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
@@ -6309,6 +6319,23 @@ resources:
             token_type: (String) Returns the token type.
             username: '(String) The user name for which this token is created. The username is based on the authenticated user - either from the user of the authenticated token or based on the username (if basic auth was used). The username is then used to set the subject of the token: /users/. Limited to 255 characters.'
         importStatements: []
+    artifactory_trashcan_config:
+        subCategory: Configuration
+        description: '""'
+        name: artifactory_trashcan_config
+        title: artifactory_trashcan_config Resource - terraform-provider-artifactory
+        examples:
+            - name: my-trash-can-config
+              manifest: |-
+                {
+                  "enabled": true,
+                  "retention_period_days": 14
+                }
+        argumentDocs:
+            enabled: (Boolean) If set, trash can will be enabled and deleted items will be stored in the trash can for the specified retention period.
+            retention_period_days: (Number) The number of days to keep deleted items in the trash can before deleting permanently. Default value is 14.
+        importStatements:
+            - terraform import artifactory_trashcan_config.my-trash-can-config my-trash-can-config
     artifactory_unmanaged_user Resource - terraform-provider-artifactory:
         subCategory: ""
         description: Provides an Artifactory user resource. This can be used to create and manage Artifactory users. The password is a required field by the Artifactory API https://www.jfrog.com/confluence/display/JFROG/Artifactory+REST+API#ArtifactoryRESTAPI-CreateorReplaceUser, but we made it optional in this resource to accommodate the scenario where the password is not needed and will be reset by the actual user later. When the optional attribute password is omitted, a random password is generated according to current Artifactory password policy.
