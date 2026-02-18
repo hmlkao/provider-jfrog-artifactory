@@ -10,6 +10,7 @@
     - [Properties are stored as string](#properties-are-stored-as-string)
   - [`keypair`](#keypair)
     - [Fails with error `cannot find pair_name in tfstate`](#fails-with-error-cannot-find-pair_name-in-tfstate)
+  - [`tokens`](#tokens)
 
 ## Resource Import Not Implemented
 
@@ -82,9 +83,9 @@ spec:
     name: default
 ```
 
-You can find the whole reconciliation process investigation of provider log [here](./docs/artifact/item_properties/reconsiliation-process-investigation.log).
+You can find the whole reconciliation process investigation of provider log in [docs](./docs/artifact/item_properties/reconsiliation-process-investigation.log).
 
-> [!NOTE] Solution
+> [!NOTE]
 > Don't use more than one value for the key even if it allows to use a set of strings.
 
 ## `keypair`

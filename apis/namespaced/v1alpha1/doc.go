@@ -1,7 +1,3 @@
-/*
-Copyright 2021 Upbound Inc.
-*/
-
 // Package v1alpha1 contains the core resources of the artifactory upjet provider.
 // +kubebuilder:object:generate=true
 // +groupName=artifactory.jfrog.m.crossplane.io

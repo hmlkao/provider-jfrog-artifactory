@@ -1,7 +1,7 @@
 <!-- markdownlint-disable no-duplicate-heading no-hard-tabs -->
 # Build provider from scratch
 
-> [!WARNING] OUTDATED!
+> [!WARNING]
 > This document describes how I built the provider for the first time.
 > Some information might be OUTDATED and may not be valid anymore!
 

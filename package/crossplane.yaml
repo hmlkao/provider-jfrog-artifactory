@@ -14,4 +14,4 @@ metadata:
       [hmlkao/provider-jfrog-artifactory](https://github.com/hmlkao/provider-jfrog-artifactory/issues) repo.
 spec:
   capabilities:
-  - SafeStart
+    - SafeStart
