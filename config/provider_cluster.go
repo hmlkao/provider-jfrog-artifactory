@@ -119,6 +119,7 @@ import (
 	remoteterrraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/remote_repositories/remote_terraform_provider_repository"
 	remoteterrraformrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/remote_repositories/remote_terraform_repository"
 	remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/remote_repositories/remote_vcs_repository"
+	"github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/certificate"
 	"github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/keypair"
 	scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/scoped_token"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/user/anonymous_user"
@@ -247,6 +248,7 @@ func GetProvider() *ujconfig.Provider {
 		localterraformbackendrepository.Configure,
 		localvagrantrepository.Configure,
 		// Security
+		certificate.Configure,
 		keypair.Configure,
 		scopedtoken.Configure,
 		// Remote Repositories
