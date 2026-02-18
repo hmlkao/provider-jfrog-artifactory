@@ -54,6 +54,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_local_terraformbackend_repository":   config.ParameterAsIdentifier("key"),
 	"artifactory_local_vagrant_repository":            config.ParameterAsIdentifier("key"),
 	// Security
+	"artifactory_certificate":  config.ParameterAsIdentifier("alias"),
 	"artifactory_keypair":      config.ParameterAsIdentifier("pair_name"),
 	"artifactory_scoped_token": config.IdentifierFromProvider,
 	// Remote Repositories

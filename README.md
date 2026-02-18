@@ -311,7 +311,7 @@ Short group is `security`, so the `apiGroup` is:
 
 | Resource                                 | Supported                                                      | Kind                           |
 |------------------------------------------|----------------------------------------------------------------|--------------------------------|
-| `artifactory_certificate`                | :x:                                                            |                                |
+| `artifactory_certificate`                | :heavy_check_mark:                                             | `Certificate`                  |
 | `artifactory_distribution_public_key`    | :x:                                                            |                                |
 | `artifactory_global_environment`         | :x:                                                            |                                |
 | `artifactory_keypair`                    | :heavy_check_mark: ([Known Issues](./KNOWN_ISSUES.md#keypair)) | `Keypair`                      |
