@@ -121,6 +121,7 @@ import (
 	swiftrepositoryremote "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/swiftrepository"
 	terraformrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/terraformrepository"
 	vcsrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/remote/vcsrepository"
+	certificate "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/certificate"
 	keypair "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/keypair"
 	scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/security/scopedtoken"
 	anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/cluster/user/anonymoususer"
@@ -273,6 +274,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		swiftrepositoryremote.Setup,
 		terraformrepository.Setup,
 		vcsrepository.Setup,
+		certificate.Setup,
 		keypair.Setup,
 		scopedtoken.Setup,
 		anonymoususer.Setup,
@@ -431,6 +433,7 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		swiftrepositoryremote.SetupGated,
 		terraformrepository.SetupGated,
 		vcsrepository.SetupGated,
+		certificate.SetupGated,
 		keypair.SetupGated,
 		scopedtoken.SetupGated,
 		anonymoususer.SetupGated,
