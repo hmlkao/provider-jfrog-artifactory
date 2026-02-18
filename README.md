@@ -3,12 +3,11 @@
 
 This document provides an overview and guidance for using the `provider-jfrog-artifactory`, a Crossplane provider for managing Artifactory resources.
 
-`provider-jfrog-artifactory` is a [Crossplane](https://crossplane.io/) provider that
-is built using [Upjet](https://github.com/crossplane/upjet) code
+`provider-jfrog-artifactory` is a [Crossplane](https://crossplane.io/) provider that is built using [Upjet](https://github.com/crossplane/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
 Artifactory API.
 
-The repo was created from [crossplane/upjet-provider-template@7311f9f](https://github.com/crossplane/upjet-provider-template/tree/7311f9f9baa87f4431702ba209dffbc6067ce74b) template.
+The repo was created from [crossplane/upjet-provider-template@9644008](https://github.com/crossplane/upjet-provider-template/tree/96440083ef6ed070d9413436a9d6a40000d6773f) template.
 
 Provider is generated from Terraform provider [jfrog/artifactory v12.11.3](https://registry.terraform.io/providers/jfrog/artifactory/12.11.3/docs).
 
@@ -28,6 +27,7 @@ Provider is generated from Terraform provider [jfrog/artifactory v12.11.3](https
     - [User](#user)
     - [Virtual Repositories](#virtual-repositories)
     - [Webhook](#webhook)
+  - [Adding new resource](#adding-new-resource)
   - [Build provider from scratch](#build-provider-from-scratch)
   - [Developing](#developing)
   - [JFrog Artifactory icon](#jfrog-artifactory-icon)
@@ -39,7 +39,7 @@ Install the provider by using the following command after changing the image tag
 to the [latest release](https://marketplace.upbound.io/providers/hmlkao/provider-jfrog-artifactory):
 
 ```bash
-up ctp provider install hmlkao/provider-jfrog-artifactory:v0.11.2
+up ctp provider install hmlkao/provider-jfrog-artifactory:v0.11.3
 ```
 
 Alternatively, you can use declarative installation:
@@ -51,7 +51,7 @@ kind: Provider
 metadata:
   name: provider-jfrog-artifactory
 spec:
-  package: hmlkao/provider-jfrog-artifactory:v0.11.2
+  package: hmlkao/provider-jfrog-artifactory:v0.11.3
 EOF
 ```
 
@@ -406,6 +406,147 @@ Short group is `webhook`, so the `apiGroup` is:
 | `artifactory_user_custom_webhook`                        | :x:                |                                |
 | `artifactory_user_webhook`                               | :x:                |                                |
 
+## Adding new resource
+
+1. Add/Modify files related to the Terraform resource (check this reference [commit](https://github.com/hmlkao/provider-jfrog-artifactory/pull/77/changes/26088c49fbf3199c9f70dceb7bf280d10fcf26ce) of [this PR](https://github.com/hmlkao/provider-jfrog-artifactory/pull/77)), an example diff for human-modified files:
+
+    ```diff
+    $ git diff HEAD^^ HEAD^
+    diff --git a/README.md b/README.md
+    index 21c5457..f695e42 100644
+    --- a/README.md
+    +++ b/README.md
+    @@ -311,7 +311,7 @@ Short group is `security`, so the `apiGroup` is:
+
+    | Resource                                 | Supported                                                      | Kind                           |
+    |------------------------------------------|----------------------------------------------------------------|--------------------------------|
+    -| `artifactory_certificate`                | :x:                                                            |                                |
+    +| `artifactory_certificate`                | :heavy_check_mark:                                             | `Certificate`                  |
+    | `artifactory_distribution_public_key`    | :x:                                                            |                                |
+    | `artifactory_global_environment`         | :x:                                                            |                                |
+    | `artifactory_keypair`                    | :heavy_check_mark: ([Known Issues](./KNOWN_ISSUES.md#keypair)) | `Keypair`                      |
+    diff --git a/config/cluster/security/certificate/config.go b/config/cluster/security/certificate/config.go
+    new file mode 100644
+    index 0000000..4853a7d
+    --- /dev/null
+    +++ b/config/cluster/security/certificate/config.go
+    @@ -0,0 +1,21 @@
+    +package certificate
+    +
+    +import (
+    +	"errors"
+    +
+    +	"github.com/crossplane/upjet/v2/pkg/config"
+    +)
+    +
+    +func Configure(p *config.Provider) {
+    +	p.AddResourceConfigurator("artifactory_certificate", func(r *config.Resource) {
+    +		r.ShortGroup = "security" // Otherwise, '' is used
+    +		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
+    +			// Certificate can be imported using the alias, e.g.
+    +			//   terraform import artifactory_certificate.my-cert my-cert-alias
+    +			if id, ok := tfstate["alias"].(string); ok && id != "" {
+    +				return id, nil
+    +			}
+    +			return "", errors.New("cannot find 'alias' in tfstate")
+    +		}
+    +	})
+    +}
+    diff --git a/config/external_name.go b/config/external_name.go
+    index 18360bd..ee720e8 100644
+    --- a/config/external_name.go
+    +++ b/config/external_name.go
+    @@ -54,6 +54,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
+      "artifactory_local_terraformbackend_repository":   config.ParameterAsIdentifier("key"),
+      "artifactory_local_vagrant_repository":            config.ParameterAsIdentifier("key"),
+      // Security
+    +	"artifactory_certificate":  config.ParameterAsIdentifier("alias"),
+      "artifactory_keypair":      config.ParameterAsIdentifier("pair_name"),
+      "artifactory_scoped_token": config.IdentifierFromProvider,
+      // Remote Repositories
+    diff --git a/config/namespaced/security/certificate/config.go b/config/namespaced/security/certificate/config.go
+    new file mode 100644
+    index 0000000..4853a7d
+    --- /dev/null
+    +++ b/config/namespaced/security/certificate/config.go
+    @@ -0,0 +1,21 @@
+    +package certificate
+    +
+    +import (
+    +	"errors"
+    +
+    +	"github.com/crossplane/upjet/v2/pkg/config"
+    +)
+    +
+    +func Configure(p *config.Provider) {
+    +	p.AddResourceConfigurator("artifactory_certificate", func(r *config.Resource) {
+    +		r.ShortGroup = "security" // Otherwise, '' is used
+    +		r.ExternalName.GetExternalNameFn = func(tfstate map[string]any) (string, error) {
+    +			// Certificate can be imported using the alias, e.g.
+    +			//   terraform import artifactory_certificate.my-cert my-cert-alias
+    +			if id, ok := tfstate["alias"].(string); ok && id != "" {
+    +				return id, nil
+    +			}
+    +			return "", errors.New("cannot find 'alias' in tfstate")
+    +		}
+    +	})
+    +}
+    diff --git a/config/provider_cluster.go b/config/provider_cluster.go
+    index fcad913..bee5963 100644
+    --- a/config/provider_cluster.go
+    +++ b/config/provider_cluster.go
+    @@ -119,6 +119,7 @@ import (
+      remoteterrraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/remote_repositories/remote_terraform_provider_repository"
+      remoteterrraformrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/remote_repositories/remote_terraform_repository"
+      remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/remote_repositories/remote_vcs_repository"
+    +	"github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/certificate"
+      "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/keypair"
+      scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/security/scoped_token"
+      anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/user/anonymous_user"
+    @@ -247,6 +248,7 @@ func GetProvider() *ujconfig.Provider {
+        localterraformbackendrepository.Configure,
+        localvagrantrepository.Configure,
+        // Security
+    +		certificate.Configure,
+        keypair.Configure,
+        scopedtoken.Configure,
+        // Remote Repositories
+    diff --git a/config/provider_namespaced.go b/config/provider_namespaced.go
+    index 6e56144..81101ad 100644
+    --- a/config/provider_namespaced.go
+    +++ b/config/provider_namespaced.go
+    @@ -119,6 +119,7 @@ import (
+      remoteterrraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/remote_repositories/remote_terraform_provider_repository"
+      remoteterrraformrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/remote_repositories/remote_terraform_repository"
+      remotevcsrepository "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/remote_repositories/remote_vcs_repository"
+    +	"github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/security/certificate"
+      "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/security/keypair"
+      scopedtoken "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/security/scoped_token"
+      anonymoususer "github.com/hmlkao/provider-jfrog-artifactory/config/namespaced/user/anonymous_user"
+    @@ -247,6 +248,7 @@ func GetProviderNamespaced() *ujconfig.Provider {
+        localterraformbackendrepository.Configure,
+        localvagrantrepository.Configure,
+        // Security
+    +		certificate.Configure,
+        keypair.Configure,
+        scopedtoken.Configure,
+        // Remote Repositories
+    ```
+
+2. Generate the resource files
+
+    ```bash
+    make generate
+    ```
+
+3. Verify that the changes are reviewable
+
+    ```bash
+    make reviewable test
+    ```
+
+4. Create a PR with all files included
+
 ## Build provider from scratch
 
 Check [`BUILD_FROM_SCRATCH.md`](./BUILD_FROM_SCRATCH.md) for notes on how this provider was built step-by-step using the [crossplane/upjet tool](https://github.com/crossplane/upjet).
@@ -422,6 +563,32 @@ Run against a Kubernetes cluster:
 
 ```console
 make run
+```
+
+Create resource
+
+```console
+# Example
+kubectl apply -f package/crds/artifactory.jfrog.m.crossplane.io_clusterproviderconfigs.yaml
+kubectl apply -f package/crds/artifactory.jfrog.m.crossplane.io_providerconfigusages.yaml
+kubectl apply -f package/crds/local.artifactory.jfrog.m.crossplane.io_genericrepositories.yaml
+
+# Create provider config
+url=https://artifactory-endpoint.example.com
+token=<artifactory-token>
+sed -e "s/y0ur-url/${url}/g" -e "s/y0ur-t0k3n/${token}/g" examples/namespaced/clusterproviderconfig/secret.yaml.tmpl | kubectl apply -f -
+kubectl apply -f examples/namespaced/clusterproviderconfig/clusterproviderconfig.yaml
+kubectl apply -f examples/namespaced/local_repositories/local_generic_repository/local_generic_repository.yaml
+
+# Check the resource
+kubectl get -f examples/namespaced/local_repositories/local_generic_repository/local_generic_repository.yaml
+
+# Cleanup
+kubectl delete -f examples/namespaced/local_repositories/local_generic_repository/local_generic_repository.yaml
+kubectl delete -f examples/namespaced/clusterproviderconfig/clusterproviderconfig.yaml
+kubectl delete -f package/crds/local.artifactory.jfrog.m.crossplane.io_genericrepositories.yaml
+kubectl delete -f package/crds/artifactory.jfrog.m.crossplane.io_providerconfigusages.yaml
+kubectl delete -f package/crds/artifactory.jfrog.m.crossplane.io_clusterproviderconfigs.yaml
 ```
 
 Build, push, and install:

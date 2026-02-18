@@ -48,7 +48,7 @@ GO_TEST_PARALLEL := $(shell echo $$(( $(NPROCS) / 2 )))
 
 GO_REQUIRED_VERSION ?= 1.24
 # https://github.com/golangci/golangci-lint/releases
-GOLANGCILINT_VERSION ?= 2.1.2
+GOLANGCILINT_VERSION ?= 2.7.2
 GO_STATIC_PACKAGES = $(GO_PROJECT)/cmd/provider $(GO_PROJECT)/cmd/generator
 GO_LDFLAGS += -X $(GO_PROJECT)/internal/version.Version=$(VERSION)
 GO_SUBDIRS += cmd internal apis
@@ -58,21 +58,18 @@ GO_SUBDIRS += cmd internal apis
 # Setup Kubernetes tools
 
 # https://github.com/kubernetes-sigs/kind/releases
-KIND_VERSION = v0.30.0
-# https://cli.upbound.io/stable?prefix=stable/
-UP_VERSION = v0.41.0
-UP_CHANNEL = stable
-# https://github.com/crossplane/uptest/releases
+KIND_VERSION = v0.31.0
 UPTEST_VERSION = v2.2.0
-# DO NOT COMMENT OUT CROSSPLANE_CLI_VERSION variable, it causes race condition
-#   Error: Text file busy
-# https://github.com/crossplane/crossplane/releases
-CROSSPLANE_CLI_VERSION ?= v2.1.4
+CRDDIFF_VERSION = v0.12.1
+CROSSPLANE_CLI_VERSION = v2.1.3
+# for e2e testing
+CROSSPLANE_VERSION = 2.1.4
 -include build/makelib/k8s_tools.mk
 
 # ====================================================================================
 # Setup Images
 
+#REGISTRY_ORGS ?= ghcr.io/crossplane-contrib
 REGISTRY_ORGS ?= xpkg.upbound.io/hmlkao
 IMAGES = $(PROJECT_NAME)
 -include build/makelib/imagelight.mk
@@ -80,9 +77,11 @@ IMAGES = $(PROJECT_NAME)
 # ====================================================================================
 # Setup XPKG
 
+#XPKG_REG_ORGS ?= ghcr.io/crossplane-contrib
 XPKG_REG_ORGS ?= xpkg.upbound.io/hmlkao
-# NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
+# NOTE(hasheddan): skip promoting on xpkg.crossplane.io as channel tags are
 # inferred.
+#XPKG_REG_ORGS_NO_PROMOTE ?= ghcr.io/crossplane-contrib
 XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/hmlkao
 XPKGS = $(PROJECT_NAME)
 -include build/makelib/xpkg.mk
@@ -107,7 +106,7 @@ xpkg.build.provider-jfrog-artifactory: do.build.images
 
 # NOTE(hasheddan): we ensure up is installed prior to running platform-specific
 # build steps in parallel to avoid encountering an installation race condition.
-build.init: $(UP) check-terraform-version
+build.init: $(UP) $(CROSSPLANE_CLI) check-terraform-version
 
 # ====================================================================================
 # Setup Terraform for fetching provider schema
@@ -160,6 +159,9 @@ generate.init: $(TERRAFORM_PROVIDER_SCHEMA) pull-docs
 go.cachedir:
 	@go env GOCACHE
 
+go.mod.cachedir:
+	@go env GOMODCACHE
+
 # Generate a coverage report for cobertura applying exclusions on
 # - generated file
 cobertura:
@@ -179,14 +181,11 @@ submodules:
 run: go.build
 	@$(INFO) Running Crossplane locally out-of-cluster . . .
 	@# To see other arguments that can be provided, run the command with --help instead
-	UPBOUND_CONTEXT="local" $(GO_OUT_DIR)/provider --debug
+	$(GO_OUT_DIR)/provider --debug
 
 # ====================================================================================
 # End to End Testing
-# https://docs.crossplane.io/latest/getting-started/introduction/
-# https://github.com/crossplane/crossplane/releases
-CROSSPLANE_VERSION = 2.1.4
-CROSSPLANE_NAMESPACE = upbound-system
+CROSSPLANE_NAMESPACE = crossplane-system
 -include build/makelib/local.xpkg.mk
 -include build/makelib/controlplane.mk
 
@@ -204,15 +203,15 @@ CROSSPLANE_NAMESPACE = upbound-system
 #   aws_secret_access_key = REDACTED'
 #   The associated `ProviderConfig`s will be named as `default` and `peer`.
 # - UPTEST_DATASOURCE_PATH (optional), please see https://github.com/crossplane/uptest#injecting-dynamic-values-and-datasource
-uptest: $(UPTEST) $(KUBECTL) $(KUTTL)
+uptest: $(UPTEST) $(KUBECTL) $(CHAINSAW) $(CROSSPLANE_CLI)
 	@$(INFO) running automated tests
-	@KUBECTL=$(KUBECTL) KUTTL=$(KUTTL) $(UPTEST) e2e "${UPTEST_EXAMPLE_LIST}" --data-source="${UPTEST_DATASOURCE_PATH}" --setup-script=cluster/test/setup.sh --default-conditions="Test" || $(FAIL)
+	@KUBECTL=$(KUBECTL) CHAINSAW=$(CHAINSAW) CROSSPLANE_CLI=$(CROSSPLANE_CLI) CROSSPLANE_NAMESPACE=$(CROSSPLANE_NAMESPACE) $(UPTEST) e2e "${UPTEST_EXAMPLE_LIST}" --data-source="${UPTEST_DATASOURCE_PATH}" --setup-script=cluster/test/setup.sh --default-conditions="Test" || $(FAIL)
 	@$(OK) running automated tests
 
 local-deploy: build controlplane.up local.xpkg.deploy.provider.$(PROJECT_NAME)
 	@$(INFO) running locally built provider
 	@$(KUBECTL) wait provider.pkg $(PROJECT_NAME) --for condition=Healthy --timeout 5m
-	@$(KUBECTL) -n upbound-system wait --for=condition=Available deployment --all --timeout=5m
+	@$(KUBECTL) -n crossplane-system wait --for=condition=Available deployment --all --timeout=5m
 	@$(OK) running locally built provider
 
 e2e: local-deploy uptest
@@ -225,7 +224,7 @@ crddiff: $(UPTEST)
 			continue ; \
 		fi ; \
 		echo "Checking $${crd} for breaking API changes..." ; \
-		changes_detected=$$($(UPTEST) crddiff revision <(git cat-file -p "$${GITHUB_BASE_REF}:$${crd}") "$${crd}" 2>&1) ; \
+		changes_detected=$$(go run github.com/crossplane/uptest/cmd/crddiff@$(CRDDIFF_VERSION) revision --enable-upjet-extensions <(git cat-file -p "$${GITHUB_BASE_REF}:$${crd}") "$${crd}" 2>&1) ; \
 		if [[ $$? != 0 ]] ; then \
 			printf "\033[31m"; echo "Breaking change detected!"; printf "\033[0m" ; \
 			echo "$${changes_detected}" ; \

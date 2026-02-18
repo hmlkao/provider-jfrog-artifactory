@@ -3,4 +3,4 @@ kind: Provider
 metadata:
   name: provider-jfrog-artifactory
 spec:
-  package: hmlkao/provider-jfrog-artifactory:v0.11.2
+  package: hmlkao/provider-jfrog-artifactory:v0.11.3
