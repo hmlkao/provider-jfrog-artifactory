@@ -41,6 +41,8 @@ import (
 	federatedterraformmodulerepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/federated_repositories/federated_terraform_module_repository"
 	federatedterraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/federated_repositories/federated_terraform_provider_repository"
 	federatedvagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/federated_repositories/federated_vagrant_repository"
+	releasebundlev2 "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/lifecycle/release_bundle_v2"
+	releasebundlev2promotion "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/lifecycle/release_bundle_v2_promotion"
 	localalpinerepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/local_repositories/local_alpine_repository"
 	localansiblerepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/local_repositories/local_ansible_repository"
 	localbowerrepository "github.com/hmlkao/provider-jfrog-artifactory/config/cluster/local_repositories/local_bower_repository"
@@ -204,6 +206,9 @@ func GetProvider() *ujconfig.Provider {
 		federatedterraformmodulerepository.Configure,
 		federatedterraformproviderrepository.Configure,
 		federatedvagrantrepository.Configure,
+		// Lifecycle
+		releasebundlev2.Configure,
+		releasebundlev2promotion.Configure,
 		// Local Repositories
 		localansiblerepository.Configure,
 		localalpinerepository.Configure,

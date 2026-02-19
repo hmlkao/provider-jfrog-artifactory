@@ -165,6 +165,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"artifactory_federated_terraform_module_repository":   config.ParameterAsIdentifier("key"),
 	"artifactory_federated_terraform_provider_repository": config.ParameterAsIdentifier("key"),
 	"artifactory_federated_vagrant_repository":            config.ParameterAsIdentifier("key"),
+	// Lifecycle
+	"artifactory_release_bundle_v2":           config.NameAsIdentifier,
+	"artifactory_release_bundle_v2_promotion": config.NameAsIdentifier,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
