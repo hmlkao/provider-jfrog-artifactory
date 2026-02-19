@@ -1,0 +1,16 @@
+apiVersion: lifecycle.artifactory.jfrog.m.crossplane.io/v1alpha1
+kind: ReleaseBundleV2Promotion
+metadata:
+  annotations:
+    meta.upbound.io/example-id: lifecycle/v1alpha1/releasebundlev2promotion
+  labels:
+    testing.upbound.io/example-name: my-release-bundle-v2-promotion
+  name: my-release-bundle-v2-promotion
+  namespace: upbound-system
+spec:
+  forProvider:
+    environment: DEV
+    includedRepositoryKeys:
+    - commons-qa-maven-local
+    keypairName: my-keypair-name
+    version: 1.0.0

@@ -13,6 +13,7 @@ import (
 	v1alpha1 "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/artifact/v1alpha1"
 	v1alpha1configuration "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/configuration/v1alpha1"
 	v1alpha1federated "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/federated/v1alpha1"
+	v1alpha1lifecycle "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/lifecycle/v1alpha1"
 	v1alpha1local "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/local/v1alpha1"
 	v1alpha1remote "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/remote/v1alpha1"
 	v1alpha1security "github.com/hmlkao/provider-jfrog-artifactory/apis/namespaced/security/v1alpha1"
@@ -28,6 +29,7 @@ func init() {
 		v1alpha1.SchemeBuilder.AddToScheme,
 		v1alpha1configuration.SchemeBuilder.AddToScheme,
 		v1alpha1federated.SchemeBuilder.AddToScheme,
+		v1alpha1lifecycle.SchemeBuilder.AddToScheme,
 		v1alpha1local.SchemeBuilder.AddToScheme,
 		v1alpha1remote.SchemeBuilder.AddToScheme,
 		v1alpha1security.SchemeBuilder.AddToScheme,

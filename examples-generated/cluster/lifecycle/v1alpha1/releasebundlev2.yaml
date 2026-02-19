@@ -1,0 +1,17 @@
+apiVersion: lifecycle.artifactory.jfrog.crossplane.io/v1alpha1
+kind: ReleaseBundleV2
+metadata:
+  annotations:
+    meta.upbound.io/example-id: lifecycle/v1alpha1/releasebundlev2
+  labels:
+    testing.upbound.io/example-name: my-release-bundle-v2-aql
+  name: my-release-bundle-v2-aql
+spec:
+  forProvider:
+    keypairName: my-keypair-name
+    projectKey: myproj-key
+    skipDockerManifestResolution: true
+    source:
+      aql: 'items.find({"repo": {"$match": "my-generic-*"}})'
+    sourceType: aql
+    version: 1.0.0
