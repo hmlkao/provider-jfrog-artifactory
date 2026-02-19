@@ -47,6 +47,8 @@ import (
 	terraformmodulerepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/federated/terraformmodulerepository"
 	terraformproviderrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/federated/terraformproviderrepository"
 	vagrantrepository "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/federated/vagrantrepository"
+	releasebundlev2 "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/lifecycle/releasebundlev2"
+	releasebundlev2promotion "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/lifecycle/releasebundlev2promotion"
 	alpinerepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/local/alpinerepository"
 	ansiblerepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/local/ansiblerepository"
 	bowerrepositorylocal "github.com/hmlkao/provider-jfrog-artifactory/internal/controller/namespaced/local/bowerrepository"
@@ -200,6 +202,8 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		terraformmodulerepository.Setup,
 		terraformproviderrepository.Setup,
 		vagrantrepository.Setup,
+		releasebundlev2.Setup,
+		releasebundlev2promotion.Setup,
 		alpinerepositorylocal.Setup,
 		ansiblerepositorylocal.Setup,
 		bowerrepositorylocal.Setup,
@@ -359,6 +363,8 @@ func SetupGated(mgr ctrl.Manager, o controller.Options) error {
 		terraformmodulerepository.SetupGated,
 		terraformproviderrepository.SetupGated,
 		vagrantrepository.SetupGated,
+		releasebundlev2.SetupGated,
+		releasebundlev2promotion.SetupGated,
 		alpinerepositorylocal.SetupGated,
 		ansiblerepositorylocal.SetupGated,
 		bowerrepositorylocal.SetupGated,
