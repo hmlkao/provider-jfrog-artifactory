@@ -532,6 +532,8 @@ url=https://artifactory-endpoint.example.com
 token=<artifactory-token>
 sed -e "s/y0ur-url/${url}/g" -e "s/y0ur-t0k3n/${token}/g" examples/namespaced/clusterproviderconfig/secret.yaml.tmpl | kubectl apply -f -
 kubectl apply -f examples/namespaced/clusterproviderconfig/clusterproviderconfig.yaml
+
+# Deploy resource
 kubectl apply -f examples/namespaced/local_repositories/local_generic_repository/local_generic_repository.yaml
 
 # Check the resource
