@@ -273,7 +273,7 @@ jobs:
           install: true
 
       - name: Login to Upbound
-        uses: docker/login-action@v3
+        uses: docker/login-action@4907a6ddec9925e35a0a9e82d7399ccc52663121 # v4.1.0
         if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
         with:
           registry: xpkg.upbound.io
@@ -317,7 +317,7 @@ jobs:
       # Build Artifacts failed with an error
       #   'No space left on device'
       - name: Free Disk Space (Ubuntu)
-        uses: jlumbroso/free-disk-space@v1.3.1
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be # v1.3.1
         with:
           # Values for 2025-10-19
           android: true # Android library: Saved 9.6GiB
