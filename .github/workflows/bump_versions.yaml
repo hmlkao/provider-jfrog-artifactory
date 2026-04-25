@@ -50,7 +50,7 @@ jobs:
       # Generate files for new version as we want them as part of PR
       - name: Setup Go
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
           go-version: ${{ env.GO_VERSION }}
       - name: Install goimports
@@ -71,7 +71,7 @@ jobs:
         #   https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#success
         # The success() function evaluates to true even if the previous step was skipped, so we must check the same condition anyway
         if: ${{ steps.current-version.outputs.TFM_PROVIDER_VERSION_CURRENT != steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST && success() }}
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           title: Bump TFM provider to v${{steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST}}
           commit-message: Bump Terraform provider version to v${{steps.latest-version.outputs.TFM_PROVIDER_VERSION_LATEST}}
@@ -120,7 +120,7 @@ jobs:
         #   https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#success
         # The success() function evaluates to true even if the previous step was skipped, so we must check the same condition anyway
         if: ${{ steps.current-version.outputs.CROSSPLANE_VERSION_CURRENT != steps.latest-version.outputs.CROSSPLANE_VERSION_LATEST && success() }}
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           title: Bump Crossplane to v${{steps.latest-version.outputs.CROSSPLANE_VERSION_LATEST}}
           commit-message: Bump Crossplane version to v${{steps.latest-version.outputs.CROSSPLANE_VERSION_LATEST}}
