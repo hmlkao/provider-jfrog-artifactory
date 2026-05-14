@@ -1,6 +1,6 @@
 module github.com/hmlkao/provider-jfrog-artifactory
 
-go 1.24.11
+go 1.26.2
 
 tool golang.org/x/tools/cmd/goimports
 

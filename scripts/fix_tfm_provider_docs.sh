@@ -28,11 +28,12 @@ generate_docs() {
     grep 'hashicorp/terraform-plugin-docs' go.mod
 
     # (*optional*) Install [`hashicorp/terraform-plugin-docs`](https://github.com/hashicorp/terraform-plugin-docs?tab=readme-ov-file#installation) CLI tool
-    go get github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@v0.21.0
-    go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@v0.21.0
+    go get github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@v0.25.0
+    go install github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs@v0.25.0
+    sleep 1 # Wait for the binary to be available in PATH
 
     # Verify that it is possible to find binary
-    command -v tfplugindocs
+    command -v tfplugindocs || { echo >&2 "tfplugindocs is not installed. Please install it to proceed."; exit 1; }
 
     # Generate docs
     make doc
