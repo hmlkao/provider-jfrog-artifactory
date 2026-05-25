@@ -13,6 +13,42 @@ import (
 	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
 )
 
+type CustomHTTPHeadersInitParameters struct {
+
+	// Header name.
+	Name *string `json:"name,omitempty" tf:"name,omitempty"`
+
+	// When `true`, Artifactory encrypts the header value server-side. Defaults to `false`.
+	Sensitive *bool `json:"sensitive,omitempty" tf:"sensitive,omitempty"`
+
+	// Header value. Stored in state as configured; never read back from Artifactory.
+	ValueSecretRef v1.SecretKeySelector `json:"valueSecretRef" tf:"-"`
+}
+
+type CustomHTTPHeadersObservation struct {
+
+	// Header name.
+	Name *string `json:"name,omitempty" tf:"name,omitempty"`
+
+	// When `true`, Artifactory encrypts the header value server-side. Defaults to `false`.
+	Sensitive *bool `json:"sensitive,omitempty" tf:"sensitive,omitempty"`
+}
+
+type CustomHTTPHeadersParameters struct {
+
+	// Header name.
+	// +kubebuilder:validation:Optional
+	Name *string `json:"name" tf:"name,omitempty"`
+
+	// When `true`, Artifactory encrypts the header value server-side. Defaults to `false`.
+	// +kubebuilder:validation:Optional
+	Sensitive *bool `json:"sensitive,omitempty" tf:"sensitive,omitempty"`
+
+	// Header value. Stored in state as configured; never read back from Artifactory.
+	// +kubebuilder:validation:Optional
+	ValueSecretRef v1.SecretKeySelector `json:"valueSecretRef" tf:"-"`
+}
+
 type GenericRepositoryContentSynchronisationInitParameters struct {
 
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
@@ -90,6 +126,8 @@ type GenericRepositoryInitParameters struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	ContentSynchronisation []GenericRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+
+	CustomHTTPHeaders []CustomHTTPHeadersInitParameters `json:"customHttpHeaders,omitempty" tf:"custom_http_headers,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -224,6 +262,8 @@ type GenericRepositoryObservation struct {
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
 	ContentSynchronisation []GenericRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+
+	CustomHTTPHeaders []CustomHTTPHeadersObservation `json:"customHttpHeaders,omitempty" tf:"custom_http_headers,omitempty"`
 
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
@@ -367,6 +407,9 @@ type GenericRepositoryParameters struct {
 
 	// +kubebuilder:validation:Optional
 	ContentSynchronisation []GenericRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
+
+	// +kubebuilder:validation:Optional
+	CustomHTTPHeaders []CustomHTTPHeadersParameters `json:"customHttpHeaders,omitempty" tf:"custom_http_headers,omitempty"`
 
 	// Public description.
 	// +kubebuilder:validation:Optional

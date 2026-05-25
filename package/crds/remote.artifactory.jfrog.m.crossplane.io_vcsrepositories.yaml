@@ -320,8 +320,10 @@ spec:
                     type: string
                   vcsGitProvider:
                     description: 'Artifactory supports proxying the following Git
-                      providers out-of-the-box: GitHub or a remote Artifactory instance.
-                      Default value is "GITHUB".'
+                      providers out-of-the-box: GitHub (GITHUB), GitHub Enterprise
+                      (GITHUBENTERPRISE), BitBucket Cloud (BITBUCKET), BitBucket Server
+                      (STASH), GitLab (GITLAB), or a remote Artifactory instance.
+                      Use CUSTOM for a custom URL. Default value is "GITHUB".'
                     type: string
                   xrayIndex:
                     description: Enable Indexing In Xray. Repository will be indexed
@@ -604,8 +606,10 @@ spec:
                     type: string
                   vcsGitProvider:
                     description: 'Artifactory supports proxying the following Git
-                      providers out-of-the-box: GitHub or a remote Artifactory instance.
-                      Default value is "GITHUB".'
+                      providers out-of-the-box: GitHub (GITHUB), GitHub Enterprise
+                      (GITHUBENTERPRISE), BitBucket Cloud (BITBUCKET), BitBucket Server
+                      (STASH), GitLab (GITLAB), or a remote Artifactory instance.
+                      Use CUSTOM for a custom URL. Default value is "GITHUB".'
                     type: string
                   xrayIndex:
                     description: Enable Indexing In Xray. Repository will be indexed
@@ -931,8 +935,10 @@ spec:
                     type: string
                   vcsGitProvider:
                     description: 'Artifactory supports proxying the following Git
-                      providers out-of-the-box: GitHub or a remote Artifactory instance.
-                      Default value is "GITHUB".'
+                      providers out-of-the-box: GitHub (GITHUB), GitHub Enterprise
+                      (GITHUBENTERPRISE), BitBucket Cloud (BITBUCKET), BitBucket Server
+                      (STASH), GitLab (GITLAB), or a remote Artifactory instance.
+                      Use CUSTOM for a custom URL. Default value is "GITHUB".'
                     type: string
                   xrayIndex:
                     description: Enable Indexing In Xray. Repository will be indexed

@@ -136,6 +136,31 @@ spec:
                           type: boolean
                       type: object
                     type: array
+                  customHttpHeaders:
+                    items:
+                      properties:
+                        name:
+                          description: Header name.
+                          type: string
+                        sensitive:
+                          description: When `true`, Artifactory encrypts the header
+                            value server-side. Defaults to `false`.
+                          type: boolean
+                        valueSecretRef:
+                          description: Header value. Stored in state as configured;
+                            never read back from Artifactory.
+                          properties:
+                            key:
+                              type: string
+                            name:
+                              description: Name of the secret.
+                              type: string
+                          required:
+                          - key
+                          - name
+                          type: object
+                      type: object
+                    type: array
                   description:
                     description: Public description.
                     type: string
@@ -410,6 +435,33 @@ spec:
                             to have been downloaded in the different Artifactory instances
                             of the proxy chain. Default value is 'false'.
                           type: boolean
+                      type: object
+                    type: array
+                  customHttpHeaders:
+                    items:
+                      properties:
+                        name:
+                          description: Header name.
+                          type: string
+                        sensitive:
+                          description: When `true`, Artifactory encrypts the header
+                            value server-side. Defaults to `false`.
+                          type: boolean
+                        valueSecretRef:
+                          description: Header value. Stored in state as configured;
+                            never read back from Artifactory.
+                          properties:
+                            key:
+                              type: string
+                            name:
+                              description: Name of the secret.
+                              type: string
+                          required:
+                          - key
+                          - name
+                          type: object
+                      required:
+                      - valueSecretRef
                       type: object
                     type: array
                   description:
@@ -740,6 +792,18 @@ spec:
                             be a discrepancy between the number of artifacts reported
                             to have been downloaded in the different Artifactory instances
                             of the proxy chain. Default value is 'false'.
+                          type: boolean
+                      type: object
+                    type: array
+                  customHttpHeaders:
+                    items:
+                      properties:
+                        name:
+                          description: Header name.
+                          type: string
+                        sensitive:
+                          description: When `true`, Artifactory encrypts the header
+                            value server-side. Defaults to `false`.
                           type: boolean
                       type: object
                     type: array

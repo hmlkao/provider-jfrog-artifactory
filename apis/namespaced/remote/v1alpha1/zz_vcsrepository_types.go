@@ -193,7 +193,7 @@ type VCSRepositoryInitParameters struct {
 	// This attribute is used when vcs_git_provider is set to 'CUSTOM'. Provided URL will be used as proxy.
 	VcsGitDownloadURL *string `json:"vcsGitDownloadUrl,omitempty" tf:"vcs_git_download_url,omitempty"`
 
-	// Artifactory supports proxying the following Git providers out-of-the-box: GitHub or a remote Artifactory instance. Default value is "GITHUB".
+	// Artifactory supports proxying the following Git providers out-of-the-box: GitHub (GITHUB), GitHub Enterprise (GITHUBENTERPRISE), BitBucket Cloud (BITBUCKET), BitBucket Server (STASH), GitLab (GITLAB), or a remote Artifactory instance. Use CUSTOM for a custom URL. Default value is "GITHUB".
 	VcsGitProvider *string `json:"vcsGitProvider,omitempty" tf:"vcs_git_provider,omitempty"`
 
 	// Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
@@ -330,7 +330,7 @@ type VCSRepositoryObservation struct {
 	// This attribute is used when vcs_git_provider is set to 'CUSTOM'. Provided URL will be used as proxy.
 	VcsGitDownloadURL *string `json:"vcsGitDownloadUrl,omitempty" tf:"vcs_git_download_url,omitempty"`
 
-	// Artifactory supports proxying the following Git providers out-of-the-box: GitHub or a remote Artifactory instance. Default value is "GITHUB".
+	// Artifactory supports proxying the following Git providers out-of-the-box: GitHub (GITHUB), GitHub Enterprise (GITHUBENTERPRISE), BitBucket Cloud (BITBUCKET), BitBucket Server (STASH), GitLab (GITLAB), or a remote Artifactory instance. Use CUSTOM for a custom URL. Default value is "GITHUB".
 	VcsGitProvider *string `json:"vcsGitProvider,omitempty" tf:"vcs_git_provider,omitempty"`
 
 	// Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
@@ -510,7 +510,7 @@ type VCSRepositoryParameters struct {
 	// +kubebuilder:validation:Optional
 	VcsGitDownloadURL *string `json:"vcsGitDownloadUrl,omitempty" tf:"vcs_git_download_url,omitempty"`
 
-	// Artifactory supports proxying the following Git providers out-of-the-box: GitHub or a remote Artifactory instance. Default value is "GITHUB".
+	// Artifactory supports proxying the following Git providers out-of-the-box: GitHub (GITHUB), GitHub Enterprise (GITHUBENTERPRISE), BitBucket Cloud (BITBUCKET), BitBucket Server (STASH), GitLab (GITLAB), or a remote Artifactory instance. Use CUSTOM for a custom URL. Default value is "GITHUB".
 	// +kubebuilder:validation:Optional
 	VcsGitProvider *string `json:"vcsGitProvider,omitempty" tf:"vcs_git_provider,omitempty"`
 
