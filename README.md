@@ -9,7 +9,7 @@ Artifactory API.
 
 The repo was created from [crossplane/upjet-provider-template@9644008](https://github.com/crossplane/upjet-provider-template/tree/96440083ef6ed070d9413436a9d6a40000d6773f) template.
 
-Provider is generated from Terraform provider [jfrog/artifactory v12.11.3](https://registry.terraform.io/providers/jfrog/artifactory/12.11.3/docs).
+Provider is generated from Terraform provider [jfrog/artifactory v12.11.5](https://registry.terraform.io/providers/jfrog/artifactory/12.11.5/docs).
 
 - [Provider JFrog Artifactory](#provider-jfrog-artifactory)
   - [Getting Started](#getting-started)
@@ -53,7 +53,7 @@ Check [Provider Naming Convention](./docs/provider-naming-convention.md)
 
 ## Supported resources
 
-List of all resources of [Terraform provider v12.11.3](https://registry.terraform.io/providers/jfrog/artifactory/12.11.3/docs).
+List of all resources of [Terraform provider v12.11.5](https://registry.terraform.io/providers/jfrog/artifactory/12.11.5/docs).
 
 ### Artifact
 

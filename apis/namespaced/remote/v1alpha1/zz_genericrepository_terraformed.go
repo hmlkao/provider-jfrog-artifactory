@@ -21,7 +21,7 @@ func (mg *GenericRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this GenericRepository
 func (tr *GenericRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"custom_http_headers[*].value": "customHttpHeaders[*].valueSecretRef", "password": "passwordSecretRef"}
 }
 
 // GetObservation of this GenericRepository
@@ -125,5 +125,5 @@ func (tr *GenericRepository) LateInitialize(attrs []byte) (bool, error) {
 
 // GetTerraformSchemaVersion returns the associated Terraform schema version
 func (tr *GenericRepository) GetTerraformSchemaVersion() int {
-	return 4
+	return 5
 }
