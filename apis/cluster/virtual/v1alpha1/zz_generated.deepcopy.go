@@ -9431,6 +9431,11 @@ func (in *RPMRepositoryInitParameters) DeepCopyInto(out *RPMRepositoryInitParame
 			}
 		}
 	}
+	if in.RetrievalCachePeriodSeconds != nil {
+		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
+		*out = new(float64)
+		**out = **in
+	}
 	if in.SecondaryKeypairRef != nil {
 		in, out := &in.SecondaryKeypairRef, &out.SecondaryKeypairRef
 		*out = new(string)
@@ -9560,6 +9565,11 @@ func (in *RPMRepositoryObservation) DeepCopyInto(out *RPMRepositoryObservation) 
 			}
 		}
 	}
+	if in.RetrievalCachePeriodSeconds != nil {
+		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
+		*out = new(float64)
+		**out = **in
+	}
 	if in.SecondaryKeypairRef != nil {
 		in, out := &in.SecondaryKeypairRef, &out.SecondaryKeypairRef
 		*out = new(string)
@@ -9646,6 +9656,11 @@ func (in *RPMRepositoryParameters) DeepCopyInto(out *RPMRepositoryParameters) {
 				**out = **in
 			}
 		}
+	}
+	if in.RetrievalCachePeriodSeconds != nil {
+		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
+		*out = new(float64)
+		**out = **in
 	}
 	if in.SecondaryKeypairRef != nil {
 		in, out := &in.SecondaryKeypairRef, &out.SecondaryKeypairRef

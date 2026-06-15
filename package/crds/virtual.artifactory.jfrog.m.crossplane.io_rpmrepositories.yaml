@@ -112,6 +112,11 @@ spec:
                     items:
                       type: string
                     type: array
+                  retrievalCachePeriodSeconds:
+                    description: This value refers to the number of seconds to cache
+                      metadata files before checking for newer versions on aggregated
+                      repositories. A value of 0 indicates no caching.
+                    type: number
                   secondaryKeypairRef:
                     description: Secondary keypair used to sign artifacts.
                     type: string
@@ -183,6 +188,11 @@ spec:
                     items:
                       type: string
                     type: array
+                  retrievalCachePeriodSeconds:
+                    description: This value refers to the number of seconds to cache
+                      metadata files before checking for newer versions on aggregated
+                      repositories. A value of 0 indicates no caching.
+                    type: number
                   secondaryKeypairRef:
                     description: Secondary keypair used to sign artifacts.
                     type: string
@@ -308,6 +318,11 @@ spec:
                     items:
                       type: string
                     type: array
+                  retrievalCachePeriodSeconds:
+                    description: This value refers to the number of seconds to cache
+                      metadata files before checking for newer versions on aggregated
+                      repositories. A value of 0 indicates no caching.
+                    type: number
                   secondaryKeypairRef:
                     description: Secondary keypair used to sign artifacts.
                     type: string
