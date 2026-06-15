@@ -49,6 +49,9 @@ type RPMRepositoryInitParameters struct {
 	// The effective list of actual repositories included in this virtual repository.
 	Repositories []*string `json:"repositories,omitempty" tf:"repositories,omitempty"`
 
+	// This value refers to the number of seconds to cache metadata files before checking for newer versions on aggregated repositories. A value of 0 indicates no caching.
+	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
+
 	// Secondary keypair used to sign artifacts.
 	SecondaryKeypairRef *string `json:"secondaryKeypairRef,omitempty" tf:"secondary_keypair_ref,omitempty"`
 }
@@ -92,6 +95,9 @@ type RPMRepositoryObservation struct {
 
 	// The effective list of actual repositories included in this virtual repository.
 	Repositories []*string `json:"repositories,omitempty" tf:"repositories,omitempty"`
+
+	// This value refers to the number of seconds to cache metadata files before checking for newer versions on aggregated repositories. A value of 0 indicates no caching.
+	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 
 	// Secondary keypair used to sign artifacts.
 	SecondaryKeypairRef *string `json:"secondaryKeypairRef,omitempty" tf:"secondary_keypair_ref,omitempty"`
@@ -143,6 +149,10 @@ type RPMRepositoryParameters struct {
 	// The effective list of actual repositories included in this virtual repository.
 	// +kubebuilder:validation:Optional
 	Repositories []*string `json:"repositories,omitempty" tf:"repositories,omitempty"`
+
+	// This value refers to the number of seconds to cache metadata files before checking for newer versions on aggregated repositories. A value of 0 indicates no caching.
+	// +kubebuilder:validation:Optional
+	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 
 	// Secondary keypair used to sign artifacts.
 	// +kubebuilder:validation:Optional

@@ -7321,6 +7321,7 @@ resources:
             project_key: (String) Project key for assigning this repository to. Must be 2 - 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
             repo_layout_ref: (String) Repository layout key for the virtual repository
             repositories: (List of String) The effective list of actual repositories included in this virtual repository.
+            retrieval_cache_period_seconds: (Number) This value refers to the number of seconds to cache metadata files before checking for newer versions on aggregated repositories. A value of 0 indicates no caching.
             secondary_keypair_ref: (String) Secondary keypair used to sign artifacts.
         importStatements: []
     artifactory_virtual_sbt_repository Resource - terraform-provider-artifactory:
