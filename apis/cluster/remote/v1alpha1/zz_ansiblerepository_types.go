@@ -80,7 +80,7 @@ type AnsibleRepositoryInitParameters struct {
 	// If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	BlockMismatchingMimeTypes *bool `json:"blockMismatchingMimeTypes,omitempty" tf:"block_mismatching_mime_types,omitempty"`
 
-	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
+	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request. Default to 'true' for Ansible repositories as 'https://galaxy.ansible.com' rejects HEAD requests.
 	BypassHeadRequests *bool `json:"bypassHeadRequests,omitempty" tf:"bypass_head_requests,omitempty"`
 
 	// When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
@@ -208,7 +208,7 @@ type AnsibleRepositoryObservation struct {
 	// If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	BlockMismatchingMimeTypes *bool `json:"blockMismatchingMimeTypes,omitempty" tf:"block_mismatching_mime_types,omitempty"`
 
-	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
+	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request. Default to 'true' for Ansible repositories as 'https://galaxy.ansible.com' rejects HEAD requests.
 	BypassHeadRequests *bool `json:"bypassHeadRequests,omitempty" tf:"bypass_head_requests,omitempty"`
 
 	// When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
@@ -341,7 +341,7 @@ type AnsibleRepositoryParameters struct {
 	// +kubebuilder:validation:Optional
 	BlockMismatchingMimeTypes *bool `json:"blockMismatchingMimeTypes,omitempty" tf:"block_mismatching_mime_types,omitempty"`
 
-	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
+	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request. Default to 'true' for Ansible repositories as 'https://galaxy.ansible.com' rejects HEAD requests.
 	// +kubebuilder:validation:Optional
 	BypassHeadRequests *bool `json:"bypassHeadRequests,omitempty" tf:"bypass_head_requests,omitempty"`
 
