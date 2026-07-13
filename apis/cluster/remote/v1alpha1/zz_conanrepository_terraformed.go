@@ -21,7 +21,7 @@ func (mg *ConanRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this ConanRepository
 func (tr *ConanRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this ConanRepository

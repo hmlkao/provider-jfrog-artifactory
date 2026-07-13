@@ -21,7 +21,7 @@ func (mg *MavenRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this MavenRepository
 func (tr *MavenRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this MavenRepository

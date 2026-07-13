@@ -21,7 +21,7 @@ func (mg *GitLFSRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this GitLFSRepository
 func (tr *GitLFSRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this GitLFSRepository

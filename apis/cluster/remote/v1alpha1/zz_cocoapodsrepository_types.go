@@ -138,6 +138,12 @@ type CocoaPodsRepositoryInitParameters struct {
 
 	PasswordSecretRef *v1.SecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
+	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
+	PasswordWoSecretRef *v1.SecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
+
+	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
+	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
+
 	// Proxy remote CocoaPods Specs repositories. Default value is 'https://github.com/CocoaPods/Specs'.
 	PodsSpecsRepoURL *string `json:"podsSpecsRepoUrl,omitempty" tf:"pods_specs_repo_url,omitempty"`
 
@@ -274,6 +280,9 @@ type CocoaPodsRepositoryObservation struct {
 
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
+
+	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
+	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
 	// Proxy remote CocoaPods Specs repositories. Default value is 'https://github.com/CocoaPods/Specs'.
 	PodsSpecsRepoURL *string `json:"podsSpecsRepoUrl,omitempty" tf:"pods_specs_repo_url,omitempty"`
@@ -436,6 +445,14 @@ type CocoaPodsRepositoryParameters struct {
 
 	// +kubebuilder:validation:Optional
 	PasswordSecretRef *v1.SecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
+
+	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
+	// +kubebuilder:validation:Optional
+	PasswordWoSecretRef *v1.SecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
+
+	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
+	// +kubebuilder:validation:Optional
+	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
 	// Proxy remote CocoaPods Specs repositories. Default value is 'https://github.com/CocoaPods/Specs'.
 	// +kubebuilder:validation:Optional

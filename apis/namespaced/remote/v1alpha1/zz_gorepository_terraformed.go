@@ -21,7 +21,7 @@ func (mg *GoRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this GoRepository
 func (tr *GoRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this GoRepository

@@ -21,7 +21,7 @@ func (mg *ComposerRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this ComposerRepository
 func (tr *ComposerRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this ComposerRepository

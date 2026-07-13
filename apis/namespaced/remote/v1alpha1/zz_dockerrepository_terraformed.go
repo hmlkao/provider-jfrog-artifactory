@@ -21,7 +21,7 @@ func (mg *DockerRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this DockerRepository
 func (tr *DockerRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this DockerRepository

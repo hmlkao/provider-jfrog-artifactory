@@ -170,6 +170,16 @@ func (in *AlpineRepositoryInitParameters) DeepCopyInto(out *AlpineRepositoryInit
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -441,6 +451,11 @@ func (in *AlpineRepositoryObservation) DeepCopyInto(out *AlpineRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -678,6 +693,16 @@ func (in *AlpineRepositoryParameters) DeepCopyInto(out *AlpineRepositoryParamete
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -1086,6 +1111,16 @@ func (in *AnsibleRepositoryInitParameters) DeepCopyInto(out *AnsibleRepositoryIn
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -1357,6 +1392,11 @@ func (in *AnsibleRepositoryObservation) DeepCopyInto(out *AnsibleRepositoryObser
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -1594,6 +1634,16 @@ func (in *AnsibleRepositoryParameters) DeepCopyInto(out *AnsibleRepositoryParame
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -2007,6 +2057,16 @@ func (in *BowerRepositoryInitParameters) DeepCopyInto(out *BowerRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -2293,6 +2353,11 @@ func (in *BowerRepositoryObservation) DeepCopyInto(out *BowerRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -2545,6 +2610,16 @@ func (in *BowerRepositoryParameters) DeepCopyInto(out *BowerRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -2963,6 +3038,16 @@ func (in *CRANRepositoryInitParameters) DeepCopyInto(out *CRANRepositoryInitPara
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -3234,6 +3319,11 @@ func (in *CRANRepositoryObservation) DeepCopyInto(out *CRANRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -3471,6 +3561,16 @@ func (in *CRANRepositoryParameters) DeepCopyInto(out *CRANRepositoryParameters) 
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -3894,6 +3994,16 @@ func (in *CargoRepositoryInitParameters) DeepCopyInto(out *CargoRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -4180,6 +4290,11 @@ func (in *CargoRepositoryObservation) DeepCopyInto(out *CargoRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -4432,6 +4547,16 @@ func (in *CargoRepositoryParameters) DeepCopyInto(out *CargoRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -4840,6 +4965,16 @@ func (in *ChefRepositoryInitParameters) DeepCopyInto(out *ChefRepositoryInitPara
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -5111,6 +5246,11 @@ func (in *ChefRepositoryObservation) DeepCopyInto(out *ChefRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -5348,6 +5488,16 @@ func (in *ChefRepositoryParameters) DeepCopyInto(out *ChefRepositoryParameters) 
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -5756,6 +5906,16 @@ func (in *CocoaPodsRepositoryInitParameters) DeepCopyInto(out *CocoaPodsReposito
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PodsSpecsRepoURL != nil {
 		in, out := &in.PodsSpecsRepoURL, &out.PodsSpecsRepoURL
 		*out = new(string)
@@ -6042,6 +6202,11 @@ func (in *CocoaPodsRepositoryObservation) DeepCopyInto(out *CocoaPodsRepositoryO
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PodsSpecsRepoURL != nil {
 		in, out := &in.PodsSpecsRepoURL, &out.PodsSpecsRepoURL
 		*out = new(string)
@@ -6294,6 +6459,16 @@ func (in *CocoaPodsRepositoryParameters) DeepCopyInto(out *CocoaPodsRepositoryPa
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PodsSpecsRepoURL != nil {
@@ -6722,6 +6897,16 @@ func (in *ComposerRepositoryInitParameters) DeepCopyInto(out *ComposerRepository
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -7008,6 +7193,11 @@ func (in *ComposerRepositoryObservation) DeepCopyInto(out *ComposerRepositoryObs
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -7260,6 +7450,16 @@ func (in *ComposerRepositoryParameters) DeepCopyInto(out *ComposerRepositoryPara
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -7693,6 +7893,16 @@ func (in *ConanRepositoryInitParameters) DeepCopyInto(out *ConanRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -7979,6 +8189,11 @@ func (in *ConanRepositoryObservation) DeepCopyInto(out *ConanRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -8231,6 +8446,16 @@ func (in *ConanRepositoryParameters) DeepCopyInto(out *ConanRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -8639,6 +8864,16 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -8910,6 +9145,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -9147,6 +9387,16 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -9737,6 +9987,16 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -10008,6 +10268,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -10245,6 +10510,16 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -10689,6 +10964,16 @@ func (in *DockerRepositoryInitParameters) DeepCopyInto(out *DockerRepositoryInit
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -11001,6 +11286,11 @@ func (in *DockerRepositoryObservation) DeepCopyInto(out *DockerRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -11279,6 +11569,16 @@ func (in *DockerRepositoryParameters) DeepCopyInto(out *DockerRepositoryParamete
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -11702,6 +12002,16 @@ func (in *GemsRepositoryInitParameters) DeepCopyInto(out *GemsRepositoryInitPara
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -11993,6 +12303,11 @@ func (in *GemsRepositoryObservation) DeepCopyInto(out *GemsRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -12250,6 +12565,16 @@ func (in *GemsRepositoryParameters) DeepCopyInto(out *GemsRepositoryParameters) 
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -12675,6 +13000,16 @@ func (in *GenericRepositoryInitParameters) DeepCopyInto(out *GenericRepositoryIn
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -12963,6 +13298,11 @@ func (in *GenericRepositoryObservation) DeepCopyInto(out *GenericRepositoryObser
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -13217,6 +13557,16 @@ func (in *GenericRepositoryParameters) DeepCopyInto(out *GenericRepositoryParame
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -13635,6 +13985,16 @@ func (in *GitLFSRepositoryInitParameters) DeepCopyInto(out *GitLFSRepositoryInit
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -13906,6 +14266,11 @@ func (in *GitLFSRepositoryObservation) DeepCopyInto(out *GitLFSRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -14143,6 +14508,16 @@ func (in *GitLFSRepositoryParameters) DeepCopyInto(out *GitLFSRepositoryParamete
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -14561,6 +14936,16 @@ func (in *GoRepositoryInitParameters) DeepCopyInto(out *GoRepositoryInitParamete
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -14857,6 +15242,11 @@ func (in *GoRepositoryObservation) DeepCopyInto(out *GoRepositoryObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -15119,6 +15509,16 @@ func (in *GoRepositoryParameters) DeepCopyInto(out *GoRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -15577,6 +15977,16 @@ func (in *GradleRepositoryInitParameters) DeepCopyInto(out *GradleRepositoryInit
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -15898,6 +16308,11 @@ func (in *GradleRepositoryObservation) DeepCopyInto(out *GradleRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -16185,6 +16600,16 @@ func (in *GradleRepositoryParameters) DeepCopyInto(out *GradleRepositoryParamete
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -16629,6 +17054,16 @@ func (in *HelmOCIRepositoryInitParameters) DeepCopyInto(out *HelmOCIRepositoryIn
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -16926,6 +17361,11 @@ func (in *HelmOCIRepositoryObservation) DeepCopyInto(out *HelmOCIRepositoryObser
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -17189,6 +17629,16 @@ func (in *HelmOCIRepositoryParameters) DeepCopyInto(out *HelmOCIRepositoryParame
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -17623,6 +18073,16 @@ func (in *HelmRepositoryInitParameters) DeepCopyInto(out *HelmRepositoryInitPara
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -17915,6 +18375,11 @@ func (in *HelmRepositoryObservation) DeepCopyInto(out *HelmRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -18173,6 +18638,16 @@ func (in *HelmRepositoryParameters) DeepCopyInto(out *HelmRepositoryParameters) 
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -18591,6 +19066,16 @@ func (in *HuggingFaceMLRepositoryInitParameters) DeepCopyInto(out *HuggingFaceML
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -18872,6 +19357,11 @@ func (in *HuggingFaceMLRepositoryObservation) DeepCopyInto(out *HuggingFaceMLRep
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -19119,6 +19609,16 @@ func (in *HuggingFaceMLRepositoryParameters) DeepCopyInto(out *HuggingFaceMLRepo
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -19552,6 +20052,16 @@ func (in *IvyRepositoryInitParameters) DeepCopyInto(out *IvyRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -19863,6 +20373,11 @@ func (in *IvyRepositoryObservation) DeepCopyInto(out *IvyRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -20140,6 +20655,16 @@ func (in *IvyRepositoryParameters) DeepCopyInto(out *IvyRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -20598,6 +21123,16 @@ func (in *MavenRepositoryInitParameters) DeepCopyInto(out *MavenRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -20919,6 +21454,11 @@ func (in *MavenRepositoryObservation) DeepCopyInto(out *MavenRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -21206,6 +21746,16 @@ func (in *MavenRepositoryParameters) DeepCopyInto(out *MavenRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -21639,6 +22189,16 @@ func (in *NPMRepositoryInitParameters) DeepCopyInto(out *NPMRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -21920,6 +22480,11 @@ func (in *NPMRepositoryObservation) DeepCopyInto(out *NPMRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -22167,6 +22732,16 @@ func (in *NPMRepositoryParameters) DeepCopyInto(out *NPMRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -22600,6 +23175,16 @@ func (in *NuGetRepositoryInitParameters) DeepCopyInto(out *NuGetRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -22906,6 +23491,11 @@ func (in *NuGetRepositoryObservation) DeepCopyInto(out *NuGetRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -23178,6 +23768,16 @@ func (in *NuGetRepositoryParameters) DeepCopyInto(out *NuGetRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -23617,6 +24217,16 @@ func (in *OCIRepositoryInitParameters) DeepCopyInto(out *OCIRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -23914,6 +24524,11 @@ func (in *OCIRepositoryObservation) DeepCopyInto(out *OCIRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -24177,6 +24792,16 @@ func (in *OCIRepositoryParameters) DeepCopyInto(out *OCIRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -24590,6 +25215,16 @@ func (in *OPKGRepositoryInitParameters) DeepCopyInto(out *OPKGRepositoryInitPara
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -24861,6 +25496,11 @@ func (in *OPKGRepositoryObservation) DeepCopyInto(out *OPKGRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -25098,6 +25738,16 @@ func (in *OPKGRepositoryParameters) DeepCopyInto(out *OPKGRepositoryParameters) 
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -25506,6 +26156,16 @@ func (in *P2RepositoryInitParameters) DeepCopyInto(out *P2RepositoryInitParamete
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -25777,6 +26437,11 @@ func (in *P2RepositoryObservation) DeepCopyInto(out *P2RepositoryObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -26014,6 +26679,16 @@ func (in *P2RepositoryParameters) DeepCopyInto(out *P2RepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -26422,6 +27097,16 @@ func (in *PubRepositoryInitParameters) DeepCopyInto(out *PubRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -26693,6 +27378,11 @@ func (in *PubRepositoryObservation) DeepCopyInto(out *PubRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -26930,6 +27620,16 @@ func (in *PubRepositoryParameters) DeepCopyInto(out *PubRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -27338,6 +28038,16 @@ func (in *PuppetRepositoryInitParameters) DeepCopyInto(out *PuppetRepositoryInit
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -27609,6 +28319,11 @@ func (in *PuppetRepositoryObservation) DeepCopyInto(out *PuppetRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -27846,6 +28561,16 @@ func (in *PuppetRepositoryParameters) DeepCopyInto(out *PuppetRepositoryParamete
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -28264,6 +28989,16 @@ func (in *PyPIRepositoryInitParameters) DeepCopyInto(out *PyPIRepositoryInitPara
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -28555,6 +29290,11 @@ func (in *PyPIRepositoryObservation) DeepCopyInto(out *PyPIRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -28812,6 +29552,16 @@ func (in *PyPIRepositoryParameters) DeepCopyInto(out *PyPIRepositoryParameters) 
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -29230,6 +29980,16 @@ func (in *RPMRepositoryInitParameters) DeepCopyInto(out *RPMRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -29501,6 +30261,11 @@ func (in *RPMRepositoryObservation) DeepCopyInto(out *RPMRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -29738,6 +30503,16 @@ func (in *RPMRepositoryParameters) DeepCopyInto(out *RPMRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -30171,6 +30946,16 @@ func (in *SBTRepositoryInitParameters) DeepCopyInto(out *SBTRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -30482,6 +31267,11 @@ func (in *SBTRepositoryObservation) DeepCopyInto(out *SBTRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -30759,6 +31549,16 @@ func (in *SBTRepositoryParameters) DeepCopyInto(out *SBTRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -31182,6 +31982,16 @@ func (in *SwiftRepositoryInitParameters) DeepCopyInto(out *SwiftRepositoryInitPa
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -31453,6 +32263,11 @@ func (in *SwiftRepositoryObservation) DeepCopyInto(out *SwiftRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -31690,6 +32505,16 @@ func (in *SwiftRepositoryParameters) DeepCopyInto(out *SwiftRepositoryParameters
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -32098,6 +32923,16 @@ func (in *TerraformRepositoryInitParameters) DeepCopyInto(out *TerraformReposito
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -32379,6 +33214,11 @@ func (in *TerraformRepositoryObservation) DeepCopyInto(out *TerraformRepositoryO
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -32626,6 +33466,16 @@ func (in *TerraformRepositoryParameters) DeepCopyInto(out *TerraformRepositoryPa
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {
@@ -33049,6 +33899,16 @@ func (in *VCSRepositoryInitParameters) DeepCopyInto(out *VCSRepositoryInitParame
 		*out = new(v1.LocalSecretKeySelector)
 		**out = **in
 	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -33335,6 +34195,11 @@ func (in *VCSRepositoryObservation) DeepCopyInto(out *VCSRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
+		**out = **in
+	}
 	if in.PriorityResolution != nil {
 		in, out := &in.PriorityResolution, &out.PriorityResolution
 		*out = new(bool)
@@ -33587,6 +34452,16 @@ func (in *VCSRepositoryParameters) DeepCopyInto(out *VCSRepositoryParameters) {
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoSecretRef != nil {
+		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
+		*out = new(v1.LocalSecretKeySelector)
+		**out = **in
+	}
+	if in.PasswordWoVersion != nil {
+		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
+		*out = new(string)
 		**out = **in
 	}
 	if in.PriorityResolution != nil {

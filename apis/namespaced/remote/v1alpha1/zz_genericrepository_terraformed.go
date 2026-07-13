@@ -21,7 +21,7 @@ func (mg *GenericRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this GenericRepository
 func (tr *GenericRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"custom_http_headers[*].value": "customHttpHeaders[*].valueSecretRef", "password": "passwordSecretRef"}
+	return map[string]string{"custom_http_headers[*].value": "customHttpHeaders[*].valueSecretRef", "password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this GenericRepository

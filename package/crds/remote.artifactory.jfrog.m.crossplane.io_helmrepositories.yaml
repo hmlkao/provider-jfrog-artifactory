@@ -244,6 +244,27 @@ spec:
                     - key
                     - name
                     type: object
+                  passwordWoSecretRef:
+                    description: Write-only equivalent of `password`.11 or later.
+                      Conflicts with `password`. Because write-only values are not
+                      tracked in state, use `password_wo_version` to signal when the
+                      secret has changed so it is re-sent to Artifactory.
+                    properties:
+                      key:
+                        type: string
+                      name:
+                        description: Name of the secret.
+                        type: string
+                    required:
+                    - key
+                    - name
+                    type: object
+                  passwordWoVersion:
+                    description: A version identifier for `password_wo`. Change this
+                      value (for example, after rotating the secret) to trigger an
+                      update that re-sends the current `password_wo` value to Artifactory.
+                      Only meaningful together with `password_wo`.
+                    type: string
                   priorityResolution:
                     description: Setting repositories with priority will cause metadata
                       to be merged only from repositories set with this field
@@ -533,6 +554,27 @@ spec:
                     - key
                     - name
                     type: object
+                  passwordWoSecretRef:
+                    description: Write-only equivalent of `password`.11 or later.
+                      Conflicts with `password`. Because write-only values are not
+                      tracked in state, use `password_wo_version` to signal when the
+                      secret has changed so it is re-sent to Artifactory.
+                    properties:
+                      key:
+                        type: string
+                      name:
+                        description: Name of the secret.
+                        type: string
+                    required:
+                    - key
+                    - name
+                    type: object
+                  passwordWoVersion:
+                    description: A version identifier for `password_wo`. Change this
+                      value (for example, after rotating the secret) to trigger an
+                      update that re-sends the current `password_wo` value to Artifactory.
+                      Only meaningful together with `password_wo`.
+                    type: string
                   priorityResolution:
                     description: Setting repositories with priority will cause metadata
                       to be merged only from repositories set with this field
@@ -865,6 +907,12 @@ spec:
                     description: If set, Artifactory does not try to fetch remote
                       artifacts. Only locally-cached artifacts are retrieved.
                     type: boolean
+                  passwordWoVersion:
+                    description: A version identifier for `password_wo`. Change this
+                      value (for example, after rotating the secret) to trigger an
+                      update that re-sends the current `password_wo` value to Artifactory.
+                      Only meaningful together with `password_wo`.
+                    type: string
                   priorityResolution:
                     description: Setting repositories with priority will cause metadata
                       to be merged only from repositories set with this field
