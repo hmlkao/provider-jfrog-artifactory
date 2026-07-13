@@ -21,7 +21,7 @@ func (mg *OCIRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this OCIRepository
 func (tr *OCIRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this OCIRepository

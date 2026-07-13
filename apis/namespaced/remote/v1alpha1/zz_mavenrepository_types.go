@@ -160,6 +160,12 @@ type MavenRepositoryInitParameters struct {
 
 	PasswordSecretRef *v1.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
+	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
+	PasswordWoSecretRef *v1.LocalSecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
+
+	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
+	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
+
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
@@ -317,6 +323,9 @@ type MavenRepositoryObservation struct {
 
 	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
 	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
+
+	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
+	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
@@ -507,6 +516,14 @@ type MavenRepositoryParameters struct {
 
 	// +kubebuilder:validation:Optional
 	PasswordSecretRef *v1.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
+
+	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
+	// +kubebuilder:validation:Optional
+	PasswordWoSecretRef *v1.LocalSecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
+
+	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
+	// +kubebuilder:validation:Optional
+	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	// +kubebuilder:validation:Optional

@@ -21,7 +21,7 @@ func (mg *P2Repository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this P2Repository
 func (tr *P2Repository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this P2Repository

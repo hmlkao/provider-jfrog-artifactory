@@ -21,7 +21,7 @@ func (mg *NPMRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this NPMRepository
 func (tr *NPMRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this NPMRepository

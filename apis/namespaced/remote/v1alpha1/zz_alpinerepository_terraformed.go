@@ -21,7 +21,7 @@ func (mg *AlpineRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this AlpineRepository
 func (tr *AlpineRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this AlpineRepository

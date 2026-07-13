@@ -21,7 +21,7 @@ func (mg *SwiftRepository) GetTerraformResourceType() string {
 
 // GetConnectionDetailsMapping for this SwiftRepository
 func (tr *SwiftRepository) GetConnectionDetailsMapping() map[string]string {
-	return map[string]string{"password": "passwordSecretRef"}
+	return map[string]string{"password": "passwordSecretRef", "password_wo": "passwordWoSecretRef"}
 }
 
 // GetObservation of this SwiftRepository
