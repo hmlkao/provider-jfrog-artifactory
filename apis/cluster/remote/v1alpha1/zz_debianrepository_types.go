@@ -15,48 +15,60 @@ import (
 
 type DebianRepositoryContentSynchronisationInitParameters struct {
 
+	// (Boolean) If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
 
+	// (Boolean) If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
 	// If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
 	PropertiesEnabled *bool `json:"propertiesEnabled,omitempty" tf:"properties_enabled,omitempty"`
 
+	// (Boolean) If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
 	// If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
 	SourceOriginAbsenceDetection *bool `json:"sourceOriginAbsenceDetection,omitempty" tf:"source_origin_absence_detection,omitempty"`
 
+	// (Boolean) If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
 	// If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
 type DebianRepositoryContentSynchronisationObservation struct {
 
+	// (Boolean) If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
 
+	// (Boolean) If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
 	// If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
 	PropertiesEnabled *bool `json:"propertiesEnabled,omitempty" tf:"properties_enabled,omitempty"`
 
+	// (Boolean) If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
 	// If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
 	SourceOriginAbsenceDetection *bool `json:"sourceOriginAbsenceDetection,omitempty" tf:"source_origin_absence_detection,omitempty"`
 
+	// (Boolean) If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
 	// If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
 }
 
 type DebianRepositoryContentSynchronisationParameters struct {
 
+	// (Boolean) If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
 
+	// (Boolean) If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
 	// If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
 	// +kubebuilder:validation:Optional
 	PropertiesEnabled *bool `json:"propertiesEnabled,omitempty" tf:"properties_enabled,omitempty"`
 
+	// (Boolean) If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
 	// If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
 	// +kubebuilder:validation:Optional
 	SourceOriginAbsenceDetection *bool `json:"sourceOriginAbsenceDetection,omitempty" tf:"source_origin_absence_detection,omitempty"`
 
+	// (Boolean) If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
 	// If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
 	// +kubebuilder:validation:Optional
 	StatisticsEnabled *bool `json:"statisticsEnabled,omitempty" tf:"statistics_enabled,omitempty"`
@@ -64,442 +76,624 @@ type DebianRepositoryContentSynchronisationParameters struct {
 
 type DebianRepositoryInitParameters struct {
 
+	// (Boolean) 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
 
+	// site scripting attacks).
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
 	ArchiveBrowsingEnabled *bool `json:"archiveBrowsingEnabled,omitempty" tf:"archive_browsing_enabled,omitempty"`
 
+	// (Number) The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
 	// The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
 	AssumedOfflinePeriodSecs *float64 `json:"assumedOfflinePeriodSecs,omitempty" tf:"assumed_offline_period_secs,omitempty"`
 
+	// (Boolean) (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
 	// (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
 	BlackedOut *bool `json:"blackedOut,omitempty" tf:"blacked_out,omitempty"`
 
+	// (Boolean) If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	// If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	BlockMismatchingMimeTypes *bool `json:"blockMismatchingMimeTypes,omitempty" tf:"block_mismatching_mime_types,omitempty"`
 
+	// (Boolean) Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
 	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
 	BypassHeadRequests *bool `json:"bypassHeadRequests,omitempty" tf:"bypass_head_requests,omitempty"`
 
+	// (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
 	// When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
 	CdnRedirect *bool `json:"cdnRedirect,omitempty" tf:"cdn_redirect,omitempty"`
 
+	// (String) Client TLS certificate name.
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
+	// (Block List) (see below for nested schema)
 	ContentSynchronisation []DebianRepositoryContentSynchronisationInitParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
+	// (Boolean) Enable repository to be protected by the Curation service.
+	// Enable repository to be protected by the Curation service.
+	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
+
+	// (String) Public description.
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
+	// (Boolean) When set to true, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
 	// When set to `true`, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
 	DisableProxy *bool `json:"disableProxy,omitempty" tf:"disable_proxy,omitempty"`
 
+	// (Boolean) Whether to disable URL normalization. Default is false.
 	// Whether to disable URL normalization. Default is `false`.
 	DisableURLNormalization *bool `json:"disableUrlNormalization,omitempty" tf:"disable_url_normalization,omitempty"`
 
+	// (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
 	// When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
 	DownloadDirect *bool `json:"downloadDirect,omitempty" tf:"download_direct,omitempty"`
 
+	// (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
 	// Enables cookie management if the remote repository uses cookies to manage client state.
 	EnableCookieManagement *bool `json:"enableCookieManagement,omitempty" tf:"enable_cookie_management,omitempty"`
 
+	// (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
+	// (Boolean) When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	// When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	HardFail *bool `json:"hardFail,omitempty" tf:"hard_fail,omitempty"`
 
+	// separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
+	// (Boolean) Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
 	// Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
 	ListRemoteFolderItems *bool `json:"listRemoteFolderItems,omitempty" tf:"list_remote_folder_items,omitempty"`
 
+	// (String) The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
 	// The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
 	LocalAddress *string `json:"localAddress,omitempty" tf:"local_address,omitempty"`
 
+	// (Number) Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
 	// Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
 	MetadataRetrievalTimeoutSecs *float64 `json:"metadataRetrievalTimeoutSecs,omitempty" tf:"metadata_retrieval_timeout_secs,omitempty"`
 
+	// (String) The set of mime types that should override the block_mismatching_mime_types setting. Eg: 'application/json,application/xml'. Default value is empty.
 	// The set of mime types that should override the block_mismatching_mime_types setting. Eg: 'application/json,application/xml'. Default value is empty.
 	MismatchingMimeTypesOverrideList *string `json:"mismatchingMimeTypesOverrideList,omitempty" tf:"mismatching_mime_types_override_list,omitempty"`
 
+	// (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
 	// Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
 	MissedCachePeriodSeconds *float64 `json:"missedCachePeriodSeconds,omitempty" tf:"missed_cache_period_seconds,omitempty"`
 
+	// (String) Internal description.
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
+	// cached artifacts are retrieved.
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
 
+	// through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
+
+	// (String, Sensitive)
 	PasswordSecretRef *v1.SecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
+	// only) Write-only equivalent of password.11 or later. Conflicts with password. Because write-only values are not tracked in state, use password_wo_version to signal when the secret has changed so it is re-sent to Artifactory.
 	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
 	PasswordWoSecretRef *v1.SecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
 
+	// sends the current password_wo value to Artifactory. Only meaningful together with password_wo.
 	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
 	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
+	// (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
+	// (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// Before Artifactory 7.53.1, up to 2 values (`DEV` and `PROD`) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// +listType=set
 	ProjectEnvironments []*string `json:"projectEnvironments,omitempty" tf:"project_environments,omitempty"`
 
+	// 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
 	// Project key for assigning this repository to. Must be 2 - 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
 	ProjectKey *string `json:"projectKey,omitempty" tf:"project_key,omitempty"`
 
+	// (Boolean) When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+	// When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+	PropagateQueryParams *bool `json:"propagateQueryParams,omitempty" tf:"propagate_query_params,omitempty"`
+
+	// (Set of String) List of property set name
 	// List of property set name
 	// +listType=set
 	PropertySets []*string `json:"propertySets,omitempty" tf:"property_sets,omitempty"`
 
+	// (String) Proxy key from Artifactory Proxies settings. Can't be set if disable_proxy = true.
 	// Proxy key from Artifactory Proxies settings. Can't be set if `disable_proxy = true`.
 	Proxy *string `json:"proxy,omitempty" tf:"proxy,omitempty"`
 
+	// (String) Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: param1=val1&param2=val2&param3=val3
 	// Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: `param1=val1&param2=val2&param3=val3`
 	QueryParams *string `json:"queryParams,omitempty" tf:"query_params,omitempty"`
 
+	// (String) Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
 	// Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
 	RemoteRepoLayoutRef *string `json:"remoteRepoLayoutRef,omitempty" tf:"remote_repo_layout_ref,omitempty"`
 
+	// (String) Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
 	// Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
 	RepoLayoutRef *string `json:"repoLayoutRef,omitempty" tf:"repo_layout_ref,omitempty"`
 
+	// (Number) Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
 	// Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
 	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 
+	// (Boolean) When set to true, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+	// When set to `true`, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+	RetrieveSha256FromServer *bool `json:"retrieveSha256FromServer,omitempty" tf:"retrieve_sha256_from_server,omitempty"`
+
+	// (Boolean, Deprecated)
 	ShareConfiguration *bool `json:"shareConfiguration,omitempty" tf:"share_configuration,omitempty"`
 
+	// (Number) Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
 	// Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
 	SocketTimeoutMillis *float64 `json:"socketTimeoutMillis,omitempty" tf:"socket_timeout_millis,omitempty"`
 
+	// to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
 	// When set, the repository should store cached artifacts locally. When not set, artifacts are not stored locally, and direct repository-to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
 	StoreArtifactsLocally *bool `json:"storeArtifactsLocally,omitempty" tf:"store_artifacts_locally,omitempty"`
 
+	// (Boolean) When set, remote artifacts are fetched along with their properties.
 	// When set, remote artifacts are fetched along with their properties.
 	SynchronizeProperties *bool `json:"synchronizeProperties,omitempty" tf:"synchronize_properties,omitempty"`
 
+	// (String) This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	// This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
+	// (Number) Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
 	// Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
 	UnusedArtifactsCleanupPeriodHours *float64 `json:"unusedArtifactsCleanupPeriodHours,omitempty" tf:"unused_artifacts_cleanup_period_hours,omitempty"`
 
+	// (String)
 	Username *string `json:"username,omitempty" tf:"username,omitempty"`
 
+	// (Boolean) Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
 	// Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
 type DebianRepositoryObservation struct {
 
+	// (Boolean) 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
 
+	// site scripting attacks).
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
 	ArchiveBrowsingEnabled *bool `json:"archiveBrowsingEnabled,omitempty" tf:"archive_browsing_enabled,omitempty"`
 
+	// (Number) The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
 	// The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
 	AssumedOfflinePeriodSecs *float64 `json:"assumedOfflinePeriodSecs,omitempty" tf:"assumed_offline_period_secs,omitempty"`
 
+	// (Boolean) (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
 	// (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
 	BlackedOut *bool `json:"blackedOut,omitempty" tf:"blacked_out,omitempty"`
 
+	// (Boolean) If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	// If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	BlockMismatchingMimeTypes *bool `json:"blockMismatchingMimeTypes,omitempty" tf:"block_mismatching_mime_types,omitempty"`
 
+	// (Boolean) Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
 	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
 	BypassHeadRequests *bool `json:"bypassHeadRequests,omitempty" tf:"bypass_head_requests,omitempty"`
 
+	// (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
 	// When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
 	CdnRedirect *bool `json:"cdnRedirect,omitempty" tf:"cdn_redirect,omitempty"`
 
+	// (String) Client TLS certificate name.
 	// Client TLS certificate name.
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
+	// (Block List) (see below for nested schema)
 	ContentSynchronisation []DebianRepositoryContentSynchronisationObservation `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
+	// (Boolean) Enable repository to be protected by the Curation service.
+	// Enable repository to be protected by the Curation service.
+	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
+
+	// (String) Public description.
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
+	// (Boolean) When set to true, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
 	// When set to `true`, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
 	DisableProxy *bool `json:"disableProxy,omitempty" tf:"disable_proxy,omitempty"`
 
+	// (Boolean) Whether to disable URL normalization. Default is false.
 	// Whether to disable URL normalization. Default is `false`.
 	DisableURLNormalization *bool `json:"disableUrlNormalization,omitempty" tf:"disable_url_normalization,omitempty"`
 
+	// (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
 	// When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
 	DownloadDirect *bool `json:"downloadDirect,omitempty" tf:"download_direct,omitempty"`
 
+	// (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
 	// Enables cookie management if the remote repository uses cookies to manage client state.
 	EnableCookieManagement *bool `json:"enableCookieManagement,omitempty" tf:"enable_cookie_management,omitempty"`
 
+	// (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
+	// (Boolean) When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	// When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	HardFail *bool `json:"hardFail,omitempty" tf:"hard_fail,omitempty"`
 
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
+	// separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
+	// (Boolean) Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
 	// Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
 	ListRemoteFolderItems *bool `json:"listRemoteFolderItems,omitempty" tf:"list_remote_folder_items,omitempty"`
 
+	// (String) The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
 	// The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
 	LocalAddress *string `json:"localAddress,omitempty" tf:"local_address,omitempty"`
 
+	// (Number) Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
 	// Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
 	MetadataRetrievalTimeoutSecs *float64 `json:"metadataRetrievalTimeoutSecs,omitempty" tf:"metadata_retrieval_timeout_secs,omitempty"`
 
+	// (String) The set of mime types that should override the block_mismatching_mime_types setting. Eg: 'application/json,application/xml'. Default value is empty.
 	// The set of mime types that should override the block_mismatching_mime_types setting. Eg: 'application/json,application/xml'. Default value is empty.
 	MismatchingMimeTypesOverrideList *string `json:"mismatchingMimeTypesOverrideList,omitempty" tf:"mismatching_mime_types_override_list,omitempty"`
 
+	// (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
 	// Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
 	MissedCachePeriodSeconds *float64 `json:"missedCachePeriodSeconds,omitempty" tf:"missed_cache_period_seconds,omitempty"`
 
+	// (String) Internal description.
 	// Internal description.
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
+	// cached artifacts are retrieved.
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
 
+	// through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
+
+	// sends the current password_wo value to Artifactory. Only meaningful together with password_wo.
 	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
 	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
+	// (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
+	// (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// Before Artifactory 7.53.1, up to 2 values (`DEV` and `PROD`) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// +listType=set
 	ProjectEnvironments []*string `json:"projectEnvironments,omitempty" tf:"project_environments,omitempty"`
 
+	// 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
 	// Project key for assigning this repository to. Must be 2 - 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
 	ProjectKey *string `json:"projectKey,omitempty" tf:"project_key,omitempty"`
 
+	// (Boolean) When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+	// When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+	PropagateQueryParams *bool `json:"propagateQueryParams,omitempty" tf:"propagate_query_params,omitempty"`
+
+	// (Set of String) List of property set name
 	// List of property set name
 	// +listType=set
 	PropertySets []*string `json:"propertySets,omitempty" tf:"property_sets,omitempty"`
 
+	// (String) Proxy key from Artifactory Proxies settings. Can't be set if disable_proxy = true.
 	// Proxy key from Artifactory Proxies settings. Can't be set if `disable_proxy = true`.
 	Proxy *string `json:"proxy,omitempty" tf:"proxy,omitempty"`
 
+	// (String) Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: param1=val1&param2=val2&param3=val3
 	// Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: `param1=val1&param2=val2&param3=val3`
 	QueryParams *string `json:"queryParams,omitempty" tf:"query_params,omitempty"`
 
+	// (String) Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
 	// Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
 	RemoteRepoLayoutRef *string `json:"remoteRepoLayoutRef,omitempty" tf:"remote_repo_layout_ref,omitempty"`
 
+	// (String) Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
 	// Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
 	RepoLayoutRef *string `json:"repoLayoutRef,omitempty" tf:"repo_layout_ref,omitempty"`
 
+	// (Number) Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
 	// Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
 	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 
+	// (Boolean) When set to true, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+	// When set to `true`, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+	RetrieveSha256FromServer *bool `json:"retrieveSha256FromServer,omitempty" tf:"retrieve_sha256_from_server,omitempty"`
+
+	// (Boolean, Deprecated)
 	ShareConfiguration *bool `json:"shareConfiguration,omitempty" tf:"share_configuration,omitempty"`
 
+	// (Number) Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
 	// Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
 	SocketTimeoutMillis *float64 `json:"socketTimeoutMillis,omitempty" tf:"socket_timeout_millis,omitempty"`
 
+	// to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
 	// When set, the repository should store cached artifacts locally. When not set, artifacts are not stored locally, and direct repository-to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
 	StoreArtifactsLocally *bool `json:"storeArtifactsLocally,omitempty" tf:"store_artifacts_locally,omitempty"`
 
+	// (Boolean) When set, remote artifacts are fetched along with their properties.
 	// When set, remote artifacts are fetched along with their properties.
 	SynchronizeProperties *bool `json:"synchronizeProperties,omitempty" tf:"synchronize_properties,omitempty"`
 
+	// (String) This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	// This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
+	// (Number) Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
 	// Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
 	UnusedArtifactsCleanupPeriodHours *float64 `json:"unusedArtifactsCleanupPeriodHours,omitempty" tf:"unused_artifacts_cleanup_period_hours,omitempty"`
 
+	// (String)
 	Username *string `json:"username,omitempty" tf:"username,omitempty"`
 
+	// (Boolean) Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
 	// Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
 }
 
 type DebianRepositoryParameters struct {
 
+	// (Boolean) 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
 	// +kubebuilder:validation:Optional
 	AllowAnyHostAuth *bool `json:"allowAnyHostAuth,omitempty" tf:"allow_any_host_auth,omitempty"`
 
+	// site scripting attacks).
 	// When set, you may view content such as HTML or Javadoc files directly from Artifactory.
 	// This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
 	// +kubebuilder:validation:Optional
 	ArchiveBrowsingEnabled *bool `json:"archiveBrowsingEnabled,omitempty" tf:"archive_browsing_enabled,omitempty"`
 
+	// (Number) The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
 	// The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
 	// +kubebuilder:validation:Optional
 	AssumedOfflinePeriodSecs *float64 `json:"assumedOfflinePeriodSecs,omitempty" tf:"assumed_offline_period_secs,omitempty"`
 
+	// (Boolean) (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
 	// (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
 	// +kubebuilder:validation:Optional
 	BlackedOut *bool `json:"blackedOut,omitempty" tf:"blacked_out,omitempty"`
 
+	// (Boolean) If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	// If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
 	// +kubebuilder:validation:Optional
 	BlockMismatchingMimeTypes *bool `json:"blockMismatchingMimeTypes,omitempty" tf:"block_mismatching_mime_types,omitempty"`
 
+	// (Boolean) Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
 	// Before caching an artifact, Artifactory first sends a HEAD request to the remote resource. In some remote resources, HEAD requests are disallowed and therefore rejected, even though downloading the artifact is allowed. When checked, Artifactory will bypass the HEAD request and cache the artifact directly using a GET request.
 	// +kubebuilder:validation:Optional
 	BypassHeadRequests *bool `json:"bypassHeadRequests,omitempty" tf:"bypass_head_requests,omitempty"`
 
+	// (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
 	// When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
 	// +kubebuilder:validation:Optional
 	CdnRedirect *bool `json:"cdnRedirect,omitempty" tf:"cdn_redirect,omitempty"`
 
+	// (String) Client TLS certificate name.
 	// Client TLS certificate name.
 	// +kubebuilder:validation:Optional
 	ClientTLSCertificate *string `json:"clientTlsCertificate,omitempty" tf:"client_tls_certificate,omitempty"`
 
+	// (Block List) (see below for nested schema)
 	// +kubebuilder:validation:Optional
 	ContentSynchronisation []DebianRepositoryContentSynchronisationParameters `json:"contentSynchronisation,omitempty" tf:"content_synchronisation,omitempty"`
 
+	// (Boolean) Enable repository to be protected by the Curation service.
+	// Enable repository to be protected by the Curation service.
+	// +kubebuilder:validation:Optional
+	Curated *bool `json:"curated,omitempty" tf:"curated,omitempty"`
+
+	// (String) Public description.
 	// Public description.
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
+	// (Boolean) When set to true, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
 	// When set to `true`, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
 	// +kubebuilder:validation:Optional
 	DisableProxy *bool `json:"disableProxy,omitempty" tf:"disable_proxy,omitempty"`
 
+	// (Boolean) Whether to disable URL normalization. Default is false.
 	// Whether to disable URL normalization. Default is `false`.
 	// +kubebuilder:validation:Optional
 	DisableURLNormalization *bool `json:"disableUrlNormalization,omitempty" tf:"disable_url_normalization,omitempty"`
 
+	// (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
 	// When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
 	// +kubebuilder:validation:Optional
 	DownloadDirect *bool `json:"downloadDirect,omitempty" tf:"download_direct,omitempty"`
 
+	// (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
 	// Enables cookie management if the remote repository uses cookies to manage client state.
 	// +kubebuilder:validation:Optional
 	EnableCookieManagement *bool `json:"enableCookieManagement,omitempty" tf:"enable_cookie_management,omitempty"`
 
+	// (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
 	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
 	// +kubebuilder:validation:Optional
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
+	// (Boolean) When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	// When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
 	// +kubebuilder:validation:Optional
 	HardFail *bool `json:"hardFail,omitempty" tf:"hard_fail,omitempty"`
 
+	// separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
 	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	// +kubebuilder:validation:Optional
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
+	// (Boolean) Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
 	// Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
 	// +kubebuilder:validation:Optional
 	ListRemoteFolderItems *bool `json:"listRemoteFolderItems,omitempty" tf:"list_remote_folder_items,omitempty"`
 
+	// (String) The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
 	// The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
 	// +kubebuilder:validation:Optional
 	LocalAddress *string `json:"localAddress,omitempty" tf:"local_address,omitempty"`
 
+	// (Number) Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
 	// Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
 	// +kubebuilder:validation:Optional
 	MetadataRetrievalTimeoutSecs *float64 `json:"metadataRetrievalTimeoutSecs,omitempty" tf:"metadata_retrieval_timeout_secs,omitempty"`
 
+	// (String) The set of mime types that should override the block_mismatching_mime_types setting. Eg: 'application/json,application/xml'. Default value is empty.
 	// The set of mime types that should override the block_mismatching_mime_types setting. Eg: 'application/json,application/xml'. Default value is empty.
 	// +kubebuilder:validation:Optional
 	MismatchingMimeTypesOverrideList *string `json:"mismatchingMimeTypesOverrideList,omitempty" tf:"mismatching_mime_types_override_list,omitempty"`
 
+	// (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
 	// Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
 	// +kubebuilder:validation:Optional
 	MissedCachePeriodSeconds *float64 `json:"missedCachePeriodSeconds,omitempty" tf:"missed_cache_period_seconds,omitempty"`
 
+	// (String) Internal description.
 	// Internal description.
 	// +kubebuilder:validation:Optional
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
+	// cached artifacts are retrieved.
 	// If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
 	// +kubebuilder:validation:Optional
 	Offline *bool `json:"offline,omitempty" tf:"offline,omitempty"`
 
+	// through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	// Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+	// +kubebuilder:validation:Optional
+	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
+
+	// (String, Sensitive)
 	// +kubebuilder:validation:Optional
 	PasswordSecretRef *v1.SecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
+	// only) Write-only equivalent of password.11 or later. Conflicts with password. Because write-only values are not tracked in state, use password_wo_version to signal when the secret has changed so it is re-sent to Artifactory.
 	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
 	// +kubebuilder:validation:Optional
 	PasswordWoSecretRef *v1.SecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
 
+	// sends the current password_wo value to Artifactory. Only meaningful together with password_wo.
 	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
 	// +kubebuilder:validation:Optional
 	PasswordWoVersion *string `json:"passwordWoVersion,omitempty" tf:"password_wo_version,omitempty"`
 
+	// (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	// +kubebuilder:validation:Optional
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
 
+	// (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// Before Artifactory 7.53.1, up to 2 values (`DEV` and `PROD`) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project.
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	ProjectEnvironments []*string `json:"projectEnvironments,omitempty" tf:"project_environments,omitempty"`
 
+	// 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
 	// Project key for assigning this repository to. Must be 2 - 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
 	// +kubebuilder:validation:Optional
 	ProjectKey *string `json:"projectKey,omitempty" tf:"project_key,omitempty"`
 
+	// (Boolean) When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+	// When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+	// +kubebuilder:validation:Optional
+	PropagateQueryParams *bool `json:"propagateQueryParams,omitempty" tf:"propagate_query_params,omitempty"`
+
+	// (Set of String) List of property set name
 	// List of property set name
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	PropertySets []*string `json:"propertySets,omitempty" tf:"property_sets,omitempty"`
 
+	// (String) Proxy key from Artifactory Proxies settings. Can't be set if disable_proxy = true.
 	// Proxy key from Artifactory Proxies settings. Can't be set if `disable_proxy = true`.
 	// +kubebuilder:validation:Optional
 	Proxy *string `json:"proxy,omitempty" tf:"proxy,omitempty"`
 
+	// (String) Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: param1=val1&param2=val2&param3=val3
 	// Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: `param1=val1&param2=val2&param3=val3`
 	// +kubebuilder:validation:Optional
 	QueryParams *string `json:"queryParams,omitempty" tf:"query_params,omitempty"`
 
+	// (String) Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
 	// Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
 	// +kubebuilder:validation:Optional
 	RemoteRepoLayoutRef *string `json:"remoteRepoLayoutRef,omitempty" tf:"remote_repo_layout_ref,omitempty"`
 
+	// (String) Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
 	// Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
 	// +kubebuilder:validation:Optional
 	RepoLayoutRef *string `json:"repoLayoutRef,omitempty" tf:"repo_layout_ref,omitempty"`
 
+	// (Number) Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
 	// Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
 	// +kubebuilder:validation:Optional
 	RetrievalCachePeriodSeconds *float64 `json:"retrievalCachePeriodSeconds,omitempty" tf:"retrieval_cache_period_seconds,omitempty"`
 
+	// (Boolean) When set to true, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+	// When set to `true`, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+	// +kubebuilder:validation:Optional
+	RetrieveSha256FromServer *bool `json:"retrieveSha256FromServer,omitempty" tf:"retrieve_sha256_from_server,omitempty"`
+
+	// (Boolean, Deprecated)
 	// +kubebuilder:validation:Optional
 	ShareConfiguration *bool `json:"shareConfiguration,omitempty" tf:"share_configuration,omitempty"`
 
+	// (Number) Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
 	// Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
 	// +kubebuilder:validation:Optional
 	SocketTimeoutMillis *float64 `json:"socketTimeoutMillis,omitempty" tf:"socket_timeout_millis,omitempty"`
 
+	// to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
 	// When set, the repository should store cached artifacts locally. When not set, artifacts are not stored locally, and direct repository-to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
 	// +kubebuilder:validation:Optional
 	StoreArtifactsLocally *bool `json:"storeArtifactsLocally,omitempty" tf:"store_artifacts_locally,omitempty"`
 
+	// (Boolean) When set, remote artifacts are fetched along with their properties.
 	// When set, remote artifacts are fetched along with their properties.
 	// +kubebuilder:validation:Optional
 	SynchronizeProperties *bool `json:"synchronizeProperties,omitempty" tf:"synchronize_properties,omitempty"`
 
+	// (String) This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	// This is a URL to the remote registry. Consider using HTTPS to ensure a secure connection.
 	// +kubebuilder:validation:Optional
 	URL *string `json:"url,omitempty" tf:"url,omitempty"`
 
+	// (Number) Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
 	// Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
 	// +kubebuilder:validation:Optional
 	UnusedArtifactsCleanupPeriodHours *float64 `json:"unusedArtifactsCleanupPeriodHours,omitempty" tf:"unused_artifacts_cleanup_period_hours,omitempty"`
 
+	// (String)
 	// +kubebuilder:validation:Optional
 	Username *string `json:"username,omitempty" tf:"username,omitempty"`
 
+	// (Boolean) Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
 	// Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
 	// +kubebuilder:validation:Optional
 	XrayIndex *bool `json:"xrayIndex,omitempty" tf:"xray_index,omitempty"`
@@ -532,7 +726,7 @@ type DebianRepositoryStatus struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:storageversion
 
-// DebianRepository is the Schema for the DebianRepositorys API. <no value>
+// DebianRepository is the Schema for the DebianRepositorys API. Provides a resource to creates a  repository.
 // +kubebuilder:printcolumn:name="SYNCED",type="string",JSONPath=".status.conditions[?(@.type=='Synced')].status"
 // +kubebuilder:printcolumn:name="READY",type="string",JSONPath=".status.conditions[?(@.type=='Ready')].status"
 // +kubebuilder:printcolumn:name="EXTERNAL-NAME",type="string",JSONPath=".metadata.annotations.crossplane\\.io/external-name"

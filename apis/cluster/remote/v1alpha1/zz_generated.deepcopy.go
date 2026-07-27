@@ -8784,6 +8784,11 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Curated != nil {
+		in, out := &in.Curated, &out.Curated
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -8859,6 +8864,11 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -8895,6 +8905,11 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.PropagateQueryParams != nil {
+		in, out := &in.PropagateQueryParams, &out.PropagateQueryParams
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertySets != nil {
 		in, out := &in.PropertySets, &out.PropertySets
 		*out = make([]*string, len(*in))
@@ -8929,6 +8944,11 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 	if in.RetrievalCachePeriodSeconds != nil {
 		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
 		*out = new(float64)
+		**out = **in
+	}
+	if in.RetrieveSha256FromServer != nil {
+		in, out := &in.RetrieveSha256FromServer, &out.RetrieveSha256FromServer
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ShareConfiguration != nil {
@@ -9065,6 +9085,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Curated != nil {
+		in, out := &in.Curated, &out.Curated
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -9145,6 +9170,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordWoVersion != nil {
 		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
 		*out = new(string)
@@ -9169,6 +9199,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 	if in.ProjectKey != nil {
 		in, out := &in.ProjectKey, &out.ProjectKey
 		*out = new(string)
+		**out = **in
+	}
+	if in.PropagateQueryParams != nil {
+		in, out := &in.PropagateQueryParams, &out.PropagateQueryParams
+		*out = new(bool)
 		**out = **in
 	}
 	if in.PropertySets != nil {
@@ -9205,6 +9240,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 	if in.RetrievalCachePeriodSeconds != nil {
 		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
 		*out = new(float64)
+		**out = **in
+	}
+	if in.RetrieveSha256FromServer != nil {
+		in, out := &in.RetrieveSha256FromServer, &out.RetrieveSha256FromServer
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ShareConfiguration != nil {
@@ -9309,6 +9349,11 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Curated != nil {
+		in, out := &in.Curated, &out.Curated
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -9384,6 +9429,11 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -9420,6 +9470,11 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 		*out = new(string)
 		**out = **in
 	}
+	if in.PropagateQueryParams != nil {
+		in, out := &in.PropagateQueryParams, &out.PropagateQueryParams
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertySets != nil {
 		in, out := &in.PropertySets, &out.PropertySets
 		*out = make([]*string, len(*in))
@@ -9454,6 +9509,11 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 	if in.RetrievalCachePeriodSeconds != nil {
 		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
 		*out = new(float64)
+		**out = **in
+	}
+	if in.RetrieveSha256FromServer != nil {
+		in, out := &in.RetrieveSha256FromServer, &out.RetrieveSha256FromServer
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ShareConfiguration != nil {
@@ -9907,6 +9967,11 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Curated != nil {
+		in, out := &in.Curated, &out.Curated
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -9982,6 +10047,11 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -10018,6 +10088,11 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.PropagateQueryParams != nil {
+		in, out := &in.PropagateQueryParams, &out.PropagateQueryParams
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertySets != nil {
 		in, out := &in.PropertySets, &out.PropertySets
 		*out = make([]*string, len(*in))
@@ -10052,6 +10127,11 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 	if in.RetrievalCachePeriodSeconds != nil {
 		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
 		*out = new(float64)
+		**out = **in
+	}
+	if in.RetrieveSha256FromServer != nil {
+		in, out := &in.RetrieveSha256FromServer, &out.RetrieveSha256FromServer
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ShareConfiguration != nil {
@@ -10188,6 +10268,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Curated != nil {
+		in, out := &in.Curated, &out.Curated
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -10268,6 +10353,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordWoVersion != nil {
 		in, out := &in.PasswordWoVersion, &out.PasswordWoVersion
 		*out = new(string)
@@ -10292,6 +10382,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 	if in.ProjectKey != nil {
 		in, out := &in.ProjectKey, &out.ProjectKey
 		*out = new(string)
+		**out = **in
+	}
+	if in.PropagateQueryParams != nil {
+		in, out := &in.PropagateQueryParams, &out.PropagateQueryParams
+		*out = new(bool)
 		**out = **in
 	}
 	if in.PropertySets != nil {
@@ -10328,6 +10423,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 	if in.RetrievalCachePeriodSeconds != nil {
 		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
 		*out = new(float64)
+		**out = **in
+	}
+	if in.RetrieveSha256FromServer != nil {
+		in, out := &in.RetrieveSha256FromServer, &out.RetrieveSha256FromServer
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ShareConfiguration != nil {
@@ -10432,6 +10532,11 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Curated != nil {
+		in, out := &in.Curated, &out.Curated
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Description != nil {
 		in, out := &in.Description, &out.Description
 		*out = new(string)
@@ -10507,6 +10612,11 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 		*out = new(bool)
 		**out = **in
 	}
+	if in.PassThrough != nil {
+		in, out := &in.PassThrough, &out.PassThrough
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
 		*out = new(v1.SecretKeySelector)
@@ -10543,6 +10653,11 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.PropagateQueryParams != nil {
+		in, out := &in.PropagateQueryParams, &out.PropagateQueryParams
+		*out = new(bool)
+		**out = **in
+	}
 	if in.PropertySets != nil {
 		in, out := &in.PropertySets, &out.PropertySets
 		*out = make([]*string, len(*in))
@@ -10577,6 +10692,11 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 	if in.RetrievalCachePeriodSeconds != nil {
 		in, out := &in.RetrievalCachePeriodSeconds, &out.RetrievalCachePeriodSeconds
 		*out = new(float64)
+		**out = **in
+	}
+	if in.RetrieveSha256FromServer != nil {
+		in, out := &in.RetrieveSha256FromServer, &out.RetrieveSha256FromServer
+		*out = new(bool)
 		**out = **in
 	}
 	if in.ShareConfiguration != nil {

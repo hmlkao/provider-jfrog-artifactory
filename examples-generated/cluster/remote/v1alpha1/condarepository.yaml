@@ -1,0 +1,14 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: CondaRepository
+metadata:
+  annotations:
+    meta.upbound.io/example-id: remote/v1alpha1/condarepository
+  labels:
+    testing.upbound.io/example-name: my-remote-conda
+  name: my-remote-conda
+spec:
+  forProvider:
+    curated: true
+    description: Remote Conda repository proxying Anaconda
+    passThrough: false
+    url: https://repo.anaconda.com/pkgs/main

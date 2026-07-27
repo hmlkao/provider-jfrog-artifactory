@@ -1,0 +1,14 @@
+apiVersion: remote.artifactory.jfrog.crossplane.io/v1alpha1
+kind: DebianRepository
+metadata:
+  annotations:
+    meta.upbound.io/example-id: remote/v1alpha1/debianrepository
+  labels:
+    testing.upbound.io/example-name: my-remote-debian
+  name: my-remote-debian
+spec:
+  forProvider:
+    curated: true
+    description: Remote Debian repository proxying Ubuntu archive
+    passThrough: false
+    url: http://archive.ubuntu.com/ubuntu/
