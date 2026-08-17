@@ -3997,6 +3997,91 @@ resources:
             url: (String) Specifies the URL that the Webhook invokes. This will be the URL that Artifactory will send an HTTP POST request to.
             use_secret_for_signing: (Boolean) When set to true, the secret will be used to sign the event payload, allowing the target to validate that the payload content has not been changed and will not be passed as part of the event. If left unset or set to false, the secret is passed through the X-JFrog-Event-Auth HTTP header.
         importStatements: []
+    artifactory_remote_aieditorextensions_repository:
+        subCategory: ""
+        description: Provides a remote AI-Editor Extensions repository that proxies and caches editor extensions from a VS Code compatible marketplace gallery, such as https://marketplace.visualstudio.com/_apis/public/gallery. This package type is supported as a remote repository only, so the provider exposes no local, virtual, or federated equivalent.
+        name: artifactory_remote_aieditorextensions_repository
+        title: artifactory_remote_aieditorextensions_repository Resource - terraform-provider-artifactory
+        examples:
+            - name: my-aieditorextensions-remote
+              manifest: |-
+                {
+                  "curated": false,
+                  "description": "Remote AI-Editor Extensions repository proxying the VS Code marketplace gallery",
+                  "external_dependencies_enabled": true,
+                  "external_dependencies_patterns": [
+                    "**/**vsassets.io/**"
+                  ],
+                  "key": "my-aieditorextensions-remote",
+                  "notes": "Internal repository",
+                  "pass_through": false,
+                  "url": "https://marketplace.visualstudio.com/_apis/public/gallery"
+                }
+        argumentDocs:
+            allow_any_host_auth: (Boolean) 'Lenient Host Authentication' in the UI. Allow credentials of this repository to be used on requests redirected to any other host.
+            archive_browsing_enabled: |-
+                (Boolean) When set, you may view content such as HTML or Javadoc files directly from Artifactory.
+                This may not be safe and therefore requires strict content moderation to prevent malicious users from uploading content that may compromise security (e.g., cross-site scripting attacks).
+            assumed_offline_period_secs: (Number) The number of seconds the repository stays in assumed offline state after a connection error. At the end of this time, an online check is attempted in order to reset the offline status. A value of 0 means the repository is never assumed offline.
+            blacked_out: (Boolean) (A.K.A 'Ignore Repository' on the UI) When set, the repository or its local cache do not participate in artifact resolution.
+            block_mismatching_mime_types: (Boolean) If set, artifacts will fail to download if a mismatch is detected between requested and received mimetype, according to the list specified in the system properties file under blockedMismatchingMimeTypes. You can override by adding mimetypes to the override list 'mismatching_mime_types_override_list'.
+            bypass_head_requests: (Boolean) Artifactory always enables this setting for AI-Editor Extensions repositories and rejects any attempt to change it, so it is read-only and always  (it cannot be set in configuration).
+            cdn_redirect: (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from AWS CloudFront. Available in Enterprise+ and Edge licenses only. Default value is 'false'
+            client_tls_certificate: (String) Client TLS certificate name.
+            content_synchronisation: (Block List) (see below for nested schema)
+            curated: (Boolean) Enable repository to be protected by the Curation service.
+            custom_http_headers: (Attributes List) Up to 5 custom HTTP headers sent on every outbound request to the remote URL. Header values are write-only and masked in plan output. To remove all headers, remove this attribute. When sensitive is true, Artifactory encrypts the value server-side. Requires Artifactory 7.146.0 or later. (see below for nested schema)
+            description: (String) Public description.
+            disable_proxy: (Boolean) When set to true, the proxy is disabled, and not returned in the API response body. If there is a default proxy set for the Artifactory instance, it will be ignored, too. Introduced since Artifactory 7.41.7.
+            disable_url_normalization: (Boolean) Whether to disable URL normalization. Default is false.
+            download_direct: (Boolean) When set, download requests to this repository will redirect the client to download the artifact directly from the cloud storage provider. Available in Enterprise+ and Edge licenses only. Default value is 'false'.
+            enable_cookie_management: (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
+            enable_token_authentication: (Boolean) Enable token (Bearer) based authentication. Defaults to false, matching the Artifactory default for this package type. Note this differs from the Docker and OCI remote repository resources, which default it to true.
+            enabled: (Boolean) If set, Remote repository proxies a local or remote repository from another instance of Artifactory. Default value is 'false'.
+            excludes_pattern: (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
+            external_dependencies_enabled: (Boolean) When set, Artifactory can resolve extension dependencies from the external sources matching external_dependencies_patterns. Unlike other package types, this defaults to true because extension payloads are hosted on a separate CDN from the gallery URL.
+            external_dependencies_patterns: (List of String) An allow list of Ant-style path patterns that determine which remote hosts external extension dependencies may be downloaded from. Only applies when external_dependencies_enabled is true. Default value is ["**/**vsassets.io/**"], which covers the CDN serving VS Code marketplace extension payloads.
+            hard_fail: (Boolean) When set, Artifactory will return an error to the client that causes the build to fail if there is a failure to communicate with this repository.
+            includes_pattern: (String) List of comma-separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+            key: (String) A mandatory identifier for the repository that must be unique. Must be 1 - 64 alphanumeric and hyphen characters. It cannot contain spaces or special characters.
+            list_remote_folder_items: (Boolean) Lists the items of remote folders in simple and list browsing. The remote content is cached according to the value of the 'Retrieval Cache Period'. Default value is 'false'. This field exists in the API but not in the UI.
+            local_address: (String) The local address to be used when creating connections. Useful for specifying the interface to use on systems with multiple network interfaces.
+            metadata_retrieval_timeout_secs: (Number) Metadata Retrieval Cache Timeout (Sec) in the UI.This value refers to the number of seconds to wait for retrieval from the remote before serving locally cached artifact or fail the request.
+            mismatching_mime_types_override_list: '(String) The set of mime types that should override the block_mismatching_mime_types setting. Eg: ''application/json,application/xml''. Default value is empty.'
+            missed_cache_period_seconds: (Number) Missed Retrieval Cache Period (Sec) in the UI. The number of seconds to cache artifact retrieval misses (artifact not found). A value of 0 indicates no caching.
+            name: (String) Header name. Artifactory stores header names lower-cased.
+            notes: (String) Internal description.
+            offline: (Boolean) If set, Artifactory does not try to fetch remote artifacts. Only locally-cached artifacts are retrieved.
+            pass_through: (Boolean) Enable Pass-through for Curation Audit. When enabled, allows artifacts to pass through the Curation audit process.
+            password: (String, Sensitive)
+            password_wo: (String, Sensitive, Write-only) Write-only equivalent of password. The value is used to authenticate against the remote registry but is never stored in Terraform state or plan. Requires Terraform 1.11 or later. Conflicts with password. Because write-only values are not tracked in state, use password_wo_version to signal when the secret has changed so it is re-sent to Artifactory.
+            password_wo_version: (String) A version identifier for password_wo. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current password_wo value to Artifactory. Only meaningful together with password_wo.
+            priority_resolution: (Boolean) Setting repositories with priority will cause metadata to be merged only from repositories set with this field
+            project_environments: (Set of String) Before Artifactory 7.53.1, up to 2 values (DEV and PROD) are allowed. From 7.53.1 to 7.107.1, only one value is allowed. From 7.107.1, multiple values are allowed.The attribute should only be used if the repository is already assigned to the existing project. If not, the attribute will be ignored by Artifactory, but will remain in the Terraform state, which will create state drift during the update.
+            project_key: (String) Project key for assigning this repository to. Must be 2 - 32 lowercase alphanumeric and hyphen characters. When assigning repository to a project, repository key must be prefixed with project key, separated by a dash.
+            propagate_query_params: (Boolean) When set, if query params are included in the request to Artifactory, they will be passed on to the remote repository.
+            properties_enabled: (Boolean) If set, properties for artifacts that have been cached in this repository will be updated if they are modified in the artifact hosted at the remote Artifactory instance. The trigger to synchronize the properties is download of the artifact from the remote repository cache of the local Artifactory instance. Default value is 'false'.
+            property_sets: (Set of String) List of property set name
+            proxy: (String) Proxy key from Artifactory Proxies settings. Can't be set if disable_proxy = true.
+            query_params: '(String) Custom HTTP query parameters that will be automatically included in all remote resource requests. For example: param1=val1&param2=val2&param3=val3'
+            remote_repo_layout_ref: (String) Repository layout key for the remote layout mapping. Repository can be created without this attribute (or set to an empty string). Once it's set, it can't be removed by passing an empty string or removing the attribute, that will be ignored by the Artifactory API. UI shows an error message, if the user tries to remove the value.
+            repo_layout_ref: (String) Sets the layout that the repository should use for storing and identifying modules. A recommended layout that corresponds to the package type defined is suggested, and index packages uploaded and calculate metadata accordingly.
+            retrieval_cache_period_seconds: (Number) Metadata Retrieval Cache Period (Sec) in the UI. This value refers to the number of seconds to cache metadata files before checking for newer versions on remote server. A value of 0 indicates no caching.
+            retrieve_sha256_from_server: (Boolean) When set to true, Artifactory retrieves the SHA256 from the remote server if it is not cached in the remote repo.
+            sensitive: (Boolean) When true, Artifactory encrypts the header value server-side. Defaults to false.
+            share_configuration: (Boolean, Deprecated)
+            socket_timeout_millis: (Number) Network timeout (in ms) to use when establishing a connection and for unanswered requests. Timing out on a network operation is considered a retrieval failure.
+            source_origin_absence_detection: (Boolean) If set, Artifactory displays an indication on cached items if they have been deleted from the corresponding repository in the remote Artifactory instance. Default value is 'false'
+            statistics_enabled: (Boolean) If set, Artifactory will notify the remote instance whenever an artifact in the Smart Remote Repository is downloaded locally so that it can update its download counter. Note that if this option is not set, there may be a discrepancy between the number of artifacts reported to have been downloaded in the different Artifactory instances of the proxy chain. Default value is 'false'.
+            store_artifacts_locally: (Boolean) When set, the repository should store cached artifacts locally. When not set, artifacts are not stored locally, and direct repository-to-client streaming is used. This can be useful for multi-server setups over a high-speed LAN, with one Artifactory caching certain data on central storage, and streaming it directly to satellite pass-though Artifactory servers.
+            synchronize_properties: (Boolean) When set, remote artifacts are fetched along with their properties.
+            unused_artifacts_cleanup_period_hours: (Number) Unused Artifacts Cleanup Period (Hr) in the UI. The number of hours to wait before an artifact is deemed 'unused' and eligible for cleanup from the repository. A value of 0 means automatic cleanup of cached artifacts is disabled.
+            url: '(String) The URL of the marketplace gallery to proxy. For the VS Code marketplace use https://marketplace.visualstudio.com/_apis/public/gallery. This attribute is required: Artifactory applies no default URL for this package type and rejects the request with No URL defined for remote repository if it is omitted.'
+            username: (String)
+            value: (String, Sensitive) Header value. Masked in Terraform plan output. Stored in state as configured; never read back from Artifactory.
+            xray_index: (Boolean) Enable Indexing In Xray. Repository will be indexed with the default retention period. You will be able to change it via Xray settings.
+        importStatements:
+            - terraform import artifactory_remote_aieditorextensions_repository.my-aieditorextensions-remote my-aieditorextensions-remote
     artifactory_remote_alpine_repository Resource - terraform-provider-artifactory:
         subCategory: ""
         description: Provides a resource to creates a  repository.
