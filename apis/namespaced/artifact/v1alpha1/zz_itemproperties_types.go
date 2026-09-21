@@ -29,7 +29,7 @@ type ItemPropertiesInitParameters struct {
 	//
 	// ~>Keys are limited up to 255 characters and values are limited up to 2,400 characters. Using properties with values over this limit might cause backend issues.
 	//
-	// ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~“!@#%&<>;=,±§` and the space character.
+	// ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~``!@#%&<>;=,±§` and the space character.
 	Properties map[string][]*string `json:"properties,omitempty" tf:"properties,omitempty"`
 
 	// (String) Respository key.
@@ -53,7 +53,7 @@ type ItemPropertiesObservation struct {
 	//
 	// ~>Keys are limited up to 255 characters and values are limited up to 2,400 characters. Using properties with values over this limit might cause backend issues.
 	//
-	// ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~“!@#%&<>;=,±§` and the space character.
+	// ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~``!@#%&<>;=,±§` and the space character.
 	Properties map[string][]*string `json:"properties,omitempty" tf:"properties,omitempty"`
 
 	// (String) Respository key.
@@ -78,7 +78,7 @@ type ItemPropertiesParameters struct {
 	//
 	// ~>Keys are limited up to 255 characters and values are limited up to 2,400 characters. Using properties with values over this limit might cause backend issues.
 	//
-	// ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~“!@#%&<>;=,±§` and the space character.
+	// ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~``!@#%&<>;=,±§` and the space character.
 	// +kubebuilder:validation:Optional
 	Properties map[string][]*string `json:"properties,omitempty" tf:"properties,omitempty"`
 

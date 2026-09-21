@@ -108,7 +108,7 @@ spec:
                       specialChar:
                         description: |-
                           ./:;<=>?@[\]^_`{|}~
-                          Minimum number of special char that the password must contain. Special chars list: “!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~“
+                          Minimum number of special char that the password must contain. Special chars list: ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``
                         type: number
                       uppercase:
                         description: |-
@@ -199,7 +199,7 @@ spec:
                       specialChar:
                         description: |-
                           ./:;<=>?@[\]^_`{|}~
-                          Minimum number of special char that the password must contain. Special chars list: “!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~“
+                          Minimum number of special char that the password must contain. Special chars list: ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``
                         type: number
                       uppercase:
                         description: |-
@@ -348,7 +348,7 @@ spec:
                       specialChar:
                         description: |-
                           ./:;<=>?@[\]^_`{|}~
-                          Minimum number of special char that the password must contain. Special chars list: “!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~“
+                          Minimum number of special char that the password must contain. Special chars list: ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``
                         type: number
                       uppercase:
                         description: |-
