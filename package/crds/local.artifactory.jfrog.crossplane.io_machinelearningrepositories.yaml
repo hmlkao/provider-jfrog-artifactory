@@ -102,13 +102,13 @@ spec:
                     type: boolean
                   excludesPattern:
                     description: |-
-                      (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-                      List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+                      separated list of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
+                      Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
                     type: string
                   includesPattern:
                     description: |-
-                      separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
-                      List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+                      separated list of artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+                      Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
                     type: string
                   notes:
                     description: |-
@@ -193,13 +193,13 @@ spec:
                     type: boolean
                   excludesPattern:
                     description: |-
-                      (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-                      List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+                      separated list of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
+                      Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
                     type: string
                   includesPattern:
                     description: |-
-                      separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
-                      List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+                      separated list of artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+                      Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
                     type: string
                   notes:
                     description: |-
@@ -363,15 +363,15 @@ spec:
                     type: boolean
                   excludesPattern:
                     description: |-
-                      (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-                      List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+                      separated list of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
+                      Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
                     type: string
                   id:
                     type: string
                   includesPattern:
                     description: |-
-                      separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
-                      List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+                      separated list of artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+                      Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
                     type: string
                   notes:
                     description: |-

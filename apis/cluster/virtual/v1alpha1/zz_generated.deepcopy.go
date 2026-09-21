@@ -62,6 +62,11 @@ func (in *AlpineRepositoryInitParameters) DeepCopyInto(out *AlpineRepositoryInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -181,6 +186,11 @@ func (in *AlpineRepositoryObservation) DeepCopyInto(out *AlpineRepositoryObserva
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -276,6 +286,11 @@ func (in *AlpineRepositoryParameters) DeepCopyInto(out *AlpineRepositoryParamete
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -427,6 +442,11 @@ func (in *AnsibleRepositoryInitParameters) DeepCopyInto(out *AnsibleRepositoryIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -541,6 +561,11 @@ func (in *AnsibleRepositoryObservation) DeepCopyInto(out *AnsibleRepositoryObser
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -631,6 +656,11 @@ func (in *AnsibleRepositoryParameters) DeepCopyInto(out *AnsibleRepositoryParame
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -798,6 +828,11 @@ func (in *BowerRepositoryInitParameters) DeepCopyInto(out *BowerRepositoryInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -928,6 +963,11 @@ func (in *BowerRepositoryObservation) DeepCopyInto(out *BowerRepositoryObservati
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -1034,6 +1074,11 @@ func (in *BowerRepositoryParameters) DeepCopyInto(out *BowerRepositoryParameters
 	if in.ExternalDependenciesRemoteRepo != nil {
 		in, out := &in.ExternalDependenciesRemoteRepo, &out.ExternalDependenciesRemoteRepo
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -1175,6 +1220,11 @@ func (in *CRANRepositoryInitParameters) DeepCopyInto(out *CRANRepositoryInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -1289,6 +1339,11 @@ func (in *CRANRepositoryObservation) DeepCopyInto(out *CRANRepositoryObservation
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -1379,6 +1434,11 @@ func (in *CRANRepositoryParameters) DeepCopyInto(out *CRANRepositoryParameters) 
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -1525,6 +1585,11 @@ func (in *CocoaPodsRepositoryInitParameters) DeepCopyInto(out *CocoaPodsReposito
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -1634,6 +1699,11 @@ func (in *CocoaPodsRepositoryObservation) DeepCopyInto(out *CocoaPodsRepositoryO
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -1719,6 +1789,11 @@ func (in *CocoaPodsRepositoryParameters) DeepCopyInto(out *CocoaPodsRepositoryPa
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -1860,6 +1935,11 @@ func (in *ComposerRepositoryInitParameters) DeepCopyInto(out *ComposerRepository
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -1969,6 +2049,11 @@ func (in *ComposerRepositoryObservation) DeepCopyInto(out *ComposerRepositoryObs
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -2054,6 +2139,11 @@ func (in *ComposerRepositoryParameters) DeepCopyInto(out *ComposerRepositoryPara
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -2200,6 +2290,11 @@ func (in *ConanRepositoryInitParameters) DeepCopyInto(out *ConanRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -2319,6 +2414,11 @@ func (in *ConanRepositoryObservation) DeepCopyInto(out *ConanRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -2413,6 +2513,11 @@ func (in *ConanRepositoryParameters) DeepCopyInto(out *ConanRepositoryParameters
 	}
 	if in.ForceConanAuthentication != nil {
 		in, out := &in.ForceConanAuthentication, &out.ForceConanAuthentication
+		*out = new(bool)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
 		*out = new(bool)
 		**out = **in
 	}
@@ -2560,6 +2665,11 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -2674,6 +2784,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -2764,6 +2879,11 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -2915,6 +3035,11 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -3055,6 +3180,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -3171,6 +3301,11 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -3338,6 +3473,11 @@ func (in *DockerRepositoryInitParameters) DeepCopyInto(out *DockerRepositoryInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -3452,6 +3592,11 @@ func (in *DockerRepositoryObservation) DeepCopyInto(out *DockerRepositoryObserva
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -3542,6 +3687,11 @@ func (in *DockerRepositoryParameters) DeepCopyInto(out *DockerRepositoryParamete
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -3688,6 +3838,11 @@ func (in *GemsRepositoryInitParameters) DeepCopyInto(out *GemsRepositoryInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -3797,6 +3952,11 @@ func (in *GemsRepositoryObservation) DeepCopyInto(out *GemsRepositoryObservation
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -3882,6 +4042,11 @@ func (in *GemsRepositoryParameters) DeepCopyInto(out *GemsRepositoryParameters) 
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -4023,6 +4188,11 @@ func (in *GenericRepositoryInitParameters) DeepCopyInto(out *GenericRepositoryIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -4132,6 +4302,11 @@ func (in *GenericRepositoryObservation) DeepCopyInto(out *GenericRepositoryObser
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -4217,6 +4392,11 @@ func (in *GenericRepositoryParameters) DeepCopyInto(out *GenericRepositoryParame
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -4358,6 +4538,11 @@ func (in *GitLFSRepositoryInitParameters) DeepCopyInto(out *GitLFSRepositoryInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -4467,6 +4652,11 @@ func (in *GitLFSRepositoryObservation) DeepCopyInto(out *GitLFSRepositoryObserva
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -4552,6 +4742,11 @@ func (in *GitLFSRepositoryParameters) DeepCopyInto(out *GitLFSRepositoryParamete
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -4709,6 +4904,11 @@ func (in *GoRepositoryInitParameters) DeepCopyInto(out *GoRepositoryInitParamete
 			}
 		}
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -4834,6 +5034,11 @@ func (in *GoRepositoryObservation) DeepCopyInto(out *GoRepositoryObservation) {
 			}
 		}
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -4936,6 +5141,11 @@ func (in *GoRepositoryParameters) DeepCopyInto(out *GoRepositoryParameters) {
 				**out = **in
 			}
 		}
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
 	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
@@ -5081,6 +5291,11 @@ func (in *GradleRepositoryInitParameters) DeepCopyInto(out *GradleRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -5205,6 +5420,11 @@ func (in *GradleRepositoryObservation) DeepCopyInto(out *GradleRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -5304,6 +5524,11 @@ func (in *GradleRepositoryParameters) DeepCopyInto(out *GradleRepositoryParamete
 	}
 	if in.ForceMavenAuthentication != nil {
 		in, out := &in.ForceMavenAuthentication, &out.ForceMavenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
 		*out = new(bool)
 		**out = **in
 	}
@@ -5456,6 +5681,11 @@ func (in *HelmOCIRepositoryInitParameters) DeepCopyInto(out *HelmOCIRepositoryIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -5570,6 +5800,11 @@ func (in *HelmOCIRepositoryObservation) DeepCopyInto(out *HelmOCIRepositoryObser
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -5660,6 +5895,11 @@ func (in *HelmOCIRepositoryParameters) DeepCopyInto(out *HelmOCIRepositoryParame
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -5806,6 +6046,11 @@ func (in *HelmRepositoryInitParameters) DeepCopyInto(out *HelmRepositoryInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -5925,6 +6170,11 @@ func (in *HelmRepositoryObservation) DeepCopyInto(out *HelmRepositoryObservation
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -6020,6 +6270,11 @@ func (in *HelmRepositoryParameters) DeepCopyInto(out *HelmRepositoryParameters) 
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -6176,6 +6431,11 @@ func (in *IvyRepositoryInitParameters) DeepCopyInto(out *IvyRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -6300,6 +6560,11 @@ func (in *IvyRepositoryObservation) DeepCopyInto(out *IvyRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -6399,6 +6664,11 @@ func (in *IvyRepositoryParameters) DeepCopyInto(out *IvyRepositoryParameters) {
 	}
 	if in.ForceMavenAuthentication != nil {
 		in, out := &in.ForceMavenAuthentication, &out.ForceMavenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
 		*out = new(bool)
 		**out = **in
 	}
@@ -6556,6 +6826,11 @@ func (in *MavenRepositoryInitParameters) DeepCopyInto(out *MavenRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -6680,6 +6955,11 @@ func (in *MavenRepositoryObservation) DeepCopyInto(out *MavenRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -6779,6 +7059,11 @@ func (in *MavenRepositoryParameters) DeepCopyInto(out *MavenRepositoryParameters
 	}
 	if in.ForceMavenAuthentication != nil {
 		in, out := &in.ForceMavenAuthentication, &out.ForceMavenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
 		*out = new(bool)
 		**out = **in
 	}
@@ -6952,6 +7237,11 @@ func (in *NPMRepositoryInitParameters) DeepCopyInto(out *NPMRepositoryInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -7087,6 +7377,11 @@ func (in *NPMRepositoryObservation) DeepCopyInto(out *NPMRepositoryObservation) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -7198,6 +7493,11 @@ func (in *NPMRepositoryParameters) DeepCopyInto(out *NPMRepositoryParameters) {
 	if in.ExternalDependenciesRemoteRepo != nil {
 		in, out := &in.ExternalDependenciesRemoteRepo, &out.ExternalDependenciesRemoteRepo
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -7349,6 +7649,11 @@ func (in *NuGetRepositoryInitParameters) DeepCopyInto(out *NuGetRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -7463,6 +7768,11 @@ func (in *NuGetRepositoryObservation) DeepCopyInto(out *NuGetRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -7552,6 +7862,11 @@ func (in *NuGetRepositoryParameters) DeepCopyInto(out *NuGetRepositoryParameters
 	}
 	if in.ForceNugetAuthentication != nil {
 		in, out := &in.ForceNugetAuthentication, &out.ForceNugetAuthentication
+		*out = new(bool)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
 		*out = new(bool)
 		**out = **in
 	}
@@ -7694,6 +8009,11 @@ func (in *OCIRepositoryInitParameters) DeepCopyInto(out *OCIRepositoryInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -7808,6 +8128,11 @@ func (in *OCIRepositoryObservation) DeepCopyInto(out *OCIRepositoryObservation) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -7898,6 +8223,11 @@ func (in *OCIRepositoryParameters) DeepCopyInto(out *OCIRepositoryParameters) {
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -8044,6 +8374,11 @@ func (in *P2RepositoryInitParameters) DeepCopyInto(out *P2RepositoryInitParamete
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -8153,6 +8488,11 @@ func (in *P2RepositoryObservation) DeepCopyInto(out *P2RepositoryObservation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -8238,6 +8578,11 @@ func (in *P2RepositoryParameters) DeepCopyInto(out *P2RepositoryParameters) {
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -8379,6 +8724,11 @@ func (in *PubRepositoryInitParameters) DeepCopyInto(out *PubRepositoryInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -8488,6 +8838,11 @@ func (in *PubRepositoryObservation) DeepCopyInto(out *PubRepositoryObservation) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -8573,6 +8928,11 @@ func (in *PubRepositoryParameters) DeepCopyInto(out *PubRepositoryParameters) {
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -8714,6 +9074,11 @@ func (in *PuppetRepositoryInitParameters) DeepCopyInto(out *PuppetRepositoryInit
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -8823,6 +9188,11 @@ func (in *PuppetRepositoryObservation) DeepCopyInto(out *PuppetRepositoryObserva
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -8908,6 +9278,11 @@ func (in *PuppetRepositoryParameters) DeepCopyInto(out *PuppetRepositoryParamete
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -9049,6 +9424,11 @@ func (in *PyPIRepositoryInitParameters) DeepCopyInto(out *PyPIRepositoryInitPara
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -9158,6 +9538,11 @@ func (in *PyPIRepositoryObservation) DeepCopyInto(out *PyPIRepositoryObservation
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -9243,6 +9628,11 @@ func (in *PyPIRepositoryParameters) DeepCopyInto(out *PyPIRepositoryParameters) 
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -9384,6 +9774,11 @@ func (in *RPMRepositoryInitParameters) DeepCopyInto(out *RPMRepositoryInitParame
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -9508,6 +9903,11 @@ func (in *RPMRepositoryObservation) DeepCopyInto(out *RPMRepositoryObservation) 
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -9608,6 +10008,11 @@ func (in *RPMRepositoryParameters) DeepCopyInto(out *RPMRepositoryParameters) {
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -9769,6 +10174,11 @@ func (in *SBTRepositoryInitParameters) DeepCopyInto(out *SBTRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -9893,6 +10303,11 @@ func (in *SBTRepositoryObservation) DeepCopyInto(out *SBTRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -9992,6 +10407,11 @@ func (in *SBTRepositoryParameters) DeepCopyInto(out *SBTRepositoryParameters) {
 	}
 	if in.ForceMavenAuthentication != nil {
 		in, out := &in.ForceMavenAuthentication, &out.ForceMavenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
 		*out = new(bool)
 		**out = **in
 	}
@@ -10144,6 +10564,11 @@ func (in *SwiftRepositoryInitParameters) DeepCopyInto(out *SwiftRepositoryInitPa
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -10253,6 +10678,11 @@ func (in *SwiftRepositoryObservation) DeepCopyInto(out *SwiftRepositoryObservati
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -10338,6 +10768,11 @@ func (in *SwiftRepositoryParameters) DeepCopyInto(out *SwiftRepositoryParameters
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {
@@ -10479,6 +10914,11 @@ func (in *TerraformRepositoryInitParameters) DeepCopyInto(out *TerraformReposito
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.IncludesPattern != nil {
 		in, out := &in.IncludesPattern, &out.IncludesPattern
 		*out = new(string)
@@ -10588,6 +11028,11 @@ func (in *TerraformRepositoryObservation) DeepCopyInto(out *TerraformRepositoryO
 		*out = new(string)
 		**out = **in
 	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ID != nil {
 		in, out := &in.ID, &out.ID
 		*out = new(string)
@@ -10673,6 +11118,11 @@ func (in *TerraformRepositoryParameters) DeepCopyInto(out *TerraformRepositoryPa
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
+		**out = **in
+	}
+	if in.HideUnauthorizedResources != nil {
+		in, out := &in.HideUnauthorizedResources, &out.HideUnauthorizedResources
+		*out = new(bool)
 		**out = **in
 	}
 	if in.IncludesPattern != nil {

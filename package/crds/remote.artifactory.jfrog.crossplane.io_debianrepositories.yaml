@@ -170,10 +170,15 @@ spec:
                       (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
                       Enables cookie management if the remote repository uses cookies to manage client state.
                     type: boolean
+                  enableTokenAuthentication:
+                    description: |-
+                      (Boolean) Enable token (Bearer) based authentication. When set, use an access token as password (username may be empty) so Artifactory authenticates to the remote with a Bearer token instead of Basic auth. Default is false for most package types; OCI, Helm OCI, and Hugging Face remotes default to true.
+                      Enable token (Bearer) based authentication. When set, use an access token as `password` (username may be empty) so Artifactory authenticates to the remote with a Bearer token instead of Basic auth. Default is `false` for most package types; OCI, Helm OCI, and Hugging Face remotes default to `true`.
+                    type: boolean
                   excludesPattern:
                     description: |-
-                      (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-                      List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+                      separated list of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
+                      Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
                     type: string
                   hardFail:
                     description: |-
@@ -182,8 +187,8 @@ spec:
                     type: boolean
                   includesPattern:
                     description: |-
-                      separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
-                      List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+                      separated list of artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+                      Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
                     type: string
                   listRemoteFolderItems:
                     description: |-
@@ -474,10 +479,15 @@ spec:
                       (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
                       Enables cookie management if the remote repository uses cookies to manage client state.
                     type: boolean
+                  enableTokenAuthentication:
+                    description: |-
+                      (Boolean) Enable token (Bearer) based authentication. When set, use an access token as password (username may be empty) so Artifactory authenticates to the remote with a Bearer token instead of Basic auth. Default is false for most package types; OCI, Helm OCI, and Hugging Face remotes default to true.
+                      Enable token (Bearer) based authentication. When set, use an access token as `password` (username may be empty) so Artifactory authenticates to the remote with a Bearer token instead of Basic auth. Default is `false` for most package types; OCI, Helm OCI, and Hugging Face remotes default to `true`.
+                    type: boolean
                   excludesPattern:
                     description: |-
-                      (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-                      List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+                      separated list of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
+                      Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
                     type: string
                   hardFail:
                     description: |-
@@ -486,8 +496,8 @@ spec:
                     type: boolean
                   includesPattern:
                     description: |-
-                      separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
-                      List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+                      separated list of artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+                      Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
                     type: string
                   listRemoteFolderItems:
                     description: |-
@@ -861,10 +871,15 @@ spec:
                       (Boolean) Enables cookie management if the remote repository uses cookies to manage client state.
                       Enables cookie management if the remote repository uses cookies to manage client state.
                     type: boolean
+                  enableTokenAuthentication:
+                    description: |-
+                      (Boolean) Enable token (Bearer) based authentication. When set, use an access token as password (username may be empty) so Artifactory authenticates to the remote with a Bearer token instead of Basic auth. Default is false for most package types; OCI, Helm OCI, and Hugging Face remotes default to true.
+                      Enable token (Bearer) based authentication. When set, use an access token as `password` (username may be empty) so Artifactory authenticates to the remote with a Bearer token instead of Basic auth. Default is `false` for most package types; OCI, Helm OCI, and Hugging Face remotes default to `true`.
+                    type: boolean
                   excludesPattern:
                     description: |-
-                      (String) List of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*.By default no artifacts are excluded.
-                      List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+                      separated list of artifact patterns to exclude when evaluating artifact requests, in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
+                      Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
                     type: string
                   hardFail:
                     description: |-
@@ -875,8 +890,8 @@ spec:
                     type: string
                   includesPattern:
                     description: |-
-                      separated artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
-                      List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+                      separated list of artifact patterns to include when evaluating artifact requests in the form of x/y/**/z/*. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (**/*).
+                      Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
                     type: string
                   listRemoteFolderItems:
                     description: |-

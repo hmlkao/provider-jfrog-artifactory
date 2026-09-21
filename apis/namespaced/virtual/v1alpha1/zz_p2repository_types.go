@@ -25,10 +25,13 @@ type P2RepositoryInitParameters struct {
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
-	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+	// Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
-	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+	// When set to true, returns a 404 Not Found response instead of revealing that an unauthorized resource exists. When false (default), Artifactory keeps its normal behavior: anonymous requests get 401 and unauthorized authenticated users get 403.
+	HideUnauthorizedResources *bool `json:"hideUnauthorizedResources,omitempty" tf:"hide_unauthorized_resources,omitempty"`
+
+	// Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// Internal description.
@@ -59,12 +62,15 @@ type P2RepositoryObservation struct {
 	// Public description.
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
-	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+	// Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
+
+	// When set to true, returns a 404 Not Found response instead of revealing that an unauthorized resource exists. When false (default), Artifactory keeps its normal behavior: anonymous requests get 401 and unauthorized authenticated users get 403.
+	HideUnauthorizedResources *bool `json:"hideUnauthorizedResources,omitempty" tf:"hide_unauthorized_resources,omitempty"`
 
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
 
-	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+	// Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
 	// Internal description.
@@ -100,11 +106,15 @@ type P2RepositoryParameters struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
-	// List of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`.By default no artifacts are excluded.
+	// Comma-separated list of artifact patterns to exclude when evaluating artifact requests, in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. By default no artifacts are excluded.
 	// +kubebuilder:validation:Optional
 	ExcludesPattern *string `json:"excludesPattern,omitempty" tf:"excludes_pattern,omitempty"`
 
-	// List of comma-separated artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
+	// When set to true, returns a 404 Not Found response instead of revealing that an unauthorized resource exists. When false (default), Artifactory keeps its normal behavior: anonymous requests get 401 and unauthorized authenticated users get 403.
+	// +kubebuilder:validation:Optional
+	HideUnauthorizedResources *bool `json:"hideUnauthorizedResources,omitempty" tf:"hide_unauthorized_resources,omitempty"`
+
+	// Comma-separated list of artifact patterns to include when evaluating artifact requests in the form of `x/y/**/z/*`. This is a single string of comma-separated values, not a list of strings. When used, only artifacts matching one of the include patterns are served. By default, all artifacts are included (`**/*`).
 	// +kubebuilder:validation:Optional
 	IncludesPattern *string `json:"includesPattern,omitempty" tf:"includes_pattern,omitempty"`
 
