@@ -115,6 +115,11 @@ func (in *AlpineRepositoryInitParameters) DeepCopyInto(out *AlpineRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -396,6 +401,11 @@ func (in *AlpineRepositoryObservation) DeepCopyInto(out *AlpineRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -637,6 +647,11 @@ func (in *AlpineRepositoryParameters) DeepCopyInto(out *AlpineRepositoryParamete
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -1056,6 +1071,11 @@ func (in *AnsibleRepositoryInitParameters) DeepCopyInto(out *AnsibleRepositoryIn
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -1337,6 +1357,11 @@ func (in *AnsibleRepositoryObservation) DeepCopyInto(out *AnsibleRepositoryObser
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -1578,6 +1603,11 @@ func (in *AnsibleRepositoryParameters) DeepCopyInto(out *AnsibleRepositoryParame
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -2002,6 +2032,11 @@ func (in *BowerRepositoryInitParameters) DeepCopyInto(out *BowerRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -2298,6 +2333,11 @@ func (in *BowerRepositoryObservation) DeepCopyInto(out *BowerRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -2554,6 +2594,11 @@ func (in *BowerRepositoryParameters) DeepCopyInto(out *BowerRepositoryParameters
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -2983,6 +3028,11 @@ func (in *CRANRepositoryInitParameters) DeepCopyInto(out *CRANRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -3264,6 +3314,11 @@ func (in *CRANRepositoryObservation) DeepCopyInto(out *CRANRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -3505,6 +3560,11 @@ func (in *CRANRepositoryParameters) DeepCopyInto(out *CRANRepositoryParameters) 
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -3934,6 +3994,11 @@ func (in *CargoRepositoryInitParameters) DeepCopyInto(out *CargoRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -4230,6 +4295,11 @@ func (in *CargoRepositoryObservation) DeepCopyInto(out *CargoRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -4486,6 +4556,11 @@ func (in *CargoRepositoryParameters) DeepCopyInto(out *CargoRepositoryParameters
 	}
 	if in.EnableSparseIndex != nil {
 		in, out := &in.EnableSparseIndex, &out.EnableSparseIndex
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -4910,6 +4985,11 @@ func (in *ChefRepositoryInitParameters) DeepCopyInto(out *ChefRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -5191,6 +5271,11 @@ func (in *ChefRepositoryObservation) DeepCopyInto(out *ChefRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -5432,6 +5517,11 @@ func (in *ChefRepositoryParameters) DeepCopyInto(out *ChefRepositoryParameters) 
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -5851,6 +5941,11 @@ func (in *CocoaPodsRepositoryInitParameters) DeepCopyInto(out *CocoaPodsReposito
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -6147,6 +6242,11 @@ func (in *CocoaPodsRepositoryObservation) DeepCopyInto(out *CocoaPodsRepositoryO
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -6403,6 +6503,11 @@ func (in *CocoaPodsRepositoryParameters) DeepCopyInto(out *CocoaPodsRepositoryPa
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -6842,6 +6947,11 @@ func (in *ComposerRepositoryInitParameters) DeepCopyInto(out *ComposerRepository
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -7138,6 +7248,11 @@ func (in *ComposerRepositoryObservation) DeepCopyInto(out *ComposerRepositoryObs
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -7394,6 +7509,11 @@ func (in *ComposerRepositoryParameters) DeepCopyInto(out *ComposerRepositoryPara
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -7828,6 +7948,11 @@ func (in *ConanRepositoryInitParameters) DeepCopyInto(out *ConanRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -8124,6 +8249,11 @@ func (in *ConanRepositoryObservation) DeepCopyInto(out *ConanRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -8380,6 +8510,11 @@ func (in *ConanRepositoryParameters) DeepCopyInto(out *ConanRepositoryParameters
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -8814,6 +8949,11 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -9115,6 +9255,11 @@ func (in *CondaRepositoryObservation) DeepCopyInto(out *CondaRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -9376,6 +9521,11 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -9997,6 +10147,11 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -10298,6 +10453,11 @@ func (in *DebianRepositoryObservation) DeepCopyInto(out *DebianRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -10559,6 +10719,11 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -12062,6 +12227,11 @@ func (in *GemsRepositoryInitParameters) DeepCopyInto(out *GemsRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -12363,6 +12533,11 @@ func (in *GemsRepositoryObservation) DeepCopyInto(out *GemsRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -12624,6 +12799,11 @@ func (in *GemsRepositoryParameters) DeepCopyInto(out *GemsRepositoryParameters) 
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -13065,6 +13245,11 @@ func (in *GenericRepositoryInitParameters) DeepCopyInto(out *GenericRepositoryIn
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -13363,6 +13548,11 @@ func (in *GenericRepositoryObservation) DeepCopyInto(out *GenericRepositoryObser
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -13621,6 +13811,11 @@ func (in *GenericRepositoryParameters) DeepCopyInto(out *GenericRepositoryParame
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -14050,6 +14245,11 @@ func (in *GitLFSRepositoryInitParameters) DeepCopyInto(out *GitLFSRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -14331,6 +14531,11 @@ func (in *GitLFSRepositoryObservation) DeepCopyInto(out *GitLFSRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -14572,6 +14777,11 @@ func (in *GitLFSRepositoryParameters) DeepCopyInto(out *GitLFSRepositoryParamete
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -14996,6 +15206,11 @@ func (in *GoRepositoryInitParameters) DeepCopyInto(out *GoRepositoryInitParamete
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -15302,6 +15517,11 @@ func (in *GoRepositoryObservation) DeepCopyInto(out *GoRepositoryObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -15568,6 +15788,11 @@ func (in *GoRepositoryParameters) DeepCopyInto(out *GoRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -16012,6 +16237,11 @@ func (in *GradleRepositoryInitParameters) DeepCopyInto(out *GradleRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -16343,6 +16573,11 @@ func (in *GradleRepositoryObservation) DeepCopyInto(out *GradleRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -16634,6 +16869,11 @@ func (in *GradleRepositoryParameters) DeepCopyInto(out *GradleRepositoryParamete
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -18117,6 +18357,11 @@ func (in *HelmRepositoryInitParameters) DeepCopyInto(out *HelmRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -18419,6 +18664,11 @@ func (in *HelmRepositoryObservation) DeepCopyInto(out *HelmRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -18681,6 +18931,11 @@ func (in *HelmRepositoryParameters) DeepCopyInto(out *HelmRepositoryParameters) 
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -19126,6 +19381,11 @@ func (in *HuggingFaceMLRepositoryInitParameters) DeepCopyInto(out *HuggingFaceML
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -19417,6 +19677,11 @@ func (in *HuggingFaceMLRepositoryObservation) DeepCopyInto(out *HuggingFaceMLRep
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -19668,6 +19933,11 @@ func (in *HuggingFaceMLRepositoryParameters) DeepCopyInto(out *HuggingFaceMLRepo
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -20092,6 +20362,11 @@ func (in *IvyRepositoryInitParameters) DeepCopyInto(out *IvyRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -20413,6 +20688,11 @@ func (in *IvyRepositoryObservation) DeepCopyInto(out *IvyRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -20694,6 +20974,11 @@ func (in *IvyRepositoryParameters) DeepCopyInto(out *IvyRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -21158,6 +21443,11 @@ func (in *MavenRepositoryInitParameters) DeepCopyInto(out *MavenRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -21489,6 +21779,11 @@ func (in *MavenRepositoryObservation) DeepCopyInto(out *MavenRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -21780,6 +22075,11 @@ func (in *MavenRepositoryParameters) DeepCopyInto(out *MavenRepositoryParameters
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -22249,6 +22549,11 @@ func (in *NPMRepositoryInitParameters) DeepCopyInto(out *NPMRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -22540,6 +22845,11 @@ func (in *NPMRepositoryObservation) DeepCopyInto(out *NPMRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -22791,6 +23101,11 @@ func (in *NPMRepositoryParameters) DeepCopyInto(out *NPMRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -23225,6 +23540,11 @@ func (in *NuGetRepositoryInitParameters) DeepCopyInto(out *NuGetRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -23541,6 +23861,11 @@ func (in *NuGetRepositoryObservation) DeepCopyInto(out *NuGetRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -23817,6 +24142,11 @@ func (in *NuGetRepositoryParameters) DeepCopyInto(out *NuGetRepositoryParameters
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -25280,6 +25610,11 @@ func (in *OPKGRepositoryInitParameters) DeepCopyInto(out *OPKGRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -25561,6 +25896,11 @@ func (in *OPKGRepositoryObservation) DeepCopyInto(out *OPKGRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -25802,6 +26142,11 @@ func (in *OPKGRepositoryParameters) DeepCopyInto(out *OPKGRepositoryParameters) 
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -26221,6 +26566,11 @@ func (in *P2RepositoryInitParameters) DeepCopyInto(out *P2RepositoryInitParamete
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -26502,6 +26852,11 @@ func (in *P2RepositoryObservation) DeepCopyInto(out *P2RepositoryObservation) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -26743,6 +27098,11 @@ func (in *P2RepositoryParameters) DeepCopyInto(out *P2RepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -27162,6 +27522,11 @@ func (in *PubRepositoryInitParameters) DeepCopyInto(out *PubRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -27443,6 +27808,11 @@ func (in *PubRepositoryObservation) DeepCopyInto(out *PubRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -27684,6 +28054,11 @@ func (in *PubRepositoryParameters) DeepCopyInto(out *PubRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -28103,6 +28478,11 @@ func (in *PuppetRepositoryInitParameters) DeepCopyInto(out *PuppetRepositoryInit
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -28384,6 +28764,11 @@ func (in *PuppetRepositoryObservation) DeepCopyInto(out *PuppetRepositoryObserva
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -28625,6 +29010,11 @@ func (in *PuppetRepositoryParameters) DeepCopyInto(out *PuppetRepositoryParamete
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -29049,6 +29439,11 @@ func (in *PyPIRepositoryInitParameters) DeepCopyInto(out *PyPIRepositoryInitPara
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -29350,6 +29745,11 @@ func (in *PyPIRepositoryObservation) DeepCopyInto(out *PyPIRepositoryObservation
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -29611,6 +30011,11 @@ func (in *PyPIRepositoryParameters) DeepCopyInto(out *PyPIRepositoryParameters) 
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -30045,6 +30450,11 @@ func (in *RPMRepositoryInitParameters) DeepCopyInto(out *RPMRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -30326,6 +30736,11 @@ func (in *RPMRepositoryObservation) DeepCopyInto(out *RPMRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -30567,6 +30982,11 @@ func (in *RPMRepositoryParameters) DeepCopyInto(out *RPMRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -30986,6 +31406,11 @@ func (in *SBTRepositoryInitParameters) DeepCopyInto(out *SBTRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -31307,6 +31732,11 @@ func (in *SBTRepositoryObservation) DeepCopyInto(out *SBTRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -31588,6 +32018,11 @@ func (in *SBTRepositoryParameters) DeepCopyInto(out *SBTRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -32047,6 +32482,11 @@ func (in *SwiftRepositoryInitParameters) DeepCopyInto(out *SwiftRepositoryInitPa
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -32328,6 +32768,11 @@ func (in *SwiftRepositoryObservation) DeepCopyInto(out *SwiftRepositoryObservati
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -32569,6 +33014,11 @@ func (in *SwiftRepositoryParameters) DeepCopyInto(out *SwiftRepositoryParameters
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -32988,6 +33438,11 @@ func (in *TerraformRepositoryInitParameters) DeepCopyInto(out *TerraformReposito
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -33279,6 +33734,11 @@ func (in *TerraformRepositoryObservation) DeepCopyInto(out *TerraformRepositoryO
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -33530,6 +33990,11 @@ func (in *TerraformRepositoryParameters) DeepCopyInto(out *TerraformRepositoryPa
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}
@@ -33959,6 +34424,11 @@ func (in *VCSRepositoryInitParameters) DeepCopyInto(out *VCSRepositoryInitParame
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -34255,6 +34725,11 @@ func (in *VCSRepositoryObservation) DeepCopyInto(out *VCSRepositoryObservation) 
 		*out = new(bool)
 		**out = **in
 	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
+		*out = new(bool)
+		**out = **in
+	}
 	if in.ExcludesPattern != nil {
 		in, out := &in.ExcludesPattern, &out.ExcludesPattern
 		*out = new(string)
@@ -34511,6 +34986,11 @@ func (in *VCSRepositoryParameters) DeepCopyInto(out *VCSRepositoryParameters) {
 	}
 	if in.EnableCookieManagement != nil {
 		in, out := &in.EnableCookieManagement, &out.EnableCookieManagement
+		*out = new(bool)
+		**out = **in
+	}
+	if in.EnableTokenAuthentication != nil {
+		in, out := &in.EnableTokenAuthentication, &out.EnableTokenAuthentication
 		*out = new(bool)
 		**out = **in
 	}

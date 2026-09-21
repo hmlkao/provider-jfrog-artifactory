@@ -71,15 +71,24 @@ spec:
                     description: Public description.
                     type: string
                   excludesPattern:
-                    description: List of artifact patterns to exclude when evaluating
-                      artifact requests, in the form of `x/y/**/z/*`.By default no
-                      artifacts are excluded.
+                    description: Comma-separated list of artifact patterns to exclude
+                      when evaluating artifact requests, in the form of `x/y/**/z/*`.
+                      This is a single string of comma-separated values, not a list
+                      of strings. By default no artifacts are excluded.
                     type: string
+                  hideUnauthorizedResources:
+                    description: 'When set to true, returns a 404 Not Found response
+                      instead of revealing that an unauthorized resource exists. When
+                      false (default), Artifactory keeps its normal behavior: anonymous
+                      requests get 401 and unauthorized authenticated users get 403.'
+                    type: boolean
                   includesPattern:
-                    description: List of comma-separated artifact patterns to include
+                    description: Comma-separated list of artifact patterns to include
                       when evaluating artifact requests in the form of `x/y/**/z/*`.
-                      When used, only artifacts matching one of the include patterns
-                      are served. By default, all artifacts are included (`**/*`).
+                      This is a single string of comma-separated values, not a list
+                      of strings. When used, only artifacts matching one of the include
+                      patterns are served. By default, all artifacts are included
+                      (`**/*`).
                     type: string
                   notes:
                     description: Internal description.
@@ -145,15 +154,24 @@ spec:
                     description: Public description.
                     type: string
                   excludesPattern:
-                    description: List of artifact patterns to exclude when evaluating
-                      artifact requests, in the form of `x/y/**/z/*`.By default no
-                      artifacts are excluded.
+                    description: Comma-separated list of artifact patterns to exclude
+                      when evaluating artifact requests, in the form of `x/y/**/z/*`.
+                      This is a single string of comma-separated values, not a list
+                      of strings. By default no artifacts are excluded.
                     type: string
+                  hideUnauthorizedResources:
+                    description: 'When set to true, returns a 404 Not Found response
+                      instead of revealing that an unauthorized resource exists. When
+                      false (default), Artifactory keeps its normal behavior: anonymous
+                      requests get 401 and unauthorized authenticated users get 403.'
+                    type: boolean
                   includesPattern:
-                    description: List of comma-separated artifact patterns to include
+                    description: Comma-separated list of artifact patterns to include
                       when evaluating artifact requests in the form of `x/y/**/z/*`.
-                      When used, only artifacts matching one of the include patterns
-                      are served. By default, all artifacts are included (`**/*`).
+                      This is a single string of comma-separated values, not a list
+                      of strings. When used, only artifacts matching one of the include
+                      patterns are served. By default, all artifacts are included
+                      (`**/*`).
                     type: string
                   notes:
                     description: Internal description.
@@ -269,17 +287,26 @@ spec:
                     description: Public description.
                     type: string
                   excludesPattern:
-                    description: List of artifact patterns to exclude when evaluating
-                      artifact requests, in the form of `x/y/**/z/*`.By default no
-                      artifacts are excluded.
+                    description: Comma-separated list of artifact patterns to exclude
+                      when evaluating artifact requests, in the form of `x/y/**/z/*`.
+                      This is a single string of comma-separated values, not a list
+                      of strings. By default no artifacts are excluded.
                     type: string
+                  hideUnauthorizedResources:
+                    description: 'When set to true, returns a 404 Not Found response
+                      instead of revealing that an unauthorized resource exists. When
+                      false (default), Artifactory keeps its normal behavior: anonymous
+                      requests get 401 and unauthorized authenticated users get 403.'
+                    type: boolean
                   id:
                     type: string
                   includesPattern:
-                    description: List of comma-separated artifact patterns to include
+                    description: Comma-separated list of artifact patterns to include
                       when evaluating artifact requests in the form of `x/y/**/z/*`.
-                      When used, only artifacts matching one of the include patterns
-                      are served. By default, all artifacts are included (`**/*`).
+                      This is a single string of comma-separated values, not a list
+                      of strings. When used, only artifacts matching one of the include
+                      patterns are served. By default, all artifacts are included
+                      (`**/*`).
                     type: string
                   notes:
                     description: Internal description.

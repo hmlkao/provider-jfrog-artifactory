@@ -103,9 +103,10 @@ spec:
                       only.
                     type: boolean
                   excludesPattern:
-                    description: List of artifact patterns to exclude when evaluating
-                      artifact requests, in the form of `x/y/**/z/*`.By default no
-                      artifacts are excluded.
+                    description: Comma-separated list of artifact patterns to exclude
+                      when evaluating artifact requests, in the form of `x/y/**/z/*`.
+                      This is a single string of comma-separated values, not a list
+                      of strings. By default no artifacts are excluded.
                     type: string
                   handleReleases:
                     description: If set, Artifactory allows you to deploy release
@@ -116,10 +117,12 @@ spec:
                       artifacts into this repository.
                     type: boolean
                   includesPattern:
-                    description: List of comma-separated artifact patterns to include
+                    description: Comma-separated list of artifact patterns to include
                       when evaluating artifact requests in the form of `x/y/**/z/*`.
-                      When used, only artifacts matching one of the include patterns
-                      are served. By default, all artifacts are included (`**/*`).
+                      This is a single string of comma-separated values, not a list
+                      of strings. When used, only artifacts matching one of the include
+                      patterns are served. By default, all artifacts are included
+                      (`**/*`).
                     type: string
                   maxUniqueSnapshots:
                     description: |-
@@ -276,9 +279,10 @@ spec:
                       only.
                     type: boolean
                   excludesPattern:
-                    description: List of artifact patterns to exclude when evaluating
-                      artifact requests, in the form of `x/y/**/z/*`.By default no
-                      artifacts are excluded.
+                    description: Comma-separated list of artifact patterns to exclude
+                      when evaluating artifact requests, in the form of `x/y/**/z/*`.
+                      This is a single string of comma-separated values, not a list
+                      of strings. By default no artifacts are excluded.
                     type: string
                   handleReleases:
                     description: If set, Artifactory allows you to deploy release
@@ -289,10 +293,12 @@ spec:
                       artifacts into this repository.
                     type: boolean
                   includesPattern:
-                    description: List of comma-separated artifact patterns to include
+                    description: Comma-separated list of artifact patterns to include
                       when evaluating artifact requests in the form of `x/y/**/z/*`.
-                      When used, only artifacts matching one of the include patterns
-                      are served. By default, all artifacts are included (`**/*`).
+                      This is a single string of comma-separated values, not a list
+                      of strings. When used, only artifacts matching one of the include
+                      patterns are served. By default, all artifacts are included
+                      (`**/*`).
                     type: string
                   maxUniqueSnapshots:
                     description: |-
@@ -504,9 +510,10 @@ spec:
                       only.
                     type: boolean
                   excludesPattern:
-                    description: List of artifact patterns to exclude when evaluating
-                      artifact requests, in the form of `x/y/**/z/*`.By default no
-                      artifacts are excluded.
+                    description: Comma-separated list of artifact patterns to exclude
+                      when evaluating artifact requests, in the form of `x/y/**/z/*`.
+                      This is a single string of comma-separated values, not a list
+                      of strings. By default no artifacts are excluded.
                     type: string
                   handleReleases:
                     description: If set, Artifactory allows you to deploy release
@@ -519,10 +526,12 @@ spec:
                   id:
                     type: string
                   includesPattern:
-                    description: List of comma-separated artifact patterns to include
+                    description: Comma-separated list of artifact patterns to include
                       when evaluating artifact requests in the form of `x/y/**/z/*`.
-                      When used, only artifacts matching one of the include patterns
-                      are served. By default, all artifacts are included (`**/*`).
+                      This is a single string of comma-separated values, not a list
+                      of strings. When used, only artifacts matching one of the include
+                      patterns are served. By default, all artifacts are included
+                      (`**/*`).
                     type: string
                   maxUniqueSnapshots:
                     description: |-
