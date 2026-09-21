@@ -43,7 +43,7 @@ kind: Provider
 metadata:
   name: provider-jfrog-artifactory
 spec:
-  package: hmlkao/provider-jfrog-artifactory:v0.12.0
+  package: hmlkao/provider-jfrog-artifactory:v0.16.0
 EOF
 ```
 
