@@ -219,7 +219,8 @@ jobs:
   #bump-alpine-version:
 
   summary:
-    needs: [ bump-tfm-provider-version, bump-crossplane-version ]
+    needs: [ bump-tfm-provider-version, bump-crossplane-version, bump-go-version ]
+    if: ${{ always() }}
     name: Print summary
     runs-on: ubuntu-latest
     steps:
@@ -230,12 +231,6 @@ jobs:
           echo "|--------------|--------------------------------------------------------------------|-------------------------------------------------------------------|" >> $GITHUB_STEP_SUMMARY
           echo "| TFM provider | \`${{ needs.bump-tfm-provider-version.outputs.current-version }}\` | \`${{ needs.bump-tfm-provider-version.outputs.latest-version }}\` |" >> $GITHUB_STEP_SUMMARY
           echo "| Crossplane   | \`${{ needs.bump-crossplane-version.outputs.current-version }}\`   | \`${{ needs.bump-crossplane-version.outputs.latest-version }}\`   |" >> $GITHUB_STEP_SUMMARY
-
-  summary-go:
-    needs: [ bump-go-version, summary ]
-    name: Print summary
-    runs-on: ubuntu-latest
-    steps:
-      - name: Write summary
-        run: |
+          if [[ "${{ needs.bump-go-version.result }}" != "skipped" ]]; then
           echo "| Go           | \`${{ needs.bump-go-version.outputs.current-version }}\`           | \`${{ needs.bump-go-version.outputs.latest-version }}\`           |" >> $GITHUB_STEP_SUMMARY
+          fi
