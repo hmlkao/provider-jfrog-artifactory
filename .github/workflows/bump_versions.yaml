@@ -163,6 +163,20 @@ jobs:
       - name: Bump version
         if: ${{ steps.current-version.outputs.GO_VERSION_CURRENT != steps.latest-version.outputs.GO_VERSION_LATEST }}
         run: scripts/bump_go_version.sh "${{steps.current-version.outputs.GO_VERSION_CURRENT}}" "${{steps.latest-version.outputs.GO_VERSION_LATEST}}"
+      - name: Get golangci-lint latest version
+        if: ${{ steps.current-version.outputs.GO_VERSION_CURRENT != steps.latest-version.outputs.GO_VERSION_LATEST }}
+        id: golangcilint-latest-version
+        run: |
+          latest_version=$(curl -sSL https://api.github.com/repos/golangci/golangci-lint/releases/latest | jq -r '.tag_name' | tr -d 'v')
+          if [[ "${latest_version}" == "null" ]]; then
+            echo "Failed to fetch the latest golangci-lint version"
+            exit 1
+          fi
+          echo "The latest version is '${latest_version}'"
+          echo "GOLANGCILINT_VERSION_LATEST=${latest_version}" >> $GITHUB_OUTPUT
+      - name: Bump golangci-lint version
+        if: ${{ steps.current-version.outputs.GO_VERSION_CURRENT != steps.latest-version.outputs.GO_VERSION_LATEST }}
+        run: scripts/bump_golangci_lint_version.sh "${{steps.golangcilint-latest-version.outputs.GOLANGCILINT_VERSION_LATEST}}"
 
       #####
       # Generate files for new version as we want them as part of PR
