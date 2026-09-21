@@ -97,7 +97,7 @@ spec:
 
                       ~>Keys are limited up to 255 characters and values are limited up to 2,400 characters. Using properties with values over this limit might cause backend issues.
 
-                      ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~“!@#%&<>;=,±§` and the space character.
+                      ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~``!@#%&<>;=,±§` and the space character.
                     type: object
                   repoKey:
                     description: |-
@@ -139,7 +139,7 @@ spec:
 
                       ~>Keys are limited up to 255 characters and values are limited up to 2,400 characters. Using properties with values over this limit might cause backend issues.
 
-                      ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~“!@#%&<>;=,±§` and the space character.
+                      ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~``!@#%&<>;=,±§` and the space character.
                     type: object
                   repoKey:
                     description: |-
@@ -270,7 +270,7 @@ spec:
 
                       ~>Keys are limited up to 255 characters and values are limited up to 2,400 characters. Using properties with values over this limit might cause backend issues.
 
-                      ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~“!@#%&<>;=,±§` and the space character.
+                      ~>The following special characters are forbidden in the key field: `)(}{][*+^$/~``!@#%&<>;=,±§` and the space character.
                     type: object
                   repoKey:
                     description: |-

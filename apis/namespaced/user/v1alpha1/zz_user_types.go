@@ -29,7 +29,7 @@ type PasswordPolicyInitParameters struct {
 	Lowercase *float64 `json:"lowercase,omitempty" tf:"lowercase,omitempty"`
 
 	// ./:;<=>?@[\]^_`{|}~
-	// Minimum number of special char that the password must contain. Special chars list: “!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~“
+	// Minimum number of special char that the password must contain. Special chars list: ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``
 	SpecialChar *float64 `json:"specialChar,omitempty" tf:"special_char,omitempty"`
 
 	// (Number) Minimum number of uppercase letters that the password must contain
@@ -52,7 +52,7 @@ type PasswordPolicyObservation struct {
 	Lowercase *float64 `json:"lowercase,omitempty" tf:"lowercase,omitempty"`
 
 	// ./:;<=>?@[\]^_`{|}~
-	// Minimum number of special char that the password must contain. Special chars list: “!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~“
+	// Minimum number of special char that the password must contain. Special chars list: ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``
 	SpecialChar *float64 `json:"specialChar,omitempty" tf:"special_char,omitempty"`
 
 	// (Number) Minimum number of uppercase letters that the password must contain
@@ -78,7 +78,7 @@ type PasswordPolicyParameters struct {
 	Lowercase *float64 `json:"lowercase,omitempty" tf:"lowercase,omitempty"`
 
 	// ./:;<=>?@[\]^_`{|}~
-	// Minimum number of special char that the password must contain. Special chars list: “!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~“
+	// Minimum number of special char that the password must contain. Special chars list: ``!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~``
 	// +kubebuilder:validation:Optional
 	SpecialChar *float64 `json:"specialChar,omitempty" tf:"special_char,omitempty"`
 
