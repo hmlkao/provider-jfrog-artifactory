@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type KeypairInitParameters struct {
@@ -23,10 +22,10 @@ type KeypairInitParameters struct {
 	PairType *string `json:"pairType,omitempty" tf:"pair_type,omitempty"`
 
 	// Passphrase will be used to decrypt the private key. Validated server side.
-	PassphraseSecretRef *v1.LocalSecretKeySelector `json:"passphraseSecretRef,omitempty" tf:"-"`
+	PassphraseSecretRef *v2.LocalSecretKeySelector `json:"passphraseSecretRef,omitempty" tf:"-"`
 
 	// Private key. PEM format will be validated. Must not include extranous spaces or tabs.
-	PrivateKeySecretRef v1.LocalSecretKeySelector `json:"privateKeySecretRef" tf:"-"`
+	PrivateKeySecretRef v2.LocalSecretKeySelector `json:"privateKeySecretRef" tf:"-"`
 
 	// Public key. PEM format will be validated. Must not include extranous spaces or tabs.
 	PublicKey *string `json:"publicKey,omitempty" tf:"public_key,omitempty"`
@@ -58,11 +57,11 @@ type KeypairParameters struct {
 
 	// Passphrase will be used to decrypt the private key. Validated server side.
 	// +kubebuilder:validation:Optional
-	PassphraseSecretRef *v1.LocalSecretKeySelector `json:"passphraseSecretRef,omitempty" tf:"-"`
+	PassphraseSecretRef *v2.LocalSecretKeySelector `json:"passphraseSecretRef,omitempty" tf:"-"`
 
 	// Private key. PEM format will be validated. Must not include extranous spaces or tabs.
 	// +kubebuilder:validation:Optional
-	PrivateKeySecretRef v1.LocalSecretKeySelector `json:"privateKeySecretRef" tf:"-"`
+	PrivateKeySecretRef v2.LocalSecretKeySelector `json:"privateKeySecretRef" tf:"-"`
 
 	// Public key. PEM format will be validated. Must not include extranous spaces or tabs.
 	// +kubebuilder:validation:Optional
@@ -88,8 +87,8 @@ type KeypairSpec struct {
 
 // KeypairStatus defines the observed state of Keypair.
 type KeypairStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        KeypairObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               KeypairObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

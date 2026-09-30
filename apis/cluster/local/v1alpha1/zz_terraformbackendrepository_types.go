@@ -10,7 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type TerraformBackendRepositoryInitParameters struct {
@@ -175,8 +175,8 @@ type TerraformBackendRepositoryParameters struct {
 
 // TerraformBackendRepositorySpec defines the desired state of TerraformBackendRepository
 type TerraformBackendRepositorySpec struct {
-	v1.ResourceSpec `json:",inline"`
-	ForProvider     TerraformBackendRepositoryParameters `json:"forProvider"`
+	v2.ManagedResourceStatus `json:",inline"`
+	ForProvider              TerraformBackendRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -192,8 +192,8 @@ type TerraformBackendRepositorySpec struct {
 
 // TerraformBackendRepositoryStatus defines the observed state of TerraformBackendRepository.
 type TerraformBackendRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        TerraformBackendRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               TerraformBackendRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

@@ -9,7 +9,7 @@
 package v1alpha1
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -172,12 +172,12 @@ func (in *AlpineRepositoryInitParameters) DeepCopyInto(out *AlpineRepositoryInit
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -707,12 +707,12 @@ func (in *AlpineRepositoryParameters) DeepCopyInto(out *AlpineRepositoryParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -1128,12 +1128,12 @@ func (in *AnsibleRepositoryInitParameters) DeepCopyInto(out *AnsibleRepositoryIn
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -1663,12 +1663,12 @@ func (in *AnsibleRepositoryParameters) DeepCopyInto(out *AnsibleRepositoryParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -2089,12 +2089,12 @@ func (in *BowerRepositoryInitParameters) DeepCopyInto(out *BowerRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -2654,12 +2654,12 @@ func (in *BowerRepositoryParameters) DeepCopyInto(out *BowerRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -3085,12 +3085,12 @@ func (in *CRANRepositoryInitParameters) DeepCopyInto(out *CRANRepositoryInitPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -3620,12 +3620,12 @@ func (in *CRANRepositoryParameters) DeepCopyInto(out *CRANRepositoryParameters) 
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -4056,12 +4056,12 @@ func (in *CargoRepositoryInitParameters) DeepCopyInto(out *CargoRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -4621,12 +4621,12 @@ func (in *CargoRepositoryParameters) DeepCopyInto(out *CargoRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -5042,12 +5042,12 @@ func (in *ChefRepositoryInitParameters) DeepCopyInto(out *ChefRepositoryInitPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -5577,12 +5577,12 @@ func (in *ChefRepositoryParameters) DeepCopyInto(out *ChefRepositoryParameters) 
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -5998,12 +5998,12 @@ func (in *CocoaPodsRepositoryInitParameters) DeepCopyInto(out *CocoaPodsReposito
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -6563,12 +6563,12 @@ func (in *CocoaPodsRepositoryParameters) DeepCopyInto(out *CocoaPodsRepositoryPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -7004,12 +7004,12 @@ func (in *ComposerRepositoryInitParameters) DeepCopyInto(out *ComposerRepository
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -7569,12 +7569,12 @@ func (in *ComposerRepositoryParameters) DeepCopyInto(out *ComposerRepositoryPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -8015,12 +8015,12 @@ func (in *ConanRepositoryInitParameters) DeepCopyInto(out *ConanRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -8580,12 +8580,12 @@ func (in *ConanRepositoryParameters) DeepCopyInto(out *ConanRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -9011,12 +9011,12 @@ func (in *CondaRepositoryInitParameters) DeepCopyInto(out *CondaRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -9586,12 +9586,12 @@ func (in *CondaRepositoryParameters) DeepCopyInto(out *CondaRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -10209,12 +10209,12 @@ func (in *DebianRepositoryInitParameters) DeepCopyInto(out *DebianRepositoryInit
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -10784,12 +10784,12 @@ func (in *DebianRepositoryParameters) DeepCopyInto(out *DebianRepositoryParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -11246,12 +11246,12 @@ func (in *DockerRepositoryInitParameters) DeepCopyInto(out *DockerRepositoryInit
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -11853,12 +11853,12 @@ func (in *DockerRepositoryParameters) DeepCopyInto(out *DockerRepositoryParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -12289,12 +12289,12 @@ func (in *GemsRepositoryInitParameters) DeepCopyInto(out *GemsRepositoryInitPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -12864,12 +12864,12 @@ func (in *GemsRepositoryParameters) DeepCopyInto(out *GemsRepositoryParameters) 
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -13302,12 +13302,12 @@ func (in *GenericRepositoryInitParameters) DeepCopyInto(out *GenericRepositoryIn
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -13871,12 +13871,12 @@ func (in *GenericRepositoryParameters) DeepCopyInto(out *GenericRepositoryParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -14302,12 +14302,12 @@ func (in *GitLFSRepositoryInitParameters) DeepCopyInto(out *GitLFSRepositoryInit
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -14837,12 +14837,12 @@ func (in *GitLFSRepositoryParameters) DeepCopyInto(out *GitLFSRepositoryParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -15268,12 +15268,12 @@ func (in *GoRepositoryInitParameters) DeepCopyInto(out *GoRepositoryInitParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -15853,12 +15853,12 @@ func (in *GoRepositoryParameters) DeepCopyInto(out *GoRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -16324,12 +16324,12 @@ func (in *GradleRepositoryInitParameters) DeepCopyInto(out *GradleRepositoryInit
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -16959,12 +16959,12 @@ func (in *GradleRepositoryParameters) DeepCopyInto(out *GradleRepositoryParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -17411,12 +17411,12 @@ func (in *HelmOCIRepositoryInitParameters) DeepCopyInto(out *HelmOCIRepositoryIn
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -17988,12 +17988,12 @@ func (in *HelmOCIRepositoryParameters) DeepCopyInto(out *HelmOCIRepositoryParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -18435,12 +18435,12 @@ func (in *HelmRepositoryInitParameters) DeepCopyInto(out *HelmRepositoryInitPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -19012,12 +19012,12 @@ func (in *HelmRepositoryParameters) DeepCopyInto(out *HelmRepositoryParameters) 
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -19443,12 +19443,12 @@ func (in *HuggingFaceMLRepositoryInitParameters) DeepCopyInto(out *HuggingFaceML
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -19998,12 +19998,12 @@ func (in *HuggingFaceMLRepositoryParameters) DeepCopyInto(out *HuggingFaceMLRepo
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -20444,12 +20444,12 @@ func (in *IvyRepositoryInitParameters) DeepCopyInto(out *IvyRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -21059,12 +21059,12 @@ func (in *IvyRepositoryParameters) DeepCopyInto(out *IvyRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -21530,12 +21530,12 @@ func (in *MavenRepositoryInitParameters) DeepCopyInto(out *MavenRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -22165,12 +22165,12 @@ func (in *MavenRepositoryParameters) DeepCopyInto(out *MavenRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -22611,12 +22611,12 @@ func (in *NPMRepositoryInitParameters) DeepCopyInto(out *NPMRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -23166,12 +23166,12 @@ func (in *NPMRepositoryParameters) DeepCopyInto(out *NPMRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -23612,12 +23612,12 @@ func (in *NuGetRepositoryInitParameters) DeepCopyInto(out *NuGetRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -24217,12 +24217,12 @@ func (in *NuGetRepositoryParameters) DeepCopyInto(out *NuGetRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -24664,12 +24664,12 @@ func (in *OCIRepositoryInitParameters) DeepCopyInto(out *OCIRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -25241,12 +25241,12 @@ func (in *OCIRepositoryParameters) DeepCopyInto(out *OCIRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -25667,12 +25667,12 @@ func (in *OPKGRepositoryInitParameters) DeepCopyInto(out *OPKGRepositoryInitPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -26202,12 +26202,12 @@ func (in *OPKGRepositoryParameters) DeepCopyInto(out *OPKGRepositoryParameters) 
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -26623,12 +26623,12 @@ func (in *P2RepositoryInitParameters) DeepCopyInto(out *P2RepositoryInitParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -27158,12 +27158,12 @@ func (in *P2RepositoryParameters) DeepCopyInto(out *P2RepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -27579,12 +27579,12 @@ func (in *PubRepositoryInitParameters) DeepCopyInto(out *PubRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -28114,12 +28114,12 @@ func (in *PubRepositoryParameters) DeepCopyInto(out *PubRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -28535,12 +28535,12 @@ func (in *PuppetRepositoryInitParameters) DeepCopyInto(out *PuppetRepositoryInit
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -29070,12 +29070,12 @@ func (in *PuppetRepositoryParameters) DeepCopyInto(out *PuppetRepositoryParamete
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -29501,12 +29501,12 @@ func (in *PyPIRepositoryInitParameters) DeepCopyInto(out *PyPIRepositoryInitPara
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -30076,12 +30076,12 @@ func (in *PyPIRepositoryParameters) DeepCopyInto(out *PyPIRepositoryParameters) 
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -30507,12 +30507,12 @@ func (in *RPMRepositoryInitParameters) DeepCopyInto(out *RPMRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -31042,12 +31042,12 @@ func (in *RPMRepositoryParameters) DeepCopyInto(out *RPMRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -31488,12 +31488,12 @@ func (in *SBTRepositoryInitParameters) DeepCopyInto(out *SBTRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -32103,12 +32103,12 @@ func (in *SBTRepositoryParameters) DeepCopyInto(out *SBTRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -32539,12 +32539,12 @@ func (in *SwiftRepositoryInitParameters) DeepCopyInto(out *SwiftRepositoryInitPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -33074,12 +33074,12 @@ func (in *SwiftRepositoryParameters) DeepCopyInto(out *SwiftRepositoryParameters
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -33495,12 +33495,12 @@ func (in *TerraformRepositoryInitParameters) DeepCopyInto(out *TerraformReposito
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -34050,12 +34050,12 @@ func (in *TerraformRepositoryParameters) DeepCopyInto(out *TerraformRepositoryPa
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -34486,12 +34486,12 @@ func (in *VCSRepositoryInitParameters) DeepCopyInto(out *VCSRepositoryInitParame
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {
@@ -35051,12 +35051,12 @@ func (in *VCSRepositoryParameters) DeepCopyInto(out *VCSRepositoryParameters) {
 	}
 	if in.PasswordSecretRef != nil {
 		in, out := &in.PasswordSecretRef, &out.PasswordSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoSecretRef != nil {
 		in, out := &in.PasswordWoSecretRef, &out.PasswordWoSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.PasswordWoVersion != nil {

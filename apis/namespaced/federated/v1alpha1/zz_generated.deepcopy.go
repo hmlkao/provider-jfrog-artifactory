@@ -9,7 +9,7 @@
 package v1alpha1
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -710,7 +710,7 @@ func (in *AnsibleRepositoryMemberInitParameters) DeepCopyInto(out *AnsibleReposi
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -765,7 +765,7 @@ func (in *AnsibleRepositoryMemberParameters) DeepCopyInto(out *AnsibleRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -1266,7 +1266,7 @@ func (in *BowerRepositoryMemberInitParameters) DeepCopyInto(out *BowerRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -1321,7 +1321,7 @@ func (in *BowerRepositoryMemberParameters) DeepCopyInto(out *BowerRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -1812,7 +1812,7 @@ func (in *CRANRepositoryMemberInitParameters) DeepCopyInto(out *CRANRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -1867,7 +1867,7 @@ func (in *CRANRepositoryMemberParameters) DeepCopyInto(out *CRANRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -2379,7 +2379,7 @@ func (in *CargoRepositoryMemberInitParameters) DeepCopyInto(out *CargoRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -2434,7 +2434,7 @@ func (in *CargoRepositoryMemberParameters) DeepCopyInto(out *CargoRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -2967,7 +2967,7 @@ func (in *ChefRepositoryMemberInitParameters) DeepCopyInto(out *ChefRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -3022,7 +3022,7 @@ func (in *ChefRepositoryMemberParameters) DeepCopyInto(out *ChefRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -3513,7 +3513,7 @@ func (in *CocoaPodsRepositoryMemberInitParameters) DeepCopyInto(out *CocoaPodsRe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -3568,7 +3568,7 @@ func (in *CocoaPodsRepositoryMemberParameters) DeepCopyInto(out *CocoaPodsReposi
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -4059,7 +4059,7 @@ func (in *ComposerRepositoryMemberInitParameters) DeepCopyInto(out *ComposerRepo
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -4114,7 +4114,7 @@ func (in *ComposerRepositoryMemberParameters) DeepCopyInto(out *ComposerReposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -4610,7 +4610,7 @@ func (in *ConanRepositoryMemberInitParameters) DeepCopyInto(out *ConanRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -4665,7 +4665,7 @@ func (in *ConanRepositoryMemberParameters) DeepCopyInto(out *ConanRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -5166,7 +5166,7 @@ func (in *CondaRepositoryMemberInitParameters) DeepCopyInto(out *CondaRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -5221,7 +5221,7 @@ func (in *CondaRepositoryMemberParameters) DeepCopyInto(out *CondaRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -5738,7 +5738,7 @@ func (in *DebianRepositoryMemberInitParameters) DeepCopyInto(out *DebianReposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -5793,7 +5793,7 @@ func (in *DebianRepositoryMemberParameters) DeepCopyInto(out *DebianRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -6351,7 +6351,7 @@ func (in *DockerRepositoryMemberInitParameters) DeepCopyInto(out *DockerReposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -6406,7 +6406,7 @@ func (in *DockerRepositoryMemberParameters) DeepCopyInto(out *DockerRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -6937,7 +6937,7 @@ func (in *DockerV1RepositoryMemberInitParameters) DeepCopyInto(out *DockerV1Repo
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -6992,7 +6992,7 @@ func (in *DockerV1RepositoryMemberParameters) DeepCopyInto(out *DockerV1Reposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -7523,7 +7523,7 @@ func (in *DockerV2RepositoryMemberInitParameters) DeepCopyInto(out *DockerV2Repo
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -7578,7 +7578,7 @@ func (in *DockerV2RepositoryMemberParameters) DeepCopyInto(out *DockerV2Reposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -8104,7 +8104,7 @@ func (in *GemsRepositoryMemberInitParameters) DeepCopyInto(out *GemsRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -8159,7 +8159,7 @@ func (in *GemsRepositoryMemberParameters) DeepCopyInto(out *GemsRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -8650,7 +8650,7 @@ func (in *GenericRepositoryMemberInitParameters) DeepCopyInto(out *GenericReposi
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -8705,7 +8705,7 @@ func (in *GenericRepositoryMemberParameters) DeepCopyInto(out *GenericRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -9196,7 +9196,7 @@ func (in *GitLFSRepositoryMemberInitParameters) DeepCopyInto(out *GitLFSReposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -9251,7 +9251,7 @@ func (in *GitLFSRepositoryMemberParameters) DeepCopyInto(out *GitLFSRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -9742,7 +9742,7 @@ func (in *GoRepositoryMemberInitParameters) DeepCopyInto(out *GoRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -9797,7 +9797,7 @@ func (in *GoRepositoryMemberParameters) DeepCopyInto(out *GoRepositoryMemberPara
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -10318,7 +10318,7 @@ func (in *GradleRepositoryMemberInitParameters) DeepCopyInto(out *GradleReposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -10373,7 +10373,7 @@ func (in *GradleRepositoryMemberParameters) DeepCopyInto(out *GradleRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -10934,7 +10934,7 @@ func (in *HelmOCIRepositoryMemberInitParameters) DeepCopyInto(out *HelmOCIReposi
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -10989,7 +10989,7 @@ func (in *HelmOCIRepositoryMemberParameters) DeepCopyInto(out *HelmOCIRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -11500,7 +11500,7 @@ func (in *HelmRepositoryMemberInitParameters) DeepCopyInto(out *HelmRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -11555,7 +11555,7 @@ func (in *HelmRepositoryMemberParameters) DeepCopyInto(out *HelmRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -12046,7 +12046,7 @@ func (in *HuggingFaceMLRepositoryMemberInitParameters) DeepCopyInto(out *Hugging
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -12101,7 +12101,7 @@ func (in *HuggingFaceMLRepositoryMemberParameters) DeepCopyInto(out *HuggingFace
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -12622,7 +12622,7 @@ func (in *IvyRepositoryMemberInitParameters) DeepCopyInto(out *IvyRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -12677,7 +12677,7 @@ func (in *IvyRepositoryMemberParameters) DeepCopyInto(out *IvyRepositoryMemberPa
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -13258,7 +13258,7 @@ func (in *MavenRepositoryMemberInitParameters) DeepCopyInto(out *MavenRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -13313,7 +13313,7 @@ func (in *MavenRepositoryMemberParameters) DeepCopyInto(out *MavenRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -13686,7 +13686,7 @@ func (in *MemberInitParameters) DeepCopyInto(out *MemberInitParameters) {
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -13741,7 +13741,7 @@ func (in *MemberParameters) DeepCopyInto(out *MemberParameters) {
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -13949,7 +13949,7 @@ func (in *NPMRepositoryMemberInitParameters) DeepCopyInto(out *NPMRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -14004,7 +14004,7 @@ func (in *NPMRepositoryMemberParameters) DeepCopyInto(out *NPMRepositoryMemberPa
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -14505,7 +14505,7 @@ func (in *NuGetRepositoryMemberInitParameters) DeepCopyInto(out *NuGetRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -14560,7 +14560,7 @@ func (in *NuGetRepositoryMemberParameters) DeepCopyInto(out *NuGetRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -15081,7 +15081,7 @@ func (in *OCIRepositoryMemberInitParameters) DeepCopyInto(out *OCIRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -15136,7 +15136,7 @@ func (in *OCIRepositoryMemberParameters) DeepCopyInto(out *OCIRepositoryMemberPa
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -15647,7 +15647,7 @@ func (in *OPKGRepositoryMemberInitParameters) DeepCopyInto(out *OPKGRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -15702,7 +15702,7 @@ func (in *OPKGRepositoryMemberParameters) DeepCopyInto(out *OPKGRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -16193,7 +16193,7 @@ func (in *PuppetRepositoryMemberInitParameters) DeepCopyInto(out *PuppetReposito
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -16248,7 +16248,7 @@ func (in *PuppetRepositoryMemberParameters) DeepCopyInto(out *PuppetRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -16739,7 +16739,7 @@ func (in *PyPIRepositoryMemberInitParameters) DeepCopyInto(out *PyPIRepositoryMe
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -16794,7 +16794,7 @@ func (in *PyPIRepositoryMemberParameters) DeepCopyInto(out *PyPIRepositoryMember
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -17315,7 +17315,7 @@ func (in *RPMRepositoryMemberInitParameters) DeepCopyInto(out *RPMRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -17370,7 +17370,7 @@ func (in *RPMRepositoryMemberParameters) DeepCopyInto(out *RPMRepositoryMemberPa
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -17951,7 +17951,7 @@ func (in *SBTRepositoryMemberInitParameters) DeepCopyInto(out *SBTRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -18006,7 +18006,7 @@ func (in *SBTRepositoryMemberParameters) DeepCopyInto(out *SBTRepositoryMemberPa
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -18557,7 +18557,7 @@ func (in *SwiftRepositoryMemberInitParameters) DeepCopyInto(out *SwiftRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -18612,7 +18612,7 @@ func (in *SwiftRepositoryMemberParameters) DeepCopyInto(out *SwiftRepositoryMemb
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -19103,7 +19103,7 @@ func (in *TerraformModuleRepositoryMemberInitParameters) DeepCopyInto(out *Terra
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -19158,7 +19158,7 @@ func (in *TerraformModuleRepositoryMemberParameters) DeepCopyInto(out *Terraform
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -19649,7 +19649,7 @@ func (in *TerraformProviderRepositoryMemberInitParameters) DeepCopyInto(out *Ter
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -19704,7 +19704,7 @@ func (in *TerraformProviderRepositoryMemberParameters) DeepCopyInto(out *Terrafo
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -20195,7 +20195,7 @@ func (in *VagrantRepositoryMemberInitParameters) DeepCopyInto(out *VagrantReposi
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {
@@ -20250,7 +20250,7 @@ func (in *VagrantRepositoryMemberParameters) DeepCopyInto(out *VagrantRepository
 	*out = *in
 	if in.AccessTokenSecretRef != nil {
 		in, out := &in.AccessTokenSecretRef, &out.AccessTokenSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.Enabled != nil {

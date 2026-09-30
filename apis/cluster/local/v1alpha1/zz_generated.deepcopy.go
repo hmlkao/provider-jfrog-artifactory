@@ -9,7 +9,7 @@
 package v1alpha1
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -495,12 +495,12 @@ func (in *AnsibleRepositoryInitParameters) DeepCopyInto(out *AnsibleRepositoryIn
 	}
 	if in.PrimaryKeypairRefRef != nil {
 		in, out := &in.PrimaryKeypairRefRef, &out.PrimaryKeypairRefRef
-		*out = new(v1.Reference)
+		*out = new(v2.Reference)
 		(*in).DeepCopyInto(*out)
 	}
 	if in.PrimaryKeypairRefSelector != nil {
 		in, out := &in.PrimaryKeypairRefSelector, &out.PrimaryKeypairRefSelector
-		*out = new(v1.Selector)
+		*out = new(v2.Selector)
 		(*in).DeepCopyInto(*out)
 	}
 	if in.PriorityResolution != nil {
@@ -746,12 +746,12 @@ func (in *AnsibleRepositoryParameters) DeepCopyInto(out *AnsibleRepositoryParame
 	}
 	if in.PrimaryKeypairRefRef != nil {
 		in, out := &in.PrimaryKeypairRefRef, &out.PrimaryKeypairRefRef
-		*out = new(v1.Reference)
+		*out = new(v2.Reference)
 		(*in).DeepCopyInto(*out)
 	}
 	if in.PrimaryKeypairRefSelector != nil {
 		in, out := &in.PrimaryKeypairRefSelector, &out.PrimaryKeypairRefSelector
-		*out = new(v1.Selector)
+		*out = new(v2.Selector)
 		(*in).DeepCopyInto(*out)
 	}
 	if in.PriorityResolution != nil {

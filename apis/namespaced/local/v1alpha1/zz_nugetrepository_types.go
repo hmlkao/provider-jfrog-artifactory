@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type NuGetRepositoryInitParameters struct {
@@ -213,8 +212,8 @@ type NuGetRepositorySpec struct {
 
 // NuGetRepositoryStatus defines the observed state of NuGetRepository.
 type NuGetRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        NuGetRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               NuGetRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

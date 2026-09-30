@@ -10,7 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type DockerV1RepositoryInitParameters struct {
@@ -182,8 +182,8 @@ type DockerV1RepositoryParameters struct {
 
 // DockerV1RepositorySpec defines the desired state of DockerV1Repository
 type DockerV1RepositorySpec struct {
-	v1.ResourceSpec `json:",inline"`
-	ForProvider     DockerV1RepositoryParameters `json:"forProvider"`
+	v2.ManagedResourceStatus `json:",inline"`
+	ForProvider              DockerV1RepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -199,8 +199,8 @@ type DockerV1RepositorySpec struct {
 
 // DockerV1RepositoryStatus defines the observed state of DockerV1Repository.
 type DockerV1RepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        DockerV1RepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               DockerV1RepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
