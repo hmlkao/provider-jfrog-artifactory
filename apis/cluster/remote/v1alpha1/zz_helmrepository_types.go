@@ -550,8 +550,8 @@ type HelmRepositoryParameters struct {
 
 // HelmRepositorySpec defines the desired state of HelmRepository
 type HelmRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              HelmRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   HelmRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

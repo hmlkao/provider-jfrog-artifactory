@@ -263,8 +263,8 @@ type AnsibleRepositoryParameters struct {
 
 // AnsibleRepositorySpec defines the desired state of AnsibleRepository
 type AnsibleRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              AnsibleRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   AnsibleRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

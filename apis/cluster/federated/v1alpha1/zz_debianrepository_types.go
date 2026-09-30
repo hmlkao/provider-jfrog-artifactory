@@ -293,8 +293,8 @@ type DebianRepositoryParameters struct {
 
 // DebianRepositorySpec defines the desired state of DebianRepository
 type DebianRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              DebianRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   DebianRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

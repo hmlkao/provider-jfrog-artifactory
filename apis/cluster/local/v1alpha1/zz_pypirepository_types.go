@@ -175,8 +175,8 @@ type PyPIRepositoryParameters struct {
 
 // PyPIRepositorySpec defines the desired state of PyPIRepository
 type PyPIRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              PyPIRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   PyPIRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

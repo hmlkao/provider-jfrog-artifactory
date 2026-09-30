@@ -151,8 +151,8 @@ type CondaRepositoryParameters struct {
 
 // CondaRepositorySpec defines the desired state of CondaRepository
 type CondaRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              CondaRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   CondaRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

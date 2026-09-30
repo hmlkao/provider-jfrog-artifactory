@@ -547,8 +547,8 @@ type VCSRepositoryParameters struct {
 
 // VCSRepositorySpec defines the desired state of VCSRepository
 type VCSRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              VCSRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   VCSRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

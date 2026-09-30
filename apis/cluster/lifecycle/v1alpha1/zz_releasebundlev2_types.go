@@ -341,8 +341,8 @@ type SourceParameters struct {
 
 // ReleaseBundleV2Spec defines the desired state of ReleaseBundleV2
 type ReleaseBundleV2Spec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              ReleaseBundleV2Parameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   ReleaseBundleV2Parameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

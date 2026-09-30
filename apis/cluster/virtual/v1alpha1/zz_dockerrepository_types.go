@@ -151,8 +151,8 @@ type DockerRepositoryParameters struct {
 
 // DockerRepositorySpec defines the desired state of DockerRepository
 type DockerRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              DockerRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   DockerRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

@@ -253,8 +253,8 @@ type SwiftRepositoryParameters struct {
 
 // SwiftRepositorySpec defines the desired state of SwiftRepository
 type SwiftRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              SwiftRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   SwiftRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

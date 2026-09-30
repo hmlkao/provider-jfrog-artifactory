@@ -141,8 +141,8 @@ type PubRepositoryParameters struct {
 
 // PubRepositorySpec defines the desired state of PubRepository
 type PubRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              PubRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   PubRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

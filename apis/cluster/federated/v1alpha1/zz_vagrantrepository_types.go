@@ -253,8 +253,8 @@ type VagrantRepositoryParameters struct {
 
 // VagrantRepositorySpec defines the desired state of VagrantRepository
 type VagrantRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              VagrantRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   VagrantRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
