@@ -118,8 +118,8 @@ type ReleaseBundleV2PromotionParameters struct {
 
 // ReleaseBundleV2PromotionSpec defines the desired state of ReleaseBundleV2Promotion
 type ReleaseBundleV2PromotionSpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              ReleaseBundleV2PromotionParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   ReleaseBundleV2PromotionParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

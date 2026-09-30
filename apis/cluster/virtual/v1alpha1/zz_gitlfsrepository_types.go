@@ -141,8 +141,8 @@ type GitLFSRepositoryParameters struct {
 
 // GitLFSRepositorySpec defines the desired state of GitLFSRepository
 type GitLFSRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              GitLFSRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   GitLFSRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

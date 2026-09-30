@@ -141,8 +141,8 @@ type P2RepositoryParameters struct {
 
 // P2RepositorySpec defines the desired state of P2Repository
 type P2RepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              P2RepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   P2RepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

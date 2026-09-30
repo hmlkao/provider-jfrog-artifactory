@@ -249,8 +249,8 @@ type ScopedTokenParameters struct {
 
 // ScopedTokenSpec defines the desired state of ScopedToken
 type ScopedTokenSpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              ScopedTokenParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   ScopedTokenParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

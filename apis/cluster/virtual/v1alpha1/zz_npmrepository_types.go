@@ -181,8 +181,8 @@ type NPMRepositoryParameters struct {
 
 // NPMRepositorySpec defines the desired state of NPMRepository
 type NPMRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              NPMRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   NPMRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

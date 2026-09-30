@@ -141,8 +141,8 @@ type TerraformRepositoryParameters struct {
 
 // TerraformRepositorySpec defines the desired state of TerraformRepository
 type TerraformRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              TerraformRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   TerraformRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception

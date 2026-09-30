@@ -171,8 +171,8 @@ type BowerRepositoryParameters struct {
 
 // BowerRepositorySpec defines the desired state of BowerRepository
 type BowerRepositorySpec struct {
-	v2.ManagedResourceStatus `json:",inline"`
-	ForProvider              BowerRepositoryParameters `json:"forProvider"`
+	v2.ClusterManagedResourceSpec `json:",inline"`
+	ForProvider                   BowerRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
