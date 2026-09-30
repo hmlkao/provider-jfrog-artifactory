@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type MavenRepositoryInitParameters struct {
@@ -103,7 +102,7 @@ type MavenRepositoryInitParameters struct {
 type MavenRepositoryMemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
-	AccessTokenSecretRef *v1.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
+	AccessTokenSecretRef *v2.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -125,7 +124,7 @@ type MavenRepositoryMemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
-	AccessTokenSecretRef *v1.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
+	AccessTokenSecretRef *v2.LocalSecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	// +kubebuilder:validation:Optional
@@ -355,8 +354,8 @@ type MavenRepositorySpec struct {
 
 // MavenRepositoryStatus defines the observed state of MavenRepository.
 type MavenRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        MavenRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               MavenRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

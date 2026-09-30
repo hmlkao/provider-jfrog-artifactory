@@ -10,7 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type DebianRepositoryInitParameters struct {
@@ -225,8 +225,8 @@ type DebianRepositoryParameters struct {
 
 // DebianRepositorySpec defines the desired state of DebianRepository
 type DebianRepositorySpec struct {
-	v1.ResourceSpec `json:",inline"`
-	ForProvider     DebianRepositoryParameters `json:"forProvider"`
+	v2.ManagedResourceStatus `json:",inline"`
+	ForProvider              DebianRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -242,8 +242,8 @@ type DebianRepositorySpec struct {
 
 // DebianRepositoryStatus defines the observed state of DebianRepository.
 type DebianRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        DebianRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               DebianRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

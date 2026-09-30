@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type AnsibleRepositoryInitParameters struct {
@@ -47,11 +46,11 @@ type AnsibleRepositoryInitParameters struct {
 
 	// Reference to a Keypair in security to populate primaryKeypairRef.
 	// +kubebuilder:validation:Optional
-	PrimaryKeypairRefRef *v1.NamespacedReference `json:"primaryKeypairRefRef,omitempty" tf:"-"`
+	PrimaryKeypairRefRef *v2.NamespacedReference `json:"primaryKeypairRefRef,omitempty" tf:"-"`
 
 	// Selector for a Keypair in security to populate primaryKeypairRef.
 	// +kubebuilder:validation:Optional
-	PrimaryKeypairRefSelector *v1.NamespacedSelector `json:"primaryKeypairRefSelector,omitempty" tf:"-"`
+	PrimaryKeypairRefSelector *v2.NamespacedSelector `json:"primaryKeypairRefSelector,omitempty" tf:"-"`
 
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	PriorityResolution *bool `json:"priorityResolution,omitempty" tf:"priority_resolution,omitempty"`
@@ -169,11 +168,11 @@ type AnsibleRepositoryParameters struct {
 
 	// Reference to a Keypair in security to populate primaryKeypairRef.
 	// +kubebuilder:validation:Optional
-	PrimaryKeypairRefRef *v1.NamespacedReference `json:"primaryKeypairRefRef,omitempty" tf:"-"`
+	PrimaryKeypairRefRef *v2.NamespacedReference `json:"primaryKeypairRefRef,omitempty" tf:"-"`
 
 	// Selector for a Keypair in security to populate primaryKeypairRef.
 	// +kubebuilder:validation:Optional
-	PrimaryKeypairRefSelector *v1.NamespacedSelector `json:"primaryKeypairRefSelector,omitempty" tf:"-"`
+	PrimaryKeypairRefSelector *v2.NamespacedSelector `json:"primaryKeypairRefSelector,omitempty" tf:"-"`
 
 	// Setting repositories with priority will cause metadata to be merged only from repositories set with this field
 	// +kubebuilder:validation:Optional
@@ -221,8 +220,8 @@ type AnsibleRepositorySpec struct {
 
 // AnsibleRepositoryStatus defines the observed state of AnsibleRepository.
 type AnsibleRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        AnsibleRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               AnsibleRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

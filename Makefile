@@ -59,10 +59,13 @@ GO_SUBDIRS += cmd internal apis
 
 # https://github.com/kubernetes-sigs/kind/releases
 KIND_VERSION = v0.31.0
+# https://github.com/crossplane/uptest/releases
 UPTEST_VERSION = v2.2.0
 CRDDIFF_VERSION = v0.12.1
+# https://github.com/crossplane/cli/releases
 CROSSPLANE_CLI_VERSION = v2.5.0
 # for e2e testing
+# https://github.com/crossplane/crossplane/releases
 CROSSPLANE_VERSION = 2.4.1
 CROSSPLANE_BIN_VERSION = 2.4.1
 -include build/makelib/k8s_tools.mk
@@ -268,8 +271,7 @@ help-special: crossplane.help
 .PHONY: crossplane.help help-special
 
 # TODO(negz): Update CI to use these targets.
-# Add $(CROSSPLANE_CLI), because it's missing and needed by 'make local-deploy' and 'make build'
-vendor: modules.download $(CROSSPLANE_CLI)
+vendor: modules.download
 vendor.check: modules.check
 
 # This file contains custom make targets

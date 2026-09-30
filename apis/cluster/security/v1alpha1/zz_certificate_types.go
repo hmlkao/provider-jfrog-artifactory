@@ -10,16 +10,16 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type CertificateInitParameters struct {
 
 	// PEM-encoded client certificate and private key
-	ContentSecretRef *v1.SecretKeySelector `json:"contentSecretRef,omitempty" tf:"-"`
+	ContentSecretRef *v2.SecretKeySelector `json:"contentSecretRef,omitempty" tf:"-"`
 
 	// File system path to PEM file
-	FileSecretRef *v1.SecretKeySelector `json:"fileSecretRef,omitempty" tf:"-"`
+	FileSecretRef *v2.SecretKeySelector `json:"fileSecretRef,omitempty" tf:"-"`
 }
 
 type CertificateObservation struct {
@@ -46,17 +46,17 @@ type CertificateParameters struct {
 
 	// PEM-encoded client certificate and private key
 	// +kubebuilder:validation:Optional
-	ContentSecretRef *v1.SecretKeySelector `json:"contentSecretRef,omitempty" tf:"-"`
+	ContentSecretRef *v2.SecretKeySelector `json:"contentSecretRef,omitempty" tf:"-"`
 
 	// File system path to PEM file
 	// +kubebuilder:validation:Optional
-	FileSecretRef *v1.SecretKeySelector `json:"fileSecretRef,omitempty" tf:"-"`
+	FileSecretRef *v2.SecretKeySelector `json:"fileSecretRef,omitempty" tf:"-"`
 }
 
 // CertificateSpec defines the desired state of Certificate
 type CertificateSpec struct {
-	v1.ResourceSpec `json:",inline"`
-	ForProvider     CertificateParameters `json:"forProvider"`
+	v2.ManagedResourceStatus `json:",inline"`
+	ForProvider              CertificateParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -72,8 +72,8 @@ type CertificateSpec struct {
 
 // CertificateStatus defines the observed state of Certificate.
 type CertificateStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        CertificateObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               CertificateObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

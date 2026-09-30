@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type ArtifactsInitParameters struct {
@@ -359,8 +358,8 @@ type ReleaseBundleV2Spec struct {
 
 // ReleaseBundleV2Status defines the observed state of ReleaseBundleV2.
 type ReleaseBundleV2Status struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        ReleaseBundleV2Observation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               ReleaseBundleV2Observation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

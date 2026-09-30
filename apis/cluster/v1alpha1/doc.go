@@ -1,4 +1,4 @@
-// Package v1alpha1 contains the core resources of the artifactory upjet provider.
+// Package v1alpha1 contains the core resources of the jfrog-artifactory upjet provider.
 // +kubebuilder:object:generate=true
 // +groupName=artifactory.jfrog.crossplane.io
 // +versionName=v1alpha1

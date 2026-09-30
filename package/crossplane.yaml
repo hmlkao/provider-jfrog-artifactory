@@ -7,9 +7,9 @@ metadata:
     meta.crossplane.io/source: github.com/hmlkao/provider-jfrog-artifactory
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/description: |
-      Artifactory Crossplane provider to manage JFrog Artifactory resources in Kubernetes.
+      JFrog Artifactory Crossplane provider to manage JFrog Artifactory resources in Kubernetes.
     meta.crossplane.io/readme: |
-      Provider Artifactory is a Crossplane provider for [JFrog Artifactory](https://jfrog.com/artifactory/).
+      Provider JFrog Artifactory is a Crossplane provider for [JFrog Artifactory](https://jfrog.com/artifactory/).
       If you encounter an issue please create an issue in the
       [hmlkao/provider-jfrog-artifactory](https://github.com/hmlkao/provider-jfrog-artifactory/issues) repo.
 spec:

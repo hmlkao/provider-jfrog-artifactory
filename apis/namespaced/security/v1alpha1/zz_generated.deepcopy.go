@@ -9,7 +9,7 @@
 package v1alpha1
 
 import (
-	"github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )
 
@@ -45,12 +45,12 @@ func (in *CertificateInitParameters) DeepCopyInto(out *CertificateInitParameters
 	*out = *in
 	if in.ContentSecretRef != nil {
 		in, out := &in.ContentSecretRef, &out.ContentSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.FileSecretRef != nil {
 		in, out := &in.FileSecretRef, &out.FileSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 }
@@ -147,12 +147,12 @@ func (in *CertificateParameters) DeepCopyInto(out *CertificateParameters) {
 	*out = *in
 	if in.ContentSecretRef != nil {
 		in, out := &in.ContentSecretRef, &out.ContentSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	if in.FileSecretRef != nil {
 		in, out := &in.FileSecretRef, &out.FileSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 }
@@ -244,7 +244,7 @@ func (in *KeypairInitParameters) DeepCopyInto(out *KeypairInitParameters) {
 	}
 	if in.PassphraseSecretRef != nil {
 		in, out := &in.PassphraseSecretRef, &out.PassphraseSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	in.PrivateKeySecretRef.DeepCopyInto(&out.PrivateKeySecretRef)
@@ -347,7 +347,7 @@ func (in *KeypairParameters) DeepCopyInto(out *KeypairParameters) {
 	}
 	if in.PassphraseSecretRef != nil {
 		in, out := &in.PassphraseSecretRef, &out.PassphraseSecretRef
-		*out = new(v1.LocalSecretKeySelector)
+		*out = new(v2.LocalSecretKeySelector)
 		**out = **in
 	}
 	in.PrivateKeySecretRef.DeepCopyInto(&out.PrivateKeySecretRef)

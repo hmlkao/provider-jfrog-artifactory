@@ -10,7 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type PubRepositoryInitParameters struct {
@@ -141,8 +141,8 @@ type PubRepositoryParameters struct {
 
 // PubRepositorySpec defines the desired state of PubRepository
 type PubRepositorySpec struct {
-	v1.ResourceSpec `json:",inline"`
-	ForProvider     PubRepositoryParameters `json:"forProvider"`
+	v2.ManagedResourceStatus `json:",inline"`
+	ForProvider              PubRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -158,8 +158,8 @@ type PubRepositorySpec struct {
 
 // PubRepositoryStatus defines the observed state of PubRepository.
 type PubRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        PubRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               PubRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

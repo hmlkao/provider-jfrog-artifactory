@@ -10,7 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type AlpineRepositoryInitParameters struct {
@@ -238,7 +238,7 @@ type AlpineRepositoryParameters struct {
 type MemberInitParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
-	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
+	AccessTokenSecretRef *v2.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	Enabled *bool `json:"enabled,omitempty" tf:"enabled,omitempty"`
@@ -260,7 +260,7 @@ type MemberParameters struct {
 
 	// Admin access token for this member Artifactory instance. Used in conjunction with `cleanup_on_delete` attribute when Access Federation for access tokens is not enabled.
 	// +kubebuilder:validation:Optional
-	AccessTokenSecretRef *v1.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
+	AccessTokenSecretRef *v2.SecretKeySelector `json:"accessTokenSecretRef,omitempty" tf:"-"`
 
 	// Represents the active state of the federated member. It is supported to change the enabled status of my own member. The config will be updated on the other federated members automatically.
 	// +kubebuilder:validation:Optional
@@ -273,8 +273,8 @@ type MemberParameters struct {
 
 // AlpineRepositorySpec defines the desired state of AlpineRepository
 type AlpineRepositorySpec struct {
-	v1.ResourceSpec `json:",inline"`
-	ForProvider     AlpineRepositoryParameters `json:"forProvider"`
+	v2.ManagedResourceStatus `json:",inline"`
+	ForProvider              AlpineRepositoryParameters `json:"forProvider"`
 	// THIS IS A BETA FIELD. It will be honored
 	// unless the Management Policies feature flag is disabled.
 	// InitProvider holds the same fields as ForProvider, with the exception
@@ -290,8 +290,8 @@ type AlpineRepositorySpec struct {
 
 // AlpineRepositoryStatus defines the observed state of AlpineRepository.
 type AlpineRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        AlpineRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               AlpineRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

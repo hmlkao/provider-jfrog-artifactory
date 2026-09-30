@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type DebianRepositoryContentSynchronisationInitParameters struct {
@@ -186,11 +185,11 @@ type DebianRepositoryInitParameters struct {
 	PassThrough *bool `json:"passThrough,omitempty" tf:"pass_through,omitempty"`
 
 	// (String, Sensitive)
-	PasswordSecretRef *v1.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
+	PasswordSecretRef *v2.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
 	// only) Write-only equivalent of password.11 or later. Conflicts with password. Because write-only values are not tracked in state, use password_wo_version to signal when the secret has changed so it is re-sent to Artifactory.
 	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
-	PasswordWoSecretRef *v1.LocalSecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
+	PasswordWoSecretRef *v2.LocalSecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
 
 	// sends the current password_wo value to Artifactory. Only meaningful together with password_wo.
 	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
@@ -605,12 +604,12 @@ type DebianRepositoryParameters struct {
 
 	// (String, Sensitive)
 	// +kubebuilder:validation:Optional
-	PasswordSecretRef *v1.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
+	PasswordSecretRef *v2.LocalSecretKeySelector `json:"passwordSecretRef,omitempty" tf:"-"`
 
 	// only) Write-only equivalent of password.11 or later. Conflicts with password. Because write-only values are not tracked in state, use password_wo_version to signal when the secret has changed so it is re-sent to Artifactory.
 	// Write-only equivalent of `password`.11 or later. Conflicts with `password`. Because write-only values are not tracked in state, use `password_wo_version` to signal when the secret has changed so it is re-sent to Artifactory.
 	// +kubebuilder:validation:Optional
-	PasswordWoSecretRef *v1.LocalSecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
+	PasswordWoSecretRef *v2.LocalSecretKeySelector `json:"passwordWoSecretRef,omitempty" tf:"-"`
 
 	// sends the current password_wo value to Artifactory. Only meaningful together with password_wo.
 	// A version identifier for `password_wo`. Change this value (for example, after rotating the secret) to trigger an update that re-sends the current `password_wo` value to Artifactory. Only meaningful together with `password_wo`.
@@ -732,8 +731,8 @@ type DebianRepositorySpec struct {
 
 // DebianRepositoryStatus defines the observed state of DebianRepository.
 type DebianRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        DebianRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               DebianRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true

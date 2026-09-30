@@ -10,8 +10,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	v1 "github.com/crossplane/crossplane-runtime/v2/apis/common/v1"
-	v2 "github.com/crossplane/crossplane-runtime/v2/apis/common/v2"
+	v2 "github.com/crossplane/crossplane/apis/v2/core/v2"
 )
 
 type ComposerRepositoryInitParameters struct {
@@ -193,8 +192,8 @@ type ComposerRepositorySpec struct {
 
 // ComposerRepositoryStatus defines the observed state of ComposerRepository.
 type ComposerRepositoryStatus struct {
-	v1.ResourceStatus `json:",inline"`
-	AtProvider        ComposerRepositoryObservation `json:"atProvider,omitempty"`
+	v2.ManagedResourceStatus `json:",inline"`
+	AtProvider               ComposerRepositoryObservation `json:"atProvider,omitempty"`
 }
 
 // +kubebuilder:object:root=true
